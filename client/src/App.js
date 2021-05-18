@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/imageupload/:userid" component={ImageUploadPage} />
+        <Route exact path="/imgupload/:userid" component={ImageUploadPage} />
       </Switch>
     </Router>
   );
