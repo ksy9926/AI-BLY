@@ -75,24 +75,24 @@ function LandingPage() {
   const [select, setSelect] = useState(0);
   const [state, setState] = React.useState({});
 
-  const checkList = [
-    'checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE',
-    'checkedF', 'checkedG', 'checkedH', 'checkedI'
-  ]
+  const checkList = {
+    'checkedA': false, 'checkedB': false, 'checkedC': false, 'checkedD': false, 'checkedE': false,
+    'checkedF': false, 'checkedG': false, 'checkedH': false, 'checkedI': false
+  }
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    setState({ ...state, [event.target.name]:   });
+
     event.target.checked ? setSelect(select+1): setSelect(select-1);
   };
 
   const images = checkList.map((check, idx) => (
     <Grid key={idx} item xs={4}>
-      <Button className={classes.imageButton} name={check}>
+      <Button className={classes.imageButton}  onClick={(e) => handleChange(e)} name={check}>
         <img style={{height:"100%", width:"100%"}} src="images/clothes.png" alt="옷"></img>
         <FormControlLabel style={{position:"absolute", bottom:"0%", left:"70%"}} control={
           <GreenCheckbox
             checked={state.check}
-            onChange={handleChange}
             name={check}
           />
         } />
