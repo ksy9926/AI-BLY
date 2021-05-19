@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, Box, Button, Checkbox } from "@material-ui/core";
 import StarsIcon from '@material-ui/icons/Stars';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import useStyles from '../styles/MainPageStyle';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { Loader } from '../components/Loader';
 
 function MainPage() {
   const classes = useStyles();
   const [favorite, setFavorite] = useState({});
   const [activeButton, setActiveButton] = useState(0);
+  const [images, setImages] = useState([]);
+  const [count, setCount] = useState(1);
 
   const categories = ["전체", "상의", "하의", "드레스", "스커트", "팬츠", "자켓"].map((category, idx) => (
     activeButton===idx ?
@@ -21,16 +25,25 @@ function MainPage() {
 
   const favoriteIcon = (idx) => (
     <Checkbox
-    style={{padding:"0"}}
-    checked={favorite.idx}
-    onChange={handleChange}
-    icon={<StarsIcon style={{color: "#E0E3DA"}}/>}
-    checkedIcon={<StarsIcon style={{color: "#A593E0"}}/>}
-    name={idx}
+      style={{padding:"0"}}
+      checked={favorite.idx}
+      onChange={handleChange}
+      icon={<StarsIcon style={{color: "#E0E3DA"}}/>}
+      checkedIcon={<StarsIcon style={{color: "#A593E0"}}/>}
+      name={idx}
     />
   )
 
-  const images = ['1','2','3','4','5','6'].map(idx=>(
+  useEffect(() => {
+    fetchImages();
+  }, [])
+
+  const fetchImages = (count) => {
+    setImages([...images, count, count+1, count+2, count+3, count+4]);
+    setCount(count+5);
+  }
+
+  const items = images.map(idx=>(
     <Grid className={classes.mobileRecommendImageBox} key={idx} item xs={6}>
       <Grid container className={classes.mobileRecommendInfoBox}>
         <img className={classes.mobileImage} src="images/clothes.png" alt="옷"></img>
@@ -84,7 +97,15 @@ function MainPage() {
       </Grid>
     <Grid className={classes.mobileRoot}>
       <Grid container>
-        {images}
+        <InfiniteScroll
+          style={{display:"flex", flexWrap:"wrap"}}
+          dataLength={images.length}
+          next={()=>fetchImages(count)}
+          hasMore={true}
+          loader={<Loader />}
+        >
+          {items}
+        </InfiniteScroll>
       </Grid>
     </Grid>
     </>
