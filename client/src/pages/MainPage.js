@@ -5,6 +5,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import useStyles from '../styles/MainPageStyle';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Loader } from '../components/Loader';
+import { Mobile } from "../MediaQuery";
+import Navbar from "../components/Navbar";
+
 
 function MainPage() {
   const classes = useStyles();
@@ -66,10 +69,8 @@ function MainPage() {
   ))
 
   return (
-    <>
-    <Grid className={classes.mobileNavbar}>
-      <AccountCircleIcon className={classes.mobileProfileIcon}></AccountCircleIcon>
-    </Grid>
+    <Mobile>
+      <Navbar />
     <Grid className={classes.mobileRoot}>  
       <Grid className={classes.mobileRecommendMessageBox}>
         <Box className={classes.mobileRecommendMessage}>당신(닉네임) 만을 위한 추천 아이템 :)</Box>
@@ -109,7 +110,10 @@ function MainPage() {
         </InfiniteScroll>
       </Grid>
     </Grid>
-    </>
+    </Mobile>
+
+
+
   );
 }
 
