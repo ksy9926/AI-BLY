@@ -35,12 +35,13 @@ function MainPage() {
   )
 
   useEffect(() => {
-    fetchImages();
+    fetchImages(count);
   }, [])
 
-  const fetchImages = (count) => {
-    setImages([...images, count, count+1, count+2, count+3, count+4]);
-    setCount(count+5);
+  const fetchImages = (cnt) => {
+    setImages([...images, cnt, cnt+1, cnt+2, cnt+3]);
+    setCount(cnt+4);
+    console.log(images);
   }
 
   const items = images.map(idx=>(
