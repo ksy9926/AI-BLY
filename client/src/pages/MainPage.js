@@ -44,10 +44,9 @@ function MainPage() {
   const fetchImages = (cnt) => {
     setImages([...images, cnt, cnt+1, cnt+2, cnt+3]);
     setCount(cnt+4);
-    console.log(images);
   }
 
-  const items = images.map(idx=>(
+  const items = images.map((idx)=>(
     <Grid className={classes.mobileRecommendImageBox} key={idx} item xs={6}>
       <Grid container className={classes.mobileRecommendInfoBox}>
         <img className={classes.mobileImage} src="images/clothes.png" alt="옷"></img>
@@ -59,7 +58,7 @@ function MainPage() {
       <Box className={classes.mobileBrandFavoriteBox}>
         <Box className={classes.mobileBrandName}>노드스트롬</Box>
         <Box>
-          {favoriteIcon(idx)}
+          {favoriteIcon(idx.toString())}
         </Box>
       </Box>
       <Box className={classes.mobileShortDescription}>
@@ -103,7 +102,7 @@ function MainPage() {
           style={{display:"flex", flexWrap:"wrap"}}
           dataLength={images.length}
           next={()=>fetchImages(count)}
-          hasMore={true}
+          hasMore={count < 27 ? true : false}
           loader={<Loader />}
         >
           {items}
