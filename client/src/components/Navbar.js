@@ -5,11 +5,10 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
-    background: "rgba(0, 0, 0, 0)",
+    background: "rgba(248, 248, 248, 1)",
     position:"static"
   },
   mobileAccountCircleIcon: {
