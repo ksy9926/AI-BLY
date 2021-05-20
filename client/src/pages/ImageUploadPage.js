@@ -9,8 +9,7 @@ import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRoun
 export default function ImageUploadPage({ match }) {
   const classes = useStyles();
   const user_id = match.params.user_id;
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imageData, setImageData] = useState(["1", "2", "3", "4", "5", "6","1", "2", "3", "4", "5"]);
+  const [imageData, setImageData] = useState(["1", "2", "3", "4"]);
   const [imageList, setImageList] = useState(null);
 
   // User Image 리스트 axios get
@@ -34,11 +33,30 @@ export default function ImageUploadPage({ match }) {
           <UploadImageComponent
             src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
             inputtype="image"
+            user_id={user_id}
           />
         ))
       );
     }
   }, [imageData]);
+
+  return (
+    <Mobile>
+      <Box className={classes.mobileContainer}>
+        <Navbar />
+        <TextTitleComponent />
+      </Box>
+      <Grid container>
+        {imageList}
+        <UploadImageComponent inputtype="empty" user_id={user_id} />
+      </Grid>
+    </Mobile>
+  );
+}
+
+function UploadImageComponent({ src, inputtype, user_id }) {
+  const classes = useStyles();
+  const [image, setImage] = useState();
 
   function PostImage() {
     const formData = new FormData();
@@ -57,30 +75,14 @@ export default function ImageUploadPage({ match }) {
     });
   }
 
-  return (
-    <Mobile>
-      <Box className={classes.mobileContainer}>
-        <Navbar />
-        <TextTitleComponent />
-      </Box>
-      <Grid container>
-        {imageList}
-        <UploadImageComponent inputtype="empty" />
-      </Grid>
-    </Mobile>
-  );
-}
-
-function UploadImageComponent({ src, inputtype }) {
-  const classes = useStyles();
-  const [image, setImage] = useState();
-  
-  function onChangeImage(e){
+  function onChangeImage(e) {
     setImage(e.target.files[0]);
-  }
+    console.log(e.target.files[0]);
 
-  function onClickImage(){
     const formData = new FormData();
+    formData.append("file", image);
+    // 서버의 upload API 호출
+    PostImage();
   }
 
   if (inputtype !== "empty") {
@@ -90,6 +92,7 @@ function UploadImageComponent({ src, inputtype }) {
         inputtype={inputtype}
         onClick={() => {
           console.log("popup delete modal");
+          // DeleteImage()
         }}
         item
         xs={4}
@@ -116,11 +119,7 @@ function UploadImageComponent({ src, inputtype }) {
           inputtype={inputtype}
           className={classes.mobileEmptyImageBox}
         >
-          <Box
-            onClick={() => {
-              console.log("add image");
-            }}
-          >
+          <Box>
             <form
               action="upload"
               id="uploadForm"
