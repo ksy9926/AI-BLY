@@ -26,7 +26,7 @@ export default function Infinite({child}){
             endMessage={<p>You have seen it all</p>}
         >
             {images.map((idx)=>(
-                <ItemInfo key={idx} idx={idx} />
+                <ItemInfo key={idx} idx={idx}  />
             ))} 
         </InfiniteScroll>
     )

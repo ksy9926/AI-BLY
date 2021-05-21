@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Mobile } from "../MediaQuery";
 import { Box, TextField } from "@material-ui/core";
 import useStyles from "../styles/RegisterPageStyle";
-import Navbar from "../components/Navbar";
-import Buttons from "../components/Buttons";
+import Navbar from "../components/common/Navbar";
+import Buttons from "../components/common/Buttons";
 
 function RegisterPage() {
     const classes = useStyles();
