@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
       padding: "10px",
     },
     mobileImage: {
-      height: "100%",
+      height: "34vh",
       width: "100%",
     },
     mobileRecommendTextBox: {

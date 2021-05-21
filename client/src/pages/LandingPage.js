@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { Grid, Box, Button, Checkbox } from "@material-ui/core";
 import { green } from '@material-ui/core/colors';
 import useStyles from '../styles/LandingPageStyle';
+import { Mobile } from "../MediaQuery";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -41,6 +42,7 @@ function LandingPage() {
   ))
 
   return (
+    <Mobile>
     <Grid className={classes.mobileRoot}>
       <Grid className={classes.mobileNavbar}>
         {select >= 3 ? 
@@ -55,6 +57,7 @@ function LandingPage() {
         {images}
       </Grid>
     </Grid>
+    </Mobile>
   );
 }
 
