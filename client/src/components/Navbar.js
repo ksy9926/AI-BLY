@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
@@ -26,11 +27,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Navbar() {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <React.Fragment>
       <AppBar className={classes.mobileAppBar} elevation={0}>
         <Toolbar>
-          <ArrowBackIosIcon className={classes.mobileArrowBackIosIcon}/>
+          <ArrowBackIosIcon className={classes.mobileArrowBackIosIcon} onClick={()=> {history.goBack()}}/>
           <Box className={classes.mobileGrow} />
           <AccountCircle className={classes.mobileAccountCircleIcon} />
         </Toolbar>
