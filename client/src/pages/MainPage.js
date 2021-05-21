@@ -34,15 +34,17 @@ function MainPage() {
     />
   )
 
-  useEffect(() => {
-    fetchImages(count);
-  }, [])
+  
 
   const fetchImages = (cnt) => {
     setImages([...images, cnt, cnt+1, cnt+2, cnt+3]);
     setCount(cnt+4);
     console.log(images);
   }
+
+  useEffect(() => {
+    fetchImages(count);
+  }, [])
 
   const items = images.map(idx=>(
     <Grid className={classes.mobileRecommendImageBox} key={idx} item xs={6}>
@@ -56,7 +58,7 @@ function MainPage() {
       <Box className={classes.mobileBrandFavoriteBox}>
         <Box className={classes.mobileBrandName}>노드스트롬</Box>
         <Box>
-          {favoriteIcon(idx)}
+          {favoriteIcon(idx.toString())}
         </Box>
       </Box>
       <Box className={classes.mobileShortDescription}>
@@ -102,8 +104,9 @@ function MainPage() {
           style={{display:"flex", flexWrap:"wrap"}}
           dataLength={images.length}
           next={()=>fetchImages(count)}
-          hasMore={true}
+          hasMore={count < 30 ? true : false}
           loader={<Loader />}
+          endMessage={<p>You have seen it all</p>}
         >
           {items}
         </InfiniteScroll>

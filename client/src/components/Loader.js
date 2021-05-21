@@ -63,7 +63,7 @@ text-align: center;
 export const Loader = () => {
   return (
     <Loading>
-      <div class="lds-ellipsis">
+      <div className="lds-ellipsis">
         <div>
         </div>
         <div>
