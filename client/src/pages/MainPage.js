@@ -5,6 +5,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import useStyles from '../styles/MainPageStyle';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Loader } from '../components/Loader';
+import { Mobile } from "../MediaQuery";
+import Navbar from "../components/Navbar";
+
 
 function MainPage() {
   const classes = useStyles();
@@ -39,7 +42,6 @@ function MainPage() {
   const fetchImages = (cnt) => {
     setImages([...images, cnt, cnt+1, cnt+2, cnt+3]);
     setCount(cnt+4);
-    console.log(images);
   }
 
   useEffect(() => {
@@ -68,10 +70,8 @@ function MainPage() {
   ))
 
   return (
-    <>
-    <Grid className={classes.mobileNavbar}>
-      <AccountCircleIcon className={classes.mobileProfileIcon}></AccountCircleIcon>
-    </Grid>
+    <Mobile>
+      <Navbar />
     <Grid className={classes.mobileRoot}>  
       <Grid className={classes.mobileRecommendMessageBox}>
         <Box className={classes.mobileRecommendMessage}>당신(닉네임) 만을 위한 추천 아이템 :)</Box>
@@ -104,7 +104,7 @@ function MainPage() {
           style={{display:"flex", flexWrap:"wrap"}}
           dataLength={images.length}
           next={()=>fetchImages(count)}
-          hasMore={count < 30 ? true : false}
+          hasMore={count < 27 ? true : false}
           loader={<Loader />}
           endMessage={<p>You have seen it all</p>}
         >
@@ -112,7 +112,10 @@ function MainPage() {
         </InfiniteScroll>
       </Grid>
     </Grid>
-    </>
+    </Mobile>
+
+
+
   );
 }
 
