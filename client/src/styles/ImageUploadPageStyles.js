@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
   //mobile
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
   mobileImageBox: {
     height: "180px",
-    backgroundColor: "rgba(248, 248, 248, 1)",
+    backgroundColor: "var(--color-bg-light)",
     borderRadius: "15px",
     borderColor: "black",
   },
@@ -40,14 +41,14 @@ const useStyles = makeStyles((theme) => ({
 
   mobileEmptyImageBox: {
     height: "180px",
-    backgroundColor: "rgba(248, 248, 248, 1)",
+    backgroundColor: "var(--color-bg-light)",
     borderRadius: "15px",
     justifyContent: "center",
     alignContent: "center",
     outline: "none",
   },
   mobileEmptyImageIcon: {
-    color: "rgba(86, 98, 112, 1)",
+    color: "var(--color-bg-dark)",
     fontSize: "35px",
   },
   mobileInput: {
