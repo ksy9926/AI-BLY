@@ -6,15 +6,6 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(1),
       flexGrow: 1,
     },
-    mobileNavbar: {
-      height: "6vh",
-      textAlign: "right",
-      backgroundColor: "#f8f8f8",
-      padding: "10px",
-    },
-    mobileProfileIcon: {
-      fontSize: "40px",
-    },
     mobileRecommendMessageBox: {
       height: "6vh",
       textAlign: "left",
@@ -22,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     mobileRecommendMessage: {
       fontSize: "18px",
       fontWeight: "bold",
+      color: "var(--color-black)"
     },
     mobileRecommendInfoBox: {
       height: "34vh",
@@ -45,14 +37,17 @@ const useStyles = makeStyles((theme) => ({
     mobileBrandName: {
       fontWeight: "bold",
       fontSize: "18px",
+      color: "var(--color-black)",
     },
     mobileDescription: {
       height: "60%",
+      color: "var(--color-gray)",
     },
     mobileShortDescription:{
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
+      color: "var(--color-gray)"
     },
     mobileDiscountPriceBox: {
       display: "flex",
@@ -61,10 +56,11 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileDiscount: {
       fontWeight: "bold",
-      color: "red",
+      color: "var(--color-red)",
     },
     mobilePrice: {
-      fontWeight:"bold"
+      fontWeight:"bold",
+      color: "var(--color-black)"
     },
     mobileCategoryContainer: {
         display: "flex",
@@ -76,32 +72,32 @@ const useStyles = makeStyles((theme) => ({
         overflowY: "hidden"
     },
     mobileCategoryButton: {
-        border: "1px solid #e6e6e6",
+        border: "1px solid var(--color-bg-dark)",
         borderRadius: "15px",
         margin: "10px 6px",
-        backgroundColor: "#E0E3DA",
+        backgroundColor: "var(--color-bg-dark)",
         fontWeight: "700",
         fontSize: "14px",
         paddingTop: "2px",
         paddingBottom: "2px",
         "&:hover, &:focus, &:active": {
-            backgroundColor: "#566270",
-            color: "white"
+            backgroundColor: "var(--color-main-b)",
+            color: "var(--color-main-c)"
           },
     },
     mobileCategoryActiveButton: {
-      border: "1px solid #e6e6e6",
+      border: "1px solid var(--color-main-b)",
       borderRadius: "15px",
       margin: "10px 6px",
-      backgroundColor: "#566270",
-      color: "white",
+      backgroundColor: "var(--color-main-b)",
+      color: "var(--color-main-c)",
       fontWeight: "700",
       fontSize: "14px",
       paddingTop: "2px",
       paddingBottom: "2px",
       "&:hover, &:focus, &:active": {
-        backgroundColor: "#566270",
-        color: "white"
+        backgroundColor: "var(--color-main-b)",
+        color: "var(--color-main-c)"
       },
     }
   }));

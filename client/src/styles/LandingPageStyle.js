@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
     mobileRoot: {
@@ -12,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileNavbarSkip: {
       fontWeight: "bold",
-      color: "#a5a5a5",
+      color: "var(--color-bg-dark)",
       textDecoration: "none",
     },
     mobileNavbarSelect: {
       fontWeight: "bold",
-      color: "#3A51A4",
+      color: "var(--color-main-b)",
       textDecoration: "none",
     },
     mobileInfoMessageBox: {
@@ -27,10 +28,11 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileInfoMessage: {
       fontSize: "18px",
-      fontWeight: "900"
+      fontWeight: "900",
+      color: "var(--color-main-b)"
     },
     mobileInfoMiniMessage: {
-      color: "#7788b9",
+      color: "var(--color-main-a)",
       fontSize: "14px",
       fontWeight: "bold",
       padding: theme.spacing(1)
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       color: theme.palette.text.secondary,
       height: "100%",
-      border: "2px solid #e6e6e6",
+      border: "2px solid var(--color-bg-dark)",
       borderRadius: "10%",
       position: "relative",
     },
