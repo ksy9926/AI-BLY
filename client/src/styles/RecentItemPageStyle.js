@@ -6,6 +6,15 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(1),
       flexGrow: 1,
     },
+    mobileNavbar: {
+      height: "6vh",
+      textAlign: "right",
+      backgroundColor: "#f8f8f8",
+      padding: "10px",
+    },
+    mobileProfileIcon: {
+      fontSize: "40px",
+    },
     mobileRecommendMessageBox: {
       height: "6vh",
       textAlign: "left",
@@ -13,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     mobileRecommendMessage: {
       fontSize: "18px",
       fontWeight: "bold",
-      color: "var(--color-black)"
     },
     mobileRecommendInfoBox: {
       height: "34vh",
@@ -21,22 +29,8 @@ const useStyles = makeStyles((theme) => ({
     mobileRecommendImageBox: {
       padding: "10px",
     },
-    mobileImageBox: {
-      height: "34vh",
-      borderRadius: "15px",
-      borderColor: "black",
-      marginBottom: "10px"
-    },
-  
-    // mobileImage: {
-    //   objectFit: "cover",
-    //   height: "100%",
-    //   width: "100%",
-    //   borderRadius: "15px",
-    // },
     mobileImage: {
-      objectFit: "cover",
-      height: "100%",
+      height: "34vh",
       width: "100%",
       borderRadius: "15px",
     },
@@ -52,17 +46,14 @@ const useStyles = makeStyles((theme) => ({
     mobileBrandName: {
       fontWeight: "bold",
       fontSize: "18px",
-      color: "var(--color-black)",
     },
     mobileDescription: {
       height: "60%",
-      color: "var(--color-gray)",
     },
     mobileShortDescription:{
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
-      color: "var(--color-gray)"
     },
     mobileDiscountPriceBox: {
       display: "flex",
@@ -71,11 +62,10 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileDiscount: {
       fontWeight: "bold",
-      color: "var(--color-red)",
+      color: "red",
     },
     mobilePrice: {
-      fontWeight:"bold",
-      color: "var(--color-black)"
+      fontWeight:"bold"
     },
     mobileCategoryContainer: {
         display: "flex",
@@ -87,34 +77,66 @@ const useStyles = makeStyles((theme) => ({
         overflowY: "hidden"
     },
     mobileCategoryButton: {
-        border: "1px solid var(--color-bg-dark)",
+        border: "1px solid #e6e6e6",
         borderRadius: "15px",
         margin: "10px 6px",
-        backgroundColor: "var(--color-bg-dark)",
+        backgroundColor: "#E0E3DA",
         fontWeight: "700",
         fontSize: "14px",
         paddingTop: "2px",
         paddingBottom: "2px",
         "&:hover, &:focus, &:active": {
-            backgroundColor: "var(--color-main-b)",
-            color: "var(--color-main-c)"
+            backgroundColor: "#566270",
+            color: "white"
           },
     },
     mobileCategoryActiveButton: {
-      border: "1px solid var(--color-main-b)",
+      border: "1px solid #e6e6e6",
       borderRadius: "15px",
       margin: "10px 6px",
-      backgroundColor: "var(--color-main-b)",
-      color: "var(--color-main-c)",
+      backgroundColor: "#566270",
+      color: "white",
       fontWeight: "700",
       fontSize: "14px",
       paddingTop: "2px",
       paddingBottom: "2px",
       "&:hover, &:focus, &:active": {
-        backgroundColor: "var(--color-main-b)",
-        color: "var(--color-main-c)"
+        backgroundColor: "#566270",
+        color: "white"
       },
-    }
+    },
+
+
+
+    
+    mobileContainer: {
+      height: "auto",
+      position: "relative",
+      justifyContent: "center",
+      alignContent: "center",
+    },
+    mobileEmptyBox:{
+      height: "35vh"
+    },
+  
+    //NoItemTemplate
+    mobileNoItemBox:{
+      textAlign: "center",
+    },
+  
+    //TextMiddleComponent
+    mobileTitleBox: {
+      margin: "10px",
+      marginBottom:"50px"
+    },
+    mobileTitleText: {
+      fontWeight: "bold",
+      fontSize: "21px",
+    },
+    mobileSubtitleText: {
+      color: "rgba(165, 147, 224, 1)",
+      fontSize: "15px",
+    },
   }));
 
 
