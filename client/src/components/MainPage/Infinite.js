@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Loader } from './Loader';
-import Info from './Info';
+import ItemInfo from './ItemInfo';
 
 export default function Infinite({child}){
     const [images, setImages] = useState([]);
@@ -21,12 +21,12 @@ export default function Infinite({child}){
             style={{display:"flex", flexWrap:"wrap"}}
             dataLength={images.length}
             next={()=>fetchImages(count)}
-            hasMore={count < 27 ? true : false}
+            hasMore={count < 100 ? true : false}
             loader={<Loader />}
             endMessage={<p>You have seen it all</p>}
         >
             {images.map((idx)=>(
-                <Info key={idx} idx={idx} />
+                <ItemInfo key={idx} idx={idx} />
             ))} 
         </InfiniteScroll>
     )

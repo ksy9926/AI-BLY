@@ -29,22 +29,8 @@ const useStyles = makeStyles((theme) => ({
     mobileRecommendImageBox: {
       padding: "10px",
     },
-    mobileImageBox: {
-      height: "34vh",
-      borderRadius: "15px",
-      borderColor: "black",
-      marginBottom: "10px"
-    },
-  
-    // mobileImage: {
-    //   objectFit: "cover",
-    //   height: "100%",
-    //   width: "100%",
-    //   borderRadius: "15px",
-    // },
     mobileImage: {
-      objectFit: "cover",
-      height: "100%",
+      height: "34vh",
       width: "100%",
       borderRadius: "15px",
     },
@@ -118,7 +104,39 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#566270",
         color: "white"
       },
-    }
+    },
+
+
+
+    
+    mobileContainer: {
+      height: "auto",
+      position: "relative",
+      justifyContent: "center",
+      alignContent: "center",
+    },
+    mobileEmptyBox:{
+      height: "35vh"
+    },
+  
+    //NoItemTemplate
+    mobileNoItemBox:{
+      textAlign: "center",
+    },
+  
+    //TextMiddleComponent
+    mobileTitleBox: {
+      margin: "10px",
+      marginBottom:"50px"
+    },
+    mobileTitleText: {
+      fontWeight: "bold",
+      fontSize: "21px",
+    },
+    mobileSubtitleText: {
+      color: "rgba(165, 147, 224, 1)",
+      fontSize: "15px",
+    },
   }));
 
 
