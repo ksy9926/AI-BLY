@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Buttons({ color, text }) {
+export default function Buttons({ color, text, url }) {
   const classes = useStyles();
   return (
     <React.Fragment>
