@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
     mobileRoot: {
