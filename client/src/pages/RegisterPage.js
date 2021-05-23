@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { Mobile } from "../MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
-import useStyles from "../styles/RegisterPageStyle";
+import useStyles from "../styles/AuthPageStyle";
 import Navbar from "../components/common/Navbar";
 import swal from "sweetalert";
 
@@ -17,7 +17,6 @@ function RegisterPage() {
     const [password, setPassword] = useState('');
     const [passwordCheck, setPasswordCheck] = useState('');
     const [name, setName] = useState('');
-    const [pwWarning, setPwWarning] = useState(<></>);
 
     // (회원가입 폼) 입력 핸들러
     const onChangeHandler = (event) => {
@@ -36,30 +35,18 @@ function RegisterPage() {
         }
     };
 
-    // (비밀번호 재확인 입력 시) 비밀번호 일치 확인
-    useEffect(() => {
-        if (password !== '' || passwordCheck !== '') {
-        if (password !== passwordCheck) {
-            setPwWarning(<p>비밀번호가 일치하지 않습니다.</p>);
-        } else {
-            setPwWarning(<></>);
-        }
-        }
-    }, [passwordCheck]);
-
     // 회원가입 버튼 핸들러
-    const onSignUpHandler = async (event) => {
+    const onSignUpHandler = (event) => {
         event.preventDefault();
         console.log("버튼누름!");
         if (password === passwordCheck) {
             console.log(id);
-            await axios
-                .post(url + "/api/signup/", {
-                    username: id,
-                    password: password,
-                    email: "test324212@test.com",
-                    full_name: name,
-                    withCredentials: true,
+            axios.post(url + "/api/signup/", {
+                username: id,
+                password: password,
+                email: "test324212@test.com",
+                full_name: name,
+                withCredentials: true,
             })
             .then((response) => {
                 console.log(response);
@@ -71,7 +58,7 @@ function RegisterPage() {
                     history.push({
                         pathname: "/register/closet"
                     });
-                } else if (response.data.status === 301) {
+                } else if (response.status === 301) {
                     swal({
                         title: "회원가입 실패",
                         text: "필수 입력 사항이 모두 입력되지 않았습니다.",
@@ -121,13 +108,11 @@ function RegisterPage() {
     return (
         <Mobile>
             <Navbar />
-            <Box
-                className={classes.mobileRegisterBox}
-            >
+            <Box className={classes.mobileAuthBox}>
                 <form>
                     <Box className={classes.mobileInputBox}>
                     <TextField
-                        className={classes.textField}
+                        className={classes.mobileTextField}
                         id="standard-basic"
                         label="아이디를 입력해주세요."
                         name="id"
@@ -137,7 +122,7 @@ function RegisterPage() {
                         required
                     />
                     <TextField
-                        className={classes.textField}
+                        className={classes.mobileTextField}
                         id="standard-basic"
                         label="비밀번호를 입력해주세요."
                         name="password"
@@ -147,9 +132,10 @@ function RegisterPage() {
                         required
                     />
                     <TextField
-                        className={classes.textField}
+                        className={classes.mobileTextField}
+                        error={passwordCheck && password !== passwordCheck ? true : false}
                         id="standard-basic"
-                        label="비밀번호를 확인해주세요."
+                        label={passwordCheck && password !== passwordCheck ? "비밀번호가 일치하지 않습니다." : "비밀번호를 확인해주세요."}
                         name="passwordCheck"
                         type="password"
                         value={passwordCheck}
@@ -157,7 +143,7 @@ function RegisterPage() {
                         required
                     />
                     <TextField
-                        className={classes.textField}
+                        className={classes.mobileTextField}
                         id="standard-basic"
                         label="이름을 입력해주세요."
                         name="name"
@@ -168,7 +154,7 @@ function RegisterPage() {
                     />
                     </Box>
                     <Box className={classes.mobileButtonBox}>
-                        <Button style={{width: "70vw", borderRadius: "15px"}} variant="contained" onClick={onSignUpHandler} >가입하기</Button>
+                        <Button className={classes.mobileButton} variant="contained" onClick={onSignUpHandler} >가입하기</Button>
                     </Box>
                 </form>
             </Box>
