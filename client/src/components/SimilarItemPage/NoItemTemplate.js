@@ -6,7 +6,6 @@ import Buttons from "../common/Buttons";
 export default function NoItemTemplate({ title, subtitle, buttontext, buttonUrl }) {
   const classes = useStyles();
   return (
-    <React.Fragment>
       <Box className={classes.mobileNoItemBox}>
         <Box>
           <Box className={classes.mobileTitleBox}>
@@ -18,8 +17,7 @@ export default function NoItemTemplate({ title, subtitle, buttontext, buttonUrl 
             </Typography>
           </Box>
         </Box>
-        <Buttons text={buttontext}></Buttons>
+        <Buttons text={buttontext} onClick={(e)=>{console.log("hello")}}></Buttons>
       </Box>
-    </React.Fragment>
   );
 }

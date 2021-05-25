@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Grid, Box, Button, Checkbox } from "@material-ui/core";
-import { green } from '@material-ui/core/colors';
-import useStyles from '../styles/LandingPageStyle';
+import { green } from "@material-ui/core/colors";
+import useStyles from "../styles/LandingPageStyle";
 import { Mobile } from "../MediaQuery";
+import TextTitleComponent from "../components/ImageUploadPage/TextTitleComponent";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 
 const GreenCheckbox = withStyles({
   root: {
     color: green[400],
-    '&$checked': {
+    "&$checked": {
       color: green[600],
     },
   },
@@ -19,44 +22,64 @@ function LandingPage() {
   const classes = useStyles();
   const [select, setSelect] = useState(0);
   const [state, setState] = useState({});
-  const checkList = [
-    'checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE',
-    'checkedF', 'checkedG', 'checkedH', 'checkedI'
-  ]
+  const [checked, setChecked] = useState([false, false, false, false, false, false, false, false]);
+  const checkList = ["checkedA","checkedA","checkedA","checkedA","checkedA","checkedA","checkedA","checkedA",];
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    event.target.checked ? setSelect(select+1): setSelect(select-1);
+    const newChecked = !event.target.checked
+    setChecked({...checked, [event.target.id] : newChecked})
+    newChecked ? setSelect(select + 1) : setSelect(select - 1);
   };
 
   const images = checkList.map((check, idx) => (
-    <Grid key={idx} item xs={4}>
-      <Button className={state[check] ? classes.mobileImageActiveButton : classes.mobileImageButton}>
-        <label className={classes.mobileImageLabel} htmlFor={check}></label>
-        <img className={classes.mobileImage} src="images/clothes.png" alt="옷"></img>
-        <Box className={classes.mobileCheckboxContainer}>
-          <GreenCheckbox checked={state.check} onChange={handleChange} name={check} id={check} />
-        </Box>
-      </Button>
+    <Grid className={
+       classes.mobileImageGrid} item xs={4}>
+      <Grid
+        container
+        className={
+          // checked[idx]
+          //   ? classes.mobileImageActiveButton
+            classes.mobileImageButton
+        }
+      >
+        <img
+          className={          checked[idx]
+            ? classes.mobileImageActiveButton
+            : classes.mobileImage}
+          src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
+          alt="none"
+          id={idx}
+          name={check}
+          checked={checked[idx]}
+          onClick={handleChange}
+        />
+      </Grid>
     </Grid>
-  ))
+  ));
 
   return (
     <Mobile>
-    <Grid className={classes.mobileRoot}>
-      <Grid className={classes.mobileNavbar}>
-        {select >= 3 ? 
-        <a href="/main" className={classes.mobileNavbarSelect}>선택하기</a> :
-        <a href="/main" className={classes.mobileNavbarSkip}>건너뛰기</a> }
-      </Grid>
-      <Grid className={classes.mobileInfoMessageBox}>
-        <Box className={classes.mobileInfoMessage}>스타일을 3개 이상 고르면<br />취향에 맞는 옷들을 추천해드릴게요 !</Box>
-        <Box className={classes.mobileInfoMiniMessage}>많이 고르실수록 추천이 더욱더 정확해져요</Box>
-      </Grid>
-      <Grid container spacing={2} className={classes.mobileImageContainer}>
-        {images}
-      </Grid>
-    </Grid>
+      <Box className={classes.mobileContainer}>
+        <AppBar className={classes.mobileAppBar} elevation={0}>
+          <Toolbar>
+            <Box className={classes.mobileGrow} />
+            {select >= 3 ? (
+              <a href="/main" className={classes.mobileNavbarSelect}>
+                선택하기
+              </a>
+            ) : (
+              <a href="/main" className={classes.mobileNavbarSkip}>
+                건너뛰기
+              </a>
+            )}
+          </Toolbar>
+        </AppBar>
+        <TextTitleComponent
+          title="추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷들을 추천해드릴게요 !"
+          subtitle="많이 고르실수록 추천이 더욱더 정확해져요."
+        />
+      </Box>
+      <Grid container>{images}</Grid>
     </Mobile>
   );
 }
