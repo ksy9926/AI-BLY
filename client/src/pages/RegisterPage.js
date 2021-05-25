@@ -17,6 +17,7 @@ function RegisterPage() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [name, setName] = useState("");
+  const [blank, setBlank] = useState(false);
 
   // (회원가입 폼) 입력 핸들러
   const onChangeHandler = (event) => {
@@ -38,9 +39,9 @@ function RegisterPage() {
   // 회원가입 버튼 핸들러
   const onSignUpHandler = (event) => {
     event.preventDefault();
-    console.log("버튼누름!");
-    if (password === passwordCheck) {
-      console.log(id);
+    if (!id || !password || !passwordCheck || !name) {
+      setBlank(true);
+    } else if (password === passwordCheck) {
       axios
         .post(url + "/api/signup/", {
           username: id,
@@ -59,50 +60,25 @@ function RegisterPage() {
             history.push({
               pathname: "/register/closet",
             });
-          } else if (response.status === 301) {
-            swal({
-              title: "회원가입 실패",
-              text: "필수 입력 사항이 모두 입력되지 않았습니다.",
-              icon: "warning",
-            });
-          } else if (response.data.status === 302) {
-            swal({
-              title: "회원가입 실패",
-              text: "이미 등록된 이메일 주소입니다.",
-              icon: "warning",
-            });
-          } else if (
-            response.data.username === "이미 존재하는 아이디 입니다."
-          ) {
-            swal({
-              title: "회원가입 실패",
-              text: "이미 등록된 별명입니다.",
-              icon: "warning",
-            });
-          } else if (response.data.status === 304) {
-            swal({
-              title: "회원가입 실패",
-              text: "비밀번호 기준에 맞지 않습니다. 비밀번호는 8자이상, 숫자+영어+특수문자 조합으로 이루어집니다.",
-              icon: "warning",
-            });
-          } else if (response.data.status === 305) {
-            swal({
-              title: "회원가입 실패",
-              text: "비밀번호는 하나이상의 특수문자가 들어가야합니다.",
-              icon: "warning",
-            });
           } else {
             console.log(response.data);
             alert("error");
           }
         })
         .catch((error) => {
-          console.log(error);
-          swal({
-            title: "에러발생",
-            text: "예상치 못한 오류가 발생했습니다",
-            icon: "warning",
-          });
+          if (error.response.data.password) {
+            swal({
+              title: error.response.data.password[0],
+              icon: "warning",
+            });
+          } else if (error.response.data.username) {
+            swal({
+              title: error.response.data.username[0],
+              icon: "warning",
+            });
+          } else {
+            alert("예상치 못한 오류 발생");
+          }
         });
     }
   };
@@ -115,23 +91,23 @@ function RegisterPage() {
           <Box className={classes.mobileInputBox}>
             <TextField
               className={classes.mobileTextField}
+              error={!id && blank ? true : false}
               id="standard-basic"
               label="아이디를 입력해주세요."
               name="id"
               type="text"
               value={id}
               onChange={onChangeHandler}
-              required
             />
             <TextField
               className={classes.mobileTextField}
+              error={!password && blank ? true : false}
               id="standard-basic"
               label="비밀번호를 입력해주세요."
               name="password"
               type="password"
               value={password}
               onChange={onChangeHandler}
-              required
             />
             <TextField
               className={classes.mobileTextField}
@@ -146,17 +122,16 @@ function RegisterPage() {
               type="password"
               value={passwordCheck}
               onChange={onChangeHandler}
-              required
             />
             <TextField
               className={classes.mobileTextField}
+              error={!name && blank ? true : false}
               id="standard-basic"
               label="이름을 입력해주세요."
               name="name"
               type="text"
               value={name}
               onChange={onChangeHandler}
-              required
             />
           </Box>
           <Box className={classes.mobileButtonBox}>
