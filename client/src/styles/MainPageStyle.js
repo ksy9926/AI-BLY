@@ -27,13 +27,7 @@ const useStyles = makeStyles((theme) => ({
       borderColor: "black",
       marginBottom: "10px"
     },
-  
-    // mobileImage: {
-    //   objectFit: "cover",
-    //   height: "100%",
-    //   width: "100%",
-    //   borderRadius: "15px",
-    // },
+
     mobileImage: {
       objectFit: "cover",
       height: "100%",
@@ -114,6 +108,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "var(--color-main-b)",
         color: "var(--color-main-c)"
       },
+
+      mobiletabbar:{
+        color: "var(--color-main-b)",
+        backgroundColor: "var(--color-bg-light)"
+      } 
     }
   }));
 
