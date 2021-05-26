@@ -13,6 +13,7 @@ function LoginPage() {
   const history = useHistory();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [blank, setBlank] = useState(false);
 
   const onChangeHandler = (event) => {
     const {
@@ -29,42 +30,52 @@ function LoginPage() {
   // 로그인 버튼 핸들러
   const onLoginHandler = (event) => {
     event.preventDefault();
-    console.log("버튼누름!");
-    axios
-      .post(url + "/api/login/", {
-        username: id,
-        password: password,
-        withCredentials: true,
-      })
-      .then((response) => {
-        console.log(response);
-        if (response.status === 201) {
-          swal({
-            title: "로그인 성공!",
-            icon: "success",
-          });
-          history.push({
-            pathname: "/main",
-          });
-        } else if (response.status === 401) {
-          swal({
-            title: "로그인 실패",
-            text: "가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.",
-            icon: "error",
-          });
-        } else {
-          console.log(response.data);
-          alert("error");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        swal({
-          title: "에러발생",
-          text: "예상치 못한 오류가 발생했습니다",
-          icon: "warning",
+    if (!id || !password) {
+      setBlank(true);
+    } else {
+      axios
+        .post(url + "/api/login/", {
+          username: id,
+          password: password,
+          withCredentials: true,
+        })
+        .then((response) => {
+          console.log(response);
+          if (response.status === 200) {
+            swal({
+              title: "로그인 성공!",
+              icon: "success",
+            });
+            history.push({
+              pathname: "/main",
+            });
+          } else {
+            console.log(response.data);
+            alert("error");
+          }
+        })
+        .catch((error) => {
+          if (error.response.data.password) {
+            swal({
+              title: error.response.data.password[0],
+              icon: "warning",
+            });
+          } else if (error.response.data.username) {
+            swal({
+              title: error.response.data.username[0],
+              icon: "warning",
+            });
+          } else if (error.response.data.non_field_errors) {
+            swal({
+              title: "아이디 혹은 비밀번호를 확인해주세요.",
+              icon: "warning",
+            });
+          } else {
+            console.log(error.response);
+            alert("예상치 못한 오류 발생");
+          }
         });
-      });
+    }
   };
 
   return (
@@ -75,23 +86,23 @@ function LoginPage() {
           <Box className={classes.mobileInputBox}>
             <TextField
               className={classes.mobileTextField}
+              error={!id && blank ? true : false}
               id="standard-basic"
               label="아이디를 입력해주세요."
               name="id"
               type="text"
               value={id}
               onChange={onChangeHandler}
-              required
             />
             <TextField
               className={classes.mobileTextField}
+              error={!password && blank ? true : false}
               id="standard-basic"
               label="비밀번호를 입력해주세요."
               name="password"
               type="password"
               value={password}
               onChange={onChangeHandler}
-              required
             />
             <br />
             <Button
