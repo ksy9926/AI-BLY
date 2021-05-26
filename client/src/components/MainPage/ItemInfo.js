@@ -1,13 +1,13 @@
 import { Grid, Box } from "@material-ui/core";
-import FavoriteIcon from './FavoriteIcon';
-import useStyles from '../../styles/MainPageStyle';
+import FavoriteIcon from "./FavoriteIcon";
+import useStyles from "../../styles/MainPageStyle";
 
-export default function ItemInfo({idx}){
-    const classes = useStyles();
-    const brand = "노드스트롬";
-    const description = "Zella Live In High Walst Pocket 7/8 Leggings";
-    const discount = "33%";
-    const price = "57,300";
+export default function ItemInfo({ idx }) {
+  const classes = useStyles();
+  const brand = "노드스트롬";
+  const description = "Zella Live In High Walst Pocket 7/8 Leggings";
+  const discount = "33%";
+  const price = "57,300";
 
     return (
         <Grid className={classes.mobileItemImageGrid} item xs={6}>
