@@ -89,28 +89,33 @@ const useStyles = makeStyles((theme) => ({
 
   mobileRecommendInfoGrid: {
     height: "34vh",
-    border: "2px solid #E0E3DA",
     marginRight: "5px",
-    borderRadius: "15px",
   },
 
   mobileRecommendImageBox: {
     width:"40vh",
     height: "34vh",
-    borderRadius: "15px",
   },
 
   mobileRecommendImage: {
     objectFit: "cover",
     height: "100%",
     width: "100%",
-    borderRadius: "15px",
+    borderRadius: "15px 0px 0px 15px ",
+    // borderTop: "2px solid #E0E3DA",
+    // borderBottom: "2px solid #E0E3DA",
+    // borderLeft: "2px solid #E0E3DA",
   },
 
   mobileRecommendTextBox: {
     padding: "10px",
     textAlign: "left",
     whiteSpace: "pre-line",
+    borderRadius: "0px 15px 15px 0px ",
+    borderTop: "2px solid #E0E3DA",
+    borderBottom: "2px solid #E0E3DA",
+    borderRight: "2px solid #E0E3DA",
+
   },
   mobileRecommendBrandFavoriteBox: {
     height: "40px",

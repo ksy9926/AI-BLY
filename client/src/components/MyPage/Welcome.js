@@ -7,12 +7,20 @@ function Welcome() {
   const history = useHistory();
   const title = "안녕하세요 (닉네임) !";
 
+  function logoutUser(e) {
+    if (localStorage.getItem("jwt") !== null) {
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("id");
+      history.push("/");
+    }
+  }
+
   return (
     <Box className={classes.mobileWelcomeBox}>
       <Box className={classes.mobileWelcomeText}>{title}</Box>
       <Button
         onClick={() => {
-          history.push({ pathname: "/login" });
+          logoutUser();
         }}
         className={classes.mobileCategoryButton}
       >

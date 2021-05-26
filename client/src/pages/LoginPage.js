@@ -42,6 +42,8 @@ function LoginPage() {
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
+            localStorage.setItem('jwt', response.data.access_token);
+            localStorage.setItem('id', response.data.result);
             swal({
               title: "로그인 성공!",
               icon: "success",

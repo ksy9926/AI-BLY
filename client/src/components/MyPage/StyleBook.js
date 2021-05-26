@@ -1,10 +1,18 @@
 import { Grid, Box } from "@material-ui/core";
+import axios from 'axios';
 import useStyles from "../../styles/MyPageStyle";
 
 function StyleBook() {
   const classes = useStyles();
   const imagePath =
     "http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg";
+
+  function getInfo(e) {
+    axios
+      .get(`/userprofile/`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("jwt") },
+      })
+  }
 
   return (
     <Box item className={classes.mobileStyleBookBox}>
