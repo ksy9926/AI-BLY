@@ -36,42 +36,57 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "bold",
       padding: theme.spacing(1)
     },
-    mobileImageContainer: {
-      height: "80vh",
-    },
+
+
     mobileImageButton: {
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-      height: "100%",
-      border: "2px solid var(--color-bg-dark)",
-      borderRadius: "10%",
-      position: "relative",
+      height: "180px",
+      backgroundColor: "var(--color-bg-light)",
+      borderRadius: "15px",
+      justifyContent: "center",
+      alignContent: "center",
+      outline: "none",
     },
+    mobileImageGrid: {
+      padding: "10px",
+    },
+
     mobileImageActiveButton: {
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
+      objectFit: "cover",
       height: "100%",
-      border: "2px solid lightgreen",
-      borderRadius: "10%",
-      position: "relative",
+      width: "100%",
+      borderRadius: "15px",
+      border: "4px solid var(--color-main-a)",
     },
+
     mobileImageLabel: {
       height: "100%",
       width: "100%",
       display: "inline-block",
       position: "absolute",
     },
+
     mobileImage: {
+      objectFit: "cover",
       height: "100%",
       width: "100%",
+      borderRadius: "15px",
     },
+
     mobileCheckboxContainer: {
       position: "absolute",
       bottom: "0%",
-      left: "60%",
     },
+
+
+    mobileAppBar: {
+      background: "rgba(256, 256, 256, 1)",
+      position:"static"
+    },
+
+    mobileGrow: {
+      flexGrow: 1,
+    },
+    
   }));
 
 export default useStyles;

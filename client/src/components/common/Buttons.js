@@ -18,10 +18,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Buttons({ color, text, url }) {
   const classes = useStyles();
   return (
-    <React.Fragment>
       <Button className={classes.mobileButton}>
         <Typography className={classes.mobileButtonText}>{text}</Typography>
       </Button>
-    </React.Fragment>
   );
 }
