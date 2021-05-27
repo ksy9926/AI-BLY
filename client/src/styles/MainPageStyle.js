@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
   mobileItemBrandName: {
     fontWeight: "bold",
     fontSize: "18px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
     color: "var(--color-black)",
   },
   mobileItemDescription: {

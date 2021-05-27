@@ -14,14 +14,16 @@ export default function MainPage() {
 
   useEffect(() => {
     function GetInfo() {
-      console.log(localStorage.getItem("jwt"))
-      axios.get(`${process.env.REACT_APP_API_URL}/api/current/`, {
-        headers: { Authorization:"JWT " + localStorage.getItem("jwt") },
-      }).then((response) => {
-        localStorage.setItem("user", response.data.pk);
-        localStorage.setItem("username", response.data.username);
-        localStorage.setItem("email", response.data.email);
-      })
+      console.log(localStorage.getItem("jwt"));
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
+          headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+        })
+        .then((response) => {
+          localStorage.setItem("user", response.data.pk);
+          localStorage.setItem("username", response.data.username);
+          localStorage.setItem("email", response.data.email);
+        });
     }
     GetInfo();
   }, []);
