@@ -6,8 +6,8 @@ import Navbar from "../components/common/Navbar";
 
 function RegisterPage() {
   const classes = useStyles();
-  const title = "닉네임님의 클로젯";
-  const message = "~~~~~~~~~이미지를 분석해서 아이템을 추천해줄거에요";
+  const title = localStorage.getItem("username") + "님의 클로젯";
+  const message = " 이미지를 분석해서 아이템을 추천해줄거에요";
 
   return (
     <Mobile>

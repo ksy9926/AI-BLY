@@ -23,7 +23,6 @@ export default function MainPage() {
         localStorage.setItem("email", response.data.email);
       })
     }
-
     GetInfo();
   }, []);
 
