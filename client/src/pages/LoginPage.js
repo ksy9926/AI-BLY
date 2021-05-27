@@ -9,7 +9,6 @@ import swal from "sweetalert";
 
 function LoginPage() {
   const classes = useStyles();
-  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com:8000`;
   const history = useHistory();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +25,7 @@ function LoginPage() {
       setPassword(value);
     }
   };
-
+  console.log(id, password);
   // 로그인 버튼 핸들러
   const onLoginHandler = (event) => {
     event.preventDefault();
@@ -34,16 +33,15 @@ function LoginPage() {
       setBlank(true);
     } else {
       axios
-        .post(url + "/api/login/", {
-          username: id,
+        .post(`${process.env.REACT_APP_API_URL}/api/login/`, {
+          email: id,
           password: password,
           withCredentials: true,
         })
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
-            localStorage.setItem('jwt', response.data.access_token);
-            localStorage.setItem('id', response.data.result);
+            localStorage.setItem("jwt", response.data.token);
             swal({
               title: "로그인 성공!",
               icon: "success",

@@ -23,8 +23,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 
-
-
   mobileItemImageGrid: {
     padding: "10px",
   },
@@ -75,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
 
-
   mobileRecommendContainer: {
     display: "flex",
     height: "34vh",
@@ -84,16 +81,16 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
     overflowX: "auto",
     overflowY: "hidden",
-    // marginLeft:"10px", 
+    // marginLeft:"10px",
   },
 
   mobileRecommendInfoGrid: {
     height: "34vh",
-    marginRight: "5px",
+    marginRight: "15px",
   },
 
   mobileRecommendImageBox: {
-    width:"40vh",
+    width: "40vh",
     height: "34vh",
   },
 
@@ -115,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "2px solid #E0E3DA",
     borderBottom: "2px solid #E0E3DA",
     borderRight: "2px solid #E0E3DA",
-
   },
   mobileRecommendBrandFavoriteBox: {
     height: "40px",
@@ -162,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "var(--color-bg-dark)",
     fontWeight: "700",
     fontSize: "14px",
-    padding:"2px",
+    padding: "2px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",

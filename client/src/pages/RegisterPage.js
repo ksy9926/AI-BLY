@@ -11,7 +11,6 @@ axios.defaults.withCredentials = true;
 
 function RegisterPage() {
   const classes = useStyles();
-  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com:8000`;
   const history = useHistory();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -43,11 +42,10 @@ function RegisterPage() {
       setBlank(true);
     } else if (password === passwordCheck) {
       axios
-        .post(url + "/api/signup/", {
-          username: id,
+        .post(`${process.env.REACT_APP_API_URL}/api/signup/`, {
+          email: id,
           password: password,
-          email: "test324212@test.com",
-          full_name: name,
+          username: name,
           withCredentials: true,
         })
         .then((response) => {
@@ -60,6 +58,9 @@ function RegisterPage() {
             history.push({
               pathname: "/register/closet",
             });
+            localStorage.setItem("jwt", response.data.token);
+            localStorage.setItem("username", response.data.username);
+            localStorage.setItem("email", response.data.email);
           } else {
             console.log(response.data);
             alert("error");
@@ -75,7 +76,13 @@ function RegisterPage() {
             swal({
               title: error.response.data.username[0],
               icon: "warning",
-            });
+            });}
+            
+            else if (error.response.data.email) {
+              swal({
+                title: error.response.data.email[0],
+                icon: "warning",
+              });
           } else {
             alert("예상치 못한 오류 발생");
           }

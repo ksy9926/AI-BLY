@@ -20,9 +20,9 @@ function App() {
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/register/closet" component={RegisterClosetPage} />
         <Route exact path="/mypage" component={MyPage} />
-        <Route exact path="/imgupload/:userid" component={ImageUploadPage} />
-        <Route exact path="/smlritem/:userid" component={SimilarItemPage} />
-        <Route exact path="/rcntitem/:userid" component={RecentItemPage} />
+        <Route exact path="/imgupload" component={ImageUploadPage} />
+        <Route exact path="/smlritem" component={SimilarItemPage} />
+        <Route exact path="/rcntitem" component={RecentItemPage} />
       </Switch>
     </Router>
   );

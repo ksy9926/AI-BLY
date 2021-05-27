@@ -10,7 +10,8 @@ function Welcome() {
   function logoutUser(e) {
     if (localStorage.getItem("jwt") !== null) {
       localStorage.removeItem("jwt");
-      localStorage.removeItem("id");
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
       history.push("/");
     }
   }
