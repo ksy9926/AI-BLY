@@ -6,35 +6,42 @@ import Navbar from "../components/common/Navbar";
 import { useStyles } from "../styles/ImageUploadPageStyles";
 import TextTitleComponent from "../components/ImageUploadPage/TextTitleComponent";
 import UploadImageComponent from "../components/ImageUploadPage/UploadImageComponent";
+import { useHistory } from "react-router-dom";
 
 export default function ImageUploadPage({ match }) {
   const classes = useStyles();
   const user_id = match.params.user_id;
   const [imageData, setImageData] = useState(["1", "2", "3", "4"]);
   const [imageList, setImageList] = useState(null);
+  const [image, setImage] = useState(null);
 
-  // User Image 리스트 axios get
   // url을 통한 다른 사용자 접근 통제 필요
+  const history = useHistory();
+  if (localStorage.getItem("jwt") === null) {
+    history.push("/login");
+  }
+
+  // get User Image 리스트  
   useEffect(() => {
-    function GetImageData() {
-      axios
-        .get(`${process.env.REACT_APP_API_URL}/imgupload/${user_id}`)
-        .then((response) => {
-          setImageData(response.data.result);
-        });
-    }
-    GetImageData();
-  }, [user_id]);
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
+        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+      })
+      .then((response) => {
+        setImageData(response.data)
+      });
+  }, []);
 
   // User Image 데이터 기준으로 컴포넌트 생성
   useEffect(() => {
     if (imageData) {
       setImageList(
-        imageData.map((idx) => (
+        imageData.map((data, idx) => (
           <UploadImageComponent
-            src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
+            src= {data.dress_img}
             inputtype="image"
             user_id={user_id}
+            id={idx}
           />
         ))
       );
@@ -52,7 +59,7 @@ export default function ImageUploadPage({ match }) {
       </Box>
       <Grid container>
         {imageList}
-        <UploadImageComponent inputtype="empty" user_id={user_id} />
+        <UploadImageComponent inputtype="empty" user_id={user_id}/>
       </Grid>
     </Mobile>
   );

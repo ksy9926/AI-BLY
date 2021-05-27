@@ -11,7 +11,7 @@ function Shopping() {
       <Link to="/rcntitem">
       <Box>최근 본 상품</Box>
       </Link>
-      <Link to="/">
+      <Link to="/likeitem">
       <Box>찜한 상품</Box>
       </Link>
 

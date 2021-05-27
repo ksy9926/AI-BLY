@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Box } from "@material-ui/core";
 import useStyles from "../styles/MainPageStyle";
 import { Mobile } from "../MediaQuery";
@@ -11,19 +11,21 @@ import axios from "axios";
 export default function MainPage() {
   const classes = useStyles();
   const title = "당신(닉네임) 만을 위한 추천 아이템 :)";
-    
-  // function get(){
-  // axios.get(`${process.env.REACT_APP_API_URL}/api/current/`, {
-  
-  //   headers: {
-  //     Authorization: "JWT " + localStorage.getItem("jwt"),
-  //   },
-  // }).then(
-  //   (res) => {
-  //     console.log(res.data[0].fields.username);
-  //  })  
-  // }
-  //  get()
+
+  useEffect(() => {
+    function GetInfo() {
+      console.log(localStorage.getItem("jwt"))
+      axios.get(`${process.env.REACT_APP_API_URL}/api/current/`, {
+        headers: { Authorization:"JWT " + localStorage.getItem("jwt") },
+      }).then((response) => {
+        localStorage.setItem("user", response.data.pk);
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("email", response.data.email);
+      })
+    }
+
+    GetInfo();
+  }, []);
 
   return (
     <Mobile>

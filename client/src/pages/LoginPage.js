@@ -45,10 +45,22 @@ function LoginPage() {
             swal({
               title: "로그인 성공!",
               icon: "success",
-            });
-            history.push({
-              pathname: "/main",
-            });
+            }).then(
+              axios
+                .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
+                  headers: {
+                    Authorization: "JWT " + response.data.token,
+                  },
+                })
+                .then((res) => {
+                  localStorage.setItem("user", res.data.pk);
+                  localStorage.setItem("username", res.data.username);
+                  localStorage.setItem("email", res.data.email);
+                  history.push({
+                    pathname: "/main",
+                  });
+                })
+            );
           } else {
             console.log(response.data);
             alert("error");

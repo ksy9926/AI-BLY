@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Grid } from "@material-ui/core";
 import { useStyles } from "../../styles/ImageUploadPageStyles";
@@ -6,34 +6,24 @@ import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRoun
 
 export default function UploadImageComponent({ src, inputtype, user_id }) {
   const classes = useStyles();
-  const [image, setImage] = useState();
-
-  function PostImage() {
-    const formData = new FormData();
-    axios.post(
-      `${process.env.REACT_APP_API_URL}closet/`,
-      formData,
-      {
-        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
-      }
-    );
-  }
-
-  function DeleteImage() {
-    axios.delete(`${process.env.REACT_APP_API_URL}/closet`, {
-      headers: { Authorization: "JWT" + localStorage.getItem("jwt") },
-    });
-  }
+  const [image, setImage] = useState(null);
 
   function onChangeImage(e) {
+    e.preventDefault();
     setImage(e.target.files[0]);
-    console.log(e.target.files[0]);
-
-    const formData = new FormData();
-    formData.append("file", image);
-    // 서버의 upload API 호출
-    PostImage();
   }
+
+  useEffect(() => {
+    if (image !== null) {
+      const formData = new FormData();
+      formData.append("dress_img", image);
+      formData.append("user_id", localStorage.getItem("user"));
+      axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
+        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+        "content-type": "multipart/form-data",
+      });
+    }
+  }, [image]);
 
   if (inputtype !== "empty") {
     return (
@@ -42,7 +32,6 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         inputtype={inputtype}
         onClick={() => {
           console.log("popup delete modal");
-          // DeleteImage()
         }}
         item
         xs={4}
@@ -59,8 +48,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         inputtype={inputtype}
         item
         xs={4}
-        onClick={() => {
-          console.log("addimage");
+        onClick={(e) => {
           document.all.file.click();
         }}
       >

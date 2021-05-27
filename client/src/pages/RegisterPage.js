@@ -86,7 +86,17 @@ function RegisterPage() {
           } else {
             alert("예상치 못한 오류 발생");
           }
-        });
+        }).then(
+          axios
+            .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
+              headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+            })
+            .then((response) => {
+              localStorage.setItem("user", response.data.pk);
+              localStorage.setItem("username", response.data.username);
+              localStorage.setItem("email", response.data.email);
+            })
+        );
     }
   };
 
