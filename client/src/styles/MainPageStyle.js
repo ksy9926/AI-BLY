@@ -142,8 +142,6 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
   mobileCategoryContainer: {
-    display: "flex",
-    height: "50px",
     borderTop: "1px solid #E0E3DA",
     borderBottom: "1px solid #E0E3DA",
     whiteSpace: "nowrap",
@@ -158,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "var(--color-bg-dark)",
     fontWeight: "700",
     fontSize: "14px",
-    padding: "2px",
+    padding: "2px 6px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
@@ -172,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-main-c)",
     fontWeight: "700",
     fontSize: "14px",
-    // padding:"11px",
+    padding: "2px 6px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
