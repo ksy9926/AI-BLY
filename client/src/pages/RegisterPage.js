@@ -5,19 +5,22 @@ import { Mobile } from "../MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
 import useStyles from "../styles/AuthPageStyle";
 import Navbar from "../components/common/Navbar";
-import swal from "sweetalert";
+import Toast from "../components/common/Toast";
 
 axios.defaults.withCredentials = true;
 
 function RegisterPage() {
   const classes = useStyles();
-  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com:8000`;
+  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com`;
   const history = useHistory();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [name, setName] = useState("");
   const [blank, setBlank] = useState(false);
+  const [toast, setToast] = useState(false);
+  const [text, setText] = useState("");
+  const [severity, setSeverity] = useState("");
 
   // (회원가입 폼) 입력 핸들러
   const onChangeHandler = (event) => {
@@ -36,6 +39,15 @@ function RegisterPage() {
     }
   };
 
+  const onToastHandler = (msg, svt) => {
+    setText(msg);
+    setSeverity(svt);
+    setToast(true);
+    window.setTimeout(() => {
+      setToast(false);
+    }, 3000);
+  };
+
   // 회원가입 버튼 핸들러
   const onSignUpHandler = (event) => {
     event.preventDefault();
@@ -44,40 +56,30 @@ function RegisterPage() {
     } else if (password === passwordCheck) {
       axios
         .post(url + "/api/signup/", {
-          username: id,
+          email: "test33@test.com",
+          username: name,
           password: password,
-          email: "test324212@test.com",
-          full_name: name,
           withCredentials: true,
         })
         .then((response) => {
           console.log(response);
           if (response.status === 201) {
-            swal({
-              title: "회원가입 성공!",
-              icon: "success",
-            });
+            onToastHandler("회원가입 성공", "success");
             history.push({
               pathname: "/register/closet",
             });
           } else {
             console.log(response.data);
-            alert("error");
           }
         })
         .catch((error) => {
-          if (error.response.data.password) {
-            swal({
-              title: error.response.data.password[0],
-              icon: "warning",
-            });
-          } else if (error.response.data.username) {
-            swal({
-              title: error.response.data.username[0],
-              icon: "warning",
-            });
+          console.log(error.response);
+          if (error.response.data.email) {
+            onToastHandler(error.response.data.email[0], "error");
+          } else if (error.response.data.password) {
+            onToastHandler(error.response.data.password[0], "error");
           } else {
-            alert("예상치 못한 오류 발생");
+            onToastHandler("오류 발생", "warning");
           }
         });
     }
@@ -87,6 +89,7 @@ function RegisterPage() {
     <Mobile>
       <Navbar />
       <Box className={classes.mobileAuthBox}>
+        {toast ? <Toast text={text} severity={severity} /> : null}
         <form>
           <Box className={classes.mobileInputBox}>
             <TextField

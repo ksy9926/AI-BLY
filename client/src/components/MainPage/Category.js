@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Grid, Button } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import useStyles from "../../styles/MainPageStyle";
 
 export default function Category() {

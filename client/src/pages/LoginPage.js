@@ -5,15 +5,18 @@ import { Mobile } from "../MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
 import useStyles from "../styles/AuthPageStyle";
 import Navbar from "../components/common/Navbar";
-import swal from "sweetalert";
+import Toast from "../components/common/Toast";
 
 function LoginPage() {
   const classes = useStyles();
-  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com:8000`;
+  const url = `http://elice-kdt-ai-track-vm-ai-14.koreacentral.cloudapp.azure.com`;
   const history = useHistory();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [blank, setBlank] = useState(false);
+  const [toast, setToast] = useState(false);
+  const [text, setText] = useState("");
+  const [severity, setSeverity] = useState("");
 
   const onChangeHandler = (event) => {
     const {
@@ -27,6 +30,15 @@ function LoginPage() {
     }
   };
 
+  const onToastHandler = (msg, svt) => {
+    setText(msg);
+    setSeverity(svt);
+    setToast(true);
+    window.setTimeout(() => {
+      setToast(false);
+    }, 3000);
+  };
+
   // 로그인 버튼 핸들러
   const onLoginHandler = (event) => {
     event.preventDefault();
@@ -35,17 +47,14 @@ function LoginPage() {
     } else {
       axios
         .post(url + "/api/login/", {
-          username: id,
+          email: "test33@test.com",
           password: password,
           withCredentials: true,
         })
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
-            swal({
-              title: "로그인 성공!",
-              icon: "success",
-            });
+            onToastHandler("로그인 성공!", "success");
             history.push({
               pathname: "/main",
             });
@@ -55,24 +64,15 @@ function LoginPage() {
           }
         })
         .catch((error) => {
-          if (error.response.data.password) {
-            swal({
-              title: error.response.data.password[0],
-              icon: "warning",
-            });
-          } else if (error.response.data.username) {
-            swal({
-              title: error.response.data.username[0],
-              icon: "warning",
-            });
+          if (error.response.data.email) {
+            onToastHandler(error.response.data.email[0], "error");
+          } else if (error.response.data.password) {
+            onToastHandler(error.response.data.password[0], "error");
           } else if (error.response.data.non_field_errors) {
-            swal({
-              title: "아이디 혹은 비밀번호를 확인해주세요.",
-              icon: "warning",
-            });
+            onToastHandler("아이디 혹은 비밀번호를 확인해주세요.", "error");
           } else {
             console.log(error.response);
-            alert("예상치 못한 오류 발생");
+            onToastHandler("예상치 못한 오류 발생", "error");
           }
         });
     }
@@ -82,6 +82,7 @@ function LoginPage() {
     <Mobile>
       <Navbar />
       <Box className={classes.mobileAuthBox}>
+        {toast ? <Toast text={text} severity={severity} /> : null}
         <form>
           <Box className={classes.mobileInputBox}>
             <TextField
