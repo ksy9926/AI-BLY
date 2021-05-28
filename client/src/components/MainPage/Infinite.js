@@ -4,42 +4,40 @@ import { Loader } from "./Loader";
 import ItemInfo from "./ItemInfo";
 import axios from "axios";
 
-
 export default function Infinite({ child }) {
   const [products, setProducts] = useState([]);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
+  const [info, setInfo] = useState([]);
 
   const fetchImages = (cnt) => {
     setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3]);
     setCount(cnt + 4);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
+    await axios
+      .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+      .then((response) => {
+        setInfo(response.data);
+        console.log(response.data);
+      });
     fetchImages(count);
   }, []);
 
-//   useEffect(() => {
-//     function GetList(){
-//         axios.get(`${process.env.REACT_APP_API_URL}/api/fashion`).then(response =>{
-//           setProducts(response.data.product_list)
-//         })
-//     }
-//     GetList()
-// },[]);
-
-
   return (
-    <InfiniteScroll
-      style={{ display: "flex", flexWrap: "wrap" }}
-      dataLength={products.length}
-      next={() => fetchImages(count)}
-      hasMore={count < 100 ? true : false}
-      loader={<Loader />}
-      endMessage={<p>You have seen it all</p>}
-    >
-      {products.map((idx) => (
-        <ItemInfo key={idx} idx={idx} />
-      ))}
-    </InfiniteScroll>
+    <div style={{ width: "100%" }}>
+      <InfiniteScroll
+        style={{ display: "flex", flexWrap: "wrap" }}
+        dataLength={products.length}
+        next={() => fetchImages(count)}
+        hasMore={count < 300 ? true : false}
+        loader={<Loader />}
+        endMessage={<p>You have seen it all</p>}
+      >
+        {products.map((idx) => (
+          <ItemInfo key={idx} idx={idx} data={info[idx]} />
+        ))}
+      </InfiniteScroll>
+    </div>
   );
 }

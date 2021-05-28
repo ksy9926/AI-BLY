@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
   mobileItemBrandName: {
     fontWeight: "bold",
     fontSize: "18px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
     color: "var(--color-black)",
   },
   mobileItemDescription: {
@@ -57,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
+    textAlign: "left",
     color: "var(--color-gray)",
   },
   mobileItemDiscountPriceBox: {
