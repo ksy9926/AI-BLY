@@ -22,31 +22,39 @@ function LandingPage() {
   const classes = useStyles();
   const [select, setSelect] = useState(0);
   const [state, setState] = useState({});
-  const [checked, setChecked] = useState([false, false, false, false, false, false, false, false]);
-  const checkList = ["checkedA","checkedA","checkedA","checkedA","checkedA","checkedA","checkedA","checkedA",];
+  const [checked, setChecked] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const checkList = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
 
   const handleChange = (event) => {
-    const newChecked = !event.target.checked
-    setChecked({...checked, [event.target.id] : newChecked})
+    const newChecked = !event.target.checked;
+    setChecked({ ...checked, [event.target.id]: newChecked });
     newChecked ? setSelect(select + 1) : setSelect(select - 1);
   };
 
   const images = checkList.map((check, idx) => (
-    <Grid className={
-       classes.mobileImageGrid} item xs={4}>
+    <Grid className={classes.mobileImageGrid} item xs={4}>
       <Grid
         container
         className={
           // checked[idx]
           //   ? classes.mobileImageActiveButton
-            classes.mobileImageButton
+          classes.mobileImageButton
         }
       >
         <img
-          className={          checked[idx]
-            ? classes.mobileImageActiveButton
-            : classes.mobileImage}
-          src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
+          className={
+            checked[idx] ? classes.mobileImageActiveButton : classes.mobileImage
+          }
+          src={`images/${check}.png`}
           alt="none"
           id={idx}
           name={check}
