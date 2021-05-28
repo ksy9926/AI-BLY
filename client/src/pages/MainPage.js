@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Box } from "@material-ui/core";
 import useStyles from "../styles/MainPageStyle";
 import { Mobile } from "../MediaQuery";
@@ -10,22 +10,12 @@ import axios from "axios";
 
 export default function MainPage() {
   const classes = useStyles();
-  const title = "당신(닉네임) 만을 위한 추천 아이템 :)";
+  const [username, setUsername] = useState("당신만");
 
   useEffect(() => {
-    function GetInfo() {
-      console.log(localStorage.getItem("jwt"));
-      axios
-        .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
-          headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
-        })
-        .then((response) => {
-          localStorage.setItem("user", response.data.pk);
-          localStorage.setItem("username", response.data.username);
-          localStorage.setItem("email", response.data.email);
-        });
+    if (localStorage.getItem("username") !== null) {
+      setUsername(localStorage.getItem("username") + "님");
     }
-    GetInfo();
   }, []);
 
   return (
@@ -34,7 +24,10 @@ export default function MainPage() {
       <Grid className={classes.mobileRoot}>
         <Box className={classes.mobileRecommendMessageBox}>
           <Box className={classes.mobileRecommendMessage}>
-            <Box>당신(닉네임) 만을 위한 추천 아이템 전체보기</Box>
+            <Box style={{ display: "flex", justifyContent: "space-between" }}>
+              <Box>{username}을 위한 추천 아이템</Box>
+              <Box style={{ fontSize: "12px", color: "red" }}>전체보기</Box>
+            </Box>
           </Box>
         </Box>
         <RecommendTab />

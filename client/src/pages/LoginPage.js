@@ -55,24 +55,22 @@ function LoginPage() {
           console.log(response);
           if (response.status === 200) {
             localStorage.setItem("jwt", response.data.token);
-            onToastHandler("로그인 성공!", "success")
-            history.push({
-              pathname: "/main",
-            });
-            // .then(
-            //   axios
-            //     .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
-            //       headers: {
-            //         Authorization: "JWT " + response.data.token,
-            //       },
-            //     })
-            //     .then((res) => {
-            //       localStorage.setItem("user", res.data.pk);
-            //       localStorage.setItem("username", res.data.username);
-            //       localStorage.setItem("email", res.data.email);
-                 
-            //     })
-            // );
+            onToastHandler("로그인 성공!", "success");
+            axios
+              .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
+                headers: {
+                  Authorization: "JWT " + localStorage.getItem("jwt"),
+                },
+              })
+              .then((response) => {
+                localStorage.setItem("username", response.data.username);
+                localStorage.setItem("email", response.data.email);
+              })
+              .then(
+                history.push({
+                  pathname: "/main",
+                }),
+              );
           } else {
             console.log(response.data);
             alert("error");

@@ -31,7 +31,7 @@ export default function Infinite({ child }) {
         dataLength={products.length}
         next={() => fetchImages(count)}
         hasMore={count < 300 ? true : false}
-        loader={<Loader />}
+        // loader={<Loader />}
         endMessage={<p>You have seen it all</p>}
       >
         {products.map((idx) => (
