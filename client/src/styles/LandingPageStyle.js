@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
     mobileNavbarSkip: {
       fontWeight: "bold",
-      color: "var(--color-bg-dark)",
+      color: "var(--color-bg-light)",
       textDecoration: "none",
     },
     mobileNavbarSelect: {

@@ -5,7 +5,7 @@
   --color-main-c: #fffff3;
 
   --color-bg-dark: #e0e3da;
-  --color-bg-light: #f8f8f8;
+  --color-bg-light: #f5f4f2;
 
   --color-gray: #838383;
   --color-black: #000000;
@@ -15,6 +15,9 @@
 a {
   color: var(--color-black);
   text-decoration: none;
+}
+body {
+  background-color: #FCFCFC;
 }
 
 .App {

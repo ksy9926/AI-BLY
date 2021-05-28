@@ -58,7 +58,7 @@ function LoginPage() {
             onToastHandler("로그인 성공!", "success")
             history.push({
               pathname: "/main",
-            });
+            })
             // .then(
             //   axios
             //     .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
