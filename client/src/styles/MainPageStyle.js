@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
+    textAlign: "left",
     color: "var(--color-gray)",
   },
   mobileItemDiscountPriceBox: {

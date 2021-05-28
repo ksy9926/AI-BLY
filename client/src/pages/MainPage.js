@@ -31,17 +31,22 @@ export default function MainPage() {
   return (
     <Mobile>
       <Navbar />
-      <Box className={classes.mobileRecommendMessageBox}>
-        <Box className={classes.mobileRecommendMessage}>
-          <Box>당신(닉네임) 만을 위한 추천 아이템 전체보기</Box>
-        </Box>
-      </Box>
-      <RecommendTab />
-      <Box className={classes.mobileRecommendMessageBox}>
-        <Box className={classes.mobileRecommendMessage}>해외직구 상품</Box>
-      </Box>
-      <Category />
       <Grid className={classes.mobileRoot}>
+        <Box className={classes.mobileRecommendMessageBox}>
+          <Box className={classes.mobileRecommendMessage}>
+            <Box>당신(닉네임) 만을 위한 추천 아이템 전체보기</Box>
+          </Box>
+        </Box>
+        <RecommendTab />
+        <Box className={classes.mobileRecommendMessageBox}>
+          <Box className={classes.mobileRecommendMessage}>해외직구 상품</Box>
+        </Box>
+      </Grid>
+      <Category />
+      <Grid
+        className={classes.mobileRoot}
+        style={{ background: "var(--color-bg-light)" }}
+      >
         <Grid container>
           <Infinite />
         </Grid>

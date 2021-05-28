@@ -5,7 +5,6 @@ import useStyles from "../../styles/MainPageStyle";
 
 export default function ItemInfo({ idx, data }) {
   const classes = useStyles();
-
   return (
     <Grid className={classes.mobileItemImageGrid} item xs={6}>
       <Box className={classes.mobileItemImageBox}>
@@ -19,10 +18,12 @@ export default function ItemInfo({ idx, data }) {
         <Box className={classes.mobileItemDiscount}>
           {data["discount_rate"]}%
         </Box>
-        <Box className={classes.mobileItemPrice}>{data["price"]}$</Box>
+        <Box className={classes.mobileItemPrice}>{data["sale_price"]}$</Box>
       </Box>
       <Box className={classes.mobileItemBrandFavoriteBox}>
-        <Box className={classes.mobileItemBrandName}>{data["brand"]}</Box>
+        <Box className={classes.mobileItemBrandName}>
+          <a href={data["url"]}>{data["brand"]}</a>
+        </Box>
         <FavoriteIcon idx={idx.toString()} />
       </Box>
       <Box className={classes.mobileItemShortDescription}>{data["name"]}</Box>

@@ -19,6 +19,7 @@ export default function Infinite({ child }) {
       .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
       .then((response) => {
         setInfo(response.data);
+        console.log(response.data);
       });
     fetchImages(count);
   }, []);
@@ -29,7 +30,7 @@ export default function Infinite({ child }) {
         style={{ display: "flex", flexWrap: "wrap" }}
         dataLength={products.length}
         next={() => fetchImages(count)}
-        hasMore={count < 100 ? true : false}
+        hasMore={count < 300 ? true : false}
         loader={<Loader />}
         endMessage={<p>You have seen it all</p>}
       >
