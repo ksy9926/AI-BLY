@@ -7,9 +7,9 @@ function Information() {
   return (
     <Box item className={classes.mobileInformationBox}>
       <Box className={classes.mobileBoldText}>정보</Box>
-      <Box>앱 문의 건의</Box>
-      <Box>공지사항</Box>
-      <Box>버전 정보 0.0.0</Box>
+      <Box className={classes.mobileInfomationText}>앱 문의 건의</Box>
+      <Box className={classes.mobileInfomationText}>공지사항</Box>
+      <Box className={classes.mobileInfomationText}>버전 정보 0.0.0</Box>
     </Box>
   );
 }

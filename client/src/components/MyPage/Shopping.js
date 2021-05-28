@@ -6,15 +6,22 @@ function Shopping() {
   const classes = useStyles();
 
   return (
-    <Box item className={classes.mobileShoppingBox}>
+    <Box item className={classes.mobileShoppingBox} underline="none">
       <Box className={classes.mobileBoldText}>쇼핑</Box>
-      <Link to="/rcntitem">
-      <Box>최근 본 상품</Box>
-      </Link>
-      <Link to="/likeitem">
-      <Box>찜한 상품</Box>
-      </Link>
-
+      <Box
+        component={Link}
+        to={"/rcntitem"}
+        className={classes.mobileShoppingText}
+      >
+        최근 본 상품
+      </Box>
+      <Box
+        component={Link}
+        to={"/likeitem"}
+        className={classes.mobileShoppingText}
+      >
+        찜한 상품
+      </Box>
     </Box>
   );
 }

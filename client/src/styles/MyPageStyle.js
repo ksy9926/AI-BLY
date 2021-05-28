@@ -81,6 +81,16 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "lighter",
     color: "var(--color-gray)",
   },
+  mobileShoppingText:{
+    display:"block",
+    textDecoration: 'none',
+    color: "var(--color-gray)",
+  },
+  mobileInfomationText:{
+    display:"block",
+    textDecoration: 'none',
+    color: "var(--color-gray)",
+  }
 }));
 
 export default useStyles;

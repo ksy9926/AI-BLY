@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileSubtitleText: {
     color: "rgba(165, 147, 224, 1)",
-    fontSize: "15px",
+    fontSize: "3.7vw",
   },
 
   mobileClosetImageGrid: {
