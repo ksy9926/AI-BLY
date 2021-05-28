@@ -44,10 +44,7 @@ export default function MainPage() {
         </Box>
       </Grid>
       <Category />
-      <Grid
-        className={classes.mobileRoot}
-        style={{ background: "var(--color-bg-light)" }}
-      >
+      <Grid className={classes.mobileRoot}>
         <Grid container>
           {info && info.length ? <Infinite info={info} /> : null}
         </Grid>
