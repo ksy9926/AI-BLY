@@ -65,6 +65,7 @@ function LoginPage() {
               .then((response) => {
                 localStorage.setItem("username", response.data.username);
                 localStorage.setItem("email", response.data.email);
+                localStorage.setItem("user", response.data.pk);
               })
               .then(
                 history.push({
