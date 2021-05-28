@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@material-ui/core";
 import { Mobile } from "../MediaQuery";
 import useStyles from "../styles/RecentItemPageStyle";
 import Navbar from "../components/common/Navbar";
 import Infinite from "../components/MainPage/Infinite";
 import TextTitleComponent from "../components/SimilarItemPage/TextTitleComponent";
-import NoItemTemplate from "../components/SimilarItemPage/NoItemTemplate"
-
+import NoItemTemplate from "../components/SimilarItemPage/NoItemTemplate";
+import axios from "axios";
 
 export default function LikeItemPage() {
   const classes = useStyles();
   const [dataList, setDataList] = useState([1, 2, 3, 4, 5, 6]);
+  const [info, setInfo] = useState([]);
 
+  useEffect(() => {
+    (async function () {
+      await axios
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+        .then((response) => {
+          setInfo(response.data);
+        });
+    })();
+  }, []);
 
   if (dataList.length > 0) {
     return (
@@ -19,27 +29,29 @@ export default function LikeItemPage() {
         <Navbar />
         <TextTitleComponent
           title="찜한 상품"
-          number="100"
+          number={info && info.length ? info.length : ""}
         />
         <Grid className={classes.mobileRoot}>
           <Grid container>
-            <Infinite />
+            {info && info.length ? <Infinite info={info} /> : null}
           </Grid>
         </Grid>
       </Mobile>
     );
-  } 
-  else {
+  } else {
     return (
       <Mobile>
         <Box className={classes.mobileContainer}>
           <Navbar />
           <Box className={classes.mobileEmptyBox} />
-          <NoItemTemplate title="최근에 본 상품이 없어요" subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요" buttontext="클로젯 추가하기" buttonUrl="" />
+          <NoItemTemplate
+            title="최근에 본 상품이 없어요"
+            subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요"
+            buttontext="클로젯 추가하기"
+            buttonUrl=""
+          />
         </Box>
       </Mobile>
     );
   }
 }
-
-

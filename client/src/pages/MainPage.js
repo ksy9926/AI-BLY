@@ -11,11 +11,19 @@ import axios from "axios";
 export default function MainPage() {
   const classes = useStyles();
   const [username, setUsername] = useState("당신만");
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem("username") !== null) {
-      setUsername(localStorage.getItem("username") + "님");
-    }
+    (async function () {
+      await axios
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+        .then((response) => {
+          setInfo(response.data);
+        });
+      if (localStorage.getItem("username") !== null) {
+        setUsername(localStorage.getItem("username") + "님");
+      }
+    })();
   }, []);
 
   return (
@@ -41,7 +49,7 @@ export default function MainPage() {
         style={{ background: "var(--color-bg-light)" }}
       >
         <Grid container>
-          <Infinite />
+          {info && info.length ? <Infinite info={info} /> : null}
         </Grid>
       </Grid>
     </Mobile>
