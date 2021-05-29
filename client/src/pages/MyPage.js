@@ -11,7 +11,6 @@ import Footer from "../components/MyPage/Footer";
 import { useHistory } from "react-router-dom";
 
 function MyPage() {
-  
   const history = useHistory();
   if (localStorage.getItem("jwt") === null) {
     history.push("/login");
