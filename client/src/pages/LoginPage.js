@@ -118,8 +118,8 @@ function LoginPage() {
               onChange={onChangeHandler}
             />
             <br />
-            
-            <Box onClick={onLoginHandler} >
+
+            <Box onClick={onLoginHandler}>
               <Buttons
                 className={classes.mobileButton}
                 variant="contained"

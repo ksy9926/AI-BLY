@@ -153,10 +153,7 @@ function RegisterPage() {
             />
           </Box>
           <Box onClick={onSignUpHandler} className={classes.mobileButtonBox}>
-            <Buttons
-              className={classes.mobileButton}
-              text="가입하기"
-            ></Buttons>
+            <Buttons className={classes.mobileButton} text="가입하기"></Buttons>
           </Box>
         </form>
       </Box>

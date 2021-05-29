@@ -21,14 +21,14 @@ export default function ImageUploadPage({ match }) {
     history.push("/login");
   }
 
-  // get User Image 리스트  
+  // get User Image 리스트
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       })
       .then((response) => {
-        setImageData(response.data)
+        setImageData(response.data);
       });
   }, []);
 
@@ -38,7 +38,7 @@ export default function ImageUploadPage({ match }) {
       setImageList(
         imageData.map((data, idx) => (
           <UploadImageComponent
-            src= {data.dress_img}
+            src={data.dress_img}
             inputtype="image"
             user_id={user_id}
             id={idx}
@@ -59,7 +59,7 @@ export default function ImageUploadPage({ match }) {
       </Box>
       <Grid container>
         {imageList}
-        <UploadImageComponent inputtype="empty" user_id={user_id}/>
+        <UploadImageComponent inputtype="empty" user_id={user_id} />
       </Grid>
     </Mobile>
   );

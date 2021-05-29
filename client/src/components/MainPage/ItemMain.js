@@ -10,28 +10,26 @@ export default function ItemMain({ idx }) {
   const price = "57,300";
 
   return (
-      <Grid container className={classes.mobileRecommendInfoGrid}>
-        <Grid className={classes.mobileRecommendImageBox} item xs={6}>
-          <img
-            className={classes.mobileRecommendImage}
-            src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
-            alt="clothes"
-          />
-        </Grid>
-        <Grid className={classes.mobileRecommendTextBox} item xs={6}>
-          <Box className={classes.mobileBrandFavoriteBox}>
-            <Box className={classes.mobileBrandName}>{brand}</Box>
-            <FavoriteIcon idx={"0"} />
-          </Box>
-          <Box className={classes.mobileRecommendDescription}>{description}</Box>
-          <Box className={classes.mobileRecommendDiscountPriceBox}>
-            <Box className={classes.mobileRecommendDiscount}>{discount}</Box>
-            <Box className={classes.mobileRecommendPrice}>{price}</Box>
-          </Box>
-          <Box>
-            구매하기
-          </Box>
-        </Grid>
+    <Grid container className={classes.mobileRecommendInfoGrid}>
+      <Grid className={classes.mobileRecommendImageBox} item xs={6}>
+        <img
+          className={classes.mobileRecommendImage}
+          src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
+          alt="clothes"
+        />
       </Grid>
+      <Grid className={classes.mobileRecommendTextBox} item xs={6}>
+        <Box className={classes.mobileBrandFavoriteBox}>
+          <Box className={classes.mobileBrandName}>{brand}</Box>
+          <FavoriteIcon idx={"0"} />
+        </Box>
+        <Box className={classes.mobileRecommendDescription}>{description}</Box>
+        <Box className={classes.mobileRecommendDiscountPriceBox}>
+          <Box className={classes.mobileRecommendDiscount}>{discount}</Box>
+          <Box className={classes.mobileRecommendPrice}>{price}</Box>
+        </Box>
+        <Box>구매하기</Box>
+      </Grid>
+    </Grid>
   );
 }

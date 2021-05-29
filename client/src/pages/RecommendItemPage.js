@@ -11,22 +11,16 @@ export default function RecommendItemPage() {
   const classes = useStyles();
   const [dataList, setDataList] = useState([]);
 
-    return (
-      <Mobile>
-        <Navbar />
-        <TextTitleComponent
-          title="''님을 위한 추천 아이템"
-          number="3"
-        />
-        <Category />
-        <Grid className={classes.mobileRoot}>
-          <Grid container>
-            <Infinite />
-          </Grid>
+  return (
+    <Mobile>
+      <Navbar />
+      <TextTitleComponent title="''님을 위한 추천 아이템" number="3" />
+      <Category />
+      <Grid className={classes.mobileRoot}>
+        <Grid container>
+          <Infinite />
         </Grid>
-      </Mobile>
-    );
+      </Grid>
+    </Mobile>
+  );
 }
-
-
-

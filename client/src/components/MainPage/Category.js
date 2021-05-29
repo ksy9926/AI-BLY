@@ -33,7 +33,7 @@ export default function Category() {
       >
         {category}
       </Button>
-    ),
+    )
   );
 
   return <Box className={classes.mobileCategoryContainer}>{categories}</Box>;
