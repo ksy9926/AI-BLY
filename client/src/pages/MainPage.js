@@ -34,7 +34,7 @@ export default function MainPage() {
           <Box className={classes.mobileRecommendMessage}>
             <Box style={{ display: "flex", justifyContent: "space-between" }}>
               <Box>{username}을 위한 추천 아이템</Box>
-              <Box style={{ fontSize: "12px", color: "red" }}>전체보기</Box>
+              <Box style={{ fontSize: "12px", color: "var(--color-main-a)" }}>전체보기</Box>
             </Box>
           </Box>
         </Box>

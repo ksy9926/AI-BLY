@@ -30,7 +30,7 @@ export default function Buttons({ color, text, url }) {
   const history = useHistory();
 
   function handleOnClick() {
-    history.push('/main')
+    history.push(url)
   }
 
   return (

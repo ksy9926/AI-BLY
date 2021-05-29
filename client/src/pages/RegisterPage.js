@@ -6,6 +6,7 @@ import { Box, TextField, Button } from "@material-ui/core";
 import useStyles from "../styles/AuthPageStyle";
 import Navbar from "../components/common/Navbar";
 import Toast from "../components/common/Toast";
+import Buttons from "../components/common/Buttons";
 
 axios.defaults.withCredentials = true;
 
@@ -83,7 +84,8 @@ function RegisterPage() {
           } else {
             onToastHandler("오류 발생", "warning");
           }
-        }).then(
+        })
+        .then(
           axios
             .get(`${process.env.REACT_APP_API_URL}/api/current/`, {
               headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
@@ -150,14 +152,11 @@ function RegisterPage() {
               onChange={onChangeHandler}
             />
           </Box>
-          <Box className={classes.mobileButtonBox}>
-            <Button
+          <Box onClick={onSignUpHandler} className={classes.mobileButtonBox}>
+            <Buttons
               className={classes.mobileButton}
-              variant="contained"
-              onClick={onSignUpHandler}
-            >
-              가입하기
-            </Button>
+              text="가입하기"
+            ></Buttons>
           </Box>
         </form>
       </Box>

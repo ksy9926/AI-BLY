@@ -9,7 +9,7 @@ function Information() {
       <Box className={classes.mobileBoldText}>정보</Box>
       <Box className={classes.mobileInfomationText}>앱 문의 건의</Box>
       <Box className={classes.mobileInfomationText}>공지사항</Box>
-      <Box className={classes.mobileInfomationText}>버전 정보 0.0.0</Box>
+      <Box className={classes.mobileInfomationText}>버전 정보 0.0.1</Box>
     </Box>
   );
 }

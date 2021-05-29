@@ -5,6 +5,7 @@ import { Mobile } from "../MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
 import useStyles from "../styles/AuthPageStyle";
 import Navbar from "../components/common/Navbar";
+import Buttons from "../components/common/Buttons";
 import Toast from "../components/common/Toast";
 
 function LoginPage() {
@@ -28,7 +29,6 @@ function LoginPage() {
       setPassword(value);
     }
   };
-  console.log(id, password);
 
   const onToastHandler = (msg, svt) => {
     setText(msg);
@@ -52,7 +52,6 @@ function LoginPage() {
           withCredentials: true,
         })
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
             localStorage.setItem("jwt", response.data.token);
             onToastHandler("로그인 성공!", "success");
@@ -69,11 +68,10 @@ function LoginPage() {
               })
               .then(
                 history.push({
-                  pathname: "/main",
-                }),
+                  pathname: "/mypage",
+                })
               );
           } else {
-            console.log(response.data);
             alert("error");
           }
         })
@@ -120,24 +118,24 @@ function LoginPage() {
               onChange={onChangeHandler}
             />
             <br />
-            <Button
-              className={classes.mobileButton}
-              variant="contained"
-              onClick={onLoginHandler}
-            >
-              로그인
-            </Button>
+            
+            <Box onClick={onLoginHandler} >
+              <Buttons
+                className={classes.mobileButton}
+                variant="contained"
+                text="로그인"
+              >
+                로그인
+              </Buttons>
+            </Box>
           </Box>
           <Box className={classes.mobileButtonBox}>
-            <Button
+            <Buttons
               className={classes.mobileButton}
               variant="contained"
-              onClick={() => {
-                history.push({ pathname: "/register" });
-              }}
-            >
-              회원가입
-            </Button>
+              text="회원가입"
+              url="/register"
+            ></Buttons>
           </Box>
         </form>
       </Box>
