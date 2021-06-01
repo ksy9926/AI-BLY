@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Grid, Box } from "@material-ui/core";
 import useStyles from "styles/MainPageStyle";
 import { Mobile } from "MediaQuery";
+import { Loader } from "components/MainPage/Loader";
 import Navbar from "components/common/Navbar";
 import Infinite from "components/MainPage/Infinite";
 import Category from "components/MainPage/Category";
@@ -47,7 +48,7 @@ export default function MainPage() {
       <Category />
       <Grid className="mobileRoot">
         <Grid container>
-          {info && info.length ? <Infinite info={info} /> : null}
+          {info && info.length ? <Infinite info={info} /> : <Loader />}
         </Grid>
       </Grid>
     </Mobile>

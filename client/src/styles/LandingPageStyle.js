@@ -6,12 +6,7 @@ const useStyles = makeStyles((theme) => ({
     position: "static",
   },
   mobileGrow: {
-    flexGrow: 1,
-  },
-  mobileRoot: {
-    textAlign: "center",
-    padding: theme.spacing(1),
-    flexGrow: 1,
+    flexGrow: "1",
   },
   mobileNavbarSelect: {
     fontWeight: "bold",

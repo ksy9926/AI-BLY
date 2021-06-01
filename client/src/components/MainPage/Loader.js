@@ -2,73 +2,67 @@ import React from "react";
 import styled from "styled-components";
 
 const Loading = styled.div`
-  text-align: center;
-  .lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  @keyframes ldio-gri7c0xz2ji {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
   }
-  .lds-ellipsis div {
+  .ldio-gri7c0xz2ji div {
     position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
+    width: 20px;
+    height: 20px;
+    border: 6px solid #e0e3da;
+    border-top-color: transparent;
     border-radius: 50%;
-    background: #222;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+  .ldio-gri7c0xz2ji div {
+    animation: ldio-gri7c0xz2ji 1s linear infinite;
+    top: 100px;
+    left: 100px;
   }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
+  .loadingio-spinner-rolling-wallm3yarlg {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
   }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+  .ldio-gri7c0xz2ji {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
   }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
-  }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
+  .ldio-gri7c0xz2ji div {
+    box-sizing: content-box;
   }
 `;
 
 export const Loader = () => {
   return (
-    <Loading>
-      <div className="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </Loading>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        height: "100%",
+        position: "relative",
+      }}
+    >
+      <Loading>
+        <div className="loadingio-spinner-rolling-wallm3yarlg">
+          <div className="ldio-gri7c0xz2ji">
+            <div></div>
+          </div>
+        </div>
+      </Loading>
+    </div>
   );
 };

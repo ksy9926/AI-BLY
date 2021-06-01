@@ -2,12 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   // 메인페이지 전체
-  mobileRoot: {
-    textAlign: "center",
-    padding: theme.spacing(1),
-    flexGrow: 1,
-  },
-
   mobileRecommendMessageBox: {
     marginTop: "10px",
     height: "5vh",
@@ -178,15 +172,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
     },
-  },
-  // 못 찾음
-  mobiletabbar: {
-    color: "var(--color-main-b)",
-    backgroundColor: "var(--color-bg-light)",
-  },
-
-  mobileGrow: {
-    flexGrow: 1,
   },
 }));
 

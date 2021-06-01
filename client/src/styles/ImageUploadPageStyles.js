@@ -48,14 +48,6 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-bg-dark)",
     fontSize: "35px",
   },
-
-  // 못 찾음
-  mobileImageBox: {
-    height: "180px",
-    backgroundColor: "var(--color-bg-light)",
-    borderRadius: "15px",
-    borderColor: "black",
-  },
 }));
 
 export { useStyles };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-// import { Loader } from "./Loader";
+import { Loader } from "components/MainPage/Loader";
 import ItemInfo from "components/MainPage/ItemInfo";
 
 export default function Infinite({ info }) {
@@ -25,7 +25,7 @@ export default function Infinite({ info }) {
         dataLength={products.length}
         next={() => fetchImages(count)}
         hasMore={count < 300 ? true : false}
-        // loader={<Loader />}
+        loader={<Loader />}
         endMessage={<p>You have seen it all</p>}
       >
         {products.map((idx) => (

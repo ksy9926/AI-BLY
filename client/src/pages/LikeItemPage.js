@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@material-ui/core";
 import { Mobile } from "MediaQuery";
 import useStyles from "styles/RecentItemPageStyle";
+import { Loader } from "components/MainPage/Loader";
 import Navbar from "components/common/Navbar";
 import Infinite from "components/MainPage/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
@@ -34,7 +35,7 @@ export default function LikeItemPage() {
         />
         <Grid className="mobileRoot">
           <Grid container>
-            {info && info.length ? <Infinite info={info} /> : null}
+            {info && info.length ? <Infinite info={info} /> : <Loader />}
           </Grid>
         </Grid>
       </Mobile>
