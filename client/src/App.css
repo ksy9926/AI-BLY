@@ -10,6 +10,22 @@
   --color-gray: #838383;
   --color-black: #000000;
   --color-red: #f05d5d;
+
+  /* Font size */
+  --font-micro: 14px;
+  --font-small: 16px;
+  --font-regular: 18px;
+  --font-medium: 28px;
+  --font-large: 48px;
+
+  /* Font weight */
+  --weight-regular: 400;
+  --weight-semi-bold: 700;
+  --weight-bold: 900;
+
+  /* Padding size */
+  --padding-small: 10px;
+  --padding-large: 15px;
 }
 
 a {
@@ -20,41 +36,24 @@ body {
   background-color: #fcfcfc;
 }
 
-.App {
-  text-align: center;
+/* 모바일 Common CSS */
+.mobileBigPaddingBox {
+  padding: var(--padding-large);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mobileSmallPaddingBox {
+  padding: var(--padding-small);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mobileImage {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mobileRoot {
+  text-align: "center";
+  padding: 8px;
+  flex-grow: 1;
 }

@@ -59,14 +59,24 @@ const useStyles = makeStyles((theme) => ({
     height: "17vh",
     lineHeight: "5vh",
   },
+  mobileBoldText: {
+    fontWeight: "bold",
+  },
+  mobileShoppingText: {
+    display: "block",
+    textDecoration: "none",
+    color: "var(--color-gray)",
+  },
   mobileInformationBox: {
     paddingTop: "10px",
     borderTop: "1px solid var(--color-bg-dark)",
     height: "22vh",
     lineHeight: "5vh",
   },
-  mobileBoldText: {
-    fontWeight: "bold",
+  mobileInfomationText: {
+    display: "block",
+    textDecoration: "none",
+    color: "var(--color-gray)",
   },
   mobileFooterBox: {
     textAlign: "center",
@@ -81,16 +91,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "lighter",
     color: "var(--color-gray)",
   },
-  mobileShoppingText:{
-    display:"block",
-    textDecoration: 'none',
-    color: "var(--color-gray)",
-  },
-  mobileInfomationText:{
-    display:"block",
-    textDecoration: 'none',
-    color: "var(--color-gray)",
-  }
 }));
 
 export default useStyles;

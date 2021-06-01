@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from "axios";
 import LandingPage from "pages/LandingPage";
 import MainPage from "pages/MainPage";
 import LoginPage from "pages/LoginPage";
@@ -10,6 +11,8 @@ import SimilarItemPage from "pages/SimilarItemPage";
 import RecentItemPage from "pages/RecentItemPage";
 import RecommendItemPage from "pages/RecommendItemPage";
 import LikeItemPage from "pages/LikeItemPage";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

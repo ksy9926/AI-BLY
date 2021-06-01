@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import useStyles from "styles/MainPageStyle";
 import ItemMain from "components/MainPage/ItemMain";
 

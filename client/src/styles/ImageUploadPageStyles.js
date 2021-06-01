@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     position: "relative",
   },
+  // TextTitleComponent
   mobileTitleBox: {
     margin: "10px",
   },
@@ -21,24 +22,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3.7vw",
   },
 
+  //UploadImageComponent
   mobileClosetImageGrid: {
     padding: "10px",
   },
-
-  mobileImageBox: {
-    height: "180px",
-    backgroundColor: "var(--color-bg-light)",
-    borderRadius: "15px",
-    borderColor: "black",
-  },
-
-  mobileImage: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px",
-  },
-
   mobileEmptyImageBox: {
     height: "180px",
     backgroundColor: "var(--color-bg-light)",
@@ -47,12 +34,27 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center",
     outline: "none",
   },
+  mobileImage: {
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "15px",
+  },
+
+  mobileInput: {
+    display: " none",
+  },
   mobileEmptyImageIcon: {
     color: "var(--color-bg-dark)",
     fontSize: "35px",
   },
-  mobileInput: {
-    display: " none",
+
+  // 못 찾음
+  mobileImageBox: {
+    height: "180px",
+    backgroundColor: "var(--color-bg-light)",
+    borderRadius: "15px",
+    borderColor: "black",
   },
 }));
 

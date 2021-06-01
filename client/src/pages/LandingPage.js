@@ -1,27 +1,14 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { Grid, Box, Button, Checkbox } from "@material-ui/core";
-import { green } from "@material-ui/core/colors";
+import { Grid, Box } from "@material-ui/core";
 import useStyles from "styles/LandingPageStyle";
 import { Mobile } from "MediaQuery";
 import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 
-const GreenCheckbox = withStyles({
-  root: {
-    color: green[400],
-    "&$checked": {
-      color: green[600],
-    },
-  },
-  checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
 function LandingPage() {
   const classes = useStyles();
   const [select, setSelect] = useState(0);
-  const [state, setState] = useState({});
   const [checked, setChecked] = useState([
     false,
     false,
@@ -34,32 +21,27 @@ function LandingPage() {
   ]);
   const checkList = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
 
-  const handleChange = (event) => {
+  // 이미지 선택 여부
+  const onImageHandler = (event) => {
     const newChecked = !event.target.checked;
     setChecked({ ...checked, [event.target.id]: newChecked });
     newChecked ? setSelect(select + 1) : setSelect(select - 1);
   };
 
+  // 이미지 출력
   const images = checkList.map((check, idx) => (
     <Grid className={classes.mobileImageGrid} item xs={4}>
-      <Grid
-        container
-        className={
-          // checked[idx]
-          //   ? classes.mobileImageActiveButton
-          classes.mobileImageButton
-        }
-      >
+      <Grid container className={classes.mobileImageButton}>
         <img
           className={
-            checked[idx] ? classes.mobileImageActiveButton : classes.mobileImage
+            checked[idx] ? classes.mobileImageActive : classes.mobileImage
           }
           src={`images/${check}.png`}
           alt="none"
           id={idx}
           name={check}
           checked={checked[idx]}
-          onClick={handleChange}
+          onClick={onImageHandler}
         />
       </Grid>
     </Grid>
@@ -67,7 +49,7 @@ function LandingPage() {
 
   return (
     <Mobile>
-      <Box className={classes.mobileContainer}>
+      <Box>
         <AppBar className={classes.mobileAppBar} elevation={0}>
           <Toolbar>
             <Box className={classes.mobileGrow} />

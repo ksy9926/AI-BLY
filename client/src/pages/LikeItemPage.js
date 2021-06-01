@@ -13,6 +13,7 @@ export default function LikeItemPage() {
   const [dataList, setDataList] = useState([1, 2, 3, 4, 5, 6]);
   const [info, setInfo] = useState([]);
 
+  // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
       await axios
@@ -31,7 +32,7 @@ export default function LikeItemPage() {
           title="찜한 상품"
           number={info && info.length ? info.length : ""}
         />
-        <Grid className={classes.mobileRoot}>
+        <Grid className="mobileRoot">
           <Grid container>
             {info && info.length ? <Infinite info={info} /> : null}
           </Grid>

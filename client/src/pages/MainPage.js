@@ -13,6 +13,7 @@ export default function MainPage() {
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
 
+  // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function () {
       await axios
@@ -29,14 +30,12 @@ export default function MainPage() {
   return (
     <Mobile>
       <Navbar />
-      <Grid className={classes.mobileRoot}>
+      <Grid className="mobileRoot">
         <Box className={classes.mobileRecommendMessageBox}>
           <Box className={classes.mobileRecommendMessage}>
-            <Box style={{ display: "flex", justifyContent: "space-between" }}>
+            <Box className={classes.mobileRecommendTitleBox}>
               <Box>{username}을 위한 추천 아이템</Box>
-              <Box style={{ fontSize: "12px", color: "var(--color-main-a)" }}>
-                전체보기
-              </Box>
+              <Box className={classes.mobileRecommendAllText}>전체보기</Box>
             </Box>
           </Box>
         </Box>
@@ -46,7 +45,7 @@ export default function MainPage() {
         </Box>
       </Grid>
       <Category />
-      <Grid className={classes.mobileRoot}>
+      <Grid className="mobileRoot">
         <Grid container>
           {info && info.length ? <Infinite info={info} /> : null}
         </Grid>

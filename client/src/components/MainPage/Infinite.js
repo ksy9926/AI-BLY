@@ -7,11 +7,13 @@ export default function Infinite({ info }) {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
 
+  // 추가 이미지 출력
   const fetchImages = (cnt) => {
     setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3]);
     setCount(cnt + 4);
   };
 
+  // 첫 접속시 이미지 출력
   useEffect(() => {
     fetchImages(count);
   }, []);

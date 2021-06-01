@@ -10,6 +10,7 @@ import Welcome from "components/MyPage/Welcome";
 import Footer from "components/MyPage/Footer";
 import { useHistory } from "react-router-dom";
 
+// url을 통한 다른 사용자 접근 통제 필요
 function MyPage() {
   const history = useHistory();
   if (localStorage.getItem("jwt") === null) {
@@ -19,7 +20,7 @@ function MyPage() {
   return (
     <Mobile>
       <Navbar />
-      <Box style={{ padding: "15px" }}>
+      <Box className="mobileBigPaddingBox">
         <Welcome />
         <StyleBook />
         <Shopping />

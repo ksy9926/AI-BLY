@@ -1,15 +1,27 @@
-import React, { useState } from "react";
-import { Box, Grid } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { Grid } from "@material-ui/core";
 import { Mobile } from "MediaQuery";
 import useStyles from "styles/RecentItemPageStyle";
 import Navbar from "components/common/Navbar";
 import Infinite from "components/MainPage/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import Category from "components/MainPage/Category";
+import axios from "axios";
 
 export default function RecommendItemPage() {
   const classes = useStyles();
   const [dataList, setDataList] = useState([]);
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      await axios
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+        .then((response) => {
+          setInfo(response.data);
+        });
+    })();
+  }, []);
 
   return (
     <Mobile>
@@ -18,7 +30,7 @@ export default function RecommendItemPage() {
       <Category />
       <Grid className={classes.mobileRoot}>
         <Grid container>
-          <Infinite />
+          {info && info.length ? <Infinite info={info} /> : null}
         </Grid>
       </Grid>
     </Mobile>

@@ -7,6 +7,7 @@ function Welcome() {
   const history = useHistory();
   const title = "안녕하세요 (닉네임) !";
 
+  // 로그아웃
   function logoutUser(e) {
     if (localStorage.getItem("jwt") !== null) {
       localStorage.clear();

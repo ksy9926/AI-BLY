@@ -19,7 +19,7 @@ export default function SimilarItemPage() {
           title="나의 클로젯 아이템과 비슷한 상품"
           number="3"
         />
-        <Grid className={classes.mobileRoot}>
+        <Grid className="mobileRoot">
           <Grid container>
             <Infinite />
           </Grid>

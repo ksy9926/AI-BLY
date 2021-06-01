@@ -11,8 +11,10 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   function onChangeImage(e) {
     e.preventDefault();
     setImage(e.target.files[0]);
+    console.log(image, "이미지 업로드 된거 체크");
   }
 
+  // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
       const formData = new FormData();

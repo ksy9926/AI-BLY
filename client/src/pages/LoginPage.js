@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Mobile } from "MediaQuery";
-import { Box, TextField, Button } from "@material-ui/core";
+import { Box, TextField } from "@material-ui/core";
 import useStyles from "styles/AuthPageStyle";
 import Navbar from "components/common/Navbar";
 import Buttons from "components/common/Buttons";
@@ -18,6 +18,7 @@ function LoginPage() {
   const [text, setText] = useState("");
   const [severity, setSeverity] = useState("");
 
+  // (로그인 폼) 입력 핸들러
   const onChangeHandler = (event) => {
     const {
       target: { name, value },
@@ -30,6 +31,7 @@ function LoginPage() {
     }
   };
 
+  // validation 경고 문구
   const onToastHandler = (msg, svt) => {
     setText(msg);
     setSeverity(svt);
@@ -124,9 +126,7 @@ function LoginPage() {
                 className={classes.mobileButton}
                 variant="contained"
                 text="로그인"
-              >
-                로그인
-              </Buttons>
+              />
             </Box>
           </Box>
           <Box className={classes.mobileButtonBox}>
@@ -135,7 +135,7 @@ function LoginPage() {
               variant="contained"
               text="회원가입"
               url="/register"
-            ></Buttons>
+            />
           </Box>
         </form>
       </Box>

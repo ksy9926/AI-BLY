@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  // 메인페이지 전체
   mobileRoot: {
     textAlign: "center",
     padding: theme.spacing(1),
@@ -19,10 +20,75 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "var(--color-black)",
   },
-  mobileGrow: {
-    flexGrow: 1,
+  mobileRecommendTitleBox: {
+    display: "flex",
+    justifyContent: "space-between",
   },
-
+  mobileRecommendAllText: {
+    fontSize: "var(--font-small)",
+    color: "var(--color-main-a)",
+  },
+  // RecommendTab
+  mobileRecommendContainer: {
+    display: "flex",
+    height: "34vh",
+    whiteSpace: "nowrap",
+    overflowX: "auto",
+    overflowY: "hidden",
+  },
+  // ItemMain
+  mobileRecommendInfoGrid: {
+    height: "34vh",
+    marginRight: "15px",
+  },
+  mobileRecommendImageBox: {
+    width: "40vh",
+    height: "34vh",
+  },
+  mobileRecommendImage: {
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "15px 0px 0px 15px ",
+  },
+  mobileRecommendTextBox: {
+    padding: "10px",
+    textAlign: "left",
+    whiteSpace: "pre-line",
+    borderRadius: "0px 15px 15px 0px ",
+    borderTop: "2px solid #E0E3DA",
+    borderBottom: "2px solid #E0E3DA",
+    borderRight: "2px solid #E0E3DA",
+  },
+  mobileRecommendBrandFavoriteBox: {
+    height: "40px",
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  mobileRecommendBrandName: {
+    fontWeight: "bold",
+    fontSize: "18px",
+    color: "var(--color-black)",
+  },
+  mobileRecommendDescription: {
+    display: "flex",
+    height: "60%",
+    color: "var(--color-gray)",
+  },
+  mobileRecommendDiscountPriceBox: {
+    display: "flex",
+    justifyContent: "space-between",
+    fontSize: "25px",
+  },
+  mobileRecommendDiscount: {
+    fontWeight: "bold",
+    color: "var(--color-red)",
+  },
+  mobileRecommendPrice: {
+    fontWeight: "bold",
+    color: "var(--color-black)",
+  },
+  // ItemInfo
   mobileItemImageGrid: {
     padding: "10px",
   },
@@ -77,74 +143,7 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
 
-  mobileRecommendContainer: {
-    display: "flex",
-    height: "34vh",
-    // borderTop: "1px solid #E0E3DA",
-    // borderBottom: "1px solid #E0E3DA",
-    whiteSpace: "nowrap",
-    overflowX: "auto",
-    overflowY: "hidden",
-    // marginLeft:"10px",
-  },
-
-  mobileRecommendInfoGrid: {
-    height: "34vh",
-    marginRight: "15px",
-  },
-
-  mobileRecommendImageBox: {
-    width: "40vh",
-    height: "34vh",
-  },
-
-  mobileRecommendImage: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px 0px 0px 15px ",
-    // borderTop: "2px solid #E0E3DA",
-    // borderBottom: "2px solid #E0E3DA",
-    // borderLeft: "2px solid #E0E3DA",
-  },
-
-  mobileRecommendTextBox: {
-    padding: "10px",
-    textAlign: "left",
-    whiteSpace: "pre-line",
-    borderRadius: "0px 15px 15px 0px ",
-    borderTop: "2px solid #E0E3DA",
-    borderBottom: "2px solid #E0E3DA",
-    borderRight: "2px solid #E0E3DA",
-  },
-  mobileRecommendBrandFavoriteBox: {
-    height: "40px",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  mobileRecommendBrandName: {
-    fontWeight: "bold",
-    fontSize: "18px",
-    color: "var(--color-black)",
-  },
-  mobileRecommendDescription: {
-    display: "flex",
-    height: "60%",
-    color: "var(--color-gray)",
-  },
-  mobileRecommendDiscountPriceBox: {
-    display: "flex",
-    justifyContent: "space-between",
-    fontSize: "25px",
-  },
-  mobileRecommendDiscount: {
-    fontWeight: "bold",
-    color: "var(--color-red)",
-  },
-  mobileRecommendPrice: {
-    fontWeight: "bold",
-    color: "var(--color-black)",
-  },
+  // 카테고리
   mobileCategoryContainer: {
     borderTop: "1px solid #E0E3DA",
     borderBottom: "1px solid #E0E3DA",
@@ -179,11 +178,15 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
     },
+  },
+  // 못 찾음
+  mobiletabbar: {
+    color: "var(--color-main-b)",
+    backgroundColor: "var(--color-bg-light)",
+  },
 
-    mobiletabbar: {
-      color: "var(--color-main-b)",
-      backgroundColor: "var(--color-bg-light)",
-    },
+  mobileGrow: {
+    flexGrow: 1,
   },
 }));
 
