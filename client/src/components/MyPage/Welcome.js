@@ -1,6 +1,6 @@
 import { Box, Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import useStyles from "../../styles/MyPageStyle";
+import useStyles from "styles/MyPageStyle";
 
 function Welcome() {
   const classes = useStyles();
@@ -9,7 +9,7 @@ function Welcome() {
 
   function logoutUser(e) {
     if (localStorage.getItem("jwt") !== null) {
-      localStorage.clear()
+      localStorage.clear();
       history.push("/");
     }
   }

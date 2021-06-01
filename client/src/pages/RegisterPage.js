@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Mobile } from "../MediaQuery";
+import { Mobile } from "MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
-import useStyles from "../styles/AuthPageStyle";
-import Navbar from "../components/common/Navbar";
-import Toast from "../components/common/Toast";
-import Buttons from "../components/common/Buttons";
+import useStyles from "styles/AuthPageStyle";
+import Navbar from "components/common/Navbar";
+import Toast from "components/common/Toast";
+import Buttons from "components/common/Buttons";
 
 axios.defaults.withCredentials = true;
 
@@ -95,7 +95,7 @@ function RegisterPage() {
               localStorage.setItem("username", response.data.username);
               localStorage.setItem("email", response.data.email);
               localStorage.setItem("user", response.data.pk);
-            })
+            }),
         );
     }
   };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@material-ui/core";
-import { useStyles } from "../../styles/ImageUploadPageStyles";
+import { useStyles } from "styles/ImageUploadPageStyles";
 
 export default function TextTitleComponent({ title, number }) {
   const classes = useStyles();

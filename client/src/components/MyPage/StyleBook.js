@@ -1,7 +1,7 @@
 import { Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import useStyles from "../../styles/MyPageStyle";
+import useStyles from "styles/MyPageStyle";
 
 function StyleBook() {
   const classes = useStyles();

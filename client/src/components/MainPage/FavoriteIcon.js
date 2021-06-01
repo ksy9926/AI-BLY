@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarsIcon from "@material-ui/icons/Stars";
 import { Checkbox, Box } from "@material-ui/core";
-import "../../App.css";
+import "App.css";
 
 export default function FavoriteIcon({ idx }) {
   const [favorite, setFavorite] = useState({});

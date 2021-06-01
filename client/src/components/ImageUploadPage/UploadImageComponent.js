@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Grid } from "@material-ui/core";
-import { useStyles } from "../../styles/ImageUploadPageStyles";
+import { useStyles } from "styles/ImageUploadPageStyles";
 import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRounded";
 
 export default function UploadImageComponent({ src, inputtype, user_id }) {

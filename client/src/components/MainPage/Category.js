@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button } from "@material-ui/core";
-import useStyles from "../../styles/MainPageStyle";
+import useStyles from "styles/MainPageStyle";
 
 export default function Category() {
   const classes = useStyles();
@@ -33,7 +33,7 @@ export default function Category() {
       >
         {category}
       </Button>
-    )
+    ),
   );
 
   return <Box className={classes.mobileCategoryContainer}>{categories}</Box>;

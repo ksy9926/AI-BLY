@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Mobile } from "../MediaQuery";
+import { Mobile } from "MediaQuery";
 import { Box, TextField, Button } from "@material-ui/core";
-import useStyles from "../styles/AuthPageStyle";
-import Navbar from "../components/common/Navbar";
-import Buttons from "../components/common/Buttons";
-import Toast from "../components/common/Toast";
+import useStyles from "styles/AuthPageStyle";
+import Navbar from "components/common/Navbar";
+import Buttons from "components/common/Buttons";
+import Toast from "components/common/Toast";
 
 function LoginPage() {
   const classes = useStyles();
@@ -69,7 +69,7 @@ function LoginPage() {
               .then(
                 history.push({
                   pathname: "/mypage",
-                })
+                }),
               );
           } else {
             alert("error");

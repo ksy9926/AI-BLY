@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@material-ui/core";
-import { Mobile } from "../MediaQuery";
-import useStyles from "../styles/RecentItemPageStyle";
-import Navbar from "../components/common/Navbar";
-import Infinite from "../components/MainPage/Infinite";
-import TextTitleComponent from "../components/SimilarItemPage/TextTitleComponent";
-import Category from "../components/MainPage/Category";
+import { Mobile } from "MediaQuery";
+import useStyles from "styles/RecentItemPageStyle";
+import Navbar from "components/common/Navbar";
+import Infinite from "components/MainPage/Infinite";
+import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
+import Category from "components/MainPage/Category";
 
 export default function RecommendItemPage() {
   const classes = useStyles();

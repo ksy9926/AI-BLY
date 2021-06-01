@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Grid, Box, Button, Checkbox } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
-import useStyles from "../styles/LandingPageStyle";
-import { Mobile } from "../MediaQuery";
-import TextTitleComponent from "../components/ImageUploadPage/TextTitleComponent";
+import useStyles from "styles/LandingPageStyle";
+import { Mobile } from "MediaQuery";
+import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Box } from "@material-ui/core";
-import FavoriteIcon from "./FavoriteIcon";
-import useStyles from "../../styles/MainPageStyle";
+import FavoriteIcon from "components/MainPage/FavoriteIcon";
+import useStyles from "styles/MainPageStyle";
 
 export default function ItemInfo({ idx, data }) {
   const classes = useStyles();

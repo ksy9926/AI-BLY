@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@material-ui/core";
-import useStyles from "../../styles/RecentItemPageStyle";
-import Buttons from "../common/Buttons";
+import useStyles from "styles/RecentItemPageStyle";
+import Buttons from "components/common/Buttons";
 
 export default function NoItemTemplate({
   title,

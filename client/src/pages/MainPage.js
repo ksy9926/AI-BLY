@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Box } from "@material-ui/core";
-import useStyles from "../styles/MainPageStyle";
-import { Mobile } from "../MediaQuery";
-import Navbar from "../components/common/Navbar";
-import Infinite from "../components/MainPage/Infinite";
-import Category from "../components/MainPage/Category";
-import RecommendTab from "../components/MainPage/RecommendTab";
+import useStyles from "styles/MainPageStyle";
+import { Mobile } from "MediaQuery";
+import Navbar from "components/common/Navbar";
+import Infinite from "components/MainPage/Infinite";
+import Category from "components/MainPage/Category";
+import RecommendTab from "components/MainPage/RecommendTab";
 import axios from "axios";
 
 export default function MainPage() {
