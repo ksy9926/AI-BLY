@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "SeoulNamsanM";
+  src: local('SeoulNamsanM'),
+    url("./font/08SeoulNamsanM_0.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: "SeoulNamsanM"
+}
+
 :root {
   /* Color */
   --color-main-a: #a593e0;
@@ -59,4 +72,13 @@ body {
   text-align: "center";
   padding: 8px;
   flex-grow: 1;
+  background-color: lightgray;
+}
+
+.mobileGlassBox {
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
 }

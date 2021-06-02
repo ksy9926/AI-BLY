@@ -10,7 +10,7 @@ export default function ItemMain({ idx }) {
   const price = "57,300";
 
   return (
-    <Grid container className={classes.mobileRecommendInfoGrid}>
+    <Grid container className="mobileGlassBox">
       <Grid className={classes.mobileRecommendImageBox} item xs={6}>
         <img
           className={classes.mobileRecommendImage}
