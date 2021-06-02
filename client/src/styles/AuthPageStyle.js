@@ -37,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  mobileTitle: {
-    fontWeight: "bold",
-  },
   mobileControlBox: {
     height: "10vh",
   },

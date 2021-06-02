@@ -51,6 +51,9 @@ body {
   width: 100%;
   border-radius: 15px;
 }
+.mobileBoldText {
+  font-weight: bold;
+}
 
 .mobileRoot {
   text-align: "center";

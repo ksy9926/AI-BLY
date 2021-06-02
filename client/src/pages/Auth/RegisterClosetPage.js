@@ -15,7 +15,7 @@ function RegisterPage() {
       <Box className={classes.mobileAuthBox}>
         <Box>
           <Box className={classes.mobileTextBox}>
-            <Box className={classes.mobileTitle}>{title}</Box>
+            <Box className="mobileBoldText">{title}</Box>
             <Box className={classes.mobileControlBox}></Box>
             <Box className={classes.mobileMessage}>{message}</Box>
           </Box>

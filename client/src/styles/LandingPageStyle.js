@@ -11,15 +11,10 @@ const useStyles = makeStyles((theme) => ({
   mobileNavbarSelect: {
     fontWeight: "bold",
     color: "var(--color-main-b)",
-    textDecoration: "none",
   },
   mobileNavbarSkip: {
     fontWeight: "bold",
     color: "var(--color-bg-light)",
-    textDecoration: "none",
-  },
-  mobileImageGrid: {
-    padding: "10px",
   },
   mobileImageButton: {
     height: "180px",
@@ -28,20 +23,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignContent: "center",
     outline: "none",
-  },
-
-  mobileImageActive: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px",
-    border: "4px solid var(--color-main-a)",
-  },
-  mobileImage: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px",
   },
 }));
 

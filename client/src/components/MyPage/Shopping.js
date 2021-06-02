@@ -7,7 +7,7 @@ function Shopping() {
 
   return (
     <Box item className={classes.mobileShoppingBox}>
-      <Box className={classes.mobileBoldText}>쇼핑</Box>
+      <Box className="mobileBoldText">쇼핑</Box>
       <Box
         component={Link}
         to={"/rcntitem"}

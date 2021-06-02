@@ -44,23 +44,11 @@ const useStyles = makeStyles((theme) => ({
     borderTop: "1px solid var(--color-bg-dark)",
     paddingTop: "20px",
   },
-  mobileSmallPadding: {
-    padding: "10px",
-  },
-  mobileImage: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px",
-  },
   mobileShoppingBox: {
     paddingTop: "10px",
     borderTop: "1px solid var(--color-bg-dark)",
     height: "17vh",
     lineHeight: "5vh",
-  },
-  mobileBoldText: {
-    fontWeight: "bold",
   },
   mobileShoppingText: {
     display: "block",

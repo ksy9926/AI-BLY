@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Loader } from "components/MainPage/Loader";
+import { Loader } from "components/common/Loader";
 import ItemInfo from "components/MainPage/ItemInfo";
 
 export default function Infinite({ info }) {

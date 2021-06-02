@@ -30,7 +30,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   if (inputtype !== "empty") {
     return (
       <Grid
-        className={classes.mobileClosetImageGrid}
+        className="mobileSmallPaddingBox"
         inputtype={inputtype}
         onClick={() => {
           console.log("popup delete modal");
@@ -39,14 +39,14 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         xs={4}
       >
         <Grid container className={classes.mobileEmptyImageBox}>
-          <img className={classes.mobileImage} src={src} alt="none" />
+          <img className="mobileImage" src={src} alt="none" />
         </Grid>
       </Grid>
     );
   } else {
     return (
       <Grid
-        className={classes.mobileClosetImageGrid}
+        className="mobileSmallPaddingBox"
         inputtype={inputtype}
         item
         xs={4}

@@ -30,11 +30,12 @@ function LandingPage() {
 
   // 이미지 출력
   const images = checkList.map((check, idx) => (
-    <Grid className={classes.mobileImageGrid} item xs={4}>
+    <Grid className="mobileSmallPaddingBox" item xs={4}>
       <Grid container className={classes.mobileImageButton}>
         <img
-          className={
-            checked[idx] ? classes.mobileImageActive : classes.mobileImage
+          className="mobileImage"
+          style={
+            checked[idx] ? { border: "4px solid var(--color-main-a)" } : null
           }
           src={`images/${check}.png`}
           alt="none"

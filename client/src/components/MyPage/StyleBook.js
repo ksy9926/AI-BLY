@@ -20,25 +20,13 @@ function StyleBook() {
         <Box className={classes.mobileStyleBookText}>나의 스타일북</Box>
         <Grid container className={classes.mobileStyleImageBox}>
           <Grid className="mobileSmallPaddingBox" item xs={4}>
-            <img
-              className={classes.mobileImage}
-              src={imagePath}
-              alt="clothes"
-            />
+            <img className="mobileImage" src={imagePath} alt="clothes" />
           </Grid>
           <Grid className="mobileSmallPaddingBox" item xs={4}>
-            <img
-              className={classes.mobileImage}
-              src={imagePath}
-              alt="clothes"
-            />
+            <img className="mobileImage" src={imagePath} alt="clothes" />
           </Grid>
           <Grid className="mobileSmallPaddingBox" item xs={4}>
-            <img
-              className={classes.mobileImage}
-              src={imagePath}
-              alt="clothes"
-            />
+            <img className="mobileImage" src={imagePath} alt="clothes" />
           </Grid>
         </Grid>
       </Box>

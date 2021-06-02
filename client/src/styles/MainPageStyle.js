@@ -83,20 +83,10 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
   // ItemInfo
-  mobileItemImageGrid: {
-    padding: "10px",
-  },
-
   mobileItemImageBox: {
     height: "34vh",
     borderRadius: "15px",
     marginBottom: "10px",
-  },
-  mobileItemImage: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    borderRadius: "15px",
   },
   mobileItemBrandFavoriteBox: {
     height: "30px",
