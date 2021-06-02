@@ -6,7 +6,6 @@ import Navbar from "components/common/Navbar";
 import StyleBook from "components/MyPage/StyleBook";
 import Shopping from "components/MyPage/Shopping";
 import Information from "components/MyPage/Information";
-import Welcome from "components/MyPage/Welcome";
 import Footer from "components/MyPage/Footer";
 import { useHistory } from "react-router-dom";
 
@@ -19,13 +18,14 @@ function MyPage() {
 
   return (
     <Mobile>
-      <Navbar />
-      <Box className="mobileBigPaddingBox">
-        <Welcome />
-        <StyleBook />
-        <Shopping />
-        <Information />
-        <Footer />
+      <Box style={{ background: "RGB(226, 226, 226)" }}>
+        <Navbar />
+        <Box>
+          <StyleBook />
+          <Shopping />
+          <Information />
+          <Footer />
+        </Box>
       </Box>
     </Mobile>
   );
