@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Grid, Box, Button, Checkbox } from "@material-ui/core";
+import { Grow, Grid, Box, Button, Checkbox, Backdrop } from "@material-ui/core";
 import { green } from "@material-ui/core/colors";
 import useStyles from "../styles/LandingPageStyle";
 import { Mobile } from "../MediaQuery";
@@ -31,9 +31,17 @@ function LandingPage() {
     false,
     false,
     false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
   ]);
-  const checkList = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
-
+  const checkList = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10", "a11", "a12", "a13", "a14", "a15", "a16", "a17", "a18"];
+  const [grow, setGrow] = useState(true)
   const handleChange = (event) => {
     const newChecked = !event.target.checked;
     setChecked({ ...checked, [event.target.id]: newChecked });
@@ -42,6 +50,7 @@ function LandingPage() {
 
   const images = checkList.map((check, idx) => (
     <Grid className={classes.mobileImageGrid} item xs={4}>
+      <Grow in={grow} >
       <Grid
         container
         className={
@@ -62,11 +71,13 @@ function LandingPage() {
           onClick={handleChange}
         />
       </Grid>
+      </Grow>
+
     </Grid>
   ));
 
   return (
-    <Mobile>
+    <Mobile className={classes.mobileRoot}>
       <Box className={classes.mobileContainer}>
         <AppBar className={classes.mobileAppBar} elevation={0}>
           <Toolbar>

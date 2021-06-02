@@ -13,6 +13,8 @@ export default function MainPage() {
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
 
+
+
   useEffect(() => {
     (async function () {
       await axios
@@ -25,6 +27,7 @@ export default function MainPage() {
       }
     })();
   }, []);
+
 
   return (
     <Mobile>
