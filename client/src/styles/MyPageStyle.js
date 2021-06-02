@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     paddingTop: "10px",
     height: "10vh",
-    borderTop: "1px solid var(--color-bg-dark)",
   },
   mobileFooterText: {
     width: "75vw",

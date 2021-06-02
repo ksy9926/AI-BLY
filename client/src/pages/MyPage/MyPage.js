@@ -18,7 +18,7 @@ function MyPage() {
 
   return (
     <Mobile>
-      <Box style={{ background: "RGB(226, 226, 226)" }}>
+      <Box>
         <Navbar />
         <Box>
           <StyleBook />
