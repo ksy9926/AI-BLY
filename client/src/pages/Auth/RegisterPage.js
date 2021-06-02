@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Mobile } from "../MediaQuery";
-import { Box, TextField, Button } from "@material-ui/core";
-import useStyles from "../styles/AuthPageStyle";
-import Navbar from "../components/common/Navbar";
-import Toast from "../components/common/Toast";
-import Buttons from "../components/common/Buttons";
-
-axios.defaults.withCredentials = true;
+import { Mobile } from "MediaQuery";
+import { Box, TextField } from "@material-ui/core";
+import useStyles from "styles/AuthPageStyle";
+import Navbar from "components/common/Navbar";
+import Toast from "components/common/Toast";
+import Buttons from "components/common/Buttons";
 
 function RegisterPage() {
   const classes = useStyles();
@@ -39,6 +37,7 @@ function RegisterPage() {
     }
   };
 
+  // validation 경고 문구
   const onToastHandler = (msg, svt) => {
     setText(msg);
     setSeverity(svt);
@@ -95,7 +94,7 @@ function RegisterPage() {
               localStorage.setItem("username", response.data.username);
               localStorage.setItem("email", response.data.email);
               localStorage.setItem("user", response.data.pk);
-            })
+            }),
         );
     }
   };

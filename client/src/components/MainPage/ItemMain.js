@@ -1,6 +1,6 @@
 import { Grid, Box } from "@material-ui/core";
-import useStyles from "../../styles/MainPageStyle";
-import FavoriteIcon from "./FavoriteIcon";
+import useStyles from "styles/MainPageStyle";
+import FavoriteIcon from "components/MainPage/FavoriteIcon";
 
 export default function ItemMain({ idx }) {
   const classes = useStyles();

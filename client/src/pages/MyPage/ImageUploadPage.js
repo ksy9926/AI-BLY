@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Grid } from "@material-ui/core";
-import { Mobile } from "../MediaQuery";
-import Navbar from "../components/common/Navbar";
-import { useStyles } from "../styles/ImageUploadPageStyles";
-import TextTitleComponent from "../components/ImageUploadPage/TextTitleComponent";
-import UploadImageComponent from "../components/ImageUploadPage/UploadImageComponent";
+import { Mobile } from "MediaQuery";
+import Navbar from "components/common/Navbar";
+import { useStyles } from "styles/ImageUploadPageStyles";
+import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
+import UploadImageComponent from "components/ImageUploadPage/UploadImageComponent";
 import { useHistory } from "react-router-dom";
 
 export default function ImageUploadPage({ match }) {
@@ -43,7 +43,7 @@ export default function ImageUploadPage({ match }) {
             user_id={user_id}
             id={idx}
           />
-        ))
+        )),
       );
     }
   }, [imageData]);

@@ -1,15 +1,16 @@
 import { Box, Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import useStyles from "../../styles/MyPageStyle";
+import useStyles from "styles/MyPageStyle";
 
 function Welcome() {
   const classes = useStyles();
   const history = useHistory();
   const title = "안녕하세요 (닉네임) !";
 
+  // 로그아웃
   function logoutUser(e) {
     if (localStorage.getItem("jwt") !== null) {
-      localStorage.clear()
+      localStorage.clear();
       history.push("/");
     }
   }

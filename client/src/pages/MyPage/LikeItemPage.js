@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@material-ui/core";
-import { Mobile } from "../MediaQuery";
-import useStyles from "../styles/RecentItemPageStyle";
-import Navbar from "../components/common/Navbar";
-import Infinite from "../components/MainPage/Infinite";
-import TextTitleComponent from "../components/SimilarItemPage/TextTitleComponent";
-import NoItemTemplate from "../components/SimilarItemPage/NoItemTemplate";
+import { Mobile } from "MediaQuery";
+import useStyles from "styles/RecentItemPageStyle";
+import { Loader } from "components/common/Loader";
+import Navbar from "components/common/Navbar";
+import Infinite from "components/common/Infinite";
+import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
+import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
 
-export default function RecentItemPage() {
+export default function LikeItemPage() {
   const classes = useStyles();
   const [dataList, setDataList] = useState([1, 2, 3, 4, 5, 6]);
   const [info, setInfo] = useState([]);
 
+  // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
       await axios
@@ -28,12 +30,12 @@ export default function RecentItemPage() {
       <Mobile>
         <Navbar />
         <TextTitleComponent
-          title="최근 본 상품"
+          title="찜한 상품"
           number={info && info.length ? info.length : ""}
         />
-        <Grid className={classes.mobileRoot}>
+        <Grid className="mobileRoot">
           <Grid container>
-            {info && info.length ? <Infinite info={info} /> : null}
+            {info && info.length ? <Infinite info={info} /> : <Loader />}
           </Grid>
         </Grid>
       </Mobile>

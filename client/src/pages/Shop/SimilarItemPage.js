@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@material-ui/core";
-import { Mobile } from "../MediaQuery";
-import useStyles from "../styles/RecentItemPageStyle";
-import Navbar from "../components/common/Navbar";
-import Infinite from "../components/MainPage/Infinite";
-import TextTitleComponent from "../components/SimilarItemPage/TextTitleComponent";
-import NoItemTemplate from "../components/SimilarItemPage/NoItemTemplate";
+import { Mobile } from "MediaQuery";
+import useStyles from "styles/RecentItemPageStyle";
+import Navbar from "components/common/Navbar";
+import Infinite from "components/common/Infinite";
+import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
+import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 
 export default function SimilarItemPage() {
   const classes = useStyles();
@@ -19,7 +19,7 @@ export default function SimilarItemPage() {
           title="나의 클로젯 아이템과 비슷한 상품"
           number="3"
         />
-        <Grid className={classes.mobileRoot}>
+        <Grid className="mobileRoot">
           <Grid container>
             <Infinite />
           </Grid>

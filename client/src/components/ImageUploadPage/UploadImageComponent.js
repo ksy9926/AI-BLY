@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Grid } from "@material-ui/core";
-import { useStyles } from "../../styles/ImageUploadPageStyles";
+import { useStyles } from "styles/ImageUploadPageStyles";
 import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRounded";
 
 export default function UploadImageComponent({ src, inputtype, user_id }) {
@@ -11,8 +11,10 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   function onChangeImage(e) {
     e.preventDefault();
     setImage(e.target.files[0]);
+    console.log(image, "이미지 업로드 된거 체크");
   }
 
+  // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
       const formData = new FormData();
@@ -28,7 +30,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   if (inputtype !== "empty") {
     return (
       <Grid
-        className={classes.mobileClosetImageGrid}
+        className="mobileSmallPaddingBox"
         inputtype={inputtype}
         onClick={() => {
           console.log("popup delete modal");
@@ -37,14 +39,14 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         xs={4}
       >
         <Grid container className={classes.mobileEmptyImageBox}>
-          <img className={classes.mobileImage} src={src} alt="none" />
+          <img className="mobileImage" src={src} alt="none" />
         </Grid>
       </Grid>
     );
   } else {
     return (
       <Grid
-        className={classes.mobileClosetImageGrid}
+        className="mobileSmallPaddingBox"
         inputtype={inputtype}
         item
         xs={4}

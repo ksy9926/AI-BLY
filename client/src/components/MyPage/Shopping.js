@@ -1,13 +1,13 @@
 import { Box } from "@material-ui/core";
-import useStyles from "../../styles/MyPageStyle";
+import useStyles from "styles/MyPageStyle";
 import { Link } from "react-router-dom";
 
 function Shopping() {
   const classes = useStyles();
 
   return (
-    <Box item className={classes.mobileShoppingBox} underline="none">
-      <Box className={classes.mobileBoldText}>쇼핑</Box>
+    <Box item className={classes.mobileShoppingBox}>
+      <Box className="mobileBoldText">쇼핑</Box>
       <Box
         component={Link}
         to={"/rcntitem"}

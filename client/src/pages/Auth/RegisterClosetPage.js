@@ -1,8 +1,8 @@
 import React from "react";
-import { Mobile } from "../MediaQuery";
+import { Mobile } from "MediaQuery";
 import { Box, Button } from "@material-ui/core";
-import useStyles from "../styles/AuthPageStyle";
-import Navbar from "../components/common/Navbar";
+import useStyles from "styles/AuthPageStyle";
+import Navbar from "components/common/Navbar";
 
 function RegisterPage() {
   const classes = useStyles();
@@ -15,7 +15,7 @@ function RegisterPage() {
       <Box className={classes.mobileAuthBox}>
         <Box>
           <Box className={classes.mobileTextBox}>
-            <Box className={classes.mobileTitle}>{title}</Box>
+            <Box className="mobileBoldText">{title}</Box>
             <Box className={classes.mobileControlBox}></Box>
             <Box className={classes.mobileMessage}>{message}</Box>
           </Box>
