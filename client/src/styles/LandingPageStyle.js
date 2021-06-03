@@ -27,17 +27,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: "var(--color-bg-light)",
   },
-  mobileGlassBox: {
-    background: "rgba(255, 255, 255, 0.4)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
-    "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
-    },
-    borderRadius: "15px",
-    margin: "10px",
-    padding: "10px",
-  },
+
   mobileSmallPaddingBox: {
     padding: "10px",
   },
