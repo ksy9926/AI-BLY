@@ -10,16 +10,16 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
-    background: "rgba(248, 248, 248, 1)",
+    background: "rgba(248, 248, 248, 0)",
     position: "static",
   },
   mobileAccountCircleIcon: {
     fontSize: "35px",
-    color: "rgba(86, 98, 112, 1)",
+    color: "Black",
   },
   mobileArrowBackIosIcon: {
     fontSize: "25px",
-    color: "rgba(86, 98, 112, 1)",
+    color: "Black",
   },
   mobileGrow: {
     flexGrow: 1,

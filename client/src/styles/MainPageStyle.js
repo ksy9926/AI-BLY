@@ -2,16 +2,23 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   // 메인페이지 전체
+
+  mobileItemMainGrid:{
+    margin: "10px",
+    textAlign:"center",
+    padding: "10px",
+    backgroundColor:"black",
+    borderRadius:"15px",
+  },
+
   mobileRecommendMessageBox: {
-    marginTop: "10px",
+    marginLeft: "10px",
     height: "5vh",
     textAlign: "left",
     lineHeight: "5vh",
-    justifyContent: "space-between",
   },
   mobileRecommendMessage: {
     fontSize: "18px",
-    fontWeight: "bold",
     color: "var(--color-black)",
   },
   mobileRecommendTitleBox: {
@@ -83,28 +90,44 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
   // ItemInfo
+
   mobileItemImageBox: {
-    height: "34vh",
+    height: "20vh",
     borderRadius: "15px",
     marginBottom: "10px",
+  },
+  mobileFavIcon:{
+    position: "relative"
+  },
+  mobileItemInfoBox:{
+    height: "90%",
+    alignContent: "left",
+    textAlign:"left",
+    padding:"1px",
+    margin:"1px"
+  },
+  mobileItemBrandName: {
+    fontWeight:"bold",
+    fontSize: "15px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+    color: "var(--color-black)",
+    marginBottom:"5px",
+
   },
   mobileItemBrandFavoriteBox: {
     height: "30px",
     display: "flex",
     justifyContent: "space-between",
+    marginBottom:"10px",
   },
-  mobileItemBrandName: {
-    fontWeight: "bold",
-    fontSize: "18px",
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    textOverflow: "ellipsis",
-    color: "var(--color-black)",
-  },
+
   mobileItemDescription: {
     display: "flex",
     height: "75%",
     color: "var(--color-gray)",
+    fontWeight:"bold"
   },
   mobileItemShortDescription: {
     overflow: "hidden",
@@ -112,11 +135,15 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: "ellipsis",
     textAlign: "left",
     color: "var(--color-gray)",
+    marginBottom:"10px",
+
   },
   mobileItemDiscountPriceBox: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "25px",
+    fontSize: "15px",
+    marginBottom:"4px",
+
   },
   mobileItemDiscount: {
     fontWeight: "bold",
@@ -129,40 +156,37 @@ const useStyles = makeStyles((theme) => ({
 
   // 카테고리
   mobileCategoryContainer: {
-    borderTop: "1px solid #E0E3DA",
-    borderBottom: "1px solid #E0E3DA",
     whiteSpace: "nowrap",
     overflowX: "auto",
     overflowY: "hidden",
   },
 
   mobileCategoryButton: {
-    border: "1px solid var(--color-bg-dark)",
     borderRadius: "15px",
     margin: "10px 6px",
-    backgroundColor: "var(--color-bg-dark)",
-    fontWeight: "700",
+    background: "rgba( 255, 255, 255, 0.4)",
     fontSize: "14px",
     padding: "2px 6px",
     "&:hover, &:focus, &:active": {
-      backgroundColor: "var(--color-main-b)",
-      color: "var(--color-main-c)",
+      backgroundColor: "#F55129",
+      color: "#F55129",
     },
   },
   mobileCategoryActiveButton: {
-    border: "1px solid var(--color-main-b)",
     borderRadius: "15px",
     margin: "10px 6px",
-    backgroundColor: "var(--color-main-b)",
+    backgroundColor: "#F55129",
     color: "var(--color-main-c)",
-    fontWeight: "700",
     fontSize: "14px",
     padding: "2px 6px",
     "&:hover, &:focus, &:active": {
-      backgroundColor: "var(--color-main-b)",
+      backgroundColor: "#F55129",
       color: "var(--color-main-c)",
     },
   },
+  mobileGridBox:{
+    padding:"1px"
+  }
 }));
 
 export default useStyles;

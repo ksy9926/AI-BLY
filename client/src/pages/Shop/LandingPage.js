@@ -74,12 +74,9 @@ function LandingPage() {
             )}
           </Toolbar>
         </AppBar>
-        <TextTitleComponent
-          title="추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷들을 추천해드릴게요 !"
-          subtitle="많이 고르실수록 추천이 더욱더 정확해져요."
-        />
+
       </Box>
-      <Grid container>{images}</Grid>
+      <Grid className="mobileGlassBox" container>{images}</Grid>
     </Mobile>
   );
 }
