@@ -38,7 +38,7 @@ function LoginPage() {
     setToast(true);
     window.setTimeout(() => {
       setToast(false);
-    }, 3000);
+    }, 333000);
   };
 
   // 로그인 버튼 핸들러
@@ -96,9 +96,9 @@ function LoginPage() {
     <Mobile>
       <Navbar />
       <Box className={classes.mobileFullBox}>
+        {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
           <Box className={classes.mobileAuthBox}>
-            {toast ? <Toast text={text} severity={severity} /> : null}
             <form className={classes.mobileFormBox}>
               <Box className={classes.mobileInputBox}>
                 <TextField

@@ -19,8 +19,8 @@ function Toast({ text, severity }) {
 
   return (
     <Snackbar
-      style={{ height: "15%" }}
-      anchorOrigin={{ vertical: "null", horizontal: "center" }}
+      style={{ height: "30%" }}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
       open={open}
       onClose={handleClose}
     >

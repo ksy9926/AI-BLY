@@ -103,9 +103,9 @@ function RegisterPage() {
     <Mobile>
       <Navbar />
       <Box className={classes.mobileFullBox}>
+        {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
           <Box className={classes.mobileAuthBox}>
-            {toast ? <Toast text={text} severity={severity} /> : null}
             <form className={classes.mobileFormBox}>
               <Box className={classes.mobileInputBox}>
                 <TextField
