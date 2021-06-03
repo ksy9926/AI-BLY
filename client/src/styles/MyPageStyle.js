@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
   },
   mobileShoppingBox: {
-    height: "15vh",
     padding: "10px 15px",
     borderRadius: "15px",
     fontSize: "18px",
@@ -55,11 +54,10 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileContentText: {
     display: "block",
-    lineHeight: "26px",
+    lineHeight: "35px",
     color: "var(--color-gray)",
   },
   mobileInformationBox: {
-    height: "19vh",
     padding: "10px 15px",
     borderRadius: "15px",
     fontSize: "18px",

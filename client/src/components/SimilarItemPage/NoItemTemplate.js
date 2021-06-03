@@ -22,12 +22,14 @@ export default function NoItemTemplate({
           </Typography>
         </Box>
       </Box>
-      <Buttons
-        text={buttontext}
-        onClick={(e) => {
-          console.log("hello");
-        }}
-      ></Buttons>
+      <Box className={classes.mobileButtonBox}>
+        <Buttons
+          text={buttontext}
+          onClick={(e) => {
+            console.log("hello");
+          }}
+        ></Buttons>
+      </Box>
     </Box>
   );
 }
