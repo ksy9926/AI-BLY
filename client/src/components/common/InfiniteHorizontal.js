@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Loader } from "components/common/Loader";
-import ItemLarge from "components/MainPage/ItemLarge";
 import useStyles from "styles/MainPageStyle";
+import ItemSmall from "components/MainPage/ItemSmall";
 
-export default function Infinite({ info }) {
+export default function InfiniteHorizontal({ info }) {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   const classes = useStyles();
@@ -29,7 +29,7 @@ export default function Infinite({ info }) {
         endMessage={<p>You have seen it all</p>}
       >
         {products.map((idx) => (
-          <ItemLarge key={idx} idx={idx} data={info[idx]} />
+          <ItemSmall key={idx} idx={idx} data={info[idx]} />
         ))}
       </InfiniteScroll>
   );

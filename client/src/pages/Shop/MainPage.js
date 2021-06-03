@@ -5,7 +5,8 @@ import { Mobile } from "MediaQuery";
 import Navbar from "components/common/Navbar";
 import axios from "axios";
 import ProductBox from "components/common/ProductBox";
-import RecommendTab from "components/MainPage/RecommendTab";
+import SmallProductBox from "components/common/SmallProductBox";
+
 export default function MainPage() {
   const classes = useStyles();
   const [username, setUsername] = useState("당신만");
@@ -29,7 +30,7 @@ export default function MainPage() {
     <Mobile>
       <Box className="mobileRoot">
         <Navbar />
-        <RecommendTab />
+        <SmallProductBox title="당신을 위한 추천상품"/>
         <ProductBox info={info} title="해외직구 상품" navbar={true} />
       </Box>
     </Mobile>

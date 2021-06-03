@@ -18,7 +18,7 @@ function MyPage() {
 
   return (
     <Mobile>
-      <Box>
+      <Box  className="mobileRoot">
         <Navbar />
         <Box>
           <StyleBook />

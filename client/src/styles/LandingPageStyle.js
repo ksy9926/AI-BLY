@@ -1,8 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  mobileGlassBox: {
+    background: "rgba(255, 255, 255, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
+    margin: "10px",
+    padding: "10px",
+  },
   mobileAppBar: {
-    background: "rgba(256, 256, 256, 1)",
+    background: "rgba(256, 256, 256, 0)",
     position: "static",
   },
   mobileGrow: {
@@ -24,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center",
     outline: "none",
   },
+
 }));
 
 export default useStyles;

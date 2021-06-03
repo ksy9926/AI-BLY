@@ -2,13 +2,24 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   // 메인페이지 전체
-
-  mobileItemMainGrid:{
+  mobileGlassBox: {
+    background: "rgba(255, 255, 255, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
     margin: "10px",
-    textAlign:"center",
     padding: "10px",
-    backgroundColor:"black",
-    borderRadius:"15px",
+  },
+  
+  mobileItemMainGrid: {
+    margin: "10px",
+    textAlign: "center",
+    padding: "10px",
+    backgroundColor: "black",
+    borderRadius: "15px",
   },
 
   mobileRecommendMessageBox: {
@@ -31,26 +42,34 @@ const useStyles = makeStyles((theme) => ({
   },
   // RecommendTab
   mobileRecommendContainer: {
-    display: "flex",
-    height: "34vh",
     whiteSpace: "nowrap",
     overflowX: "auto",
     overflowY: "hidden",
+    height: "30vh"
   },
-  // ItemMain
-  mobileRecommendInfoGrid: {
-    height: "34vh",
-    marginRight: "15px",
+
+  // ItemSmall
+  mobileGlassSmallItemBox: {
+    height: "18vh",
+    width: "10vh",
+    marginRight: "10px",
+    padding:"4px"
   },
-  mobileRecommendImageBox: {
-    width: "40vh",
-    height: "34vh",
+  mobileItemSmallItemGrid: {
+    padding :"1px"
   },
-  mobileRecommendImage: {
+  mobileSmallItemImageBox:{
+    height: "12vh",
+    borderRadius: "15px",
+    marginBottom: "10px",
+    position: "relative",
+  },
+
+  mobileItemSmallImage: {
     objectFit: "cover",
     height: "100%",
     width: "100%",
-    borderRadius: "15px 0px 0px 15px ",
+    borderRadius: "15px",
   },
   mobileRecommendTextBox: {
     padding: "10px",
@@ -90,44 +109,49 @@ const useStyles = makeStyles((theme) => ({
     color: "var(--color-black)",
   },
   // ItemInfo
-
+  mobileGridBox: {
+    padding: "1px",
+  },
   mobileItemImageBox: {
     height: "20vh",
     borderRadius: "15px",
     marginBottom: "10px",
+    position: "relative",
   },
-  mobileFavIcon:{
-    position: "relative"
+  mobileFavIconBox: {
+    position: "absolute",
+    right: "4%",
+    bottom: "4%"
   },
-  mobileItemInfoBox:{
+
+  mobileItemInfoBox: {
     height: "90%",
     alignContent: "left",
-    textAlign:"left",
-    padding:"1px",
-    margin:"1px"
+    textAlign: "left",
+    padding: "1px",
+    margin: "1px",
   },
   mobileItemBrandName: {
-    fontWeight:"bold",
+    fontWeight: "bold",
     fontSize: "15px",
     overflow: "hidden",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
     color: "var(--color-black)",
-    marginBottom:"5px",
-
+    marginBottom: "5px",
   },
   mobileItemBrandFavoriteBox: {
     height: "30px",
     display: "flex",
     justifyContent: "space-between",
-    marginBottom:"10px",
+    marginBottom: "10px",
   },
 
   mobileItemDescription: {
     display: "flex",
     height: "75%",
     color: "var(--color-gray)",
-    fontWeight:"bold"
+    fontWeight: "bold",
   },
   mobileItemShortDescription: {
     overflow: "hidden",
@@ -135,15 +159,13 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: "ellipsis",
     textAlign: "left",
     color: "var(--color-gray)",
-    marginBottom:"10px",
-
+    marginBottom: "10px",
   },
   mobileItemDiscountPriceBox: {
     display: "flex",
     justifyContent: "space-between",
     fontSize: "15px",
-    marginBottom:"4px",
-
+    marginBottom: "4px",
   },
   mobileItemDiscount: {
     fontWeight: "bold",
@@ -184,9 +206,6 @@ const useStyles = makeStyles((theme) => ({
       color: "var(--color-main-c)",
     },
   },
-  mobileGridBox:{
-    padding:"1px"
-  }
 }));
 
 export default useStyles;
