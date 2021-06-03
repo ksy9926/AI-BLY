@@ -1,85 +1,60 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-
-  mobileItemMainGrid:{
-    margin: "25px",
-    textAlign:"center",
-    padding: "30px",
-    backgroundColor:"black"
+  mobileStyleBookBox: {
+    height: "34vh",
+    borderRadius: "15px",
+    fontSize: "18px",
   },
-
-  mobileWelcomeBox: {
-    height: "6vh",
-    marginBottom: "3vh",
+  mobileStyleBookTextBox: {
+    height: "15%",
     display: "flex",
     justifyContent: "space-between",
   },
-  mobileWelcomeText: {
-    lineHeight: "6vh",
-    fontSize: "18px",
-    fontWeight: "bold",
-  },
-  mobileCategoryButton: {
-    borderRadius: "15px",
-    margin: "5px",
-    backgroundColor: "var(--color-bg-dark)",
-    fontWeight: "700",
-    fontSize: "14px",
-    paddingTop: "2px",
-    paddingBottom: "2px",
-    "&:hover, &:focus, &:active": {
-      backgroundColor: "var(--color-main-b)",
-      color: "var(--color-main-c)",
-    },
-  },
-  mobileStyleBookBox: {
-    height: "27vh",
-    position: "relative",
-  },
   mobileStyleBookText: {
-    fontWeight: "bold",
-    fontSize: "18px",
-    zIndex: "100",
-    position: "absolute",
-    top: "-10px",
-    background: "white",
-    paddingRight: "10px",
+    lineHeight: "4vh",
+    fontSize: "16px",
+    paddingLeft: "10px",
+    color: "var(--color-gray)",
+    display: "flex",
+    alignItems: "center",
   },
   mobileStyleImageBox: {
-    height: "90%",
-    paddingTop: "20px",
+    height: "80%",
+    paddingTop: "5%",
   },
   mobileShoppingBox: {
-    paddingTop: "10px",
-    height: "17vh",
-    lineHeight: "5vh",
+    height: "15vh",
+    padding: "10px 15px",
+    borderRadius: "15px",
+    fontSize: "18px",
   },
-  mobileShoppingText: {
+  mobileTitleText: {
+    fontWeight: "bold",
+    marginBottom: "3vh",
+  },
+  mobileContentText: {
     display: "block",
-    textDecoration: "none",
+    lineHeight: "26px",
     color: "var(--color-gray)",
   },
   mobileInformationBox: {
-    paddingTop: "10px",
-    height: "22vh",
-    lineHeight: "5vh",
-  },
-  mobileInfomationText: {
-    display: "block",
-    textDecoration: "none",
-    color: "var(--color-gray)",
+    height: "19vh",
+    padding: "10px 15px",
+    borderRadius: "15px",
+    fontSize: "18px",
   },
   mobileFooterBox: {
     textAlign: "center",
-    paddingTop: "15px",
+    paddingTop: "10px",
     height: "10vh",
   },
   mobileFooterText: {
     width: "75vw",
     display: "inline-block",
-    fontSize: "11px",
-    fontWeight: "lighter",
+    lineHeight: "16px",
+    fontSize: "12px",
+    fontWeight: "bold",
     color: "var(--color-gray)",
   },
 }));

@@ -1,14 +1,13 @@
 @font-face {
   font-family: "SeoulNamsanM";
-  src: local('SeoulNamsanM'),
-    url("./font/08SeoulNamsanM_0.ttf") format('truetype');
+  src: local("SeoulNamsanM"),
+    url("./font/08SeoulNamsanM_0.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-
 * {
-  font-family: "SeoulNamsanM"
+  font-family: "SeoulNamsanM";
 }
 
 :root {
@@ -37,6 +36,7 @@
   --weight-bold: 900;
 
   /* Padding size */
+  --padding-micro: 5px;
   --padding-small: 10px;
   --padding-large: 15px;
 }
@@ -50,6 +50,10 @@ body {
 }
 
 /* 모바일 Common CSS */
+.mobileMicroPaddingBox {
+  padding: var(--padding-micro);
+}
+
 .mobileBigPaddingBox {
   padding: var(--padding-large);
 }
