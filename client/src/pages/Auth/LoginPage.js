@@ -95,49 +95,50 @@ function LoginPage() {
   return (
     <Mobile>
       <Navbar />
-      <Box className={classes.mobileAuthBox}>
-        {toast ? <Toast text={text} severity={severity} /> : null}
-        <form>
-          <Box className={classes.mobileInputBox}>
-            <TextField
-              className={classes.mobileTextField}
-              error={!id && blank ? true : false}
-              id="standard-basic"
-              label="아이디를 입력해주세요."
-              name="id"
-              type="text"
-              value={id}
-              onChange={onChangeHandler}
-            />
-            <TextField
-              className={classes.mobileTextField}
-              error={!password && blank ? true : false}
-              id="standard-basic"
-              label="비밀번호를 입력해주세요."
-              name="password"
-              type="password"
-              value={password}
-              onChange={onChangeHandler}
-            />
-            <br />
-
-            <Box onClick={onLoginHandler}>
-              <Buttons
-                className={classes.mobileButton}
-                variant="contained"
-                text="로그인"
-              />
-            </Box>
+      <Box className={classes.mobileFullBox}>
+        <Box className={classes.mobileGlassBox}>
+          <Box className={classes.mobileAuthBox}>
+            {toast ? <Toast text={text} severity={severity} /> : null}
+            <form className={classes.mobileFormBox}>
+              <Box className={classes.mobileInputBox}>
+                <TextField
+                  className={classes.mobileTextField}
+                  error={!id && blank ? true : false}
+                  id="standard-basic"
+                  label="아이디를 입력해주세요."
+                  name="id"
+                  type="text"
+                  value={id}
+                  onChange={onChangeHandler}
+                />
+                <TextField
+                  className={classes.mobileTextField}
+                  error={!password && blank ? true : false}
+                  id="standard-basic"
+                  label="비밀번호를 입력해주세요."
+                  name="password"
+                  type="password"
+                  value={password}
+                  onChange={onChangeHandler}
+                />
+                <br />
+              </Box>
+              <Box className={classes.mobileButtonBox}>
+                <Box onClick={onLoginHandler}>
+                  <Buttons
+                    className={classes.mobileButton}
+                    variant="contained"
+                    text="로그인"
+                    url="/login"
+                  />
+                </Box>
+                <Box className={classes.mobileLinkBox}>
+                  <a href="/register">회원가입 하러가기</a>
+                </Box>
+              </Box>
+            </form>
           </Box>
-          <Box className={classes.mobileButtonBox}>
-            <Buttons
-              className={classes.mobileButton}
-              variant="contained"
-              text="회원가입"
-              url="/register"
-            />
-          </Box>
-        </form>
+        </Box>
       </Box>
     </Mobile>
   );

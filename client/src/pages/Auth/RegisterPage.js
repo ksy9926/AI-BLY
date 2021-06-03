@@ -102,59 +102,73 @@ function RegisterPage() {
   return (
     <Mobile>
       <Navbar />
-      <Box className={classes.mobileAuthBox}>
-        {toast ? <Toast text={text} severity={severity} /> : null}
-        <form>
-          <Box className={classes.mobileInputBox}>
-            <TextField
-              className={classes.mobileTextField}
-              error={!id && blank ? true : false}
-              id="standard-basic"
-              label="아이디를 입력해주세요."
-              name="id"
-              type="text"
-              value={id}
-              onChange={onChangeHandler}
-            />
-            <TextField
-              className={classes.mobileTextField}
-              error={!password && blank ? true : false}
-              id="standard-basic"
-              label="비밀번호를 입력해주세요."
-              name="password"
-              type="password"
-              value={password}
-              onChange={onChangeHandler}
-            />
-            <TextField
-              className={classes.mobileTextField}
-              error={passwordCheck && password !== passwordCheck ? true : false}
-              id="standard-basic"
-              label={
-                passwordCheck && password !== passwordCheck
-                  ? "비밀번호가 일치하지 않습니다."
-                  : "비밀번호를 확인해주세요."
-              }
-              name="passwordCheck"
-              type="password"
-              value={passwordCheck}
-              onChange={onChangeHandler}
-            />
-            <TextField
-              className={classes.mobileTextField}
-              error={!name && blank ? true : false}
-              id="standard-basic"
-              label="이름을 입력해주세요."
-              name="name"
-              type="text"
-              value={name}
-              onChange={onChangeHandler}
-            />
+      <Box className={classes.mobileFullBox}>
+        <Box className={classes.mobileGlassBox}>
+          <Box className={classes.mobileAuthBox}>
+            {toast ? <Toast text={text} severity={severity} /> : null}
+            <form className={classes.mobileFormBox}>
+              <Box className={classes.mobileInputBox}>
+                <TextField
+                  className={classes.mobileTextField}
+                  error={!id && blank ? true : false}
+                  id="standard-basic"
+                  label="아이디를 입력해주세요."
+                  name="id"
+                  type="text"
+                  value={id}
+                  onChange={onChangeHandler}
+                />
+                <TextField
+                  className={classes.mobileTextField}
+                  error={!password && blank ? true : false}
+                  id="standard-basic"
+                  label="비밀번호를 입력해주세요."
+                  name="password"
+                  type="password"
+                  value={password}
+                  onChange={onChangeHandler}
+                />
+                <TextField
+                  className={classes.mobileTextField}
+                  error={
+                    passwordCheck && password !== passwordCheck ? true : false
+                  }
+                  id="standard-basic"
+                  label={
+                    passwordCheck && password !== passwordCheck
+                      ? "비밀번호가 일치하지 않습니다."
+                      : "비밀번호를 확인해주세요."
+                  }
+                  name="passwordCheck"
+                  type="password"
+                  value={passwordCheck}
+                  onChange={onChangeHandler}
+                />
+                <TextField
+                  className={classes.mobileTextField}
+                  error={!name && blank ? true : false}
+                  id="standard-basic"
+                  label="이름을 입력해주세요."
+                  name="name"
+                  type="text"
+                  value={name}
+                  onChange={onChangeHandler}
+                />
+              </Box>
+              <Box className={classes.mobileButtonBox}>
+                <Box onClick={onSignUpHandler}>
+                  <Buttons
+                    className={classes.mobileButton}
+                    text="가입하기"
+                  ></Buttons>
+                </Box>
+                <Box className={classes.mobileLinkBox}>
+                  <a href="/login">로그인 하러가기</a>
+                </Box>
+              </Box>
+            </form>
           </Box>
-          <Box onClick={onSignUpHandler} className={classes.mobileButtonBox}>
-            <Buttons className={classes.mobileButton} text="가입하기"></Buttons>
-          </Box>
-        </form>
+        </Box>
       </Box>
     </Mobile>
   );
