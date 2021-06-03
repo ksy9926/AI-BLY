@@ -8,6 +8,7 @@ export default function Category() {
 
   const categories = [
     "전체",
+    "추천 상품",
     "높은 가격순",
     "낮은 가격순",
     "상의",

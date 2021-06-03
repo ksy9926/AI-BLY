@@ -8,10 +8,10 @@ import Infinite from "components/common/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
+import ProductBox from "components/common/ProductBox";
 
 export default function LikeItemPage() {
   const classes = useStyles();
-  const [dataList, setDataList] = useState([1, 2, 3, 4, 5, 6]);
   const [info, setInfo] = useState([]);
 
   // 찜한 상품 출력(코드 수정해야함)
@@ -25,25 +25,25 @@ export default function LikeItemPage() {
     })();
   }, []);
 
-  if (dataList.length > 0) {
+  if (info.length > 0) {
     return (
       <Mobile>
+      <Box className="mobileRoot">
+
         <Navbar />
-        <TextTitleComponent
+        {/* <TextTitleComponent
           title="찜한 상품"
           number={info && info.length ? info.length : ""}
-        />
-        <Grid className="mobileRoot">
-          <Grid container>
-            {info && info.length ? <Infinite info={info} /> : <Loader />}
-          </Grid>
-        </Grid>
+        /> */}
+        <ProductBox info={info} title="내가 찜한 상품" />
+        </Box>
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-        <Box className={classes.mobileContainer}>
+      <Box className="mobileRoot">
+
           <Navbar />
           <Box className={classes.mobileEmptyBox} />
           <NoItemTemplate

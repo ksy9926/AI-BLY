@@ -1,6 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+
+  mobileItemMainGrid:{
+    margin: "25px",
+    textAlign:"center",
+    padding: "30px",
+    backgroundColor:"black"
+  },
+
   mobileWelcomeBox: {
     height: "6vh",
     marginBottom: "3vh",
@@ -13,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
   mobileCategoryButton: {
-    border: "1px solid var(--color-bg-dark)",
     borderRadius: "15px",
     margin: "5px",
     backgroundColor: "var(--color-bg-dark)",
@@ -41,12 +48,10 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileStyleImageBox: {
     height: "90%",
-    borderTop: "1px solid var(--color-bg-dark)",
     paddingTop: "20px",
   },
   mobileShoppingBox: {
     paddingTop: "10px",
-    borderTop: "1px solid var(--color-bg-dark)",
     height: "17vh",
     lineHeight: "5vh",
   },
@@ -57,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileInformationBox: {
     paddingTop: "10px",
-    borderTop: "1px solid var(--color-bg-dark)",
     height: "22vh",
     lineHeight: "5vh",
   },
@@ -70,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     paddingTop: "15px",
     height: "10vh",
-    borderTop: "1px solid var(--color-bg-dark)",
   },
   mobileFooterText: {
     width: "75vw",
