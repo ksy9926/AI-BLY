@@ -8,12 +8,13 @@ import Infinite from "components/common/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import Category from "components/MainPage/Category";
 import axios from "axios";
+import ProductBox from "components/common/ProductBox";
 
 export default function RecommendItemPage() {
   const classes = useStyles();
-  const [dataList, setDataList] = useState([]);
   const [info, setInfo] = useState([]);
 
+  // 추천아이템 클릭시  추천 아이템 출력
   useEffect(() => {
     (async function () {
       await axios
@@ -23,17 +24,12 @@ export default function RecommendItemPage() {
         });
     })();
   }, []);
+  
 
   return (
     <Mobile>
       <Navbar />
-      <TextTitleComponent title="''님을 위한 추천 아이템" number="3" />
-      <Category />
-      <Grid className="mobileRoot">
-        <Grid container>
-          {info && info.length ? <Infinite info={info} /> : <Loader />}
-        </Grid>
-      </Grid>
+        <ProductBox info={info} title="해외직구 상품" navbar="true" />
     </Mobile>
   );
 }

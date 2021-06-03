@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import { Mobile } from "MediaQuery";
 import useStyles from "styles/RecentItemPageStyle";
-import { Loader } from "components/common/Loader";
 import Navbar from "components/common/Navbar";
-import Infinite from "components/common/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
+import ProductBox from "components/common/ProductBox";
 
 export default function RecentItemPage() {
   const classes = useStyles();
-  const [dataList, setDataList] = useState([1, 2, 3, 4, 5, 6]);
   const [info, setInfo] = useState([]);
 
   // 최근 본 상품 출력(코드 수정해야함)
@@ -25,19 +23,15 @@ export default function RecentItemPage() {
     })();
   }, []);
 
-  if (dataList.length > 0) {
+  if (info.length > 0) {
     return (
       <Mobile>
         <Navbar />
-        <TextTitleComponent
+        {/* <TextTitleComponent
           title="최근 본 상품"
           number={info && info.length ? info.length : ""}
-        />
-        <Grid className="mobileRoot">
-          <Grid container>
-            {info && info.length ? <Infinite info={info} /> : <Loader />}
-          </Grid>
-        </Grid>
+        /> */}
+        <ProductBox info={info} title="최근 본 상품"  />
       </Mobile>
     );
   } else {

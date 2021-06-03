@@ -1,29 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid } from "@material-ui/core";
 import { Mobile } from "MediaQuery";
+import axios from "axios";
 import useStyles from "styles/RecentItemPageStyle";
 import Navbar from "components/common/Navbar";
 import Infinite from "components/common/Infinite";
 import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
+import ProductBox from "components/common/ProductBox";
 
 export default function SimilarItemPage() {
   const classes = useStyles();
-  const [dataList, setDataList] = useState([]);
+  const [info, setInfo] = useState([]);
 
-  if (dataList.length > 0) {
+  // 옷장 이미지 클릭시 이미지와 유사한 아이템 출력
+  useEffect(() => {
+    (async function () {
+      await axios
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+        .then((response) => {
+          setInfo(response.data);
+        });
+    })();
+  }, []);
+
+  if (info.length > 0) {
     return (
       <Mobile>
         <Navbar />
-        <TextTitleComponent
-          title="나의 클로젯 아이템과 비슷한 상품"
-          number="3"
-        />
-        <Grid className="mobileRoot">
-          <Grid container>
-            <Infinite />
-          </Grid>
-        </Grid>
+        <ProductBox info={info} title="해외직구 상품" navbar="true" />
       </Mobile>
     );
   } else {

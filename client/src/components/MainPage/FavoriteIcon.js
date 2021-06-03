@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import StarsIcon from "@material-ui/icons/Stars";
 import { Checkbox, Box } from "@material-ui/core";
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
-export default function FavoriteIcon({ idx }) {
+export default function CustomFavoriteIcon({ idx }) {
   const [favorite, setFavorite] = useState({});
 
   // 찜하기 체크 여부
@@ -16,8 +17,8 @@ export default function FavoriteIcon({ idx }) {
         style={{ padding: "0" }}
         checked={favorite.idx}
         onChange={onLikeChange}
-        icon={<StarsIcon style={{ color: "var(--color-bg-dark)" }} />}
-        checkedIcon={<StarsIcon style={{ color: "var(--color-main-a)" }} />}
+        icon={<FavoriteBorderIcon  style={{ color: "#F77260" }} />}
+        checkedIcon={<FavoriteIcon  style={{ color:  "#F77260" }} />}
         name={idx}
       />
     </Box>
