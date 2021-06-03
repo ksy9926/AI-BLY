@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
   // RegisterClosetPage
   mobileTextBox: {
-    height: "63.9vh",
+    height: "26vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -65,8 +65,12 @@ const useStyles = makeStyles((theme) => ({
   mobileControlBox: {
     height: "10vh",
   },
+  mobileBoldText: {
+    fontWeight: "bold",
+  },
   mobileMessage: {
-    width: "70vw",
+    width: "45vw",
+    textAlign: "center",
   },
 }));
 

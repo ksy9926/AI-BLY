@@ -2,6 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   // LikeItemPage, RecentItemPage
+  mobileRoot: {
+    textAlign: "center",
+    flexGrow: "1",
+  },
   mobileContainer: {
     height: "auto",
     position: "relative",

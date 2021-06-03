@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   //UploadImageComponent
+  mobileSmallPaddingBox: {
+    padding: "10px",
+  },
   mobileEmptyImageBox: {
     height: "180px",
     backgroundColor: "var(--color-bg-light)",
@@ -30,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignContent: "center",
     outline: "none",
+  },
+  mobileImage: {
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "15px",
   },
   mobileInput: {
     display: " none",

@@ -5,7 +5,7 @@ function Information() {
   const classes = useStyles();
 
   return (
-    <Box className="mobileGlassBox">
+    <Box className={classes.mobileGlassBox}>
       <Box item className={classes.mobileInformationBox}>
         <Box className={classes.mobileTitleText}>정보</Box>
         <Box className={classes.mobileContentText}>앱 문의 건의</Box>
