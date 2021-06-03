@@ -31,10 +31,10 @@ function LandingPage() {
   };
 
   const images = checkList.map((check, idx) => (
-    <Grid className="mobileSmallPaddingBox" item xs={4}>
+    <Grid className={classes.mobileSmallPaddingBox} item xs={4}>
       <Grid container className={classes.mobileImageButton}>
         <img
-          className="mobileImage"
+          className={classes.mobileImage}
           style={
             checked[idx] ? { border: "4px solid var(--color-main-a)" } : null
           }

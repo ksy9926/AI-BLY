@@ -18,7 +18,7 @@ function StyleBook() {
 
   return (
     <Link to="/imgupload">
-      <Box className="mobileGlassBox">
+      <Box className={classes.mobileGlassBox}>
         <Box item className={classes.mobileStyleBookBox}>
           <Box className={classes.mobileStyleBookTextBox}>
             <Box className={classes.mobileStyleBookText}>{title}</Box>
@@ -26,15 +26,27 @@ function StyleBook() {
               더보기 <ArrowForwardIosIcon style={{ fontSize: "1rem" }} />
             </Box>
           </Box>
-          <Grid container className={classes.mobileStyleImageBox}>
-            <Grid className="mobileMicroPaddingBox" item xs={4}>
-              <img className="mobileImage" src={imagePath} alt="clothes" />
+          <Grid container className={classes.mobileStyleBookImageBox}>
+            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+              <img
+                className={classes.mobileImage}
+                src={imagePath}
+                alt="clothes"
+              />
             </Grid>
-            <Grid className="mobileMicroPaddingBox" item xs={4}>
-              <img className="mobileImage" src={imagePath} alt="clothes" />
+            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+              <img
+                className={classes.mobileImage}
+                src={imagePath}
+                alt="clothes"
+              />
             </Grid>
-            <Grid className="mobileMicroPaddingBox" item xs={4}>
-              <img className="mobileImage" src={imagePath} alt="clothes" />
+            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+              <img
+                className={classes.mobileImage}
+                src={imagePath}
+                alt="clothes"
+              />
             </Grid>
           </Grid>
         </Box>

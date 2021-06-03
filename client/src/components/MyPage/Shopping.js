@@ -6,7 +6,7 @@ function Shopping() {
   const classes = useStyles();
 
   return (
-    <Box className="mobileGlassBox">
+    <Box className={classes.mobileGlassBox}>
       <Box item className={classes.mobileShoppingBox}>
         <Box className={classes.mobileTitleText}>쇼핑</Box>
         <Box

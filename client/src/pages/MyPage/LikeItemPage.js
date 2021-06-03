@@ -28,22 +28,20 @@ export default function LikeItemPage() {
   if (info.length > 0) {
     return (
       <Mobile>
-      <Box className="mobileRoot">
-
-        <Navbar />
-        {/* <TextTitleComponent
+        <Box className={classes.mobileRoot}>
+          <Navbar />
+          {/* <TextTitleComponent
           title="찜한 상품"
           number={info && info.length ? info.length : ""}
         /> */}
-        <ProductBox info={info} title="내가 찜한 상품" />
+          <ProductBox info={info} title="내가 찜한 상품" />
         </Box>
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-      <Box className="mobileRoot">
-
+        <Box className={classes.mobileRoot}>
           <Navbar />
           <Box className={classes.mobileEmptyBox} />
           <NoItemTemplate
