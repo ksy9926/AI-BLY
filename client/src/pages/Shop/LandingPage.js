@@ -27,8 +27,27 @@ function LandingPage() {
     false,
     false,
   ]);
-  const checkList = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9", "a10", "a11", "a12", "a13", "a14", "a15", "a16", "a17", "a18"];
-  const [grow, setGrow] = useState(true)
+  const checkList = [
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5",
+    "a6",
+    "a7",
+    "a8",
+    "a9",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14",
+    "a15",
+    "a16",
+    "a17",
+    "a18",
+  ];
+  const [grow, setGrow] = useState(true);
 
   // 이미지 선택 여부
   const onImageHandler = (event) => {
@@ -39,10 +58,10 @@ function LandingPage() {
 
   // 이미지 출력
   const images = checkList.map((check, idx) => (
-    <Grid className="mobileSmallPaddingBox" item xs={4}>
+    <Grid className={classes.mobileSmallPaddingBox} item xs={4}>
       <Grid container className={classes.mobileImageButton}>
         <img
-          className="mobileImage"
+          className={classes.mobileImage}
           style={
             checked[idx] ? { border: "4px solid var(--color-main-a)" } : null
           }
@@ -74,9 +93,10 @@ function LandingPage() {
             )}
           </Toolbar>
         </AppBar>
-
       </Box>
-      <Grid className="mobileGlassBox" container>{images}</Grid>
+      <Grid className={classes.mobileGlassBox} container>
+        {images}
+      </Grid>
     </Mobile>
   );
 }
