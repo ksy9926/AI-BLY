@@ -21,7 +21,7 @@ export default function InfiniteHorizontal({ info }) {
 
   return (
       <InfiniteScroll
-        style={{ display: "flex", flexWrap: "wrap" }}
+        style={{ display: "flex", flexWrap: "nowrap" }}
         dataLength={products.length}
         next={() => fetchImages(count)}
         hasMore={count < 300 ? true : false}
