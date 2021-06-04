@@ -13,6 +13,33 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     padding: "10px",
   },
+  mobileGlassLargeBox:{
+    background: "rgba(255, 255, 255, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
+    margin: "10px",
+    padding: "10px",
+    height:"80vh",
+    whiteSpace: "nowrap",
+    overflowx: "hidden",
+    overflowY: "auto",
+    position: "relative",
+  },
+  mobileGlassItemBox:{
+    background: "rgba( 255, 255, 255, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.4)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
+    margin: "5px",
+    padding: "10px",
+  },
 
   mobileItemMainGrid: {
     margin: "10px",
@@ -107,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileRecommendDiscount: {
     fontWeight: "bold",
-    color: "var(--color-red)",
+    color: "var(--color-main-b)",
   },
   mobileRecommendPrice: {
     fontWeight: "bold",
@@ -173,7 +200,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileItemDiscount: {
     fontWeight: "bold",
-    color: "var(--color-red)",
+    color: "var(--color-main-b)",
   },
   mobileItemPrice: {
     fontWeight: "bold",
@@ -185,6 +212,9 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
     overflowX: "auto",
     overflowY: "hidden",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
 
   mobileCategoryButton: {
@@ -194,20 +224,36 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     padding: "2px 6px",
     "&:hover, &:focus, &:active": {
-      backgroundColor: "#F55129",
+      backgroundColor: "var(--color-main-b)",
       color: "#F55129",
     },
   },
   mobileCategoryActiveButton: {
     borderRadius: "15px",
     margin: "10px 6px",
-    backgroundColor: "#F55129",
+    backgroundColor: "var(--color-main-b)",
     color: "var(--color-main-c)",
     fontSize: "14px",
     padding: "2px 6px",
     "&:hover, &:focus, &:active": {
-      backgroundColor: "#F55129",
+      backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
+    },
+  },
+  //세로 인피니트 바
+  mobileInfinite: {
+    display: "flex",
+    flexWrap: "nowrap",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+  },
+  //가로 인피니트 바
+  mobileInfiniteHorizontal: {
+    display: "flex",
+    flexWrap: "nowrap",
+    "&::-webkit-scrollbar": {
+      display: "none",
     },
   },
 }));

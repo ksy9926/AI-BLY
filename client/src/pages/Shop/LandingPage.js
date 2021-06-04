@@ -5,6 +5,7 @@ import { Mobile } from "MediaQuery";
 import axios from "axios";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 
 function LandingPage() {
   const classes = useStyles();
@@ -68,13 +69,13 @@ function LandingPage() {
           </AppBar>
         </Box>
         <Box className={classes.mobileGlassBox}>
-          <Grid  container>
-            <Box className={classes.mobileRecommendMessageBox}>
-              <Box className={classes.mobileRecommendMessage}>
-                추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷들을
-                추천해드릴게요 !
-              </Box>
-            </Box>
+          <Grid container>
+            <TextTitleComponent
+              title="추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷을
+                추천해드릴게요!"
+                subtitle= "많이 고르실수록 추천이 더욱더 정확해져요"
+            />
+
             {images}
           </Grid>
         </Box>

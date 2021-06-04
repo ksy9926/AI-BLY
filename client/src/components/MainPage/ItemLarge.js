@@ -7,7 +7,7 @@ export default function ItemLarge({ idx, data }) {
   const classes = useStyles();
   return (
     <Grid className={classes.mobileGridBox} item xs={6}>
-      <Box className="mobileGlassItemBox">
+      <Box className={classes.mobileGlassItemBox}>
         <Box className={classes.mobileItemImageBox}>
           <img className="mobileImage" src={data["thumnail"]} alt="옷"></img>
           <Box className={classes.mobileFavIconBox}>

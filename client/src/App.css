@@ -13,15 +13,14 @@
 :root {
   /* Color */
   --color-main-a: #a593e0;
-  --color-main-b: #566270;
+  --color-main-b: #F77260;
   --color-main-c: #fffff3;
 
   --color-bg-dark: #e0e3da;
   --color-bg-light: #f5f4f2;
 
-  --color-gray: #838383;
+  --color-gray: #656464;
   --color-black: #000000;
-  --color-red: #f05d5d;
 
   /* Font size */
   --font-micro: 14px;
@@ -78,23 +77,3 @@ body {
   flex-grow: 1;
 }
 
-.mobileGlassBox {
-  background: rgba( 255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(120, 120, 120, 0.4);
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 15px;
-  margin: 10px;
-  padding: 10px;
-}
-
-.mobileGlassItemBox {
-  background: rgba( 255, 255, 255, 0.01);
-  box-shadow: 0 5px 5px 0 rgba(120, 120, 120, 0.4);
-  backdrop-filter: blur( 4px );
-  -webkit-backdrop-filter: blur( 4px );
-  border-radius: 15px;
-  margin: 5px;
-  text-align: center;
-  padding: 10px;
-}

@@ -10,7 +10,7 @@ export default function ProductBox({ info, title, navbar, count }) {
 
   // 메인페이지 접속시 모든 아이템 출력
   return (
-    <Grid className="mobileGlassBox">
+    <Grid className={classes.mobileGlassBox}>
       <Box className={classes.mobileRecommendContainer}>
         <Box className={classes.mobileRecommendMessageBox}>
           <Box className={classes.mobileRecommendMessage}>{title}</Box>
