@@ -18,7 +18,6 @@ function LandingPage() {
         .get(`${process.env.REACT_APP_API_URL}/api/style`)
         .then((response) => {
           setCheckList(response.data);
-          console.log(response.data);
         });
     })();
   }, []);
@@ -51,7 +50,7 @@ function LandingPage() {
 
   return (
     <Mobile>
-      <Box className="mobileRoot">
+      <Box>
         <Box>
           <AppBar className={classes.mobileAppBar} elevation={0}>
             <Toolbar>
@@ -68,15 +67,17 @@ function LandingPage() {
             </Toolbar>
           </AppBar>
         </Box>
-        <Grid className={classes.mobileGlassBox} container>
-          <Box className={classes.mobileRecommendMessageBox}>
-            <Box className={classes.mobileRecommendMessage}>
-              추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷들을
-              추천해드릴게요 !
+        <Box className={classes.mobileGlassBox}>
+          <Grid  container>
+            <Box className={classes.mobileRecommendMessageBox}>
+              <Box className={classes.mobileRecommendMessage}>
+                추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷들을
+                추천해드릴게요 !
+              </Box>
             </Box>
-          </Box>
-          {images}
-        </Grid>
+            {images}
+          </Grid>
+        </Box>
       </Box>
     </Mobile>
   );

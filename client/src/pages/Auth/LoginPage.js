@@ -38,7 +38,7 @@ function LoginPage() {
     setToast(true);
     window.setTimeout(() => {
       setToast(false);
-    }, 3000);
+    }, 1233000);
   };
 
   // 로그인 버튼 핸들러
