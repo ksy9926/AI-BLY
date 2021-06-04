@@ -4,7 +4,7 @@ import CustomFavoriteIcon from "components/MainPage/FavoriteIcon";
 
 export default function ItemSmall({ idx }) {
   const classes = useStyles();
-  const brand = "노드스트롬";
+  const brand = "w.concept";
   const description = "Zella Live In High Walst Pocket 7/8 Leggings";
   const discount = "33%";
   const price = "57,300";
@@ -23,11 +23,11 @@ export default function ItemSmall({ idx }) {
           </Box>
         </Box>
         <Box className={classes.mobileItemInfoBox}>
-          <Box className={classes.mobileItemBrandName}>shopbob</Box>
-          <Box className={classes.mobileItemShortDescription}>fdjsalfd</Box>
+          <Box className={classes.mobileItemBrandName}>{brand}</Box>
+          <Box className={classes.mobileItemShortDescription}>{description}</Box>
           <Box className={classes.mobileItemDiscountPriceBox}>
-            <Box className={classes.mobileItemDiscount}>10</Box>
-            <Box className={classes.mobileItemPrice}>111</Box>
+            <Box className={classes.mobileItemDiscount}>{discount}</Box>
+            <Box className={classes.mobileItemPrice}>{price}</Box>
           </Box>
         </Box>
       </Box>

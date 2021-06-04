@@ -49,15 +49,22 @@ const useStyles = makeStyles((theme) => ({
 
   // ItemSmall
   mobileGlassSmallItemBox: {
-    width: "10vh",
+    width: "12vh",
+    padding: "7px",
+    background: "rgba( 255, 255, 255, 0.01)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.01)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
     marginRight: "10px",
-    padding:"4px"
   },
   mobileItemSmallItemGrid: {
-    padding :"1px"
+    padding: "1px",
   },
-  mobileSmallItemImageBox:{
-    height: "12vh",
+  mobileSmallItemImageBox: {
+    height: "14vh",
     borderRadius: "15px",
     marginBottom: "10px",
     position: "relative",
@@ -119,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   mobileFavIconBox: {
     position: "absolute",
     right: "4%",
-    bottom: "4%"
+    bottom: "4%",
   },
 
   mobileItemInfoBox: {
