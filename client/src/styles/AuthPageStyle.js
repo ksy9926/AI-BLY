@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   mobileInputBox: {
-    height: "26vh",
+    height: "30vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

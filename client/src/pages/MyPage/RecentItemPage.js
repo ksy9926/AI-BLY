@@ -31,21 +31,24 @@ export default function RecentItemPage() {
           title="최근 본 상품"
           number={info && info.length ? info.length : ""}
         /> */}
-        <ProductBox info={info} title="최근 본 상품"  />
+        <ProductBox info={info} title="최근 본 상품" />
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-        <Box className={classes.mobileContainer}>
-          <Navbar />
-          <Box className={classes.mobileEmptyBox} />
-          <NoItemTemplate
-            title="최근에 본 상품이 없어요"
-            subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요"
-            buttontext="클로젯 추가하기"
-            buttonUrl=""
-          />
+        <Navbar />
+        <Box className={classes.mobileFullBox}>
+          <Box className={classes.mobileGlassBox}>
+            <Box className={classes.mobileContainer}>
+              <NoItemTemplate
+                title="최근 본 상품이 없어요!"
+                subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요."
+                buttontext="추천상품 보러가기"
+                buttonUrl=""
+              />
+            </Box>
+          </Box>
         </Box>
       </Mobile>
     );
