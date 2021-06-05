@@ -16,9 +16,10 @@ function LandingPage() {
   useEffect(() => {
     (async function () {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/style`)
+        .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
         .then((response) => {
           setCheckList(response.data);
+          console.log(response.data)
         });
     })();
   }, []);
@@ -38,7 +39,7 @@ function LandingPage() {
           style={
             checked[idx] ? { border: "4px solid var(--color-main-a)" } : null
           }
-          src={check.style_img}
+          src={process.env.REACT_APP_API_URL/check.style_img}
           alt="none"
           id={idx}
           name={check}
