@@ -19,7 +19,7 @@ export default function ProductBox({info, title, navbar, count}) {
       </Box>
       {navbar === true ? <Category /> : <Box/> }
       {info && info.length ? <Infinite info={info} /> : <Loader />}
-      <ScrollTop point="#product-box-title"/>
+      {/* <ScrollTop point="#product-box-title"/> */}
 
     </Box>
   );

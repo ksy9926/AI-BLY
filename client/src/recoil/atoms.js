@@ -65,3 +65,14 @@ export const categoryState = atom({
   key: "categoryState",
   default: "",
 });
+
+
+export const pageState = atom({
+  key:"pageState",
+  default:"",
+})
+
+export const totalItemInfo = atom({
+  key:"totalItemInfo",
+  default:[],
+})

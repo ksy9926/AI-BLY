@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
     padding: "10px",
-    height:"80vh",
-    whiteSpace: "nowrap",
-    overflowx: "hidden",
-    overflowY: "auto",
-    position: "relative",
+    // height:"80vh",
+    // whiteSpace: "nowrap",
+    // overflowx: "hidden",
+    // overflowY: "auto",
+    // position: "relative",
   },
   mobileGlassItemBox:{
     background: "rgba( 255, 255, 255, 0.4)",
@@ -243,7 +243,7 @@ const useStyles = makeStyles((theme) => ({
   //세로 인피니트 바
   mobileInfinite: {
     display: "flex",
-    flexWrap: "nowrap",
+    flexWrap: "wrap",
     "&::-webkit-scrollbar": {
       display: "none",
     },
