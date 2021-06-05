@@ -37,9 +37,9 @@ function LandingPage() {
         <img
           className={classes.mobileImage}
           style={
-            checked[idx] ? { border: "4px solid var(--color-main-a)" } : null
+            checked[idx] ? { border: "2px solid rgba(255, 255, 255, 0.9)" } : null
           }
-          src={process.env.REACT_APP_API_URL/check.style_img}
+          src= {`${process.env.REACT_APP_API_URL}${check.style_img}`}
           alt="none"
           id={idx}
           name={check}
@@ -70,13 +70,11 @@ function LandingPage() {
           </AppBar>
         </Box>
         <Box className={classes.mobileGlassBox}>
-          <Grid container>
-            <TextTitleComponent
-              title="추천받고 싶은 스타일을 3개 이상 고르면 취향에 맞는 옷을
-                추천해드릴게요!"
+        <TextTitleComponent
+              title="추천받고 싶은 스타일을 3개 이상 골라주세요"
                 subtitle= "많이 고르실수록 추천이 더욱더 정확해져요"
             />
-
+          <Grid container>
             {images}
           </Grid>
         </Box>

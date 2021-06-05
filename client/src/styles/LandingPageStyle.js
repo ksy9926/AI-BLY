@@ -12,9 +12,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     padding: "10px",
     height:"85vh",
-    whiteSpace: "nowrap",
-    overflowx: "auto",
-    overflowY: "hidden",
+    whiteSpace: "wrap",
+    overflowx: "hidden",
+    overflowY: "auto",
     "&::-webkit-scrollbar": {
       display: "none",
     },
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileNavbarSelect: {
     fontWeight: "bold",
-    color: "var(--color-main-b)",
+    color: "white",
   },
   mobileNavbarSkip: {
     fontWeight: "bold",
