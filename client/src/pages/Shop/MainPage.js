@@ -7,24 +7,32 @@ import axios from "axios";
 import ProductBox from "components/common/ProductBox";
 import SmallProductBox from "components/common/SmallProductBox";
 
+import { useRecoilValue } from "recoil";
+import { categoryState } from "recoil/atoms";
+
 export default function MainPage() {
   const classes = useStyles();
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
+  const category = useRecoilValue(categoryState);
 
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function () {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
+        .get(
+          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`,
+        )
         .then((response) => {
-          setInfo(response.data);
+          console.log(response.data);
+          console.log(response.data.results);
+          setInfo(response.data.results);
         });
       if (localStorage.getItem("username") !== null) {
         setUsername(localStorage.getItem("username") + "님");
       }
     })();
-  }, []);
+  }, [category]);
 
   return (
     <Mobile>

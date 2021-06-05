@@ -2,37 +2,42 @@ import React, { useState } from "react";
 import { Box, Button } from "@material-ui/core";
 import useStyles from "styles/MainPageStyle";
 
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  categoryKeyState,
+  categoryDictState,
+  categoryState,
+} from "recoil/atoms";
+
 export default function Category() {
   const classes = useStyles();
   const [activeButton, setActiveButton] = useState(0);
+  const categoryKey = useRecoilValue(categoryKeyState);
+  const categoryDict = useRecoilValue(categoryDictState);
+  const setCategory = useSetRecoilState(categoryState);
 
-  const categories = [
-    "전체",
-    "추천 상품",
-    "높은 가격순",
-    "낮은 가격순",
-    "상의",
-    "하의",
-    "드레스",
-    "스커트",
-    "팬츠",
-    "자켓",
-  ].map((category, idx) =>
+  const categories = categoryKey.map((key, idx) =>
     activeButton === idx ? (
       <Button
-        onClick={() => setActiveButton(idx)}
+        onClick={() => {
+          setActiveButton(idx);
+          setCategory(categoryDict[key]);
+        }}
         className={classes.mobileCategoryActiveButton}
         key={idx}
       >
-        {category}
+        {key}
       </Button>
     ) : (
       <Button
-        onClick={() => setActiveButton(idx)}
+        onClick={() => {
+          setActiveButton(idx);
+          setCategory(categoryDict[key]);
+        }}
         className={classes.mobileCategoryButton}
         key={idx}
       >
-        {category}
+        {key}
       </Button>
     ),
   );
