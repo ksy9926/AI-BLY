@@ -8,6 +8,9 @@ import Navbar from "components/common/Navbar";
 import Buttons from "components/common/Buttons";
 import Toast from "components/common/Toast";
 
+import { useSetRecoilState } from "recoil";
+import { usernameState, emailState, userState } from "recoil/atoms";
+
 function LoginPage() {
   const classes = useStyles();
   const history = useHistory();
@@ -17,6 +20,9 @@ function LoginPage() {
   const [toast, setToast] = useState(false);
   const [text, setText] = useState("");
   const [severity, setSeverity] = useState("");
+  const setUsername = useSetRecoilState(usernameState);
+  const setEmail = useSetRecoilState(emailState);
+  const setUser = useSetRecoilState(userState);
 
   // (로그인 폼) 입력 핸들러
   const onChangeHandler = (event) => {
@@ -67,6 +73,9 @@ function LoginPage() {
                 localStorage.setItem("username", response.data.username);
                 localStorage.setItem("email", response.data.email);
                 localStorage.setItem("user", response.data.pk);
+                setUsername(response.data.username);
+                setEmail(response.data.email);
+                setUser(response.data.pk);
               })
               .then(
                 history.push({
