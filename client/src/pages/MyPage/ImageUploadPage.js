@@ -43,24 +43,30 @@ export default function ImageUploadPage({ match }) {
             user_id={user_id}
             id={idx}
           />
-        )),
+        ))
       );
     }
   }, [imageData]);
 
   return (
     <Mobile>
-      <Box className={classes.mobileContainer}>
+      <Box>
         <Navbar />
-        <TextTitleComponent
-          title="클로젯에 이미지를 추가해주시면 AI 분석을 통해서 아이템을 추천해드려요."
-          subtitle="클릭하시면 사진 속 의상과 비슷한 상품을 모아서 볼 수 있어요."
-        />
+
+        <Box className={classes.mobileGlassBox}>
+          <Grid container>
+            <TextTitleComponent
+              title="엘리스님의 옷장"
+              subtitle="찾고싶은 상품의 이미지를 등록해주세요.
+               다양한 해외 쇼핑몰에서 비슷한 상품을 찾아드립니다"
+            />
+            {imageList}
+            <UploadImageComponent inputtype="empty" user_id={user_id} />
+          </Grid>
+        </Box>
       </Box>
-      <Grid container>
-        {imageList}
-        <UploadImageComponent inputtype="empty" user_id={user_id} />
-      </Grid>
     </Mobile>
   );
 }
+
+

@@ -11,6 +11,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
     padding: "10px",
+    height:"85vh",
+    whiteSpace: "nowrap",
+    overflowx: "auto",
+    overflowY: "hidden",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
   },
   mobileAppBar: {
     background: "rgba(256, 256, 256, 0)",
@@ -32,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
   },
   mobileImageButton: {
-    height: "180px",
+    height: "18vh",
     backgroundColor: "var(--color-bg-light)",
     borderRadius: "15px",
     justifyContent: "center",

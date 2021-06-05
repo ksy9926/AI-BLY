@@ -28,9 +28,10 @@ export default function MainPage() {
 
   return (
     <Mobile>
-      <Box className="mobileRoot">
+      <Box>
         <Navbar />
-        <SmallProductBox title="당신을 위한 추천상품"/>
+        <SmallProductBox title="당신이 찾고 있는 상품" />
+        <SmallProductBox title="당신을 위한 추천 상품"  />
         <ProductBox info={info} title="해외직구 상품" navbar={true} />
       </Box>
     </Mobile>

@@ -49,7 +49,7 @@ export default function Navbar() {
   const history = useHistory();
   return (
     <React.Fragment>
-      <AppBar className={classes.mobileAppBar} elevation={0}>
+      <AppBar className={classes.mobileAppBar} elevation={0} id="navbar">
         <Toolbar>
           <ArrowBackIosIcon
             className={classes.mobileArrowBackIosIcon}

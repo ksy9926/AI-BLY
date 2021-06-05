@@ -9,17 +9,34 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     position: "relative",
   },
+  mobileGlassBox: {
+    background: "rgba(255, 255, 255, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px",
+    margin: "10px",
+    padding: "10px",
+    height:"85vh",
+    whiteSpace: "nowrap",
+    overflowx: "auto",
+    overflowY: "hidden",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+    position: "relative",
+  },
   // TextTitleComponent
   mobileTitleBox: {
     margin: "10px",
+    fontSize:"18px"
+
   },
-  mobileTitleText: {
-    fontWeight: "bold",
-    fontSize: "21px",
-  },
-  mobileSubtitleText: {
-    color: "rgba(165, 147, 224, 1)",
-    fontSize: "3.7vw",
+  mobileSubTitleBox: {
+    margin: "10px",
+    fontSize:"14px"
   },
 
   //UploadImageComponent
@@ -27,12 +44,17 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
   },
   mobileEmptyImageBox: {
-    height: "180px",
-    backgroundColor: "var(--color-bg-light)",
+    height: "18vh",
     borderRadius: "15px",
     justifyContent: "center",
     alignContent: "center",
     outline: "none",
+    background: "rgba(255, 255, 255, 0.01)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.4)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
   },
   mobileImage: {
     objectFit: "cover",
@@ -44,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     display: " none",
   },
   mobileEmptyImageIcon: {
-    color: "var(--color-bg-dark)",
+    color: "lightgray",
     fontSize: "35px",
   },
 }));

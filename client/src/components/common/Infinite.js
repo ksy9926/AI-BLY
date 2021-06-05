@@ -21,7 +21,7 @@ export default function Infinite({ info }) {
 
   return (
       <InfiniteScroll
-        style={{ display: "flex", flexWrap: "wrap" }}
+      className={classes.mobileInfinite}
         dataLength={products.length}
         next={() => fetchImages(count)}
         hasMore={count < 300 ? true : false}
