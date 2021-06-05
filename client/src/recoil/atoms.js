@@ -66,13 +66,17 @@ export const categoryState = atom({
   default: "",
 });
 
-
 export const pageState = atom({
-  key:"pageState",
-  default:"",
-})
+  key: "pageState",
+  default: 1,
+});
 
-export const totalItemInfo = atom({
-  key:"totalItemInfo",
-  default:[],
-})
+export const nextPageState = atom({
+  key: "nextPageState",
+  default: "",
+});
+
+export const countAllState = atom({
+  key: "countAllState",
+  default: 0,
+});

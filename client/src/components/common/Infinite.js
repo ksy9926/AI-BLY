@@ -7,25 +7,19 @@ import { useRecoilState } from "recoil";
 import { pageState } from "recoil/atoms";
 import axios from "axios";
 
-
 export default function Infinite({ info }) {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   const classes = useStyles();
-  const [nextpage, setNextpage] = useRecoilState(pageState);
+  const [page, setPage] = useRecoilState(pageState);
 
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
-    setProducts([
-      ...products,
-      cnt,
-      cnt + 1,
-      cnt + 2,
-      cnt + 3,
-      cnt + 4,
-      cnt + 5,
-    ]);
-    setCount(cnt + 6);
+    setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4]);
+    setCount(cnt + 5);
+    if (count / page > 60) {
+      setPage(page + 1);
+    }
   };
 
   // 첫 접속시 이미지 출력
@@ -33,16 +27,14 @@ export default function Infinite({ info }) {
     fetchImages(count);
   }, []);
 
-
-
   return (
     <InfiniteScroll
       className={classes.mobileInfinite}
       dataLength={products.length}
       next={() => fetchImages(count)}
-      hasMore={nextpage ? true : false}
+      hasMore={count < 300 ? true : false}
       loader={<Loader />}
-      endMessage={<></>}
+      endMessage={<p>you have seen it all</p>}
     >
       {products.map((idx) => (
         <ItemLarge key={idx} idx={idx} data={info[idx]} />

@@ -8,32 +8,25 @@ import ProductBox from "components/common/ProductBox";
 import SmallProductBox from "components/common/SmallProductBox";
 
 import { useRecoilValue, useRecoilState } from "recoil";
-import { categoryState, pageState } from "recoil/atoms";
+import { categoryState, pageState, countAllState } from "recoil/atoms";
 
 export default function MainPage() {
   const classes = useStyles();
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
   const category = useRecoilValue(categoryState);
-  const [nextpage, setNextpage] = useRecoilState(pageState);
-
-
+  const [page, setPage] = useRecoilState(pageState);
+  // const [countAll, setCountAll] = useRecoilState(countAllState);
 
   // 메인페이지 접속시 모든 아이템 출력
-
-
   useEffect(() => {
     (async function () {
       await axios
-        .get(
-          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-        )
-        .then((response) => {
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
+        .then(async (response) => {
           console.log(response.data);
-          console.log(response.data.results);
-          console.log(response.data.next);
+          // setPage(1);
           setInfo(response.data.results);
-          setNextpage(response.data.next);
         });
       if (localStorage.getItem("username") !== null) {
         setUsername(localStorage.getItem("username") + "님");
@@ -41,17 +34,19 @@ export default function MainPage() {
     })();
   }, [category]);
 
-  // useEffect(() => {
-  //   async function fetchNewItem() {
-  //       console.log(nextpage)
-  //       await axios.get(nextpage).then((response) => {
-  //         console.log(response.data.next);
-  //         setNextpage(response.data.next);
-  //         setInfo([...info, response.data.results]);
-  //       })
-  //   }
-  //   fetchNewItem();
-  // }, [info]);
+  useEffect(() => {
+    console.log("page: ", page);
+    if (page > 1) {
+      (async function () {
+        await axios
+          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
+          .then(async (response) => {
+            setInfo([...info, ...response.data.results]);
+          });
+      })();
+    }
+    console.log(info);
+  }, [page]);
 
   return (
     <Mobile>
