@@ -8,12 +8,10 @@ export default function TextTitleComponent({ title, subtitle }) {
   return (
     <Box>
       <Box className={classes.mobileTitleBox}>
-        <Typography className={classes.mobileTitleText}>{title}</Typography>
+{title}
       </Box>
-      <Box className={classes.mobileTitleBox}>
-        <Typography className={classes.mobileSubtitleText}>
+      <Box className={classes.mobileSubTitleBox}>
           {subtitle}
-        </Typography>
       </Box>
     </Box>
   );

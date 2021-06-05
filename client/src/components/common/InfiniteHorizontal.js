@@ -10,7 +10,15 @@ export default function InfiniteHorizontal({ info }) {
   const classes = useStyles();
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
-    setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
+    setProducts([
+      ...products,
+      cnt,
+      cnt + 1,
+      cnt + 2,
+      cnt + 3,
+      cnt + 4,
+      cnt + 5,
+    ]);
     setCount(cnt + 6);
   };
 
@@ -20,17 +28,17 @@ export default function InfiniteHorizontal({ info }) {
   }, []);
 
   return (
-      <InfiniteScroll
-        style={{ display: "flex", flexWrap: "nowrap" }}
-        dataLength={products.length}
-        next={() => fetchImages(count)}
-        hasMore={count < 300 ? true : false}
-        loader={<Loader />}
-        endMessage={<p>You have seen it all</p>}
-      >
-        {products.map((idx) => (
-          <ItemSmall key={idx} idx={idx} data={info[idx]} />
-        ))}
-      </InfiniteScroll>
+    <InfiniteScroll
+      className={classes.mobileInfiniteHorizontal}
+      dataLength={products.length}
+      next={() => fetchImages(count)}
+      hasMore={count < 300 ? true : false}
+      loader={<Loader />}
+      endMessage={<p>You have seen it all</p>}
+    >
+      {products.map((idx) => (
+        <ItemSmall key={idx} idx={idx} data={info[idx]} />
+      ))}
+    </InfiniteScroll>
   );
 }

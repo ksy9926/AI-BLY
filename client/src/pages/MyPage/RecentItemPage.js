@@ -27,10 +27,6 @@ export default function RecentItemPage() {
     return (
       <Mobile>
         <Navbar />
-        {/* <TextTitleComponent
-          title="최근 본 상품"
-          number={info && info.length ? info.length : ""}
-        /> */}
         <ProductBox info={info} title="최근 본 상품" />
       </Mobile>
     );
