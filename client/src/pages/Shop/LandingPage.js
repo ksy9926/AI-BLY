@@ -75,7 +75,7 @@ function LandingPage() {
     <Mobile>
       <Box>
         <Box>
-          <AppBar className={classes.mobileAppBar} elevation={0}>
+        <AppBar className={classes.mobileAppBar} elevation={0}>
             <Toolbar>
               <Box className={classes.mobileGrow} />
               {select.length >= 3 ? (
