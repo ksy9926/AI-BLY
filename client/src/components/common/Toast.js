@@ -24,7 +24,14 @@ function Toast({ text, severity }) {
       open={open}
       onClose={handleClose}
     >
-      <Alert onClose={handleClose} severity={severity}>
+      <Alert
+        style={{
+          borderRadius: "15px",
+          background: "rgba(255, 255, 255, 0.3)",
+        }}
+        onClose={handleClose}
+        severity={severity}
+      >
         {text}
       </Alert>
     </Snackbar>

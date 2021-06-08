@@ -16,7 +16,7 @@ export default function MainPage() {
   const [info, setInfo] = useState([]);
   const category = useRecoilValue(categoryState);
   const [page, setPage] = useRecoilState(pageState);
-  const setCountAll = useSetRecoilState(countAllState);
+  const [countAll, setCountAll] = useRecoilState(countAllState);
   console.log("변수선언하는곳");
 
   // 메인페이지 접속시 모든 아이템 출력
@@ -26,7 +26,6 @@ export default function MainPage() {
       await axios
         .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
         .then(async (response) => {
-          console.log(response.data.count);
           console.log(response.data);
           setPage(1);
           setInfo(response.data.results);
@@ -58,7 +57,7 @@ export default function MainPage() {
         <Navbar />
         <SmallProductBox title="당신이 찾고 있는 상품" />
         <SmallProductBox title="당신을 위한 추천 상품" />
-        <ProductBox info={info} title="해외직구 상품" navbar={true} />
+        <ProductBox info={info} title={`해외직구 상품 ${countAll}`} navbar={true} />
       </Box>
     </Mobile>
   );
