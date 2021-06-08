@@ -16,8 +16,8 @@
   --color-main-b: #F77260;
   --color-main-c: #fffff3;
 
-  --color-bg-dark: #e0e3da;
-  --color-bg-light: #f5f4f2;
+  --color-bg-box: rgba(255, 255, 255, 0.3);
+  --color-bg-title:rgba(255, 255, 255, 0.5);
 
   --color-gray: #656464;
   --color-black: #000000;
