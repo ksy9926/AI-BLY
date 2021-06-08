@@ -11,7 +11,7 @@ import { useHistory } from "react-router-dom";
 export default function ImageUploadPage({ match }) {
   const classes = useStyles();
   const user_id = match.params.user_id;
-  const [imageData, setImageData] = useState(["1", "2", "3", "4"]);
+  const [imageData, setImageData] = useState([]);
   const [imageList, setImageList] = useState(null);
   const [image, setImage] = useState(null);
 
@@ -28,6 +28,7 @@ export default function ImageUploadPage({ match }) {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       })
       .then((response) => {
+        console.log(response.data);
         setImageData(response.data);
       });
   }, []);
@@ -37,13 +38,8 @@ export default function ImageUploadPage({ match }) {
     if (imageData) {
       setImageList(
         imageData.map((data, idx) => (
-          <UploadImageComponent
-            src={data.dress_img}
-            inputtype="image"
-            user_id={user_id}
-            id={idx}
-          />
-        ))
+          <UploadImageComponent src={data.dress_img} inputtype="image" user_id={user_id} id={idx} />
+        )),
       );
     }
   }, [imageData]);
@@ -52,7 +48,6 @@ export default function ImageUploadPage({ match }) {
     <Mobile>
       <Box>
         <Navbar />
-
         <Box className={classes.mobileGlassBox}>
           <Grid container>
             <TextTitleComponent
@@ -68,5 +63,3 @@ export default function ImageUploadPage({ match }) {
     </Mobile>
   );
 }
-
-
