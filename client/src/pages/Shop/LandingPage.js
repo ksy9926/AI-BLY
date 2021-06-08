@@ -20,6 +20,7 @@ function LandingPage() {
         .then((response) => {
           setCheckList(response.data);
           console.log(response.data)
+          console.log(response.data[0].style_img)
         });
     })();
   }, []);
@@ -39,7 +40,7 @@ function LandingPage() {
           style={
             checked[idx] ? { border: "2px solid rgba(255, 255, 255, 0.9)" } : null
           }
-          src= {`${process.env.REACT_APP_API_URL}${check.style_img}`}
+          src={process.env.REACT_APP_API_URL+check.style_img}
           alt="none"
           id={idx}
           name={check}

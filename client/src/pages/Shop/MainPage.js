@@ -7,33 +7,30 @@ import axios from "axios";
 import ProductBox from "components/common/ProductBox";
 import SmallProductBox from "components/common/SmallProductBox";
 
-import { useRecoilValue, useRecoilState } from "recoil";
-import { categoryState, pageState } from "recoil/atoms";
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
+import { categoryState, pageState, countAllState } from "recoil/atoms";
 
 export default function MainPage() {
   const classes = useStyles();
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
   const category = useRecoilValue(categoryState);
-  const [nextpage, setNextpage] = useRecoilState(pageState);
-
-
+  const [page, setPage] = useRecoilState(pageState);
+  const setCountAll = useSetRecoilState(countAllState);
+  console.log("변수선언하는곳");
 
   // 메인페이지 접속시 모든 아이템 출력
-
-
   useEffect(() => {
+    console.log("메인페이지 접속/카테고리 변경");
     (async function () {
       await axios
-        .get(
-          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-        )
-        .then((response) => {
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
+        .then(async (response) => {
+          console.log(response.data.count);
           console.log(response.data);
-          console.log(response.data.results);
-          console.log(response.data.next);
+          setPage(1);
           setInfo(response.data.results);
-          setNextpage(response.data.next);
+          setCountAll(response.data.count);
         });
       if (localStorage.getItem("username") !== null) {
         setUsername(localStorage.getItem("username") + "님");
@@ -41,17 +38,19 @@ export default function MainPage() {
     })();
   }, [category]);
 
-  // useEffect(() => {
-  //   async function fetchNewItem() {
-  //       console.log(nextpage)
-  //       await axios.get(nextpage).then((response) => {
-  //         console.log(response.data.next);
-  //         setNextpage(response.data.next);
-  //         setInfo([...info, response.data.results]);
-  //       })
-  //   }
-  //   fetchNewItem();
-  // }, [info]);
+  useEffect(() => {
+    console.log("페이지 추가 ", page);
+    if (page > 1) {
+      (async function () {
+        await axios
+          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
+          .then((response) => {
+            console.log(response.data.results);
+            setInfo([...info, ...response.data.results]);
+          });
+      })();
+    }
+  }, [page]);
 
   return (
     <Mobile>
