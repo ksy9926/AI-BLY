@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
+import firstpageBackground from "firstpage.png"
 const useStyles = makeStyles((theme) => ({
   mobileFirstPageBox: {
     width: "100vw",
@@ -8,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
+    backgroundImage: `url(${firstpageBackground})`
+
   },
   mobileSubTitle: {
     color: "var(--color-gray)",
@@ -67,6 +70,9 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     width: "100%",
   },
+  mobileLogoimage:{
+    width:"50vw"
+  }
 }));
 
 export default useStyles;

@@ -12,6 +12,7 @@ import RecentItemPage from "pages/MyPage/RecentItemPage";
 import RecommendItemPage from "pages/Shop/RecommendItemPage";
 import LikeItemPage from "pages/MyPage/LikeItemPage";
 import TutorialPage from "pages/TutorialPage";
+// import TutorialPage from "pages/Shop/TutorialPage";
 
 axios.defaults.withCredentials = true;
 

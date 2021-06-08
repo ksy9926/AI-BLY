@@ -42,7 +42,7 @@ export const categoryDictState = atom({
   key: "categoryListState",
   default: {
     전체: "",
-    추천상품: "",
+    추천상품: "recommendation",
     높은가격순: "",
     낮은가격순: "",
     반팔: "short sleeve top",
@@ -80,3 +80,9 @@ export const countAllState = atom({
   key: "countAllState",
   default: 0,
 });
+
+export const styleState = atom({
+  key: "styleState",
+  default: [],
+});
+
