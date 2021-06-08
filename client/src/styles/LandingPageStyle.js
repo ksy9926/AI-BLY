@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileAppBar: {
-    background: "rgba(256, 256, 256, 0)",
+    background: "transparent",
     position: "static",
   },
   mobileGrow: {
