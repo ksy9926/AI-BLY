@@ -9,7 +9,7 @@ export default function ItemLarge({ idx, data }) {
     <Grid className={classes.mobileGridBox} item xs={6}>
       <Box className={classes.mobileGlassItemBox}>
         <Box className={classes.mobileItemImageBox}>
-          <img className="mobileImage" src={data["thumnail"]} alt="옷"></img>
+          <img className={classes.mobileItemLgImage} src={data["thumnail"]} alt="옷"></img>
           <Box className={classes.mobileFavIconBox}>
             <CustomFavoriteIcon idx={idx.toString()} />
           </Box>

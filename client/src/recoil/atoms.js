@@ -80,3 +80,9 @@ export const countAllState = atom({
   key: "countAllState",
   default: 0,
 });
+
+export const styleState = atom({
+  key: "styleState",
+  default: [],
+});
+

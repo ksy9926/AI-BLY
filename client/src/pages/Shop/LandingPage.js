@@ -6,10 +6,12 @@ import axios from "axios";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
+import { useHistory } from "react-router-dom";
 
 function LandingPage() {
   const classes = useStyles();
-  const [select, setSelect] = useState(0);
+  const history = useHistory();
+  const [select, setSelect] = useState([]);
   const [checked, setChecked] = useState([]);
   const [checkList, setCheckList] = useState([]);
 
@@ -19,8 +21,6 @@ function LandingPage() {
         .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
         .then((response) => {
           setCheckList(response.data);
-          console.log(response.data)
-          console.log(response.data[0].style_img)
         });
     })();
   }, []);
@@ -29,8 +29,26 @@ function LandingPage() {
   const onImageHandler = (event) => {
     const newChecked = !event.target.checked;
     setChecked({ ...checked, [event.target.id]: newChecked });
-    newChecked ? setSelect(select + 1) : setSelect(select - 1);
+    newChecked
+      ? setSelect([...select, event.target.id])
+      : setSelect(select.filter((item) => item !== event.target.id));
+    console.log(select);
   };
+
+  function onStyleHandler(e) {
+    const type = e.target.getAttribute("type");
+    console.log(type);
+    if (type === "selected") {
+      localStorage.setItem("styles", select);
+      history.push({
+        pathname: "/main",
+      });
+    } else {
+      history.push({
+        pathname: "/main",
+      });
+    }
+  }
 
   const images = checkList.map((check, idx) => (
     <Grid className={classes.mobileSmallPaddingBox} item xs={4}>
@@ -38,13 +56,15 @@ function LandingPage() {
         <img
           className={classes.mobileImage}
           style={
-            checked[idx] ? { border: "2px solid rgba(255, 255, 255, 0.9)" } : null
+            checked[check.id]
+              ? { border: "2px solid rgba(255, 255, 255, 0.9)" }
+              : null
           }
-          src={process.env.REACT_APP_API_URL+check.style_img}
+          src={process.env.REACT_APP_API_URL + check.style_img}
           alt="none"
-          id={idx}
-          name={check}
-          checked={checked[idx]}
+          key={idx}
+          id={check.id}
+          checked={checked[check.id]}
           onClick={onImageHandler}
         />
       </Grid>
@@ -58,26 +78,32 @@ function LandingPage() {
           <AppBar className={classes.mobileAppBar} elevation={0}>
             <Toolbar>
               <Box className={classes.mobileGrow} />
-              {select >= 3 ? (
-                <a href="/main" className={classes.mobileNavbarSelect}>
+              {select.length >= 3 ? (
+                <Box
+                  className={classes.mobileNavbarSelect}
+                  onClick={onStyleHandler}
+                  type="selected"
+                >
                   선택하기
-                </a>
+                </Box>
               ) : (
-                <a href="/main" className={classes.mobileNavbarSkip}>
+                <Box
+                  className={classes.mobileNavbarSkip}
+                  onClick={onStyleHandler}
+                  type="none"
+                >
                   건너뛰기
-                </a>
+                </Box>
               )}
             </Toolbar>
           </AppBar>
         </Box>
         <Box className={classes.mobileGlassBox}>
-        <TextTitleComponent
-              title="추천받고 싶은 스타일을 3개 이상 골라주세요"
-                subtitle= "많이 고르실수록 추천이 더욱더 정확해져요"
-            />
-          <Grid container>
-            {images}
-          </Grid>
+          <TextTitleComponent
+            title="추천받고 싶은 스타일을 3개 이상 골라주세요"
+            subtitle="많이 고르실수록 추천이 더욱더 정확해져요"
+          />
+          <Grid container>{images}</Grid>
         </Box>
       </Box>
     </Mobile>

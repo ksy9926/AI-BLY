@@ -22,20 +22,41 @@ export default function MainPage() {
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     console.log("메인페이지 접속/카테고리 변경");
-    (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
-        .then(async (response) => {
-          console.log(response.data.count);
-          console.log(response.data);
-          setPage(1);
-          setInfo(response.data.results);
-          setCountAll(response.data.count);
-        });
-      if (localStorage.getItem("username") !== null) {
-        setUsername(localStorage.getItem("username") + "님");
-      }
-    })();
+    if (category === "recommend") {
+      (async function () {
+        await axios
+          .get(
+            `${process.env.REACT_APP_API_URL}/api/recommend`, 
+          )
+          .then(async (response) => {
+            console.log(response.data.count);
+            console.log(response.data);
+            setPage(1);
+            setInfo(response.data.results);
+            setCountAll(response.data.count);
+          });
+        if (localStorage.getItem("username") !== null) {
+          setUsername(localStorage.getItem("username") + "님");
+        }
+      })();
+    } else {
+      (async function () {
+        await axios
+          .get(
+            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
+          )
+          .then(async (response) => {
+            console.log(response.data.count);
+            console.log(response.data);
+            setPage(1);
+            setInfo(response.data.results);
+            setCountAll(response.data.count);
+          });
+        if (localStorage.getItem("username") !== null) {
+          setUsername(localStorage.getItem("username") + "님");
+        }
+      })();
+    }
   }, [category]);
 
   useEffect(() => {
@@ -43,7 +64,9 @@ export default function MainPage() {
     if (page > 1) {
       (async function () {
         await axios
-          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
+          .get(
+            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
+          )
           .then((response) => {
             console.log(response.data.results);
             setInfo([...info, ...response.data.results]);

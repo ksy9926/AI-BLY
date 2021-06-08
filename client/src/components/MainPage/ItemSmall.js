@@ -18,16 +18,16 @@ export default function ItemSmall({ idx }) {
             src="http://fpost.co.kr/board/data/editor/1902/af6295e29b76e6d52de0accea62b4e4b_1550713144_4274.jpg"
             alt="clothes"
           />
-          <Box className={classes.mobileFavIconBox}>
+          {/* <Box className={classes.mobileFavIconBox}>
             <CustomFavoriteIcon idx={idx.toString()} />
-          </Box>
+          </Box> */}
         </Box>
-        <Box className={classes.mobileItemInfoBox}>
-          <Box className={classes.mobileItemBrandName}>{brand}</Box>
-          <Box className={classes.mobileItemShortDescription}>{description}</Box>
-          <Box className={classes.mobileItemDiscountPriceBox}>
-            <Box className={classes.mobileItemDiscount}>{discount}</Box>
-            <Box className={classes.mobileItemPrice}>{price}</Box>
+        <Box className={classes.mobileItemSmInfoBox}>
+          <Box className={classes.mobileItemSmBrandName}>{brand}</Box>
+          <Box className={classes.mobileItemSmShortDescription}>{description}</Box>
+          <Box className={classes.mobileItemSmDiscountPriceBox}>
+            <Box className={classes.mobileItemSmDiscount}>{discount}</Box>
+            <Box className={classes.mobileItemSmPrice}>{price}</Box>
           </Box>
         </Box>
       </Box>

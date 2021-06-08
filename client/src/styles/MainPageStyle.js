@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     padding: "10px",
   },
-  mobileGlassLargeBox:{
+  mobileGlassLargeBox: {
     background: "rgba(255, 255, 255, 0.4)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
     backdropFilter: "blur(4px)",
@@ -29,16 +29,21 @@ const useStyles = makeStyles((theme) => ({
     // overflowY: "auto",
     // position: "relative",
   },
-  mobileGlassItemBox:{
+  mobileGlassItemBox: {
     background: "rgba( 255, 255, 255, 0.4)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.4)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
     },
-    borderRadius: "15px",
+    borderRadius: "10px",
     margin: "5px",
-    padding: "10px",
+  },
+  mobileItemLgImage: {
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "10px 10px 0 0",
   },
 
   mobileItemMainGrid: {
@@ -46,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     padding: "10px",
     backgroundColor: "black",
-    borderRadius: "15px",
+    borderRadius: "10px",
   },
 
   mobileRecommendMessageBox: {
@@ -76,24 +81,23 @@ const useStyles = makeStyles((theme) => ({
 
   // ItemSmall
   mobileGlassSmallItemBox: {
-    width: "12vh",
-    padding: "7px",
-    background: "rgba( 255, 255, 255, 0.01)",
+    width: "100px",
+    background: "rgba(255, 255, 255, 0.5)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.01)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
     },
-    borderRadius: "15px",
+    borderRadius: "10px",
     marginRight: "10px",
   },
   mobileItemSmallItemGrid: {
     padding: "1px",
   },
   mobileSmallItemImageBox: {
-    height: "14vh",
-    borderRadius: "15px",
-    marginBottom: "10px",
+    height: "100px",
+    borderRadius: "10px 10px 0 0",
+    marginBottom: "3px",
     position: "relative",
   },
 
@@ -101,53 +105,33 @@ const useStyles = makeStyles((theme) => ({
     objectFit: "cover",
     height: "100%",
     width: "100%",
-    borderRadius: "15px",
+    borderRadius: "10px 10px 0 0",
   },
-  mobileRecommendTextBox: {
-    padding: "10px",
-    textAlign: "left",
-    whiteSpace: "pre-line",
-    borderRadius: "0px 15px 15px 0px ",
-    borderTop: "2px solid #E0E3DA",
-    borderBottom: "2px solid #E0E3DA",
-    borderRight: "2px solid #E0E3DA",
-  },
-  mobileRecommendBrandFavoriteBox: {
-    height: "40px",
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  mobileRecommendBrandName: {
+  mobileItemSmBrandName: {
     fontWeight: "bold",
-    fontSize: "18px",
+    fontSize: "15px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
     color: "var(--color-black)",
+    marginBottom: "5px",
   },
-  mobileRecommendDescription: {
+
+  mobileItemSmDescription: {
     display: "flex",
-    height: "60%",
+    height: "75%",
     color: "var(--color-gray)",
-  },
-  mobileRecommendDiscountPriceBox: {
-    display: "flex",
-    justifyContent: "space-between",
-    fontSize: "25px",
-  },
-  mobileRecommendDiscount: {
     fontWeight: "bold",
-    color: "var(--color-main-b)",
   },
-  mobileRecommendPrice: {
-    fontWeight: "bold",
-    color: "var(--color-black)",
-  },
+
   // ItemInfo
   mobileGridBox: {
     padding: "1px",
   },
   mobileItemImageBox: {
-    height: "20vh",
-    borderRadius: "15px",
-    marginBottom: "10px",
+    height: "25vh",
+    borderRadius: "10px 10px 0px 0px",
+    marginBottom: "5px",
     position: "relative",
   },
   mobileFavIconBox: {
@@ -159,9 +143,16 @@ const useStyles = makeStyles((theme) => ({
   mobileItemInfoBox: {
     alignContent: "left",
     textAlign: "left",
-    padding: "1px",
+    padding: "5px",
+    margin: "3px",
+  },
+  mobileItemSmInfoBox: {
+    alignContent: "left",
+    textAlign: "left",
+    padding: "3px",
     margin: "1px",
   },
+
   mobileItemBrandName: {
     fontWeight: "bold",
     fontSize: "15px",
