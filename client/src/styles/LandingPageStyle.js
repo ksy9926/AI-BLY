@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   mobileGlassBox: {
     background: "rgba(255, 255, 255, 0.4)",
-  
+
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
@@ -11,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
 
+<<<<<<< HEAD
     height:"85vh",
+=======
+    height: "85vh",
+>>>>>>> 9038957bdbf9bbb6f472628854336fb133a676cb
     whiteSpace: "wrap",
     overflowx: "hidden",
     overflowY: "auto",
@@ -20,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileSubTitleBox: {
-    margin:"15px 10px 10px 20px",
+    margin: "15px 10px 10px 20px",
     fontSize: "14px",
-    width:"100%"
+    width: "100%",
   },
 
   mobileAppBar: {
