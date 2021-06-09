@@ -6,7 +6,7 @@ import ItemSmall from "components/MainPage/ItemSmall";
 
 export default function InfiniteHorizontal({ info }) {
   const [products, setProducts] = useState([]);
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState(0);
   const classes = useStyles();
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
@@ -27,16 +27,32 @@ export default function InfiniteHorizontal({ info }) {
     fetchImages(count);
   }, []);
 
+  // return (
+  //   <InfiniteScroll
+  //     className={classes.mobileInfiniteHorizontal}
+  //     dataLength={products.length}
+  //     next={() => fetchImages(count)}
+  //     hasMore={count < 300 ? true : false}
+  //     loader={<Loader />}
+  //   >
+  //     {products.map((idx) => (
+  //       <ItemSmall key={idx} idx={idx} data={info[idx]}  />
+  //     ))}
+  //   </InfiniteScroll>
+  // );
+
   return (
     <InfiniteScroll
-      className={classes.mobileInfiniteHorizontal}
+    className={classes.mobileInfiniteHorizontal}
       dataLength={products.length}
       next={() => fetchImages(count)}
       hasMore={count < 300 ? true : false}
+
       loader={<Loader />}
+      endMessage={<p>you have seen it all</p>}
     >
       {products.map((idx) => (
-        <ItemSmall key={idx} idx={idx} data={info[idx]}  />
+        <ItemSmall key={idx} idx={idx} data={info[idx]} recommend={true}/>
       ))}
     </InfiniteScroll>
   );

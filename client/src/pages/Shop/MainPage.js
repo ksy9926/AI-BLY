@@ -19,7 +19,7 @@ export default function MainPage() {
   const [page, setPage] = useRecoilState(pageState);
   const [countAll, setCountAll] = useRecoilState(countAllState);
   const [recommend, setRecommend] = useState([]);
-
+  const body = localStorage.getItem("styles");
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function () {
