@@ -17,11 +17,10 @@ function LandingPage() {
 
   useEffect(() => {
     (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
-        .then((response) => {
-          setCheckList(response.data);
-        });
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/stylelist/`).then((response) => {
+        setCheckList(response.data);
+        console.log("response.data: ", response.data);
+      });
     })();
   }, []);
 
@@ -54,17 +53,12 @@ function LandingPage() {
     }
   }
 
-
   const images = checkList.map((check, idx) => (
     <Grid className={classes.mobileSmallPaddingBox} item xs={4}>
       <Grid container className={classes.mobileImageButton}>
         <img
           className={classes.mobileImage}
-          style={
-            checked[check.id]
-              ? { border: "2px solid rgba(255, 255, 255, 0.9)" }
-              : null
-          }
+          style={checked[check.id] ? { border: "2px solid rgba(255, 255, 255, 0.9)" } : null}
           src={process.env.REACT_APP_API_URL + check.style_img}
           alt="none"
           key={idx}
@@ -83,19 +77,11 @@ function LandingPage() {
         <Box className={classes.mobileBar}>
           <Box className={classes.mobileGrow} />
           {select.length >= 3 ? (
-            <Box
-              className={classes.mobileNavbarSelect}
-              onClick={onStyleHandler}
-              type="selected"
-            >
+            <Box className={classes.mobileNavbarSelect} onClick={onStyleHandler} type="selected">
               선택하기
             </Box>
           ) : (
-            <Box
-              className={classes.mobileNavbarSkip}
-              onClick={onStyleHandler}
-              type="none"
-            >
+            <Box className={classes.mobileNavbarSkip} onClick={onStyleHandler} type="none">
               건너뛰기
             </Box>
           )}

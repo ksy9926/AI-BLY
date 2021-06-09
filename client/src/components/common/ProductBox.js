@@ -9,6 +9,7 @@ import ScrollTop from "components/common/ScrollTop";
 
 export default function ProductBox({info, title, navbar, count, recommend}) {
   const classes = useStyles();
+  console.log("info: ", info);
 
   // 메인페이지 접속시 모든 아이템 출력
   return (
