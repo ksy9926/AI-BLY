@@ -22,7 +22,7 @@ export default function ItemLarge({ idx, data }) {
           <Box className={classes.mobileItemShortDescription}>{data["name"]}</Box>
           <Box className={classes.mobileItemDiscountPriceBox}>
             <Box className={classes.mobileItemDiscount}>{data["discount_rate"]}% OFF</Box>
-            <Box className={classes.mobileItemPrice}>{data["sale_price"]}$</Box>
+            <Box className={classes.mobileItemPrice}>$ {data["sale_price"]}</Box>
           </Box>
         </Box>
       </Box>

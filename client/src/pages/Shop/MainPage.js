@@ -18,11 +18,11 @@ export default function MainPage() {
   const category = useRecoilValue(categoryState);
   const [page, setPage] = useRecoilState(pageState);
   const [countAll, setCountAll] = useRecoilState(countAllState);
-  console.log("변수선언하는곳");
+  const [recommend, setRecommend] = useState([]);
+
 
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
-    console.log("메인페이지 접속/카테고리 변경");
     (async function () {
       await axios
         .get(
@@ -57,6 +57,23 @@ export default function MainPage() {
     }
   }, [page]);
 
+
+  // 메인페이지 접속시 스타일 선택했을 경우 로컬스토리지 기반 전체 추천 상품 추출
+
+  useEffect(() => {
+    const body = localStorage.getItem("styles");
+    if (body !== null) {
+      (async function () {
+        await axios
+          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+          .then((response) => {
+            console.log(response.data.recommend_list);
+            setRecommend(response.recommend_list)
+          });
+      })();
+    }
+  }, []);
+
   function ImageRecommendBox() {
     if (localStorage.getItem("jwt") === null) {
       return (
@@ -70,18 +87,25 @@ export default function MainPage() {
       return <SmallProductBox title="당신이 찾고 있는 상품" />;
     }
   }
-
+  function StyleRecommendBox() {
+    if (localStorage.getItem("styles") === null) {
+      return <Box />;
+    } else {
+      return <SmallProductBox title="당신을 위한 추천 상품" data={recommend}/>;
+    }
+  }
   return (
     <Mobile>
       <Box>
         <Navbar />
         <ImageRecommendBox />
-        <SmallProductBox title="선택하신 스타일 기반 추천 상품" />
+        <StyleRecommendBox />
         <ProductBox
           info={info}
-          title="해외직구 상품"
+          title="해외 직구 상품"
           count={countAll}
           navbar={true}
+          recommend={true}
         />
       </Box>
     </Mobile>

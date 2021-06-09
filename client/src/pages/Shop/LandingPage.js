@@ -25,6 +25,8 @@ function LandingPage() {
     })();
   }, []);
 
+
+
   // 이미지 선택 여부
   const onImageHandler = (event) => {
     const newChecked = !event.target.checked;
@@ -42,6 +44,9 @@ function LandingPage() {
       console.log(style);
       select.map((styleId) => style.push(checkList[styleId].feature));
       localStorage.setItem("styles", JSON.stringify(style));
+      history.push({
+        pathname: "/main",
+      });
     } else {
       history.push({
         pathname: "/main",

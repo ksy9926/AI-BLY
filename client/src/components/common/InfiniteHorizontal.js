@@ -6,7 +6,7 @@ import ItemSmall from "components/MainPage/ItemSmall";
 
 export default function InfiniteHorizontal({ info }) {
   const [products, setProducts] = useState([]);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(5);
   const classes = useStyles();
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
@@ -34,7 +34,6 @@ export default function InfiniteHorizontal({ info }) {
       next={() => fetchImages(count)}
       hasMore={count < 300 ? true : false}
       loader={<Loader />}
-      endMessage={<p>You have seen it all</p>}
     >
       {products.map((idx) => (
         <ItemSmall key={idx} idx={idx} data={info[idx]} />
