@@ -74,10 +74,8 @@ function LandingPage() {
 
   return (
     <Mobile>
-      <Box>
-        <Box>
-          <AppBar className={classes.mobileAppBar} elevation={0}>
-            <Toolbar>
+          <Box className={classes.mobileAppBar}>
+            <Box className={classes.mobileBar}>
               <Box className={classes.mobileGrow} />
               {select.length >= 3 ? (
                 <Box
@@ -96,9 +94,8 @@ function LandingPage() {
                   건너뛰기
                 </Box>
               )}
-            </Toolbar>
-          </AppBar>
-        </Box>
+            </Box>
+          </Box>
         <Box className={classes.mobileGlassBox}>
           <TextTitleComponent
             title="추천받고 싶은 스타일을 3개 이상 골라주세요"
@@ -110,7 +107,6 @@ function LandingPage() {
             {images}
           </Grid>
         </Box>
-      </Box>
     </Mobile>
   );
 }

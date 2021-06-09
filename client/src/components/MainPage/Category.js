@@ -18,7 +18,7 @@ export default function Category() {
 
   const categories = categoryKey.map((key, idx) =>
     activeButton === idx ? (
-      <Button
+      <Box
         onClick={() => {
           setActiveButton(idx);
           setCategory(categoryDict[key]);
@@ -26,10 +26,12 @@ export default function Category() {
         className={classes.mobileCategoryActiveButton}
         key={idx}
       >
+        <Box className={classes.mobileCategoryButtonText}>
         {key}
-      </Button>
+          </Box>
+      </Box>
     ) : (
-      <Button
+      <Box
         onClick={() => {
           setActiveButton(idx);
           setCategory(categoryDict[key]);
@@ -37,8 +39,10 @@ export default function Category() {
         className={classes.mobileCategoryButton}
         key={idx}
       >
+        <Box className={classes.mobileCategoryButtonText}>
         {key}
-      </Button>
+          </Box>
+      </Box>
     ),
   );
 

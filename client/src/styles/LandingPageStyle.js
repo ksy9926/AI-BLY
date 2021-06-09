@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "15px",
     margin: "10px",
-
     height: "85vh",
     whiteSpace: "wrap",
     overflowx: "hidden",
@@ -27,18 +26,30 @@ const useStyles = makeStyles((theme) => ({
 
   mobileAppBar: {
     background: "transparent",
-    position: "static",
   },
+  mobileBar:{
+    height:"56px",
+    display: "flex",
+    position: "relative",
+    alignContent: "center",
+    padding:"0px 15px 0px 15px"
+  },
+
+
   mobileGrow: {
     flexGrow: "1",
+    display: "block"
   },
   mobileNavbarSkip: {
     fontWeight: "bold",
     color: "var(--color-bg-title)",
+    lineHeight: "56px"
+
   },
   mobileNavbarSelect: {
     fontWeight: "bold",
-    color: "var(--color-bg-title)",
+    color: "var(--color-main-b)",
+    lineHeight: "56px"
   },
 
   mobileSmallPaddingBox: {
