@@ -119,6 +119,8 @@ function LoginPage() {
                   type="text"
                   value={id}
                   onChange={onChangeHandler}
+                  color= '#f77260'
+
                 />
                 <TextField
                   className={classes.mobileTextField}
@@ -129,6 +131,7 @@ function LoginPage() {
                   type="password"
                   value={password}
                   onChange={onChangeHandler}
+                  color= '#f77260'
                 />
                 <br />
               </Box>

@@ -14,7 +14,7 @@ function LandingPage() {
   const [select, setSelect] = useState([]);
   const [checked, setChecked] = useState([]);
   const [checkList, setCheckList] = useState([]);
-
+  const [style, setStyle] = useState([]);
   useEffect(() => {
     (async function () {
       await axios
@@ -29,6 +29,7 @@ function LandingPage() {
   // 이미지 선택 여부
   const onImageHandler = (event) => {
     const newChecked = !event.target.checked;
+    const feature = event.target.name
     setChecked({ ...checked, [event.target.id]: newChecked });
     newChecked
       ? setSelect([...select, event.target.id])
@@ -65,6 +66,7 @@ function LandingPage() {
           alt="none"
           key={idx}
           id={check.id}
+          name={check.feature}
           checked={checked[check.id]}
           onClick={onImageHandler}
         />

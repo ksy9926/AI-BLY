@@ -4,16 +4,20 @@ import { Box, Grid } from "@material-ui/core";
 import { useStyles } from "styles/ImageUploadPageStyles";
 import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRounded";
 import { useHistory } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { userState } from "recoil/atoms";
+
 
 export default function UploadImageComponent({ src, inputtype, user_id }) {
   const classes = useStyles();
   const [image, setImage] = useState(null);
   const history = useHistory();
+  const userId = useRecoilValue(userState);
+
 
   function onChangeImage(e) {
     e.preventDefault();
     setImage(e.target.files[0]);
-    console.log(image, "이미지 업로드 된거 체크");
   }
 
   function onClickimage(){
@@ -24,9 +28,12 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
+      console.log(image, "이미지 업로드 된거 체크");
+      console.log(image, userId);
+
       const formData = new FormData();
       formData.append("dress_img", image);
-      formData.append("user_id", localStorage.getItem("user"));
+      formData.append("user_id", userId)
       axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
         "content-type": "multipart/form-data",
