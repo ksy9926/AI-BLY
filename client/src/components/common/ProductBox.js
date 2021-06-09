@@ -13,9 +13,9 @@ export default function ProductBox({info, title, navbar, count}) {
   // 메인페이지 접속시 모든 아이템 출력
   return (
     <Box className={classes.mobileGlassLargeBox}>
-      
-      <Box className={classes.mobileRecommendMessageBox} id="product-box-title">
+      <Box className={classes.mobileProductBoxTitleBox} id="product-box-title">
         <Box className={classes.mobileRecommendMessage}>{title}</Box>
+        <Box className={classes.mobileProductBoxCountText}>{count}</Box>
       </Box>
       {navbar === true ? <Category /> : <Box/> }
       {info && info.length ? <Infinite info={info} /> : <Loader />}

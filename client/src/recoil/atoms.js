@@ -19,7 +19,6 @@ export const categoryKeyState = atom({
   key: "categoryKeyState",
   default: [
     "전체",
-    "추천상품",
     "높은가격순",
     "낮은가격순",
     "반팔",

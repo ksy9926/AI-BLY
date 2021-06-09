@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
   },
   mobileStyleBookBox: {
-    height: "34vh",
+    height: "25vh",
     borderRadius: "15px",
     fontSize: "18px",
   },
   mobileStyleBookTextBox: {
-    height: "15%",
+    height: "10%",
     display: "flex",
     justifyContent: "space-between",
   },

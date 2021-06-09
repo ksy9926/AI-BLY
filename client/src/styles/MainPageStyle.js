@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   // 메인페이지 전체
   mobileGlassBox: {
-    background: "rgba(255, 255, 255, 0.4)",
+    background: "rgba(255, 255, 255, 0.1)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
@@ -11,10 +11,9 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "15px",
     margin: "10px",
-    padding: "10px",
   },
   mobileGlassLargeBox: {
-    background: "rgba(255, 255, 255, 0.4)",
+    background: "rgba(255, 255, 255, 0.1)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
@@ -22,15 +21,9 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "15px",
     margin: "10px",
-    padding: "10px",
-    // height:"80vh",
-    // whiteSpace: "nowrap",
-    // overflowx: "hidden",
-    // overflowY: "auto",
-    // position: "relative",
   },
   mobileGlassItemBox: {
-    background: "rgba( 255, 255, 255, 0.4)",
+    background: "rgba( 255, 255, 255, 0.2)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
@@ -53,15 +46,51 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "black",
     borderRadius: "10px",
   },
-
   mobileRecommendMessageBox: {
-    marginLeft: "10px",
-    height: "5vh",
+    height: "25px",
     textAlign: "left",
-    lineHeight: "5vh",
+    background: "rgba(255, 255, 255, 0.2)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "15px 15px 0 0",
+    padding: "20px 15px 10px 20px",
+    display: "flex",
+    justifyContent: "space-between",
   },
+
+    mobileProductBoxTitleBox: {
+      height: "25px",
+      textAlign: "left",
+      background: "rgba(255, 255, 255, 0.2)",
+      backdropFilter: "blur(4px)",
+      "&::-webkit-backdrop-filter": {
+        backdropFilter: "blur(4px)",
+      },
+
+    borderRadius: "15px 15px 0 0",
+    padding: "20px 15px 0px 20px",
+    display: "flex",
+    justifyContent: "left",
+  },
+
+  mobileProductBoxCountText:{
+    fontSize: "15px",
+    color: "var(--color-gray)",
+    marginLeft:"10px",
+    lineHeight:"16px"
+  },
+
+  
   mobileRecommendMessage: {
-    fontSize: "18px",
+    fontSize: "16px",
+    color: "var(--color-black)",
+  },
+
+  mobileRecommendButton: {
+    fontSize: "15px",
     color: "var(--color-black)",
   },
   mobileRecommendTitleBox: {
@@ -82,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   // ItemSmall
   mobileGlassSmallItemBox: {
     width: "100px",
-    background: "rgba(255, 255, 255, 0.5)",
+    background: "rgba(255, 255, 255, 0.3)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.01)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
@@ -117,11 +146,29 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "5px",
   },
 
-  mobileItemSmDescription: {
-    display: "flex",
-    height: "75%",
+  mobileItemSmShortDescription: {
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+    textAlign: "left",
     color: "var(--color-gray)",
+    fontSize:"13px",
+    marginBottom: "4px",
+  },
+
+  mobileItemSmDiscountPriceBox: {
+    display: "flex",
+    justifyContent: "space-between",
+    fontSize: "15px",
+    marginBottom: "5px",
+  },
+  mobileItemSmDiscount: {
     fontWeight: "bold",
+    color: "var(--color-main-b)",
+  },
+  mobileItemSmPrice: {
+    fontWeight: "bold",
+    color: "var(--color-black)",
   },
 
   // ItemInfo
@@ -206,6 +253,11 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
+    background: "rgba(255, 255, 255, 0.2)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
   },
 
   mobileCategoryButton: {
@@ -218,6 +270,8 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "#F55129",
     },
+    border:"1px",
+    borderColor:"red"
   },
   mobileCategoryActiveButton: {
     borderRadius: "15px",
@@ -238,6 +292,7 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
+    padding:"10px"
   },
   //가로 인피니트 바
   mobileInfiniteHorizontal: {
@@ -246,6 +301,8 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
+    margin:"1px",
+    padding:"10px"
   },
 }));
 

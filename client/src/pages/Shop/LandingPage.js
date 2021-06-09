@@ -21,6 +21,7 @@ function LandingPage() {
         .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
         .then((response) => {
           setCheckList(response.data);
+          console.log(response.data)
         });
     })();
   }, []);
@@ -75,7 +76,7 @@ function LandingPage() {
     <Mobile>
       <Box>
         <Box>
-        <AppBar className={classes.mobileAppBar} elevation={0}>
+          <AppBar className={classes.mobileAppBar} elevation={0}>
             <Toolbar>
               <Box className={classes.mobileGrow} />
               {select.length >= 3 ? (
@@ -101,9 +102,13 @@ function LandingPage() {
         <Box className={classes.mobileGlassBox}>
           <TextTitleComponent
             title="추천받고 싶은 스타일을 3개 이상 골라주세요"
-            subtitle="많이 고르실수록 추천이 더욱더 정확해져요"
           />
-          <Grid container>{images}</Grid>
+          <Grid container>
+            <Box className={classes.mobileSubTitleBox}>
+              "많이 고르실수록 추천이 더욱더 정확해져요"
+            </Box>
+            {images}
+          </Grid>
         </Box>
       </Box>
     </Mobile>

@@ -22,41 +22,22 @@ export default function MainPage() {
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     console.log("메인페이지 접속/카테고리 변경");
-    if (category === "recommend") {
-      (async function () {
-        await axios
-          .get(
-            `${process.env.REACT_APP_API_URL}/api/recommend`, 
-          )
-          .then(async (response) => {
-            console.log(response.data.count);
-            console.log(response.data);
-            setPage(1);
-            setInfo(response.data.results);
-            setCountAll(response.data.count);
-          });
-        if (localStorage.getItem("username") !== null) {
-          setUsername(localStorage.getItem("username") + "님");
-        }
-      })();
-    } else {
-      (async function () {
-        await axios
-          .get(
-            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-          )
-          .then(async (response) => {
-            console.log(response.data.count);
-            console.log(response.data);
-            setPage(1);
-            setInfo(response.data.results);
-            setCountAll(response.data.count);
-          });
-        if (localStorage.getItem("username") !== null) {
-          setUsername(localStorage.getItem("username") + "님");
-        }
-      })();
-    }
+    (async function () {
+      await axios
+        .get(
+          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
+        )
+        .then(async (response) => {
+          console.log(response.data.count);
+          console.log(response.data);
+          setPage(1);
+          setInfo(response.data.results);
+          setCountAll(response.data.count);
+        });
+      if (localStorage.getItem("username") !== null) {
+        setUsername(localStorage.getItem("username") + "님");
+      }
+    })();
   }, [category]);
 
   useEffect(() => {
@@ -81,7 +62,12 @@ export default function MainPage() {
         <Navbar />
         <SmallProductBox title="당신이 찾고 있는 상품" />
         <SmallProductBox title="당신을 위한 추천 상품" />
-        <ProductBox info={info} title={`해외직구 상품 ${countAll}`} navbar={true} />
+        <ProductBox
+          info={info}
+          title="해외직구 상품"
+          count={countAll}
+          navbar={true}
+        />
       </Box>
     </Mobile>
   );
