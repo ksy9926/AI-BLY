@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "15px",
     margin: "10px",
-    padding: "10px",
     height: "85vh",
     whiteSpace: "nowrap",
     overflowx: "auto",
@@ -44,9 +43,15 @@ const useStyles = makeStyles((theme) => ({
   mobileTitleBox: {
     fontSize: "16px",
   },
-  mobileSubTitleBox: {
-    marginTop:"10px",
+  mobileSubTitleBox1: {
+    margin: "15px 10px 5px 20px",
     fontSize: "14px",
+    width: "100%",
+  },
+  mobileSubTitleBox2: {
+    margin: "5px 10px 5px 20px",
+    fontSize: "14px",
+    width: "100%",
   },
 
   //UploadImageComponent

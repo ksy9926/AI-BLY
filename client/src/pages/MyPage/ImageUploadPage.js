@@ -38,8 +38,13 @@ export default function ImageUploadPage({ match }) {
     if (imageData) {
       setImageList(
         imageData.map((data, idx) => (
-          <UploadImageComponent src={data.dress_img} inputtype="image" user_id={user_id} id={idx} />
-        )),
+          <UploadImageComponent
+            src={data.dress_img}
+            inputtype="image"
+            user_id={user_id}
+            id={idx}
+          />
+        ))
       );
     }
   }, [imageData]);
@@ -49,12 +54,14 @@ export default function ImageUploadPage({ match }) {
       <Box>
         <Navbar />
         <Box className={classes.mobileGlassBox}>
+          <TextTitleComponent title="엘리스님의 옷장" />
+          <Box className={classes.mobileSubTitleBox1}>
+            찾고싶은 상품의 이미지를 등록해주세요. 
+          </Box>
+          <Box className={classes.mobileSubTitleBox2}>
+            다양한 해외 쇼핑몰에서 비슷한 상품을 찾아드립니다
+          </Box>
           <Grid container>
-            <TextTitleComponent
-              title="엘리스님의 옷장"
-              subtitle="찾고싶은 상품의 이미지를 등록해주세요.
-               다양한 해외 쇼핑몰에서 비슷한 상품을 찾아드립니다"
-            />
             {imageList}
             <UploadImageComponent inputtype="empty" user_id={user_id} />
           </Grid>
