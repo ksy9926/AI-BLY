@@ -17,12 +17,10 @@ function LandingPage() {
 
   useEffect(() => {
     (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
-        .then((response) => {
-          setCheckList(response.data);
-          console.log(response.data)
-        });
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/stylelist/`).then((response) => {
+        setCheckList(response.data);
+        console.log("response.data: ", response.data);
+      });
     })();
   }, []);
 
@@ -33,12 +31,13 @@ function LandingPage() {
     newChecked
       ? setSelect([...select, event.target.id])
       : setSelect(select.filter((item) => item !== event.target.id));
-    console.log(select);
+    console.log("select:", select);
+    console.log("check.feature: ", event.target.getAttribute("data-feature"));
   };
 
   function onStyleHandler(e) {
     const type = e.target.getAttribute("type");
-    console.log(type);
+    console.log("type:", type);
     if (type === "selected") {
       localStorage.setItem("styles", select);
       history.push({
@@ -56,15 +55,12 @@ function LandingPage() {
       <Grid container className={classes.mobileImageButton}>
         <img
           className={classes.mobileImage}
-          style={
-            checked[check.id]
-              ? { border: "2px solid rgba(255, 255, 255, 0.9)" }
-              : null
-          }
+          style={checked[check.id] ? { border: "2px solid rgba(255, 255, 255, 0.9)" } : null}
           src={process.env.REACT_APP_API_URL + check.style_img}
           alt="none"
           key={idx}
           id={check.id}
+          data-feature={check}
           checked={checked[check.id]}
           onClick={onImageHandler}
         />
@@ -74,39 +70,29 @@ function LandingPage() {
 
   return (
     <Mobile>
-          <Box className={classes.mobileAppBar}>
-            <Box className={classes.mobileBar}>
-              <Box className={classes.mobileGrow} />
-              {select.length >= 3 ? (
-                <Box
-                  className={classes.mobileNavbarSelect}
-                  onClick={onStyleHandler}
-                  type="selected"
-                >
-                  선택하기
-                </Box>
-              ) : (
-                <Box
-                  className={classes.mobileNavbarSkip}
-                  onClick={onStyleHandler}
-                  type="none"
-                >
-                  건너뛰기
-                </Box>
-              )}
+      <Box className={classes.mobileAppBar}>
+        <Box className={classes.mobileBar}>
+          <Box className={classes.mobileGrow} />
+          {select.length >= 3 ? (
+            <Box className={classes.mobileNavbarSelect} onClick={onStyleHandler} type="selected">
+              선택하기
             </Box>
-          </Box>
-        <Box className={classes.mobileGlassBox}>
-          <TextTitleComponent
-            title="추천받고 싶은 스타일을 3개 이상 골라주세요"
-          />
-          <Grid container>
-            <Box className={classes.mobileSubTitleBox}>
-              "많이 고르실수록 추천이 더욱더 정확해져요"
+          ) : (
+            <Box className={classes.mobileNavbarSkip} onClick={onStyleHandler} type="none">
+              건너뛰기
             </Box>
-            {images}
-          </Grid>
+          )}
         </Box>
+      </Box>
+      <Box className={classes.mobileGlassBox}>
+        <TextTitleComponent title="추천받고 싶은 스타일을 3개 이상 골라주세요" />
+        <Grid container>
+          <Box className={classes.mobileSubTitleBox}>
+            "많이 고르실수록 추천이 더욱더 정확해져요"
+          </Box>
+          {images}
+        </Grid>
+      </Box>
     </Mobile>
   );
 }

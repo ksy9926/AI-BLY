@@ -11,7 +11,7 @@ export default function ItemLarge({ idx, data }) {
         <Box className={classes.mobileItemImageBox}>
           <img className={classes.mobileItemLgImage} src={data["thumnail"]} alt="옷"></img>
           <Box className={classes.mobileFavIconBox}>
-            <CustomFavoriteIcon idx={idx.toString()} />
+            <CustomFavoriteIcon idx={idx.toString()} product_id={data.id} data={data} />
           </Box>
         </Box>
         <Box className={classes.mobileItemInfoBox}>

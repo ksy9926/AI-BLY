@@ -6,9 +6,9 @@ import Infinite from "components/common/Infinite";
 import Category from "components/MainPage/Category";
 import ScrollTop from "components/common/ScrollTop";
 
-
-export default function ProductBox({info, title, navbar, count}) {
+export default function ProductBox({ info, title, navbar, count }) {
   const classes = useStyles();
+  console.log("info: ", info);
 
   // 메인페이지 접속시 모든 아이템 출력
   return (
@@ -17,10 +17,9 @@ export default function ProductBox({info, title, navbar, count}) {
         <Box className={classes.mobileRecommendMessage}>{title}</Box>
         <Box className={classes.mobileProductBoxCountText}>{count}</Box>
       </Box>
-      {navbar === true ? <Category /> : <Box/> }
+      {navbar === true ? <Category /> : <Box />}
       {info && info.length ? <Infinite info={info} /> : <Loader />}
       {/* <ScrollTop point="#product-box-title"/> */}
-
     </Box>
   );
 }
