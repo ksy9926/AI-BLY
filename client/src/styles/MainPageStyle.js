@@ -261,6 +261,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileCategoryButton: {
+    display:"inline-block",
     borderRadius: "15px",
     margin: "10px 6px",
     background: "rgba( 255, 255, 255, 0.4)",
@@ -270,9 +271,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "#F55129",
     },
-    border:"1px",
-    borderColor:"red"
+    width: "fit-content",
+    padding:"5px 15px 5px 15px"
+  
   },
+
+  mobileCategoryButtonText:{
+    boxSizing: "border-box",
+    fontWeight: "500"
+  },
+
   mobileCategoryActiveButton: {
     borderRadius: "15px",
     margin: "10px 6px",
@@ -284,6 +292,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
     },
+    width: "fit-content",
+    padding:"5px 15px 5px 15px",
+    display:"inline-block",
+
   },
   //세로 인피니트 바
   mobileInfinite: {

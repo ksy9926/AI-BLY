@@ -7,19 +7,21 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   mobileButton: {
     textDecoration: "none",
-    background: "var(--color-main-a)",
-    width: "70vw",
-    borderRadius: "15px",
-    color: "var(--color-bg-light)",
+    background: "rgb(255, 102, 98)",
+    width: "55vw",
+    borderRadius: "20px",
+    color: "white",
     underline: "none",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
 
     "&.MuiButton-root:hover": {
-      background: "var(--color-main-a)",
-      color: "var(--color-bg-light)",
+      background: "rgb(255, 102, 98)",
+      color: "white",
     },
   },
   mobileButtonText: {
-    fontSize: "20px",
+    fontSize: "13px",
     fontWeight: "Bold",
     underline: "none",
   },
