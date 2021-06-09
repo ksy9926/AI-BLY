@@ -17,55 +17,49 @@ export default function Infinite({ info, recommend }) {
 
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
-    if (cnt >= countAll - remainder) {
-      for (let i = cnt; i < cnt + remainder; i++) {
-        temp.push(i);
-      }
-      setProducts([...products, ...temp]);
-      setCount(countAll);
-    } else {
-      setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
-      setCount(cnt + 6);
-    }
+    console.log(info);
+    console.log(products);
+    setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
+    setCount(cnt + 6);
+    console.log(countAll, page + 1);
     if (cnt / page > 60 && countAll / 100 > page) {
       setPage(page + 1);
     }
   };
-  
+  console.log(countAll, remainder)
+
+  // const fetchImages = (cnt) => {
+  //   if (cnt >= countAll - remainder) {
+  //     for (let i = cnt; i < cnt + remainder; i++) {
+  //       temp.push(i);
+  //     }
+  //     setProducts([...products, ...temp]);
+  //     setCount(countAll);
+  //   } else {
+  //     setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
+  //     setCount(cnt + 6);
+  //   }
+  //   if (cnt / page > 60 && countAll / 100 > page) {
+  //     setPage(page + 1);
+  //   }
+  // };
+
   useEffect(() => {
     fetchImages(count);
   }, []);
 
-  if (recommend) {
-    return (
-      <InfiniteScroll
-        className={classes.mobileInfinite}
-        dataLength={products.length}
-        next={() => fetchImages(count)}
-        hasMore={count < countAll ? true : false}
-        loader={<Loader />}
-      >
-        {products.map((idx) => (
-          <ItemLarge key={idx} idx={idx} data={info[idx]} />
-        ))}
-      </InfiniteScroll>
-    );
-  } else {
-    return (
-      <InfiniteScroll
-        className={classes.mobileInfinite}
-        dataLength={products.length}
-        next={() => fetchImages(count)}
-        hasMore={count < countAll ? true : false}
-        loader={<Loader />}
-      >
-        {products.map((idx) => (
-          <ItemLarge key={idx} idx={idx} data={info[idx]} />
-        ))}
-      </InfiniteScroll>
-    );
-  }
-
-
-
+  return (
+    <InfiniteScroll
+      className={classes.mobileInfinite}
+      dataLength={products.length}
+      next={() => fetchImages(count)}
+      hasMore={count < countAll ? true : false}
+      loader={<Loader />}
+      endMessage={<p>you have seen it all</p>}
+    >
+      {products.map((idx) => (
+        <ItemLarge key={idx} idx={idx} data={info[idx]} recommend={true}/>
+      ))}
+    </InfiniteScroll>
+  );
 }

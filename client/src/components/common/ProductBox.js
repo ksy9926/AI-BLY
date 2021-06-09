@@ -9,7 +9,6 @@ import ScrollTop from "components/common/ScrollTop";
 
 export default function ProductBox({info, title, navbar, count, recommend}) {
   const classes = useStyles();
-  console.log("info: ", info);
 
   // 메인페이지 접속시 모든 아이템 출력
   return (
@@ -20,7 +19,7 @@ export default function ProductBox({info, title, navbar, count, recommend}) {
       </Box>
       {navbar === true ? <Category /> : <Box/> }
       {info && info.length ? <Infinite info={info} recommend={recommend}/> : <Loader />}
-      <ScrollTop point="#product-box-title"/>
+      {/* <ScrollTop point="#product-box-title"/> */}
     </Box>
   );
 }

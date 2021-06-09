@@ -36,7 +36,7 @@ export default function InfiniteHorizontal({ info }) {
       loader={<Loader />}
     >
       {products.map((idx) => (
-        <ItemSmall key={idx} idx={idx} data={info[idx]} />
+        <ItemSmall key={idx} idx={idx} data={info[idx]}  />
       ))}
     </InfiniteScroll>
   );

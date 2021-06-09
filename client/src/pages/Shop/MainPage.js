@@ -20,29 +20,24 @@ export default function MainPage() {
   const [countAll, setCountAll] = useRecoilState(countAllState);
   const [recommend, setRecommend] = useState([]);
 
-
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function () {
-      await axios
-        .get(
-          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-        )
-        .then(async (response) => {
-          console.log(response.data.count);
-          console.log(response.data);
-          setPage(1);
-          setInfo(response.data.results);
-          setCountAll(response.data.count);
-        });
-      if (localStorage.getItem("username") !== null) {
-        setUsername(localStorage.getItem("username") + "님");
-      }
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
+      .then(async (response) => {
+        setPage(1);
+        setInfo(response.data.results);
+        setCountAll(response.data.count);
+      });
     })();
+
+    if (localStorage.getItem("username") !== null) {
+      setUsername(localStorage.getItem("username") + "님");
+    }
   }, [category]);
 
   useEffect(() => {
-    console.log("페이지 추가 ", page);
     if (page > 1) {
       (async function () {
         await axios
@@ -50,27 +45,28 @@ export default function MainPage() {
             `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
           )
           .then((response) => {
-            console.log(response.data.results);
             setInfo([...info, ...response.data.results]);
           });
       })();
     }
   }, [page]);
 
-
   // 메인페이지 접속시 스타일 선택했을 경우 로컬스토리지 기반 전체 추천 상품 추출
 
   useEffect(() => {
     const body = localStorage.getItem("styles");
+    const recommendList = []
     if (body !== null) {
-      (async function () {
-        await axios
-          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-          .then((response) => {
-            console.log(response.data.recommend_list);
-            setRecommend(response.recommend_list)
-          });
-      })();
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+        .then((response) => {
+          console.log(response.data.recommend_list);
+          response.data.recommend_list.map((productList) =>
+            productList.map((product) => recommendList.push(product))
+          );
+          console.log("recommend", recommendList);
+          setRecommend(recommendList)
+        });
     }
   }, []);
 
@@ -87,19 +83,13 @@ export default function MainPage() {
       return <SmallProductBox title="당신이 찾고 있는 상품" />;
     }
   }
-  function StyleRecommendBox() {
-    if (localStorage.getItem("styles") === null) {
-      return <Box />;
-    } else {
-      return <SmallProductBox title="당신을 위한 추천 상품" data={recommend}/>;
-    }
-  }
+
   return (
     <Mobile>
       <Box>
         <Navbar />
-        <ImageRecommendBox />
-        <StyleRecommendBox />
+        <ImageRecommendBox/>
+        <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />
         <ProductBox
           info={info}
           title="해외 직구 상품"
