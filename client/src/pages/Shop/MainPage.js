@@ -57,25 +57,26 @@ export default function MainPage() {
     }
   }, [page]);
 
-  return (
-    <Mobile>
-      <Box>
-        <Navbar />
+  function ImageRecommendBox() {
+    if (localStorage.getItem("jwt") === null) {
+      return (
         <NoProductBox
           title="당신이 찾고 있는 상품"
           text="클로젯에 이미지를 등록하면 유사한 상품을 찾아드려요."
           button="사진 추가하기"
         />
-        <SmallProductBox title="당신이 찾고 있는 상품" />
+      );
+    } else {
+      return <SmallProductBox title="당신이 찾고 있는 상품" />;
+    }
+  }
+
+  return (
+    <Mobile>
+      <Box>
+        <Navbar />
+        <ImageRecommendBox />
         <SmallProductBox title="선택하신 스타일 기반 추천 상품" />
-        <ProductBox
-          info={info}
-          title="해외직구 상품"
-          count={countAll}
-          navbar={true}
-        />
-        {/* <SmallProductBox title="당신이 찾고 있는 상품" /> */}
-        <SmallProductBox title="당신을 위한 추천 상품" />
         <ProductBox
           info={info}
           title="해외직구 상품"

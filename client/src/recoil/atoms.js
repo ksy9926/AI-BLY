@@ -85,3 +85,7 @@ export const styleState = atom({
   default: [],
 });
 
+export const previousPageState = atom({
+  key: "previousPageState",
+  default: "",
+});
