@@ -14,7 +14,7 @@ export default function ProductBox({ info, title, navbar, count }) {
           <Box className={classes.mobileRecommendMessage}>{title}</Box>
           <Box className={classes.mobileRecommendButton}> {buttontext} </Box>
         </Box>
-      <InfiniteHorizontal info={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,1,1,11,1,1,1]} />
+      <InfiniteHorizontal info={[1]} />
       </Box>
     </Grid>
   );
