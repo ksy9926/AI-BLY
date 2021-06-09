@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/register/closet" component={RegisterClosetPage} />
         <Route exact path="/mypage" component={MyPage} />
-        <Route exact path="/imgupload" component={ImageUploadPage} />
+        <Route exact path="/closet" component={ImageUploadPage} />
         <Route exact path="/smlritem" component={SimilarItemPage} />
         <Route exact path="/likeitem" component={LikeItemPage} />
         <Route exact path="/rcntitem" component={RecentItemPage} />

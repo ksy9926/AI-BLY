@@ -31,18 +31,16 @@ function LandingPage() {
     newChecked
       ? setSelect([...select, event.target.id])
       : setSelect(select.filter((item) => item !== event.target.id));
-    console.log("select:", select);
-    console.log("check.feature: ", event.target.getAttribute("data-feature"));
   };
 
   function onStyleHandler(e) {
     const type = e.target.getAttribute("type");
-    console.log("type:", type);
+    console.log(select);
+    const style = [];
     if (type === "selected") {
-      localStorage.setItem("styles", select);
-      history.push({
-        pathname: "/main",
-      });
+      console.log(style);
+      select.map((styleId) => style.push(checkList[styleId].feature));
+      localStorage.setItem("styles", JSON.stringify(style));
     } else {
       history.push({
         pathname: "/main",
@@ -60,7 +58,7 @@ function LandingPage() {
           alt="none"
           key={idx}
           id={check.id}
-          data-feature={check}
+          name={check.feature}
           checked={checked[check.id]}
           onClick={onImageHandler}
         />

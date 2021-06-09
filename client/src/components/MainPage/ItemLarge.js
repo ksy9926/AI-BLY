@@ -5,6 +5,7 @@ import useStyles from "styles/MainPageStyle";
 
 export default function ItemLarge({ idx, data }) {
   const classes = useStyles();
+
   return (
     <Grid className={classes.mobileGridBox} item xs={6}>
       <Box className={classes.mobileGlassItemBox}>

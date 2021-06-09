@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
   mobileTextField: {
     margin: "0.5vw",
+    fontSize:"12px"
   },
   mobileButtonBox: {
     height: "20vh",
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   mobileLinkBox: {
     position: "absolute",
     top: "15vh",
+    fontSize:"12px"
   },
 
   // RegisterClosetPage

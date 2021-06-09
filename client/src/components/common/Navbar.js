@@ -7,6 +7,7 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
@@ -28,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
 
 function AccountCircleButton() {
   const classes = useStyles();
+  const location = useLocation();
+  console.log(location.pathname === "/mypage");
 
   if (localStorage.getItem("jwt") === null) {
     return (
@@ -35,6 +38,8 @@ function AccountCircleButton() {
         <AccountCircle className={classes.mobileAccountCircleIcon} />
       </Link>
     );
+  } else if (location === `/mypage`) {
+    return <Box />;
   } else {
     return (
       <Link to="/mypage">

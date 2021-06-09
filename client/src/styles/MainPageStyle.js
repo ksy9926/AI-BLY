@@ -117,14 +117,15 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileTextBox: {
     height: "14vh",
-    width: "85%",
+    width: "95%",
     display: "flex",
     alignItems: "center",
     whiteSpace: "normal",
     textAlign: "center",
-    padding: "10px",
+    padding: "5px",
     justifyContent: "center",
     flexDirection: "column",
+    fontSize: "14px"
   },
   mobileButtonBox: {
     height: "9vh",
@@ -174,14 +175,14 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: "ellipsis",
     textAlign: "left",
     color: "var(--color-gray)",
-    fontSize: "13px",
-    marginBottom: "4px",
+    fontSize: "12px",
+    marginBottom: "5px",
   },
 
   mobileItemSmDiscountPriceBox: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "15px",
+    fontSize: "12px",
     marginBottom: "5px",
   },
   mobileItemSmDiscount: {

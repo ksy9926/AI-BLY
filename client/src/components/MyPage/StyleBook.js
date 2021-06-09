@@ -17,41 +17,41 @@ function StyleBook() {
   }
 
   return (
-    <Link to="/imgupload">
-      <Box className={classes.mobileGlassBox}>
-        <Box item className={classes.mobileStyleBookBox}>
-          <Box className={classes.mobileStyleBookTextBox}>
-            <Box className={classes.mobileStyleBookText}>{title}</Box>
+    <Box className={classes.mobileGlassBox}>
+      <Box item className={classes.mobileStyleBookBox}>
+        <Box className={classes.mobileStyleBookTextBox}>
+          <Box className={classes.mobileStyleBookText}>{title}</Box>
+          <Link to="/closet">
             <Box className={classes.mobileStyleBookText}>
               더보기 <ArrowForwardIosIcon style={{ fontSize: "1rem" }} />
             </Box>
-          </Box>
-          <Grid container className={classes.mobileStyleBookImageBox}>
-            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
-              <img
-                className={classes.mobileImage}
-                src={imagePath}
-                alt="clothes"
-              />
-            </Grid>
-            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
-              <img
-                className={classes.mobileImage}
-                src={imagePath}
-                alt="clothes"
-              />
-            </Grid>
-            <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
-              <img
-                className={classes.mobileImage}
-                src={imagePath}
-                alt="clothes"
-              />
-            </Grid>
-          </Grid>
+          </Link>
         </Box>
+        <Grid container className={classes.mobileStyleBookImageBox}>
+          <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+            <img
+              className={classes.mobileImage}
+              src={imagePath}
+              alt="clothes"
+            />
+          </Grid>
+          <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+            <img
+              className={classes.mobileImage}
+              src={imagePath}
+              alt="clothes"
+            />
+          </Grid>
+          <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+            <img
+              className={classes.mobileImage}
+              src={imagePath}
+              alt="clothes"
+            />
+          </Grid>
+        </Grid>
       </Box>
-    </Link>
+    </Box>
   );
 }
 
