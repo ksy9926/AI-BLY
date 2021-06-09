@@ -61,7 +61,7 @@ export default function MainPage() {
       <Box>
         <Navbar />
         <SmallProductBox title="당신이 찾고 있는 상품" />
-        <SmallProductBox title="당신을 위한 추천 상품" />
+        <SmallProductBox title="선택하신 스타일 기반 추천 상품" />
         <ProductBox
           info={info}
           title="해외직구 상품"

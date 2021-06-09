@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Checkbox, Box } from "@material-ui/core";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import axios from "axios";
+
 
 export default function CustomFavoriteIcon({ idx }) {
   const [favorite, setFavorite] = useState({});
@@ -9,7 +11,12 @@ export default function CustomFavoriteIcon({ idx }) {
   // 찜하기 체크 여부
   const onLikeChange = (event) => {
     setFavorite({ ...favorite, [event.target.name]: event.target.checked });
+    axios.get(
+        `${process.env.REACT_APP_API_URL}/api/fashion/like`
+      )
   };
+
+
 
   return (
     <Box>

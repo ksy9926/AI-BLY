@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-import firstpageBackground from "firstpage.png"
+import firstpageBackground from "firstpage.png";
 const useStyles = makeStyles((theme) => ({
   mobileFirstPageBox: {
     width: "100vw",
@@ -9,8 +9,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    backgroundImage: `url(${firstpageBackground})`
-
+    backgroundImage: `url(${firstpageBackground})`,
   },
   mobileSubTitle: {
     color: "var(--color-gray)",
@@ -55,24 +54,41 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
     },
-    borderRadius: "15px",
+    borderRadius: "15px  15px 5px 5px",
     whiteSpace: "wrap",
     overflowx: "hidden",
     overflowY: "auto",
     "&::-webkit-scrollbar": {
       display: "none",
     },
+
   },
   mobileGlassTextBox: {
-    padding: "20px",
+    padding: "15px",
+    fontSize: "14px",
+
+  },
+  mobileGlassSubText: {
+    margin:"5px"
   },
   mobileImg: {
     display: "block",
     width: "100%",
   },
-  mobileLogoimage:{
-    width:"50vw"
-  }
+  mobileLogoimage: {
+    width: "50vw",
+  },
+
+
+  //User
+
+  mobileBar:{
+    height:"56px",
+    display: "flex",
+    position: "relative",
+    alignContent: "center",
+    padding:"0px 15px 0px 15px"
+  },
 }));
 
 export default useStyles;
