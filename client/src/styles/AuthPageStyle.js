@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileGlassBox: {
     width: "85vw",
-    background: "rgba(255, 255, 255, 0.4)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+    background: "rgba(255, 255, 255, 0.3)",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
