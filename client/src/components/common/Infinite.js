@@ -17,8 +17,8 @@ export default function Infinite({ info }) {
   const fetchImages = (cnt) => {
     console.log(info);
     console.log(products);
-    setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4]);
-    setCount(cnt + 5);
+    setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
+    setCount(cnt + 6);
     console.log(countAll, page + 1);
     if (cnt / page > 60 && countAll / 100 > page) {
       setPage(page + 1);

@@ -3,14 +3,14 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   mobileGlassBox: {
     background: "rgba(255, 255, 255, 0.4)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
+  
     backdropFilter: "blur(4px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
     },
     borderRadius: "15px",
     margin: "10px",
-    padding: "10px",
+
     height:"85vh",
     whiteSpace: "wrap",
     overflowx: "hidden",
@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  mobileSubTitleBox: {
+    margin:"15px 10px 10px 20px",
+    fontSize: "14px",
+    width:"100%"
+  },
+
   mobileAppBar: {
     background: "transparent",
     position: "static",
@@ -26,13 +32,13 @@ const useStyles = makeStyles((theme) => ({
   mobileGrow: {
     flexGrow: "1",
   },
+  mobileNavbarSkip: {
+    fontWeight: "bold",
+    color: "var(--color-bg-title)",
+  },
   mobileNavbarSelect: {
     fontWeight: "bold",
     color: "white",
-  },
-  mobileNavbarSkip: {
-    fontWeight: "bold",
-    color: "var(--color-bg-light)",
   },
 
   mobileSmallPaddingBox: {

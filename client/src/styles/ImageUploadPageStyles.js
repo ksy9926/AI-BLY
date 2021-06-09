@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
     padding: "10px",
-    height:"85vh",
+    height: "85vh",
     whiteSpace: "nowrap",
     overflowx: "auto",
     overflowY: "hidden",
@@ -29,14 +29,24 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   // TextTitleComponent
-  mobileTitleBox: {
-    margin: "10px",
-    fontSize:"18px"
 
+  mobileTextTitle: {
+    background: "rgba(255, 255, 255, 0.4)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    height: "25px",
+    borderRadius: "15px 15px 10px 10px",
+    padding: "20px 10px 10px 20px",
+  },
+
+  mobileTitleBox: {
+    fontSize: "16px",
   },
   mobileSubTitleBox: {
-    margin: "10px",
-    fontSize:"14px"
+    marginTop:"10px",
+    fontSize: "14px",
   },
 
   //UploadImageComponent
