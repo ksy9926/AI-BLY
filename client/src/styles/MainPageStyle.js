@@ -61,14 +61,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
 
-    mobileProductBoxTitleBox: {
-      height: "25px",
-      textAlign: "left",
-      background: "rgba(255, 255, 255, 0.2)",
+  mobileProductBoxTitleBox: {
+    height: "25px",
+    textAlign: "left",
+    background: "rgba(255, 255, 255, 0.2)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(4px)",
-      "&::-webkit-backdrop-filter": {
-        backdropFilter: "blur(4px)",
-      },
+    },
 
     borderRadius: "15px 15px 0 0",
     padding: "20px 15px 0px 20px",
@@ -76,14 +76,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "left",
   },
 
-  mobileProductBoxCountText:{
+  mobileProductBoxCountText: {
     fontSize: "15px",
     color: "var(--color-gray)",
-    marginLeft:"10px",
-    lineHeight:"16px"
+    marginLeft: "10px",
+    lineHeight: "16px",
   },
 
-  
   mobileRecommendMessage: {
     fontSize: "16px",
     color: "var(--color-black)",
@@ -106,6 +105,29 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace: "nowrap",
     overflowX: "auto",
     overflowY: "hidden",
+  },
+  // NoProductBox
+  mobileNoProductBox: {
+    textAlign: "center",
+    display: "flex",
+    padding: "10px",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  mobileTextBox: {
+    height: "14vh",
+    width: "85%",
+    display: "flex",
+    alignItems: "center",
+    whiteSpace: "normal",
+    textAlign: "center",
+    padding: "10px",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
+  mobileButtonBox: {
+    height: "9vh",
   },
 
   // ItemSmall
@@ -152,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: "ellipsis",
     textAlign: "left",
     color: "var(--color-gray)",
-    fontSize:"13px",
+    fontSize: "13px",
     marginBottom: "4px",
   },
 
@@ -270,8 +292,8 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "var(--color-main-b)",
       color: "#F55129",
     },
-    border:"1px",
-    borderColor:"red"
+    border: "1px",
+    borderColor: "red",
   },
   mobileCategoryActiveButton: {
     borderRadius: "15px",
@@ -292,7 +314,7 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
-    padding:"10px"
+    padding: "10px",
   },
   //가로 인피니트 바
   mobileInfiniteHorizontal: {
@@ -301,8 +323,8 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
-    margin:"1px",
-    padding:"10px"
+    margin: "1px",
+    padding: "10px",
   },
 }));
 

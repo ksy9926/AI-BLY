@@ -6,6 +6,7 @@ import Navbar from "components/common/Navbar";
 import axios from "axios";
 import ProductBox from "components/common/ProductBox";
 import SmallProductBox from "components/common/SmallProductBox";
+import NoProductBox from "components/common/NoProductBox";
 
 import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 import { categoryState, pageState, countAllState } from "recoil/atoms";
@@ -24,9 +25,7 @@ export default function MainPage() {
     console.log("메인페이지 접속/카테고리 변경");
     (async function () {
       await axios
-        .get(
-          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-        )
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
         .then(async (response) => {
           console.log(response.data.count);
           console.log(response.data);
@@ -45,9 +44,7 @@ export default function MainPage() {
     if (page > 1) {
       (async function () {
         await axios
-          .get(
-            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
-          )
+          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
           .then((response) => {
             console.log(response.data.results);
             setInfo([...info, ...response.data.results]);
@@ -60,14 +57,14 @@ export default function MainPage() {
     <Mobile>
       <Box>
         <Navbar />
-        <SmallProductBox title="당신이 찾고 있는 상품" />
-        <SmallProductBox title="당신을 위한 추천 상품" />
-        <ProductBox
-          info={info}
-          title="해외직구 상품"
-          count={countAll}
-          navbar={true}
+        <NoProductBox
+          title="당신이 찾고 있는 상품"
+          text="클로젯에 이미지를 등록하면 유사한 상품을 찾아드려요."
+          button="사진 추가하기"
         />
+        {/* <SmallProductBox title="당신이 찾고 있는 상품" /> */}
+        <SmallProductBox title="당신을 위한 추천 상품" />
+        <ProductBox info={info} title="해외직구 상품" count={countAll} navbar={true} />
       </Box>
     </Mobile>
   );
