@@ -175,14 +175,14 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: "ellipsis",
     textAlign: "left",
     color: "var(--color-gray)",
-    fontSize: "13px",
-    marginBottom: "4px",
+    fontSize: "12px",
+    marginBottom: "5px",
   },
 
   mobileItemSmDiscountPriceBox: {
     display: "flex",
     justifyContent: "space-between",
-    fontSize: "15px",
+    fontSize: "12px",
     marginBottom: "5px",
   },
   mobileItemSmDiscount: {

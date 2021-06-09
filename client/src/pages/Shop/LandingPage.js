@@ -14,14 +14,13 @@ function LandingPage() {
   const [select, setSelect] = useState([]);
   const [checked, setChecked] = useState([]);
   const [checkList, setCheckList] = useState([]);
-  const [style, setStyle] = useState([]);
+
   useEffect(() => {
     (async function () {
       await axios
         .get(`${process.env.REACT_APP_API_URL}/api/stylelist/`)
         .then((response) => {
           setCheckList(response.data);
-          console.log(response.data)
         });
     })();
   }, []);
@@ -29,28 +28,27 @@ function LandingPage() {
   // 이미지 선택 여부
   const onImageHandler = (event) => {
     const newChecked = !event.target.checked;
-    const feature = event.target.name
     setChecked({ ...checked, [event.target.id]: newChecked });
     newChecked
       ? setSelect([...select, event.target.id])
       : setSelect(select.filter((item) => item !== event.target.id));
-    console.log(select);
   };
 
   function onStyleHandler(e) {
     const type = e.target.getAttribute("type");
-    console.log(type);
+    console.log(select);
+    const style = [];
     if (type === "selected") {
-      localStorage.setItem("styles", select);
-      history.push({
-        pathname: "/main",
-      });
+      console.log(style);
+      select.map((styleId) => style.push(checkList[styleId].feature));
+      localStorage.setItem("styles", JSON.stringify(style));
     } else {
       history.push({
         pathname: "/main",
       });
     }
   }
+
 
   const images = checkList.map((check, idx) => (
     <Grid className={classes.mobileSmallPaddingBox} item xs={4}>
@@ -76,39 +74,37 @@ function LandingPage() {
 
   return (
     <Mobile>
-          <Box className={classes.mobileAppBar}>
-            <Box className={classes.mobileBar}>
-              <Box className={classes.mobileGrow} />
-              {select.length >= 3 ? (
-                <Box
-                  className={classes.mobileNavbarSelect}
-                  onClick={onStyleHandler}
-                  type="selected"
-                >
-                  선택하기
-                </Box>
-              ) : (
-                <Box
-                  className={classes.mobileNavbarSkip}
-                  onClick={onStyleHandler}
-                  type="none"
-                >
-                  건너뛰기
-                </Box>
-              )}
+      <Box className={classes.mobileAppBar}>
+        <Box className={classes.mobileBar}>
+          <Box className={classes.mobileGrow} />
+          {select.length >= 3 ? (
+            <Box
+              className={classes.mobileNavbarSelect}
+              onClick={onStyleHandler}
+              type="selected"
+            >
+              선택하기
             </Box>
-          </Box>
-        <Box className={classes.mobileGlassBox}>
-          <TextTitleComponent
-            title="추천받고 싶은 스타일을 3개 이상 골라주세요"
-          />
-          <Grid container>
-            <Box className={classes.mobileSubTitleBox}>
-              "많이 고르실수록 추천이 더욱더 정확해져요"
+          ) : (
+            <Box
+              className={classes.mobileNavbarSkip}
+              onClick={onStyleHandler}
+              type="none"
+            >
+              건너뛰기
             </Box>
-            {images}
-          </Grid>
+          )}
         </Box>
+      </Box>
+      <Box className={classes.mobileGlassBox}>
+        <TextTitleComponent title="추천받고 싶은 스타일을 3개 이상 골라주세요" />
+        <Grid container>
+          <Box className={classes.mobileSubTitleBox}>
+            "많이 고르실수록 추천이 더욱더 정확해져요"
+          </Box>
+          {images}
+        </Grid>
+      </Box>
     </Mobile>
   );
 }
