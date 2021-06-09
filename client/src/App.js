@@ -12,7 +12,7 @@ import RecentItemPage from "pages/MyPage/RecentItemPage";
 import RecommendItemPage from "pages/Shop/RecommendItemPage";
 import LikeItemPage from "pages/MyPage/LikeItemPage";
 import TutorialPage from "pages/TutorialPage";
-// import TutorialPage from "pages/Shop/TutorialPage";
+import StartPage from "pages/Shop/TutorialPage";
 
 axios.defaults.withCredentials = true;
 
@@ -32,6 +32,7 @@ function App() {
         <Route exact path="/rcntitem" component={RecentItemPage} />
         <Route exact path="/rcmditem" component={RecommendItemPage} />
         <Route exact path="/" component={TutorialPage} />
+        <Route exact path="/start" component={StartPage} />
       </Switch>
     </Router>
   );

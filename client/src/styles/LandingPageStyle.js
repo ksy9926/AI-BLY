@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
     padding: "10px",
-    height:"85vh",
+    height: "85vh",
     whiteSpace: "wrap",
     overflowx: "hidden",
     overflowY: "auto",
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileNavbarSkip: {
     fontWeight: "bold",
-    color: "var(--color-bg-light)",
+    color: "var(--color-bg-title)",
   },
 
   mobileSmallPaddingBox: {

@@ -28,6 +28,7 @@ function Toast({ text, severity }) {
         style={{
           borderRadius: "15px",
           background: "rgba(255, 255, 255, 0.3)",
+          color: "black",
         }}
         onClose={handleClose}
         severity={severity}
