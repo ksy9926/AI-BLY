@@ -77,3 +77,8 @@ body {
   flex-grow: 1;
 }
 
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: transparent
+}
+
