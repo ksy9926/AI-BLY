@@ -11,9 +11,9 @@ export default function LandingPage() {
   const classes = useStyles();
   const grow = true;
   const history = useHistory();
-  // if (localStorage.getItem("jwt") !== null) {
-  //   history.push("/main");
-  // }
+  if (localStorage.getItem("jwt") !== null) {
+    history.push("/main");
+  }
 
   return (
     <Mobile>
