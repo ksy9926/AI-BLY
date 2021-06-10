@@ -6,13 +6,14 @@ import Navbar from "components/common/Navbar";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
 import ProductBox from "components/common/ProductBox";
-import { useRecoilState } from "recoil";
-import { countAllState } from "recoil/atoms";
+import { useSetRecoilState, useRecoilState } from "recoil";
+import { countAllState, updateState } from "recoil/atoms";
 
 export default function LikeItemPage() {
   const classes = useStyles();
   const [info, setInfo] = useState([]);
-  const [countAll, setCountAll] = useRecoilState(countAllState);
+  const setCountAll = useSetRecoilState(countAllState);
+  const [update, setUpdate] = useRecoilState(updateState);
 
   // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
@@ -24,21 +25,16 @@ export default function LikeItemPage() {
           },
         })
         .then((response) => {
-          console.log(
-            "likeproduct response: ",
-            response.data.map((item) => {
-              return item.product_id.id;
-            }),
-          );
           setCountAll(response.data.length);
           setInfo(
             response.data.map((item) => {
               return item.product_id;
             }),
           );
+          setUpdate(false);
         });
     })();
-  }, []);
+  }, [update]);
 
   if (info.length > 0) {
     return (
