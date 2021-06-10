@@ -17,7 +17,12 @@ export default function ProductBox({ title, text, button }) {
             <span>{text}</span>
           </Box>
           <Box className={classes.mobileButtonBox} onClick={() => {}}>
-            <Buttons className={classes.mobileButton} variant="contained" text={button} url="/closet" />
+            <Buttons
+              className={classes.mobileButton}
+              variant="contained"
+              text={button}
+              url="/closet"
+            />
           </Box>
         </Box>
       </Box>
