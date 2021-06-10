@@ -18,11 +18,8 @@ export default function MainPage() {
   const [countAll, setCountAll] = useRecoilState(countAllState);
   const [recommend, setRecommend] = useState([]);
   const body = localStorage.getItem("styles");
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 169bb6bce363ed3f559ee236aaabb4fb1f19d9e0
+  
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function mainItem () {
@@ -56,54 +53,6 @@ export default function MainPage() {
 
   // 메인페이지 접속시 스타일 선택했을 경우 로컬스토리지 기반 전체 추천 상품 추출
 
-<<<<<<< HEAD
-  useEffect(() => {
-    const body = localStorage.getItem("styles");
-    console.log(body);
-    const recommendList = [];
-    if (body !== null) {
-      (async function recommendItem() {
-        console.log("recommend", recommendList);
-
-        await axios
-          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-          .then((response) => {
-            console.log(response.data.recommend_list);
-            response.data.recommend_list.map((productList) =>
-              productList.map((product) => recommendList.push(product)),
-            );
-
-            setRecommend(recommendList);
-            console.log("next-recommend", recommendList);
-          });
-          return recommendList
-      })();
-    }
-  }, []);
-
-  function ImageRecommendBox() {
-
-
-    if (localStorage.getItem("jwt") === null) {
-      return (
-        <NoProductBox
-          title="당신이 찾고 있는 상품"
-          text="클로젯에 이미지를 등록하면 유사한 상품을 찾아드려요."
-          button="사진 추가하기"
-        />
-      );
-    } else {
-      return <SmallProductBox title="당신이 찾고 있는 상품" />;
-    }
-  }
-  function StyleRecommendBox() {
-    if (localStorage.getItem("styles") === null) {
-      return <Box />;
-    } else {
-      return <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />;
-    }
-  }
-=======
   // useEffect(() => {
   //   const body = localStorage.getItem("styles");
   //   const recommendList = [];
@@ -132,7 +81,6 @@ export default function MainPage() {
   //     return <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />;
   //   }
   // }
->>>>>>> 169bb6bce363ed3f559ee236aaabb4fb1f19d9e0
 
   return (
     <Mobile>
