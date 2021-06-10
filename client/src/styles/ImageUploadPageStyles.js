@@ -10,11 +10,12 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   mobileGlassBox: {
-    background: "rgba(255, 255, 255, 0.4)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    background: "rgba(255, 255, 255, 0.2)",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     margin: "10px",
@@ -30,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
   // TextTitleComponent
 
   mobileTextTitle: {
-    background: "rgba(255, 255, 255, 0.4)",
-    backdropFilter: "blur(4px)",
+    background: "rgba(255, 255, 255, 0.2)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     height: "25px",
     borderRadius: "15px 15px 10px 10px",
@@ -64,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignContent: "center",
     outline: "none",
-    background: "rgba(255, 255, 255, 0.01)",
+    background: "rgba(255, 255, 255, 0.02)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.4)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
   },
   mobileImage: {
@@ -76,6 +77,8 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     width: "100%",
     borderRadius: "15px",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
   },
   mobileInput: {
     display: " none",

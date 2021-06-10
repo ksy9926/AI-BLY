@@ -3,31 +3,34 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   // 메인페이지 전체
   mobileGlassBox: {
-    background: "rgba(255, 255, 255, 0.1)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    background: "rgba(255, 255, 255, 0.2)",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     margin: "10px",
   },
   mobileGlassLargeBox: {
-    background: "rgba(255, 255, 255, 0.1)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    background: "rgba(255, 255, 255, 0.2)",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     margin: "10px",
   },
   mobileGlassItemBox: {
     background: "rgba( 255, 255, 255, 0.2)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
-    backdropFilter: "blur(4px)",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "10px",
     margin: "5px",
@@ -51,9 +54,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     background: "rgba(255, 255, 255, 0.2)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px 15px 0 0",
     padding: "20px 15px 10px 20px",
@@ -65,9 +68,9 @@ const useStyles = makeStyles((theme) => ({
     height: "25px",
     textAlign: "left",
     background: "rgba(255, 255, 255, 0.2)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
 
     borderRadius: "15px 15px 0 0",
@@ -134,11 +137,11 @@ const useStyles = makeStyles((theme) => ({
   // ItemSmall
   mobileGlassSmallItemBox: {
     width: "100px",
-    background: "rgba(255, 255, 255, 0.3)",
+    background: "rgba(255, 255, 255, 0.2)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.01)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "10px",
     marginRight: "10px",
@@ -279,9 +282,9 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
     background: "rgba(255, 255, 255, 0.2)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
   },
 
@@ -289,8 +292,10 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     borderRadius: "15px",
     margin: "10px 6px",
-    background: "rgba( 255, 255, 255, 0.4)",
+    background: "rgba( 255, 255, 255, 0.2)",
     fontSize: "14px",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "#F55129",
@@ -310,6 +315,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "var(--color-main-b)",
     color: "var(--color-main-c)",
     fontSize: "14px",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",
@@ -341,22 +348,22 @@ const useStyles = makeStyles((theme) => ({
   mobileEmptyItemBox: {
     background: "rgba( 255, 255, 255, 0.2)",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "10px",
     margin: "5px",
   },
   mobileEmptyInfoBox: {
     height: "25vh",
-    paddig:"14px",
+    paddig: "14px",
     alignContent: "center",
     textAlign: "left",
     padding: "5px",
     margin: "3px",
-    color:"white",
-    fontSize:"20px"
+    color: "white",
+    fontSize: "20px",
   },
 
   mobileEmptyImageBox: {
@@ -369,7 +376,7 @@ const useStyles = makeStyles((theme) => ({
     display: "inline-block",
     borderRadius: "15px",
     margin: "10px 6px",
-    background: "rgba( 255, 255, 255, 0.4)",
+    background: "rgba( 255, 255, 255, 0.2)",
     fontSize: "14px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",

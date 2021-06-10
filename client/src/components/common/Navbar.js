@@ -16,17 +16,18 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileAccountCircleIcon: {
     fontSize: "35px",
-    color: "Black",
+    color: "white",
   },
   mobileArrowBackIosIcon: {
     fontSize: "25px",
-    color: "Black",
+    color: "white",
   },
   mobileGrow: {
     flexGrow: 1,
   },
   mobileTitle: {
     fontSize: "20px",
+    fontWeight: "bold",
   },
 }));
 

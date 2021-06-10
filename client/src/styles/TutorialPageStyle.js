@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  mobileVideo:{
+  mobileVideo: {
     objectFit: "cover",
     width: "100vw",
     height: "100vh",
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
   },
   mobileDescription1: {
-    gridRow : "4/span 1",
+    gridRow: "4/span 1",
     textAlign: "left",
   },
   mobileDescriptionText: {
@@ -42,11 +42,11 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "35px",
     color: "white",
     textShadow: "white 0px 0px 2px;",
-    
+
     fontWeight: "1000",
   },
   mobileDescription2: {
-    gridRow : "5/span 2",
+    gridRow: "5/span 2",
     textAlign: "center",
     padding: "20px",
   },
@@ -56,42 +56,42 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     lineHeight: "30px",
     color: "#ffffffd9",
-    textShadow : "-3px 3px 4px #000000;",
+    textShadow: "-3px 3px 4px #000000;",
     fontWeight: "1000",
   },
   mobileButtonGrid: {
     gridRow: "7/span 1",
     textAlign: "center",
   },
-  mobileBtn:{
+  mobileBtn: {
     textDecoration: "none",
     background: "var(--color-main-b)",
     width: "60vw",
-    height :"12vw",
+    height: "12vw",
     borderRadius: "25px",
     color: "white",
-    fontSize : "15px",
+    fontSize: "15px",
     underline: "none",
 
     "&.MuiButton-root:hover": {
       background: "#fc8979",
       color: "#f8b9b0",
-    }
+    },
   },
-  mobileBtn2:{
+  mobileBtn2: {
     textDecoration: "none",
     background: "white",
     width: "60vw",
-    height :"12vw",
+    height: "12vw",
     borderRadius: "25px",
     color: "var(--color-main-b)",
-    fontSize : "15px",
+    fontSize: "15px",
     underline: "none",
 
     "&.MuiButton-root:hover": {
       background: "#fc8979",
       color: "#f8b9b0",
-    }
+    },
   },
 
   mobileLinkBox: {
@@ -120,13 +120,13 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   mobileGlassOutBox: {
-    background: "rgba(255, 255, 255, 0.4)",
+    background: "rgba(255, 255, 255, 0.2)",
     margin: "15px",
     textAlign: "center",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     whiteSpace: "wrap",
@@ -137,12 +137,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileGlassInBox: {
-    background: "rgba(255, 255, 255, 0.4)",
+    background: "rgba(255, 255, 255, 0.2)",
     padding: "10px",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px  15px 5px 5px",
     whiteSpace: "wrap",
