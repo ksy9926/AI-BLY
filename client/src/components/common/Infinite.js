@@ -25,7 +25,15 @@ export default function Infinite({ info, recommend }) {
       setProducts([...products, ...temp]);
       setCount(countAll);
     } else {
-      setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
+      setProducts([
+        ...products,
+        cnt,
+        cnt + 1,
+        cnt + 2,
+        cnt + 3,
+        cnt + 4,
+        cnt + 5,
+      ]);
       setCount(cnt + 6);
     }
     if (cnt / page > 60 && countAll / 100 > page) {
@@ -47,7 +55,7 @@ export default function Infinite({ info, recommend }) {
       endMessage={<p>you have seen it all</p>}
     >
       {products.map((idx) => (
-        <ItemLarge key={idx} idx={idx} data={info[idx]} recommend={true} />
+        <ItemLarge key={idx} idx={idx} data={info[idx]} recommend={recommend} />
       ))}
     </InfiniteScroll>
   );

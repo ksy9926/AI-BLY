@@ -5,7 +5,7 @@ import useStyles from "styles/MainPageStyle";
 
 export default function ItemLarge({ idx, data, recommend }) {
   const classes = useStyles();
-  if (recommend && idx % 9 === 0) {
+  if (recommend === true && idx % 9 === 1) {
     return (
       <Grid className={classes.mobileGridBox} item xs={6}>
         <Box className={classes.mobileGlassItemBox}>

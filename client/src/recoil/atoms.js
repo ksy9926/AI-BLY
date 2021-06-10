@@ -19,8 +19,6 @@ export const categoryKeyState = atom({
   key: "categoryKeyState",
   default: [
     "전체",
-    "높은가격순",
-    "낮은가격순",
     "아우터",
     "반팔아우터",
     "긴팔",
@@ -40,9 +38,6 @@ export const categoryDictState = atom({
   key: "categoryListState",
   default: {
     전체: "",
-    추천상품: "recommendation",
-    높은가격순: "",
-    낮은가격순: "",
     반팔: "short sleeve top",
     긴팔: "long sleeve top",
     반팔아우터: "short sleeve outwear",
