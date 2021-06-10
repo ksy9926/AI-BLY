@@ -18,9 +18,10 @@ export default function MainPage() {
   const [countAll, setCountAll] = useRecoilState(countAllState);
   const [recommend, setRecommend] = useState([]);
   const body = localStorage.getItem("styles");
+  
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
-    (async function () {
+    (async function mainItem () {
       axios
         .get(
           `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
@@ -30,6 +31,7 @@ export default function MainPage() {
           setInfo(response.data.results);
           setCountAll(response.data.count);
         });
+        return 
     })();
 
     if (localStorage.getItem("username") !== null) {
@@ -39,7 +41,7 @@ export default function MainPage() {
 
   useEffect(() => {
     if (page > 1) {
-      (async function () {
+      (async function paginationItem() {
         await axios
           .get(
             `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
@@ -55,9 +57,12 @@ export default function MainPage() {
 
   useEffect(() => {
     const body = localStorage.getItem("styles");
+    console.log(body);
     const recommendList = [];
     if (body !== null) {
-      (async function () {
+      (async function recommendItem() {
+        console.log("recommend", recommendList);
+
         await axios
           .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
           .then((response) => {
@@ -65,16 +70,18 @@ export default function MainPage() {
             response.data.recommend_list.map((productList) =>
               productList.map((product) => recommendList.push(product)),
             );
-            console.log("recommend", recommendList);
 
             setRecommend(recommendList);
-            console.log("recommend", recommendList);
+            console.log("next-recommend", recommendList);
           });
+          return recommendList
       })();
     }
   }, []);
 
   function ImageRecommendBox() {
+
+
     if (localStorage.getItem("jwt") === null) {
       return (
         <NoProductBox

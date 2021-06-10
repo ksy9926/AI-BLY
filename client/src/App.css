@@ -47,7 +47,7 @@ body {
   background-color: #fcfcfc;
   background-image: url("background.png");
   background-size: cover;
-
+  height: 100vh;
 }
 
 /* 모바일 Common CSS */
