@@ -38,14 +38,14 @@ export default function SimilarItemPage({}) {
   if (info && info.length > 0) {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <ProductBox info={info} title="해외직구 상품" navbar="true" />
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMS" />
         <Box className={classes.mobileFullBox}>
           <Box className={classes.mobileGlassBox}>
             <Box className={classes.mobileContainer}>

@@ -103,7 +103,7 @@ function LoginPage() {
 
   return (
     <Mobile>
-      <Navbar />
+      <Navbar title="LOGIN" />
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
@@ -119,8 +119,7 @@ function LoginPage() {
                   type="text"
                   value={id}
                   onChange={onChangeHandler}
-                  color= '#f77260'
-
+                  color="#f77260"
                 />
                 <TextField
                   className={classes.mobileTextField}
@@ -131,7 +130,7 @@ function LoginPage() {
                   type="password"
                   value={password}
                   onChange={onChangeHandler}
-                  color= '#f77260'
+                  color="#f77260"
                 />
                 <br />
               </Box>

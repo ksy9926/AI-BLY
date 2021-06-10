@@ -44,10 +44,11 @@ a {
   text-decoration: none;
 }
 body {
-  background-color: #fcfcfc;
+  background-color: #ffffff;
   background-image: url("background.png");
   background-size: cover;
-
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
 }
 
 /* 모바일 Common CSS */

@@ -22,9 +22,7 @@ export default function MainPage() {
   useEffect(() => {
     (async function () {
       axios
-        .get(
-          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
-        )
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
         .then(async (response) => {
           setPage(1);
           setInfo(response.data.results);
@@ -41,9 +39,7 @@ export default function MainPage() {
     if (page > 1) {
       (async function () {
         await axios
-          .get(
-            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
-          )
+          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
           .then((response) => {
             setInfo([...info, ...response.data.results]);
           });
@@ -98,7 +94,7 @@ export default function MainPage() {
   return (
     <Mobile>
       <Box>
-        <Navbar />
+        <Navbar title="SHOP" />
         <ImageRecommendBox />
         <StyleRecommendBox />
         <ProductBox

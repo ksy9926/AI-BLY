@@ -55,7 +55,7 @@ export default function ImageUploadPage({ match }) {
   return (
     <Mobile>
       <Box>
-        <Navbar />
+        <Navbar title="CLOSET" />
         <Box className={classes.mobileGlassBox}>
           <TextTitleComponent title="엘리스님의 옷장" />
           <Box className={classes.mobileSubTitleBox1}>찾고싶은 상품의 이미지를 등록해주세요.</Box>

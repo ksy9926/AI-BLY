@@ -23,14 +23,14 @@ export default function RecentItemPage() {
   if (info.length > 0) {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <ProductBox info={info} title="최근 본 상품" />
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <Box className={classes.mobileFullBox}>
           <Box className={classes.mobileGlassBox}>
             <Box className={classes.mobileContainer}>

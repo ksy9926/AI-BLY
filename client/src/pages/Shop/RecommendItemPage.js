@@ -17,19 +17,16 @@ export default function RecommendItemPage() {
   // 추천아이템 클릭시  추천 아이템 출력
   useEffect(() => {
     (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
-        .then((response) => {
-          setInfo(response.data);
-        });
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/fashion`).then((response) => {
+        setInfo(response.data);
+      });
     })();
   }, []);
-  
 
   return (
     <Mobile>
-      <Navbar />
-        <ProductBox info={info} title="해외직구 상품" navbar="true" />
+      <Navbar title="ITEMs" />
+      <ProductBox info={info} title="해외직구 상품" navbar="true" />
     </Mobile>
   );
 }

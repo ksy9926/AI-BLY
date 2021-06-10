@@ -20,7 +20,7 @@ function MyPage() {
   return (
     <Mobile>
       <Box>
-        <Navbar />
+        <Navbar title="MY PAGE" />
         <Box>
           <User />
           <StyleBook />
