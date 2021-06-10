@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import firstpageBackground from "firstpage.png";
+import secondpageBackground from "secondpage.png"
 
 const useStyles = makeStyles((theme) => ({
   mobilecontainer: {
@@ -12,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  mobileTutorialContainer:{
+    backgroundImage: `url(${secondpageBackground})`,
+    backgroundSize: "cover",
+    overflowX: "hidden" 
+  },
   mobileVideo: {
     objectFit: "cover",
     width: "100vw",
@@ -19,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     top: "0",
     left: "0",
+  },
+  mobileTutorialImageBox:{
+    paddig:"10px",
+    margin:"0 40px 0  40px"
   },
   mobileGrid: {
     gridRow: "3/span 1",

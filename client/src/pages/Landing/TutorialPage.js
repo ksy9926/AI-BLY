@@ -10,6 +10,11 @@ import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
+import tutorial1 from "tutorial1.png";
+import tutorial2 from "tutorial2.png";
+import tutorial3 from "tutorial3.png";
+import tutorial4 from "tutorial4.png";
+import tutorial5 from "tutorial5.png";
 
 function TutorialPage() {
   const classes = useStyles();
@@ -17,32 +22,30 @@ function TutorialPage() {
     {
       label: "클로젯 기능이란",
       text: "사용자가 등록하신 의류 이미지를 분석하여 \n 해당 상품을 해외 직구 사이트에서 찾아드려요",
-      imgPath:
-        "https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1",
+      imgPath: tutorial1,
     },
     {
       label: "클로젯 이용준비",
       text: "자신의 클로젯에 이미지를 등록하기 위해 \n 먼저 회원가입을 해주시기 바랍니다",
-      imgPath:
-        "https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1",
+      imgPath: tutorial2,
     },
     {
       label: "클로젯에 이미지 등록하기",
       text: "나의 클로젯에 있는 이미지 추가 버튼을 누른 후\n 찾아보고 싶은 의류의 이미지를 등록해주세요",
       imgPath:
-        "https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1",
+        tutorial3,
     },
     {
       label: "클로젯에서 상품 찾기",
       text: "등록하신 이미지를 클릭하시면\n  AI로 이미지를 분석하여 비슷한 상품을 찾아드려요",
       imgPath:
-        "https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1",
+        tutorial4,
     },
     {
       label: "나의 스타일 등록",
       text: "사용자님이 선택하신 스타일을 통해서 \n 혹시라도 마음에 드실 상품들을 추천해드려요.",
       imgPath:
-        "https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1",
+        tutorial5,
     },
   ];
 
@@ -63,7 +66,7 @@ function TutorialPage() {
 
   return (
     <Mobile>
-      <Box style={{ overflowX: "hidden" }}>
+      <Box className={classes.mobileTutorialContainer}>
         <Box>
           <AppBar className={classes.mobileAppBar} elevation={0}>
             <Toolbar>
@@ -113,7 +116,10 @@ function TutorialPage() {
                 enableMouseEvents
               >
                 {tutorialSteps.map((step, index) => (
-                  <div key={step.label}>
+                  <Box
+                    className={classes.mobileTutorialImageBox}
+                    key={step.label}
+                  >
                     {Math.abs(activeStep - index) <= 2 ? (
                       <img
                         className={classes.mobileImg}
@@ -121,7 +127,7 @@ function TutorialPage() {
                         alt={step.label}
                       />
                     ) : null}
-                  </div>
+                  </Box>
                 ))}
               </SwipeableViews>
               <MobileStepper
@@ -137,17 +143,21 @@ function TutorialPage() {
                     onClick={handleBack}
                     disabled={activeStep === 0}
                   >
-                    <KeyboardArrowLeft style={{ fontSize: "4rem" }} />
+                    <KeyboardArrowLeft
+                      style={{ fontSize: "4rem" }}
+                    />
                   </Button>
                 }
                 backButton={
                   <Button
-                    style={{ position: "absolute", top: "33%", right: "-5%" }}
+                    style={{ position: "absolute", top: "33%", right: "-5%" ,}}
                     size="small"
                     onClick={handleNext}
                     disabled={activeStep === 4}
                   >
-                    <KeyboardArrowRight style={{ fontSize: "4rem" }} />
+                    <KeyboardArrowRight
+                      style={{ fontSize: "4rem" }}
+                    />
                   </Button>
                 }
               />
@@ -158,7 +168,7 @@ function TutorialPage() {
             <Grid item xs={12}>
               <img
                 style={{ width: "100%", height: "100%" }}
-                src="https://i0.wp.com/i.pinimg.com/originals/15/d4/90/15d4903ffd54f3ad76007ffae8722fc5.png?w=1140&ssl=1"
+                src=tutorial3
               ></img>
             </Grid>
             <ChevronRightIcon

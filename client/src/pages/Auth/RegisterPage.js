@@ -101,7 +101,7 @@ function RegisterPage() {
 
   return (
     <Mobile>
-      <Navbar title="SING UP" />
+      <Navbar title="SIGN UP" />
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>

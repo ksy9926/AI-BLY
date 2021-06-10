@@ -9,7 +9,7 @@ function RegisterPage() {
   const classes = useStyles();
   const title = localStorage.getItem("username") + "님의 클로젯은 현재 비어있습니다.";
   const message = "등록하신 사진을 분석해서 아이템을 찾아드려요";
-
+  
   return (
     <Mobile>
       <Navbar title="SIGN UP" />
