@@ -43,7 +43,6 @@ export default function Infinite({ info, recommend }) {
       next={() => fetchImages(count)}
       hasMore={count < countAll ? true : false}
       loader={<Loader />}
-      endMessage={<p>you have seen it all</p>}
     >
       {products.map((idx) => (
         <ItemLarge key={idx} idx={idx} data={info[idx]} recommend={recommend} />

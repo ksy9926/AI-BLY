@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileSubTitleBox: {
+    color: "rgb(1 1 1 / 66%)",
+    
     margin: "15px 10px 10px 20px",
     fontSize: "14px",
     width: "100%",

@@ -33,7 +33,7 @@ export default function ItemSmall({ idx, data }) {
     //     </Box>
     //   </Box>
     // </Box>
-        <Box>
+    <Box>
       <Box className={classes.mobileGlassSmallItemBox}>
         <Box className={classes.mobileSmallItemImageBox}>
           <img
@@ -41,7 +41,6 @@ export default function ItemSmall({ idx, data }) {
             src={data["thumnail"]}
             alt={data["name"]}
           />
-
         </Box>
         <Box className={classes.mobileItemSmInfoBox}>
           <Box className={classes.mobileItemSmBrandName}>
@@ -52,11 +51,11 @@ export default function ItemSmall({ idx, data }) {
           </Box>
           <Box className={classes.mobileItemSmDiscountPriceBox}>
             <Box className={classes.mobileItemSmDiscount}>
-              {data["discount_rate"]}% 
-              </Box>
+              {data["discount_rate"]}%
+            </Box>
             <Box className={classes.mobileItemSmPrice}>
               $ {data["sale_price"]}
-              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>

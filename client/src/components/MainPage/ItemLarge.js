@@ -13,11 +13,15 @@ export default function ItemLarge({ idx, data, recommend }) {
       <Grid className={classes.mobileGridBox} item xs={6}>
         <Box className={classes.mobileEmptyItemBox}>
           <Box className={classes.mobileEmptyInfoBox}>
-            <Box>마음에 드시는 상품을</Box>
-            <Box>아직 찾으시지 못하셨나요?</Box>
-
-            <Box>내 스타일을 등록해서</Box>
-            <Box>관련 추천상품 받아보세요</Box>
+            <Box className={classes.mobileEmptyInfoText}>
+              <Box>마음에 </Box>
+              <Box>드시는 상품을</Box>
+              <Box>없으신가요?</Box>
+            </Box>
+            <Box className={classes.mobileEmptyInfoSubText1}>
+              <Box className={classes.mobileEmptyInfoSubText2} >원하시는 스타일을 알려주세요</Box>
+              <Box className={classes.mobileEmptyInfoSubText3}>저희가 대신 찾아드릴게요</Box>
+            </Box>
           </Box>
           <Box className={classes.mobileEmptyImageBox}>
             <Box

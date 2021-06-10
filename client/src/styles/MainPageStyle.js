@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
   },
   mobileRecommendMessageBox: {
+    
     height: "25px",
     textAlign: "left",
     background: "rgba(255, 255, 255, 0.2)",
@@ -88,12 +89,14 @@ const useStyles = makeStyles((theme) => ({
 
   mobileRecommendMessage: {
     fontSize: "16px",
-    color: "var(--color-black)",
+    color: "rgb(1 1 1 / 66%)",
+
   },
 
   mobileRecommendButton: {
     fontSize: "15px",
-    color: "var(--color-black)",
+    color: "rgb(1 1 1 / 66%)",
+
   },
   mobileRecommendTitleBox: {
     display: "flex",
@@ -215,11 +218,30 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileItemInfoBox: {
-    height: "7.5vh",
+    heifght: "7.5vh",
     alignContent: "left",
     textAlign: "left",
     padding: "5px",
     margin: "3px",
+  },
+  mobileEmptyInfoText: {
+    marginTop: "13px",
+    padding: "10px",
+    fontSize: "20px",
+    lineHeight: "27px",
+  },
+  mobileEmptyInfoSubText1: {
+    marginTop: "50px",
+    textAlign: "center",
+    lineHeight: "13px",
+  },
+  mobileEmptyInfoSubText2: {
+    fontSize: "9px",
+    lineHeight: "12px",
+  },
+  mobileEmptyInfoSubText3: {
+    fontSize: "11px",
+    lineHeight: "15px",
   },
   mobileItemSmInfoBox: {
     alignContent: "left",
@@ -289,6 +311,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileCategoryButton: {
+    color: "rgb(1 1 1 / 66%)",
+
     display: "inline-block",
     borderRadius: "15px",
     margin: "10px 6px",
@@ -305,6 +329,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileCategoryButtonText: {
+    
     boxSizing: "border-box",
     fontWeight: "500",
   },
@@ -346,8 +371,8 @@ const useStyles = makeStyles((theme) => ({
   },
   //empty
   mobileEmptyItemBox: {
-    background: "rgba( 255, 255, 255, 0.2)",
-    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
+    background: "rgba( 1, 1, 1, 0.3)",
+    boxShadow: "0 8px 32px 0 rgba(10, 10, 10, 0.1)",
     backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(10px)",
@@ -362,7 +387,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     padding: "5px",
     margin: "3px",
-    color: "white",
+    color: "rgb(255 255 255 / 66%)",
     fontSize: "20px",
   },
 
@@ -375,6 +400,7 @@ const useStyles = makeStyles((theme) => ({
   mobileEmtpyButton: {
     display: "inline-block",
     borderRadius: "15px",
+    border: " rgb(255 255 255 / 66%)",
     margin: "10px 6px",
     background: "rgba( 255, 255, 255, 0.2)",
     fontSize: "14px",
@@ -387,6 +413,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileEmptyButtonText: {
     boxSizing: "border-box",
+    color: "rgb(255 255 255 / 66%)",
     fontWeight: "500",
   },
 }));

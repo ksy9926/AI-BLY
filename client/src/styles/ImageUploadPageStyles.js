@@ -42,14 +42,20 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileTitleBox: {
+    color: "rgb(1 1 1 / 66%)",
+
     fontSize: "16px",
   },
   mobileSubTitleBox1: {
+    color: "rgb(1 1 1 / 66%)",
+
     margin: "15px 10px 5px 20px",
     fontSize: "14px",
     width: "100%",
   },
   mobileSubTitleBox2: {
+    color: "rgb(1 1 1 / 66%)",
+
     margin: "5px 10px 5px 20px",
     fontSize: "14px",
     width: "100%",

@@ -19,7 +19,7 @@ export default function MainPage() {
   const [recommend, setRecommend] = useState([]);
   const body = localStorage.getItem("styles");
 
-  
+
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function mainItem () {
@@ -53,34 +53,34 @@ export default function MainPage() {
 
   // 메인페이지 접속시 스타일 선택했을 경우 로컬스토리지 기반 전체 추천 상품 추출
 
-  // useEffect(() => {
-  //   const body = localStorage.getItem("styles");
-  //   const recommendList = [];
-  //   if (body !== null) {
-  //     (async function () {
-  //       await axios
-  //         .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-  //         .then((response) => {
-  //           console.log(response.data.recommend_list);
-  //           response.data.recommend_list.map((productList) =>
-  //             productList.map((product) => recommendList.push(product)),
-  //           );
-  //           console.log("recommend", recommendList);
+  useEffect(() => {
+    const body = localStorage.getItem("styles");
+    const recommendList = [];
+    if (body !== null) {
+      (async function () {
+        await axios
+          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+          .then((response) => {
+            console.log(response.data.recommend_list);
+            response.data.recommend_list.map((productList) =>
+              productList.map((product) => recommendList.push(product)),
+            );
+            console.log("recommend", recommendList);
 
-  //           setRecommend(recommendList);
-  //           console.log("recommend", recommendList);
-  //         });
-  //     })();
-  //   }
-  // }, []);
+            setRecommend(recommendList);
+            console.log("recommend", recommendList);
+          });
+      })();
+    }
+  }, []);
 
-  // function StyleRecommendBox() {
-  //   if (localStorage.getItem("styles") === null) {
-  //     return <Box />;
-  //   } else {
-  //     return <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />;
-  //   }
-  // }
+  function StyleRecommendBox() {
+    if (localStorage.getItem("styles") === null) {
+      return <Box />;
+    } else {
+      return <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />;
+    }
+  }
 
   return (
     <Mobile>
@@ -95,7 +95,7 @@ export default function MainPage() {
         ) : (
           <SmallProductBox title="당신이 찾고 있는 상품" />
         )}
-        {/* <StyleRecommendBox /> */}
+        <StyleRecommendBox />
         <ProductBox
           info={info}
           title="해외 직구 상품"

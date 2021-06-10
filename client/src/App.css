@@ -46,14 +46,8 @@ a {
 body {
   background-color: #888888;
   height: 100vh;
-  background-image: url("https://cdn.discordapp.com/attachments/841880605662642237/852586348757647360/2021-06-10_11.28.01.png");
+  background-image: url("background.png");
   background-size: cover;
-<<<<<<< HEAD
-  height: 100vh;
-  backdrop-filter: blur(0.5px);
-  -webkit-backdrop-filter: blur(0.5px);
-=======
->>>>>>> 2ffa40995841f64814341051c5e1f7758bfaed15
 }
 
 /* 모바일 Common CSS */

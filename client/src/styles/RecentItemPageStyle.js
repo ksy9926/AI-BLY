@@ -41,9 +41,11 @@ const useStyles = makeStyles((theme) => ({
   mobileTitleText: {
     fontWeight: "bold",
     fontSize: "18px",
+    color: "rgb(255 255 255 / 66%)",
+
   },
   mobileSubtitleText: {
-    color: "rgba(165, 147, 224, 1)",
+    color: "rgb(255 255 255 / 66%)",
     fontSize: "13px",
   },
   // NoItemTemplate
