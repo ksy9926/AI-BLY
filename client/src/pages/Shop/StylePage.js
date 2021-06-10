@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Box } from "@material-ui/core";
-import useStyles from "styles/LandingPageStyle";
+import useStyles from "styles/StylePageStyle";
 import { Mobile } from "MediaQuery";
 import axios from "axios";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 import { useHistory } from "react-router-dom";
 
-function LandingPage() {
+export default function StylePage() {
   const classes = useStyles();
   const history = useHistory();
   const [select, setSelect] = useState([]);
@@ -100,4 +98,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
-import LandingPage from "pages/Shop/LandingPage";
+import StylePage from "pages/Shop/StylePage";
 import MainPage from "pages/Shop/MainPage";
 import LoginPage from "pages/Auth/LoginPage";
 import RegisterPage from "pages/Auth/RegisterPage";
@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/style" component={LandingPage} />
+        <Route exact path="/style" component={StylePage} />
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
