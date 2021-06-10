@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Glow, Box } from "@material-ui/core";
-import useStyles from "styles/MainPageStyle";
 import { Mobile } from "MediaQuery";
 import Navbar from "components/common/Navbar";
 import axios from "axios";
@@ -12,7 +11,6 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { categoryState, pageState, countAllState } from "recoil/atoms";
 
 export default function MainPage() {
-  const classes = useStyles();
   const [username, setUsername] = useState("당신만");
   const [info, setInfo] = useState([]);
   const category = useRecoilValue(categoryState);
@@ -57,18 +55,17 @@ export default function MainPage() {
     if (body !== null) {
       (async function () {
         await axios
-        .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-        .then((response) => {
-          console.log(response.data.recommend_list);
-          response.data.recommend_list.map((productList) =>
-            productList.map((product) => recommendList.push(product))
-          );
-          console.log("recommend", recommendList);
+          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+          .then((response) => {
+            console.log(response.data.recommend_list);
+            response.data.recommend_list.map((productList) =>
+              productList.map((product) => recommendList.push(product)),
+            );
+            console.log("recommend", recommendList);
 
-          setRecommend(recommendList)
-          console.log("recommend", recommendList);
-
-        });
+            setRecommend(recommendList);
+            console.log("recommend", recommendList);
+          });
       })();
     }
   }, []);

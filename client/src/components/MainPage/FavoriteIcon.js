@@ -40,14 +40,14 @@ export default function CustomFavoriteIcon({ idx, product_id, data }) {
         checked={favorite.idx}
         onChange={onLikeChange}
         icon={
-          data.likeproduct.includes(user) ? (
+          data && data.likeproduct && data.likeproduct.includes(user) ? (
             <FavoriteIcon style={{ color: "#F77260" }} />
           ) : (
             <FavoriteBorderIcon style={{ color: "#F77260" }} />
           )
         }
         checkedIcon={
-          data.likeproduct.includes(user) ? (
+          data && data.likeproduct && data.likeproduct.includes(user) ? (
             <FavoriteBorderIcon style={{ color: "#F77260" }} />
           ) : (
             <FavoriteIcon style={{ color: "#F77260" }} />
