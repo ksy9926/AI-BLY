@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function AccountCircleButton() {
   const classes = useStyles();
   const location = useLocation();
-  console.log(location.pathname === "/mypage");
 
   if (localStorage.getItem("jwt") === null) {
     return (
@@ -49,19 +48,14 @@ function AccountCircleButton() {
   }
 }
 
-export default function Navbar() {
+export default function Navbar({ title }) {
   const classes = useStyles();
   const history = useHistory();
   return (
     <React.Fragment>
       <AppBar className={classes.mobileAppBar} elevation={0} id="navbar">
         <Toolbar>
-          <ArrowBackIosIcon
-            className={classes.mobileArrowBackIosIcon}
-            onClick={() => {
-              history.goBack();
-            }}
-          />
+          <Box>{title}</Box>
           <Box className={classes.mobileGrow} />
           <AccountCircleButton />
         </Toolbar>

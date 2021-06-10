@@ -32,7 +32,7 @@ export default function LikeItemPage() {
     return (
       <Mobile>
         <Box className={classes.mobileRoot}>
-          <Navbar />
+          <Navbar title="ITEMs" />
           <ProductBox info={info} title="내가 찜한 상품" />
         </Box>
       </Mobile>
@@ -40,7 +40,7 @@ export default function LikeItemPage() {
   } else {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <Box className={classes.mobileFullBox}>
           <Box className={classes.mobileGlassBox}>
             <Box className={classes.mobileContainer}>
