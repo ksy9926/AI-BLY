@@ -10,12 +10,12 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileGlassBox: {
     width: "85vw",
-    background: "rgba(255, 255, 255, 0.3)",
+    background: "rgba(255, 255, 255, 0.2)",
     boxShadow:
       "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     margin: "10px",
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
   mobileTextField: {
     margin: "0.5vw",
-    fontSize:"12px"
+    fontSize: "12px",
   },
   mobileButtonBox: {
     height: "20vh",
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   mobileLinkBox: {
     position: "absolute",
     top: "15vh",
-    fontSize:"12px"
+    fontSize: "12px",
   },
 
   // RegisterClosetPage
