@@ -13,7 +13,7 @@ export default function LikeItemPage() {
   const classes = useStyles();
   const [info, setInfo] = useState([]);
   const [countAll, setCountAll] = useRecoilState(countAllState);
-
+  const [Update, setUpdate] = useState([]);
   // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
