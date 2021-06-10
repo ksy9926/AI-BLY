@@ -12,14 +12,9 @@ import { countAllState, updateState } from "recoil/atoms";
 export default function LikeItemPage() {
   const classes = useStyles();
   const [info, setInfo] = useState([]);
-<<<<<<< HEAD
-  const [countAll, setCountAll] = useRecoilState(countAllState);
-  const [Update, setUpdate] = useState([]);
-=======
   const setCountAll = useSetRecoilState(countAllState);
   const [update, setUpdate] = useRecoilState(updateState);
 
->>>>>>> 6fc50b0365b5c4b376e24ac3109663d4faed97f3
   // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
@@ -36,8 +31,9 @@ export default function LikeItemPage() {
               return item.product_id;
             }),
           );
-          setUpdate(false);
-        });
+        }).then(
+          setUpdate(false)
+        )
     })();
   }, [update]);
 

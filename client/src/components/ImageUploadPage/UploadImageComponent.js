@@ -12,7 +12,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   const classes = useStyles();
   const [image, setImage] = useState(null);
   const history = useHistory();
-  const userId = useRecoilValue(userState);
+  const userId = localStorage.getItem("user")
 
 
   function onChangeImage(e) {
@@ -22,13 +22,11 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
 
   function onClickimage(){
     history.push("/smlritem");
-
   }
 
   // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
-      console.log(image, "이미지 업로드 된거 체크");
       console.log(image, userId);
 
       const formData = new FormData();
@@ -37,7 +35,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
       axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
         "content-type": "multipart/form-data",
-      });
+      })
     }
   }, [image]);
 
