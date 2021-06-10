@@ -11,8 +11,9 @@ import SimilarItemPage from "pages/Shop/SimilarItemPage";
 import RecentItemPage from "pages/MyPage/RecentItemPage";
 import RecommendItemPage from "pages/Shop/RecommendItemPage";
 import LikeItemPage from "pages/MyPage/LikeItemPage";
-import TutorialPage from "pages/TutorialPage";
-import StartPage from "pages/Shop/TutorialPage";
+import TutorialPage from "pages/Landing/TutorialPage";
+import LandingPage from "pages/Landing/LandingPage";
+
 
 axios.defaults.withCredentials = true;
 
@@ -31,8 +32,8 @@ function App() {
         <Route exact path="/likeitem" component={LikeItemPage} />
         <Route exact path="/rcntitem" component={RecentItemPage} />
         <Route exact path="/rcmditem" component={RecommendItemPage} />
-        <Route exact path="/" component={TutorialPage} />
-        <Route exact path="/start" component={StartPage} />
+        <Route exact path="/tutorial" component={TutorialPage} />
+        <Route exact path="/" component={LandingPage} />
       </Switch>
     </Router>
   );

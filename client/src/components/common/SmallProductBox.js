@@ -9,7 +9,7 @@ export default function ProductBox({ title, navbar, count, info }) {
   console.log("data:", info)
 
   // 메인페이지 접속시 모든 아이템 출력
-  if(info){
+  if(localStorage.getItem("styles")){
     return (
       <Grid className={classes.mobileGlassBox}>
         <Box className={classes.mobileRecommendContainer}>

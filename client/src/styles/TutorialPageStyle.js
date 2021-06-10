@@ -2,18 +2,45 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import firstpageBackground from "firstpage.png";
 const useStyles = makeStyles((theme) => ({
-  mobileFirstPageBox: {
-    width: "100vw",
+  mobilecontainer: {
     height: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
+    display: "grid",
+    gridTemplateRows: "repeat(8, 1fr)",
+    // gridTemplateColumns: "1fr 2fr 1fr",
     backgroundImage: `url(${firstpageBackground})`,
+    backgroundSize:"cover",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  mobileGrid: {
+    gridRow: "2/span 1",
+  },
+  mobileImageBox:{
+    textAlign:"center",
+    margin: "20px"
   },
   mobileSubTitle: {
     color: "var(--color-gray)",
+    textAlign:"center",
+    margin: "10px"
+
   },
+  mobileButtonGrid: {
+    gridRow: "7/span 1",
+    textAlign:"center",
+  },
+
+  mobileLinkBox: {
+    margin: "15px",
+    fontSize: "15px",
+    textAlign:"center",
+  },
+
+  mobileLinkText: {
+    color: "white",
+  },
+
   mobileAppBar: {
     background: "rgba(256, 256, 256, 0)",
     position: "static",
@@ -61,15 +88,13 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-scrollbar": {
       display: "none",
     },
-
   },
   mobileGlassTextBox: {
     padding: "15px",
     fontSize: "14px",
-
   },
   mobileGlassSubText: {
-    margin:"5px"
+    margin: "5px",
   },
   mobileImg: {
     display: "block",
@@ -79,15 +104,14 @@ const useStyles = makeStyles((theme) => ({
     width: "50vw",
   },
 
-
   //User
 
-  mobileBar:{
-    height:"56px",
+  mobileBar: {
+    height: "56px",
     display: "flex",
     position: "relative",
     alignContent: "center",
-    padding:"0px 15px 0px 15px"
+    padding: "0px 15px 0px 15px",
   },
 }));
 
