@@ -198,6 +198,7 @@ const useStyles = makeStyles((theme) => ({
   mobileGridBox: {
     padding: "1px",
   },
+
   mobileItemImageBox: {
     height: "25vh",
     borderRadius: "10px 10px 0px 0px",
@@ -211,6 +212,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileItemInfoBox: {
+    height: "7.5vh",
     alignContent: "left",
     textAlign: "left",
     padding: "5px",
@@ -334,6 +336,51 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: "1px",
     padding: "10px",
+  },
+  //empty
+  mobileEmptyItemBox: {
+    background: "rgba( 255, 255, 255, 0.2)",
+    boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.1)",
+    backdropFilter: "blur(4px)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(4px)",
+    },
+    borderRadius: "10px",
+    margin: "5px",
+  },
+  mobileEmptyInfoBox: {
+    height: "25vh",
+    paddig:"14px",
+    alignContent: "center",
+    textAlign: "left",
+    padding: "5px",
+    margin: "3px",
+    color:"white",
+    fontSize:"20px"
+  },
+
+  mobileEmptyImageBox: {
+    height: "7.5vh",
+    borderRadius: "10px 10px 0px 0px",
+    marginBottom: "5px",
+    textAlign: "center",
+  },
+  mobileEmtpyButton: {
+    display: "inline-block",
+    borderRadius: "15px",
+    margin: "10px 6px",
+    background: "rgba( 255, 255, 255, 0.4)",
+    fontSize: "14px",
+    "&:hover, &:focus, &:active": {
+      backgroundColor: "var(--color-main-b)",
+      color: "#F55129",
+    },
+    width: "fit-content",
+    padding: "5px 15px 5px 15px",
+  },
+  mobileEmptyButtonText: {
+    boxSizing: "border-box",
+    fontWeight: "500",
   },
 }));
 

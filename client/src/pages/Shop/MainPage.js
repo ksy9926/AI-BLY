@@ -24,7 +24,9 @@ export default function MainPage() {
   useEffect(() => {
     (async function () {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
+        .get(
+          `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`
+        )
         .then(async (response) => {
           setPage(1);
           setInfo(response.data.results);
@@ -41,7 +43,9 @@ export default function MainPage() {
     if (page > 1) {
       (async function () {
         await axios
-          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
+          .get(
+            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
+          )
           .then((response) => {
             setInfo([...info, ...response.data.results]);
           });
@@ -57,18 +61,17 @@ export default function MainPage() {
     if (body !== null) {
       (async function () {
         await axios
-        .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-        .then((response) => {
-          console.log(response.data.recommend_list);
-          response.data.recommend_list.map((productList) =>
-            productList.map((product) => recommendList.push(product))
-          );
-          console.log("recommend", recommendList);
+          .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+          .then((response) => {
+            console.log(response.data.recommend_list);
+            response.data.recommend_list.map((productList) =>
+              productList.map((product) => recommendList.push(product))
+            );
+            console.log("recommend", recommendList);
 
-          setRecommend(recommendList)
-          console.log("recommend", recommendList);
-
-        });
+            setRecommend(recommendList);
+            console.log("recommend", recommendList);
+          });
       })();
     }
   }, []);
@@ -86,13 +89,20 @@ export default function MainPage() {
       return <SmallProductBox title="당신이 찾고 있는 상품" />;
     }
   }
+  function StyleRecommendBox() {
+    if (localStorage.getItem("styles") === null) {
+      return <Box />;
+    } else {
+      return <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />;
+    }
+  }
 
   return (
     <Mobile>
       <Box>
         <Navbar />
         <ImageRecommendBox />
-        <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />
+        <StyleRecommendBox />
         <ProductBox
           info={info}
           title="해외 직구 상품"

@@ -21,7 +21,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
   }
 
   function onClickimage(){
-    history.push("/smlritem");
+    history.push("/smlritem/");
   }
 
   // 업로드 이미지 백엔드 전송
@@ -51,7 +51,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         xs={4}
       >
         <Grid container className={classes.mobileEmptyImageBox}>
-          <img className={classes.mobileImage} src={src} onClick={onClickimage} alt="none" />
+          <img className={classes.mobileImage} src={src}  onClick={onClickimage} alt="none" />
         </Grid>
       </Grid>
     );
