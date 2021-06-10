@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
     justifyContent: "center",
     flexDirection: "column",
-    fontSize: "14px"
+    fontSize: "14px",
   },
   mobileButtonBox: {
     height: "9vh",
@@ -289,7 +289,6 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px 6px",
     background: "rgba( 255, 255, 255, 0.4)",
     fontSize: "14px",
-    padding: "2px 6px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "#F55129",
@@ -309,7 +308,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "var(--color-main-b)",
     color: "var(--color-main-c)",
     fontSize: "14px",
-    padding: "2px 6px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
       color: "var(--color-main-c)",

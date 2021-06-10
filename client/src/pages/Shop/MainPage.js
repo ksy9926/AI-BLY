@@ -8,7 +8,7 @@ import ProductBox from "components/common/ProductBox";
 import SmallProductBox from "components/common/SmallProductBox";
 import NoProductBox from "components/common/NoProductBox";
 
-import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { categoryState, pageState, countAllState } from "recoil/atoms";
 
 export default function MainPage() {
@@ -23,13 +23,13 @@ export default function MainPage() {
   // 메인페이지 접속시 모든 아이템 출력
   useEffect(() => {
     (async function () {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
-      .then(async (response) => {
-        setPage(1);
-        setInfo(response.data.results);
-        setCountAll(response.data.count);
-      });
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}`)
+        .then(async (response) => {
+          setPage(1);
+          setInfo(response.data.results);
+          setCountAll(response.data.count);
+        });
     })();
 
     if (localStorage.getItem("username") !== null) {
@@ -41,9 +41,7 @@ export default function MainPage() {
     if (page > 1) {
       (async function () {
         await axios
-          .get(
-            `${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`
-          )
+          .get(`${process.env.REACT_APP_API_URL}/api/fashion/?category=${category}&page=${page}`)
           .then((response) => {
             setInfo([...info, ...response.data.results]);
           });
@@ -55,18 +53,16 @@ export default function MainPage() {
 
   useEffect(() => {
     const body = localStorage.getItem("styles");
-    const recommendList = []
+    const recommendList = [];
     if (body !== null) {
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
-        .then((response) => {
-          console.log(response.data.recommend_list);
-          response.data.recommend_list.map((productList) =>
-            productList.map((product) => recommendList.push(product))
-          );
-          console.log("recommend", recommendList);
-          setRecommend(recommendList)
-        });
+      axios.post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body).then((response) => {
+        console.log(response.data.recommend_list);
+        response.data.recommend_list.map((productList) =>
+          productList.map((product) => recommendList.push(product)),
+        );
+        console.log("recommend", recommendList);
+        setRecommend(recommendList);
+      });
     }
   }, []);
 
@@ -88,7 +84,7 @@ export default function MainPage() {
     <Mobile>
       <Box>
         <Navbar />
-        <ImageRecommendBox/>
+        <ImageRecommendBox />
         <SmallProductBox title="당신을 위한 추천 상품" info={recommend} />
         <ProductBox
           info={info}
