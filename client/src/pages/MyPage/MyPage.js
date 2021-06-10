@@ -4,7 +4,6 @@ import { Mobile } from "MediaQuery";
 
 import Navbar from "components/common/Navbar";
 import StyleBook from "components/MyPage/StyleBook";
-import User from "components/MyPage/User";
 import Shopping from "components/MyPage/Shopping";
 import Information from "components/MyPage/Information";
 import Footer from "components/MyPage/Footer";
@@ -22,7 +21,6 @@ function MyPage() {
       <Box>
         <Navbar title="MY PAGE" />
         <Box>
-          <User />
           <StyleBook />
           <Shopping />
           <Information />

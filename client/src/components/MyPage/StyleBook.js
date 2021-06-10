@@ -25,27 +25,27 @@ function StyleBook() {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       })
       .then((response) => {
-        if (response.data.length > 3) {
-        } else {
+        if (response.data && response.data.length) {
           setImageData(response.data);
         }
-        console.log(response.data.length);
       });
   }, []);
 
   useEffect(() => {
-    if (imageData) {
+    if (imageData && imageData.length) {
       setImageList(
-        imageData.map((data, idx) => (
-          <Grid className={classes.mobileMicroPaddingBox} item xs={4}>
+        [0, 1, 2].map((idx) => (
+          <Grid className={classes.mobileStyleBookPreviewBox} item xs={4}>
             <img
               className={classes.mobileImage}
-              src={data.dress_img.slice(0, 74) + ":8000" + data.dress_img.slice(74)}
+              src={
+                imageData[idx].dress_img.slice(0, 74) + ":8000" + imageData[idx].dress_img.slice(74)
+              }
               alt="clothes"
               id={idx}
             />
           </Grid>
-        ))
+        )),
       );
     }
   }, [imageData]);

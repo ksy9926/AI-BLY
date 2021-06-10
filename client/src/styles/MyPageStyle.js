@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
       backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
-    margin: "10px",
-    padding: "10px",
+    margin: "30px 10px",
+    padding: "10px 10px",
   },
   mobileStyleBookBox: {
     height: "25vh",
@@ -36,7 +36,11 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "5%",
   },
   mobileMicroPaddingBox: {
-    height:"20vh"
+    height: "20vh",
+  },
+  mobileStyleBookPreviewBox: {
+    height: "20vh",
+    padding: "10px",
   },
   mobileImage: {
     objectFit: "cover",

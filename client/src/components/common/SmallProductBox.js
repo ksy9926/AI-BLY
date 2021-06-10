@@ -16,7 +16,6 @@ export default function ProductBox({ title }) {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       });
-      console.log("test: ", response.data);
       if (response.data && response.data.length) {
         axios
           .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, [response.data[0].feature])
