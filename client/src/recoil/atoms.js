@@ -88,8 +88,3 @@ export const previousPageState = atom({
   key: "previousPageState",
   default: "",
 });
-
-export const updateState = atom({
-  key: "updateState",
-  default: false,
-});

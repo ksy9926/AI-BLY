@@ -6,35 +6,27 @@ import Navbar from "components/common/Navbar";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
 import ProductBox from "components/common/ProductBox";
-import { useSetRecoilState, useRecoilState } from "recoil";
-import { countAllState, updateState } from "recoil/atoms";
+import { useSetRecoilState } from "recoil";
+import { countAllState } from "recoil/atoms";
 
 export default function LikeItemPage() {
   const classes = useStyles();
   const [info, setInfo] = useState([]);
   const setCountAll = useSetRecoilState(countAllState);
-  const [update, setUpdate] = useRecoilState(updateState);
 
   // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/likeproduct`, {
-          headers: {
-            Authorization: "JWT " + localStorage.getItem("jwt"),
-          },
-        })
-        .then((response) => {
-          setCountAll(response.data.length);
-          setInfo(
-            response.data.map((item) => {
-              return item.product_id;
-            }),
-          );
-          setUpdate(false);
-        });
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/likeproduct`, {
+        headers: {
+          Authorization: "JWT " + localStorage.getItem("jwt"),
+        },
+      });
+
+      setCountAll(response.data.length);
+      setInfo(response.data.map((item) => item.product_id));
     })();
-  }, [update]);
+  }, []);
 
   if (info.length > 0) {
     return (

@@ -4,13 +4,9 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import axios from "axios";
 
-import { useRecoilState } from "recoil";
-import { updateState } from "recoil/atoms";
-
 export default function CustomFavoriteIcon({ idx, product_id, data }) {
   const [favorite, setFavorite] = useState({});
   const user = parseInt(localStorage.getItem("user"));
-  const [update, setUpdate] = useRecoilState(updateState);
 
   // 찜하기 체크 여부
   const onLikeChange = (event) => {
@@ -35,7 +31,6 @@ export default function CustomFavoriteIcon({ idx, product_id, data }) {
           console.log("error: ", error.response);
         });
     })();
-    setUpdate(true);
   };
 
   return (
