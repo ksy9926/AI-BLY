@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   mobileGrow: {
     flexGrow: 1,
   },
+  mobileTitle: {
+    fontSize: "20px",
+  },
 }));
 
 function AccountCircleButton() {
@@ -55,7 +58,7 @@ export default function Navbar({ title }) {
     <React.Fragment>
       <AppBar className={classes.mobileAppBar} elevation={0} id="navbar">
         <Toolbar>
-          <Box>{title}</Box>
+          <Box className={classes.mobileTitle}>{title}</Box>
           <Box className={classes.mobileGrow} />
           <AccountCircleButton />
         </Toolbar>
