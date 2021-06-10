@@ -8,12 +8,15 @@ import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 import UploadImageComponent from "components/ImageUploadPage/UploadImageComponent";
 import { useHistory } from "react-router-dom";
 
+import { useSetRecoilState } from "recoil";
+import { featureState } from "recoil/atoms";
+
 export default function ImageUploadPage({ match }) {
   const classes = useStyles();
   const user_id = match.params.user_id;
   const [imageData, setImageData] = useState([]);
   const [imageList, setImageList] = useState(null);
-  const [image, setImage] = useState(null);
+  const setFeature = useSetRecoilState(featureState);
 
   // url을 통한 다른 사용자 접근 통제 필요
   const history = useHistory();
@@ -28,7 +31,7 @@ export default function ImageUploadPage({ match }) {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       })
       .then((response) => {
-        console.log(response.data);
+        setFeature(response.data);
         setImageData(response.data);
       });
   }, []);
@@ -39,12 +42,12 @@ export default function ImageUploadPage({ match }) {
       setImageList(
         imageData.map((data, idx) => (
           <UploadImageComponent
-            src={data.dress_img}
+            src={data.dress_img.slice(0, 74) + ":8000" + data.dress_img.slice(74)}
             inputtype="image"
             user_id={user_id}
             id={idx}
           />
-        ))
+        )),
       );
     }
   }, [imageData]);
@@ -55,9 +58,7 @@ export default function ImageUploadPage({ match }) {
         <Navbar />
         <Box className={classes.mobileGlassBox}>
           <TextTitleComponent title="엘리스님의 옷장" />
-          <Box className={classes.mobileSubTitleBox1}>
-            찾고싶은 상품의 이미지를 등록해주세요. 
-          </Box>
+          <Box className={classes.mobileSubTitleBox1}>찾고싶은 상품의 이미지를 등록해주세요.</Box>
           <Box className={classes.mobileSubTitleBox2}>
             다양한 해외 쇼핑몰에서 비슷한 상품을 찾아드립니다
           </Box>

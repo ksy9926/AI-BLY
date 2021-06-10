@@ -14,7 +14,6 @@ export default function Infinite({ info, recommend }) {
   let temp = [];
   const countAll = useRecoilValue(countAllState);
   const remainder = countAll % 6;
-  console.log("info: ", info);
 
   // 추가 이미지 출력
   const fetchImages = (cnt) => {
@@ -25,15 +24,7 @@ export default function Infinite({ info, recommend }) {
       setProducts([...products, ...temp]);
       setCount(countAll);
     } else {
-      setProducts([
-        ...products,
-        cnt,
-        cnt + 1,
-        cnt + 2,
-        cnt + 3,
-        cnt + 4,
-        cnt + 5,
-      ]);
+      setProducts([...products, cnt, cnt + 1, cnt + 2, cnt + 3, cnt + 4, cnt + 5]);
       setCount(cnt + 6);
     }
     if (cnt / page > 60 && countAll / 100 > page) {
