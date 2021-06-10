@@ -26,34 +26,21 @@ export default function InfiniteHorizontal({ info }) {
   useEffect(() => {
     fetchImages(count);
   }, []);
-
-  // return (
-  //   <InfiniteScroll
-  //     className={classes.mobileInfiniteHorizontal}
-  //     dataLength={products.length}
-  //     next={() => fetchImages(count)}
-  //     hasMore={count < 300 ? true : false}
-  //     loader={<Loader />}
-  //   >
-  //     {products.map((idx) => (
-  //       <ItemSmall key={idx} idx={idx} data={info[idx]}  />
-  //     ))}
-  //   </InfiniteScroll>
-  // );
-
-  return (
-    <InfiniteScroll
-    className={classes.mobileInfiniteHorizontal}
-      dataLength={products.length}
-      next={() => fetchImages(count)}
-      hasMore={count < 300 ? true : false}
-
-      loader={<Loader />}
-      endMessage={<p>you have seen it all</p>}
-    >
-      {products.map((idx) => (
-        <ItemSmall key={idx} idx={idx} data={info[idx]} recommend={true}/>
-      ))}
-    </InfiniteScroll>
-  );
+  if (info) {
+    return (
+      <InfiniteScroll
+        className={classes.mobileInfiniteHorizontal}
+        dataLength={products.length}
+        next={() => fetchImages(count)}
+        hasMore={count < 300 ? true : false}
+        loader={<Loader />}
+      >
+        {products.map((idx) => (
+          <ItemSmall key={idx} idx={idx} data={info[idx]} recommend={true} />
+        ))}
+      </InfiniteScroll>
+    );
+  } else {
+    return <Loader />;
+  }
 }

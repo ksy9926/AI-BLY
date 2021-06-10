@@ -55,14 +55,21 @@ export default function MainPage() {
     const body = localStorage.getItem("styles");
     const recommendList = [];
     if (body !== null) {
-      axios.post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body).then((response) => {
-        console.log(response.data.recommend_list);
-        response.data.recommend_list.map((productList) =>
-          productList.map((product) => recommendList.push(product)),
-        );
-        console.log("recommend", recommendList);
-        setRecommend(recommendList);
-      });
+      (async function () {
+        await axios
+        .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+        .then((response) => {
+          console.log(response.data.recommend_list);
+          response.data.recommend_list.map((productList) =>
+            productList.map((product) => recommendList.push(product))
+          );
+          console.log("recommend", recommendList);
+
+          setRecommend(recommendList)
+          console.log("recommend", recommendList);
+
+        });
+      })();
     }
   }, []);
 

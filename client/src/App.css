@@ -46,7 +46,8 @@ a {
 body {
   background-color: #fcfcfc;
   background-image: url("background.png");
-  /* background-attachment: fixed; */
+  background-size: auto; 
+  /* background-repeat: no-repeat; */
 }
 
 /* 모바일 Common CSS */
