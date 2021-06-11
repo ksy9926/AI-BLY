@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileEmptyCoverBtn:{
       color: "#ffffffd6",
-      backgroundColor: "#f77260a8",
+      backgroundColor: "#dadadab0",
       width: "8vh",
       height: "4vh",
       textAlign:"center",
