@@ -224,22 +224,26 @@ const useStyles = makeStyles((theme) => ({
   mobileEmptyInfoText: {
     marginTop: "13px",
     padding: "10px",
-    fontSize: "20px",
+    fontSize: "19px",
     lineHeight: "27px",
+    color : "#ffffffd1",
   },
   mobileEmptyInfoSubText1: {
     marginTop: "50px",
     textAlign: "center",
     lineHeight: "13px",
+    color : "#ffffffd1",
   },
   mobileEmptyInfoSubText2: {
     fontSize: "9px",
     lineHeight: "12px",
+    color : "#ffffffd1",
   },
   mobileEmptyInfoSubText3: {
     fontSize: "11px",
     lineHeight: "15px",
-  },
+    color : "#ffffffd1",
+  },color : "#ffffffd1",
   mobileItemSmInfoBox: {
     alignContent: "left",
     textAlign: "left",
@@ -367,11 +371,11 @@ const useStyles = makeStyles((theme) => ({
   },
   //empty
   mobileEmptyItemBox: {
-    background: "rgba( 1, 1, 1, 0.3)",
-    boxShadow: "0 8px 32px 0 rgba(10, 10, 10, 0.1)",
-    backdropFilter: "blur(10px)",
+    background: "rgb(247 114 96 / 65%)",
+    boxShadow: "0px 5px 10px 0 rgb(254 73 73 / 35%)",
+    backdropFilter: "blur(0px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(10px)",
+      backdropFilter: "blur(0px)",
     },
     borderRadius: "10px",
     margin: "5px",
@@ -398,7 +402,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     border: " rgb(255 255 255 / 66%)",
     margin: "10px 6px",
-    background: "rgba( 255, 255, 255, 0.2)",
+    background: "rgba( 255, 255, 255, 0.25)",
     fontSize: "14px",
     "&:hover, &:focus, &:active": {
       backgroundColor: "var(--color-main-b)",
@@ -409,8 +413,8 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileEmptyButtonText: {
     boxSizing: "border-box",
-    color: "rgb(255 255 255 / 80%)",
-    fontWeight: "1000",
+    color : "#fffffff4",
+    fontWeight: "500",
   },
 }));
 

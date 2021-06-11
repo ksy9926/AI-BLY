@@ -15,11 +15,11 @@ export default function ItemLarge({ idx, data, recommend }) {
           <Box className={classes.mobileEmptyInfoBox}>
             <Box className={classes.mobileEmptyInfoText}>
               <Box>마음에 </Box>
-              <Box>드시는 상품을</Box>
+              <Box>드는 상품이</Box>
               <Box>없으신가요?</Box>
             </Box>
             <Box className={classes.mobileEmptyInfoSubText1}>
-              <Box className={classes.mobileEmptyInfoSubText2} >원하시는 스타일을 알려주세요</Box>
+              <Box className={classes.mobileEmptyInfoSubText2}>원하시는 스타일을 알려주세요</Box>
               <Box className={classes.mobileEmptyInfoSubText3}>저희가 대신 찾아드릴게요</Box>
             </Box>
           </Box>
