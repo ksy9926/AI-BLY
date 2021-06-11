@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileAppBar: {
-    background: "rgba(256, 256, 256, 0.3)",
+    background: "transparent",
     position: "static",
   },
   mobileGrow: {
@@ -134,15 +134,16 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileNavbarSkip: {
     fontWeight: "bolder",
-    color: "#ff4b55",
+    color: "white",
+
     fontSize: "18px",
-    textShadow: "-1px 1px 1px #f3bec1",
+    // textShadow: "-1px 1px 1px #f3bec1",
   },
   mobileNavbarSelect: {
     fontWeight: "bolder",
-    color: "#ff4b55",
+    color: "#f77260",
     fontSize: "18px",
-    textShadow: "-1px 1px 1px #f3bec1",
+    // textShadow: "-1px 1px 1px #f3bec1",
   },
   mobileGlassOutBox: {
     background: "rgba(255, 255, 255, 0.2)",
