@@ -73,11 +73,11 @@ function TutorialPage() {
               <Box className={classes.mobileGrow} />
               {activeStep === 4 ? (
                 <a href="/main" className={classes.mobileNavbarSelect}>
-                  시작하기
+                  START
                 </a>
               ) : (
                 <a href="/main" className={classes.mobileNavbarSkip}>
-                  건너뛰기
+                  SKIP
                 </a>
               )}
             </Toolbar>

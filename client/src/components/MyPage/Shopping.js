@@ -7,20 +7,14 @@ function Shopping() {
 
   return (
     <Box className={classes.mobileGlassBox}>
-      <Box item className={classes.mobileShoppingBox}>
+      <Box className={classes.mobileTitleBox}>
         <Box className={classes.mobileTitleText}>쇼핑</Box>
-        <Box
-          component={Link}
-          to={"/rcntitem"}
-          className={classes.mobileContentText}
-        >
+      </Box>
+      <Box className={classes.mobileContentBox}>
+        <Box component={Link} to={"/rcntitem"} className={classes.mobileContentText}>
           최근 본 상품
         </Box>
-        <Box
-          component={Link}
-          to={"/likeitem"}
-          className={classes.mobileContentText}
-        >
+        <Box component={Link} to={"/likeitem"} className={classes.mobileContentText}>
           찜한 상품
         </Box>
       </Box>

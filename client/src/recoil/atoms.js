@@ -35,18 +35,18 @@ export const categoryKeyState = atom({
 export const categoryDictState = atom({
   key: "categoryListState",
   default: {
-    "전체": "",
+    전체: "",
     "반팔 상의": "short sleeve top",
     "긴팔 상의": "long sleeve top",
-    "아우터": "long sleeve outwear",
-    "조끼": "vest",
-    "반바지": "shorts",
-    "바지": "trousers",
-    "스커트": "skirt",
-    "짧은드레스": "short sleeve dress",
-    "드레스": "long sleeve dress",
-    "조끼드레스": "vest dress",
-    "슬링드레스": "sling dress",
+    아우터: "long sleeve outwear",
+    조끼: "vest",
+    반바지: "shorts",
+    바지: "trousers",
+    스커트: "skirt",
+    짧은드레스: "short sleeve dress",
+    드레스: "long sleeve dress",
+    조끼드레스: "vest dress",
+    슬링드레스: "sling dress",
   },
 });
 
@@ -83,4 +83,9 @@ export const previousPageState = atom({
 export const featureState = atom({
   key: "featureState",
   default: {},
+});
+
+export const uploadState = atom({
+  key: "uploadState",
+  default: false,
 });

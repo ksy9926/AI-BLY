@@ -103,12 +103,14 @@ function LoginPage() {
 
   return (
     <Mobile>
-      <Navbar title="LOGIN" />
+      <Box className={classes.mobileLogo}><a href="/main">AIBLY</a></Box>
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
           <Box className={classes.mobileAuthBox}>
             <form className={classes.mobileFormBox}>
+              <Box className={classes.mobileInputTitle}>LOGIN</Box>
+              <Box className={classes.mobileInputSubTitle}>로그인이 필요한 서비스 입니다.</Box>
               <Box className={classes.mobileInputBox}>
                 <TextField
                   className={classes.mobileTextField}
@@ -144,7 +146,8 @@ function LoginPage() {
                   />
                 </Box>
                 <Box className={classes.mobileLinkBox}>
-                  <a href="/register">회원가입 하러가기</a>
+                  <span className={classes.mobileLinkInfo}>아이디가 없으신가요?</span>
+                  <a className={classes.mobileLink}href="/register">회원가입</a>
                 </Box>
               </Box>
             </form>

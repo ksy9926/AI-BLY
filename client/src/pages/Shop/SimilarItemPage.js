@@ -57,7 +57,7 @@ export default function SimilarItemPage({}) {
                 subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요."
                 buttontext="추천상품 보러가기"
                 buttonUrl="/main"
-                conClick={()=>{history.push("/main")}            }
+                onClick={()=>{history.push("/main")}            }
               />
             </Box>
           </Box>

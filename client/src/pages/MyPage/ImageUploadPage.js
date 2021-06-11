@@ -8,8 +8,8 @@ import TextTitleComponent from "components/ImageUploadPage/TextTitleComponent";
 import UploadImageComponent from "components/ImageUploadPage/UploadImageComponent";
 import { useHistory } from "react-router-dom";
 
-import { useSetRecoilState } from "recoil";
-import { featureState } from "recoil/atoms";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { featureState, uploadState } from "recoil/atoms";
 
 export default function ImageUploadPage({ match }) {
   const classes = useStyles();
@@ -18,6 +18,7 @@ export default function ImageUploadPage({ match }) {
   const [imageList, setImageList] = useState(null);
   const setFeature = useSetRecoilState(featureState);
   const [username, setUsername] = useState("");
+  const upload = useRecoilValue(uploadState);
 
   // url을 통한 다른 사용자 접근 통제 필요
   const history = useHistory();
@@ -36,7 +37,7 @@ export default function ImageUploadPage({ match }) {
         setImageData(response.data);
       });
     setUsername(localStorage.getItem("username") + "님");
-  }, []);
+  }, [upload]);
 
   // User Image 데이터 기준으로 컴포넌트 생성
   useEffect(() => {
@@ -60,9 +61,9 @@ export default function ImageUploadPage({ match }) {
         <Navbar title="CLOSET" />
         <Box className={classes.mobileGlassBox}>
           <TextTitleComponent title={`${username}의 옷장`} />
-          <Box className={classes.mobileSubTitleBox1}>찾고싶은 상품의 이미지를 등록해주세요.</Box>
+          <Box className={classes.mobileSubTitleBox1}>찾고 싶은 상품의 이미지를 등록해주세요.</Box>
           <Box className={classes.mobileSubTitleBox2}>
-            다양한 해외 쇼핑몰에서 비슷한 상품을 찾아드립니다
+            이미지를 클릭하시면 비슷한 상품을 찾아드려요.
           </Box>
           <Grid container>
             {imageList}

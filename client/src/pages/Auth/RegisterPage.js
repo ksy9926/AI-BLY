@@ -102,13 +102,14 @@ function RegisterPage() {
 
   return (
     <Mobile>
-      <Navbar title="SIGN UP" />
+      <Box className={classes.mobileLogo}><a href="/main">AIBLY</a></Box>
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
           <Box className={classes.mobileAuthBox}>
             <form className={classes.mobileFormBox}>
-              <Box className={classes.mobileInputBox}>
+              <Box className={classes.mobileInputSignTitle}>SIGN UP</Box>
+              <Box className={classes.mobileSignInputBox}>
                 <TextField
                   className={classes.mobileTextField}
                   error={!id && blank ? true : false}
@@ -154,12 +155,13 @@ function RegisterPage() {
                   onChange={onChangeHandler}
                 />
               </Box>
-              <Box className={classes.mobileButtonBox}>
+              <Box className={classes.mobileButtonSignBox}>
                 <Box onClick={onSignUpHandler}>
                   <Buttons className={classes.mobileButton} text="가입하기"></Buttons>
                 </Box>
-                <Box className={classes.mobileLinkBox}>
-                  <a href="/login">로그인 하러가기</a>
+                <Box className={classes.mobileSignLinkBox}>
+                <span className={classes.mobileLinkInfo}>이미 회원이신가요?</span>
+                  <a className={classes.mobileLink}href="/login">로그인</a>
                 </Box>
               </Box>
             </form>

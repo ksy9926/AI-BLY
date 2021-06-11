@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Grid, Box } from "@material-ui/core";
 import useStyles from "styles/MainPageStyle";
 import Buttons from "components/common/Buttons";
