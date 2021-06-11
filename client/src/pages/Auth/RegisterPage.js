@@ -67,6 +67,7 @@ function RegisterPage() {
             history.push({
               pathname: "/register/closet",
             });
+            console.log(response.data.username);
             localStorage.setItem("jwt", response.data.token);
             localStorage.setItem("username", response.data.username);
             localStorage.setItem("user", response.data.pk);

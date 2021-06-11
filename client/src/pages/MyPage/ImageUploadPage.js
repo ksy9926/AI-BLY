@@ -35,6 +35,7 @@ export default function ImageUploadPage({ match }) {
       .then((response) => {
         setFeature(response.data);
         setImageData(response.data);
+        console.log(response.data);
       });
     setUsername(localStorage.getItem("username") + "님");
   }, [upload]);
@@ -49,6 +50,7 @@ export default function ImageUploadPage({ match }) {
             inputtype="image"
             user_id={user_id}
             id={idx}
+            pk={data.pk}
           />
         )),
       );
