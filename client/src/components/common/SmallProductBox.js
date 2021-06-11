@@ -15,6 +15,7 @@ export default function ProductBox({ title, type }) {
     if (type === "style") {
       const body = localStorage.getItem("styles");
       const recommendList = [];
+
       if (body !== null) {
         (async function () {
           await axios
@@ -32,6 +33,8 @@ export default function ProductBox({ title, type }) {
     }
     // 메인 페이지 접속시 사용자 클로젯의 첫 번째 이미지 기반 비슷한 상품 추천
     else if (localStorage.getItem("jwt") !== null && type === "closet") {
+
+
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       });
@@ -54,7 +57,7 @@ export default function ProductBox({ title, type }) {
             <Box className={classes.mobileRecommendMessageBox}>
               <Box className={classes.mobileRecommendMessage}>{title}</Box>
               <Box className={classes.mobileRecommendButton}>
-                <a href="/closet">{buttontext}</a>
+              {type === "closet" ? <a href="/closet">{buttontext}</a> : null}
               </Box>
             </Box>
             <InfiniteHorizontal info={info} />

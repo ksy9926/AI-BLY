@@ -89,12 +89,14 @@ const useStyles = makeStyles((theme) => ({
   mobileEmptyCoverBtn:{
       color: "#ffffffd6",
       backgroundColor: "#dadadab0",
-      width: "8vh",
       height: "4vh",
+      lineHeight:"4vh",
       textAlign:"center",
       margin: "10px auto",
       borderRadius: "8px",
-      
+      display: "inline-block",
+      borderRadius: "15px",
+      margin: "10px 6px",
   },
   mobileImage: {
     objectFit: "cover",

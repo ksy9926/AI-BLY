@@ -128,7 +128,7 @@ export default function TemporaryDrawer() {
         </ListItem>
         <ListItem
           onClick={() => {
-            history.push("/");
+            history.push("/likeitem");
           }}
           button
           key="찜한 상품"

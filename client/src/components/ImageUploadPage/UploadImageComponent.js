@@ -133,18 +133,18 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
           }}
         >
           <Box className={classes.mobileEmptyCoverImageBox}>
-            <Button
+            <Box
               className={classes.mobileEmptyCoverBtn}
               onClick={onClickimage}
             >
               보기
-            </Button>
-            <Button
+            </Box>
+            <Box
               className={classes.mobileEmptyCoverBtn}
               onClick={onClickimageDelete}
             >
               삭제
-            </Button>
+            </Box>
           </Box>
         </Grid>
       </Grid>
