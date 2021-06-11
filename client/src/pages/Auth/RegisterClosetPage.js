@@ -4,12 +4,18 @@ import { Box } from "@material-ui/core";
 import useStyles from "styles/AuthPageStyle";
 import Navbar from "components/common/Navbar";
 import Buttons from "components/common/Buttons";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 function RegisterPage() {
   const classes = useStyles();
+  const history = useHistory();
+
   const title = localStorage.getItem("username") + "님의 클로젯은 현재 비어있습니다.";
   const message = "등록하신 사진을 분석해서 아이템을 찾아드려요";
-  
+
+
   return (
     <Mobile>
       <Navbar title="SIGN UP" />
@@ -28,7 +34,10 @@ function RegisterPage() {
                   className={classes.mobileButton}
                   variant="contained"
                   text="지금 추가하기"
-                  url="/mypage"
+                  url="/closet"
+                  onClick={() => {
+                    history.push("/main");
+                  }}
                 />
 
                 <Box className={classes.mobileLinkBox}>

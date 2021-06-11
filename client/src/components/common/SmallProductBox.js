@@ -5,14 +5,33 @@ import useStyles from "styles/MainPageStyle";
 import InfiniteHorizontal from "components/common/InfiniteHorizontal";
 import NoProductBox from "components/common/NoProductBox";
 
-export default function ProductBox({ title }) {
+export default function ProductBox({ title, type }) {
   const classes = useStyles();
   const buttontext = "더보기 >";
   const [info, setInfo] = useState([]);
 
-  // 메인 페이지 접속시 사용자 클로젯의 첫 번째 이미지 기반 비슷한 상품 추천
   useEffect(async () => {
-    if (localStorage.getItem("jwt") !== null) {
+    // 메인페이지 접속시 스타일 선택했을 경우 로컬스토리지 기반 전체 추천 상품 추출
+    if (type === "style") {
+      const body = localStorage.getItem("styles");
+      const recommendList = [];
+      if (body !== null) {
+        (async function () {
+          await axios
+            .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
+            .then((response) => {
+              console.log(response.data.recommend_list);
+              response.data.recommend_list.map((productList) =>
+                productList.map((product) => recommendList.push(product)),
+              );
+              setInfo(recommendList);
+              console.log("recommend", recommendList);
+            });
+        })();
+      }
+    }
+    // 메인 페이지 접속시 사용자 클로젯의 첫 번째 이미지 기반 비슷한 상품 추천
+    else if (localStorage.getItem("jwt") !== null && type === "closet") {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       });

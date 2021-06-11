@@ -64,14 +64,13 @@ function RegisterPage() {
           console.log(response);
           if (response.status === 201) {
             onToastHandler("회원가입 성공", "success");
-            history.push({
-              pathname: "/register/closet",
-            });
-            console.log(response.data.username);
             localStorage.setItem("jwt", response.data.token);
             localStorage.setItem("username", response.data.username);
             localStorage.setItem("user", response.data.pk);
             localStorage.setItem("email", response.data.email);
+            history.push({
+              pathname: "/register/closet",
+            });
           } else {
             console.log(response.data);
           }
@@ -96,14 +95,16 @@ function RegisterPage() {
               localStorage.setItem("username", response.data.username);
               localStorage.setItem("email", response.data.email);
               localStorage.setItem("user", response.data.pk);
-            }),
+            })
         );
     }
   };
 
   return (
     <Mobile>
-      <Box className={classes.mobileLogo}><a href="/main">AIBLY</a></Box>
+      <Box className={classes.mobileLogo}>
+        <a href="/main">AIBLY</a>
+      </Box>
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
@@ -133,7 +134,9 @@ function RegisterPage() {
                 />
                 <TextField
                   className={classes.mobileTextField}
-                  error={passwordCheck && password !== passwordCheck ? true : false}
+                  error={
+                    passwordCheck && password !== passwordCheck ? true : false
+                  }
                   id="standard-basic"
                   label={
                     passwordCheck && password !== passwordCheck
@@ -158,11 +161,18 @@ function RegisterPage() {
               </Box>
               <Box className={classes.mobileButtonSignBox}>
                 <Box onClick={onSignUpHandler}>
-                  <Buttons className={classes.mobileButton} text="가입하기"></Buttons>
+                  <Buttons
+                    className={classes.mobileButton}
+                    text="가입하기"
+                  ></Buttons>
                 </Box>
                 <Box className={classes.mobileSignLinkBox}>
-                <span className={classes.mobileLinkInfo}>이미 회원이신가요?</span>
-                  <a className={classes.mobileLink}href="/login">로그인</a>
+                  <span className={classes.mobileLinkInfo}>
+                    이미 회원이신가요?
+                  </span>
+                  <a className={classes.mobileLink} href="/login">
+                    로그인
+                  </a>
                 </Box>
               </Box>
             </form>

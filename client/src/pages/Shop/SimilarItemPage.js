@@ -27,7 +27,10 @@ export default function SimilarItemPage({}) {
       await axios
         .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, [feature])
         .then((response) => {
-          console.log("recommend 받은 데이터: ", response.data["recommend_list"][1]);
+          console.log(
+            "recommend 받은 데이터: ",
+            response.data["recommend_list"][1]
+          );
           setInfo(response.data["recommend_list"][1]);
           setPage(1);
           setCountAll(response.data["recommend_list"][1].length);
@@ -55,9 +58,8 @@ export default function SimilarItemPage({}) {
               <NoItemTemplate
                 title="비슷한 상품이 아직 없어요!"
                 subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요."
-                buttontext="추천상품 보러가기"
+                buttontext="해외직구 상품 보러가기"
                 buttonUrl="/main"
-                onClick={()=>{history.push("/main")}            }
               />
             </Box>
           </Box>
