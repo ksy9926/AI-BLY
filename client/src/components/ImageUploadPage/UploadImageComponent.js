@@ -7,7 +7,7 @@ import Resizer from "react-image-file-resizer";
 import { useHistory } from "react-router-dom";
 
 import { useRecoilState } from "recoil";
-import { featureState } from "recoil/atoms";
+import { featureState, uploadState } from "recoil/atoms";
 
 export default function UploadImageComponent({ src, inputtype, id }) {
   const classes = useStyles();
@@ -16,6 +16,7 @@ export default function UploadImageComponent({ src, inputtype, id }) {
   const userId = localStorage.getItem("user");
   const [feature, setFeature] = useRecoilState(featureState);
   const [cover, setCover] = useState(false);
+  const [upload, setUpload] = useRecoilState(uploadState);
 
   const resizeFile = (file) =>
     new Promise((resolve) => {
@@ -61,10 +62,12 @@ export default function UploadImageComponent({ src, inputtype, id }) {
       const formData = new FormData();
       formData.append("dress_img", image);
       formData.append("user_id", userId);
-      axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
-        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
-        "content-type": "multipart/form-data",
-      });
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
+          headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+          "content-type": "multipart/form-data",
+        })
+        .then(setUpload(!upload));
     }
   }, [image]);
 

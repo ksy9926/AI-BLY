@@ -50,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
   },
   mobileRecommendMessageBox: {
-    
     height: "25px",
     textAlign: "left",
     background: "rgba(255, 255, 255, 0.2)",
@@ -90,13 +89,11 @@ const useStyles = makeStyles((theme) => ({
   mobileRecommendMessage: {
     fontSize: "16px",
     color: "rgb(1 1 1 / 66%)",
-
   },
 
   mobileRecommendButton: {
     fontSize: "15px",
     color: "rgb(1 1 1 / 66%)",
-
   },
   mobileRecommendTitleBox: {
     display: "flex",
@@ -134,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
   },
   mobileButtonBox: {
-    height: "9vh",
+    height: "8vh",
   },
 
   // ItemSmall
@@ -329,7 +326,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileCategoryButtonText: {
-    
     boxSizing: "border-box",
     fontWeight: "500",
   },
