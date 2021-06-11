@@ -1,8 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 import firstpageBackground from "firstpage.png";
-import secondpageBackground from "secondpage.png"
+import secondpageBackground from "secondpage.png";
 
 const useStyles = makeStyles((theme) => ({
+  noapplyGrid: {
+    height: "100vh",
+    width: "100vw",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundImage : "none",
+    fontSize:"4vw",
+    color:"white"
+  },
+
   mobilecontainer: {
     height: "101vh",
     display: "grid",
@@ -13,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  mobileTutorialContainer:{
+  mobileTutorialContainer: {
     backgroundImage: `url(${secondpageBackground})`,
     backgroundSize: "cover",
-    overflowX: "hidden" 
+    overflowX: "hidden",
   },
   mobileVideo: {
     objectFit: "cover",
@@ -26,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
     top: "0",
     left: "0",
   },
-  mobileTutorialImageBox:{
-    paddig:"10px",
-    margin:"0 35px 0  35px"
+  mobileTutorialImageBox: {
+    paddig: "10px",
+    margin: "0 35px 0  35px",
   },
   mobileGrid: {
     gridRow: "3/span 1",
@@ -124,14 +135,14 @@ const useStyles = makeStyles((theme) => ({
   mobileNavbarSkip: {
     fontWeight: "bolder",
     color: "#ff4b55",
-    fontSize: '18px',
-    textShadow: '-1px 1px 1px #f3bec1',
+    fontSize: "18px",
+    textShadow: "-1px 1px 1px #f3bec1",
   },
   mobileNavbarSelect: {
     fontWeight: "bolder",
     color: "#ff4b55",
-    fontSize: '18px',
-    textShadow: '-1px 1px 1px #f3bec1',
+    fontSize: "18px",
+    textShadow: "-1px 1px 1px #f3bec1",
   },
   mobileGlassOutBox: {
     background: "rgba(255, 255, 255, 0.2)",
@@ -154,7 +165,7 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(255, 255, 255, 0.2)",
     color: "#000000ab",
     padding: "10px",
-    fontWeight: 'bold',
+    fontWeight: "bold",
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
     backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
@@ -175,8 +186,8 @@ const useStyles = makeStyles((theme) => ({
   mobileGlassSubText: {
     margin: "5px",
     color: "#0000008c",
-    fontWeight: 'bold',
-    fontSize : "13px",
+    fontWeight: "bold",
+    fontSize: "13px",
   },
   mobileImg: {
     display: "block",
