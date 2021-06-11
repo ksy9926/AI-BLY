@@ -12,10 +12,13 @@ export default function NoItemTemplate({
 }) {
   const classes = useStyles();
   const history = useHistory();
+  // console.log(buttonUrl)
 
-  function handleOnClick() {
+  
+  function handleOnClick(e){
     history.push(buttonUrl);
   }
+
   return (
     <Box className={classes.mobileNoItemBox}>
       <Box>
@@ -29,7 +32,13 @@ export default function NoItemTemplate({
         </Box>
       </Box>
       <Box className={classes.mobileButtonBox}>
-        <Buttons text={buttontext} onClick={handleOnClick}></Buttons>
+        <Buttons
+          text={buttontext}
+          onClick={(e) => {
+            handleOnClick(e);
+          }}
+          url={buttonUrl}
+        ></Buttons>
       </Box>
     </Box>
   );
