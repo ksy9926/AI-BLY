@@ -11,11 +11,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     margin: "10px",
 
-<<<<<<< HEAD
-    height:"85vh",
-=======
     height: "85vh",
->>>>>>> 9038957bdbf9bbb6f472628854336fb133a676cb
     whiteSpace: "wrap",
     overflowx: "hidden",
     overflowY: "auto",
