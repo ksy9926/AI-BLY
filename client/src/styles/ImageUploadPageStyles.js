@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "10px",
     height: "85vh",
     whiteSpace: "nowrap",
-    overflowx: "auto",
-    overflowY: "hidden",
+    overflowX: "hidden",
+    overflowY: "scroll",
     "&::-webkit-scrollbar": {
       display: "none",
     },
@@ -48,17 +48,16 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileSubTitleBox1: {
     color: "rgb(1 1 1 / 66%)",
-
     margin: "15px 10px 5px 20px",
     fontSize: "14px",
-    width: "100%",
+    width: "90%",
   },
   mobileSubTitleBox2: {
     color: "rgb(1 1 1 / 66%)",
-
+    whiteSpace: "normal",
     margin: "5px 10px 5px 20px",
     fontSize: "14px",
-    width: "100%",
+    width: "90%",
   },
 
   //UploadImageComponent

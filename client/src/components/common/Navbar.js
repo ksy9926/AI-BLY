@@ -97,8 +97,10 @@ export default function Navbar({ title }) {
         <Toolbar>
           <Box className={classes.mobileTitle}>{title}</Box>
           <Box className={classes.mobileGrow} />
-          {/* <Box className={classes.mobileLogo}>AIBLY</Box> */}
-          <Box className={classes.mobileGrow} />
+          {/* <Box className={classes.mobileLogo}>
+            <a href="/main">AIBLY</a>
+          </Box>
+          <Box className={classes.mobileGrow} /> */}
           <AccountCircleButton />
         </Toolbar>
       </AppBar>

@@ -6,7 +6,7 @@ import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRoun
 import { useHistory } from "react-router-dom";
 
 import { useRecoilState } from "recoil";
-import { featureState } from "recoil/atoms";
+import { featureState, uploadState } from "recoil/atoms";
 
 export default function UploadImageComponent({ src, inputtype, id }) {
   const classes = useStyles();
@@ -14,6 +14,7 @@ export default function UploadImageComponent({ src, inputtype, id }) {
   const history = useHistory();
   const userId = localStorage.getItem("user");
   const [feature, setFeature] = useRecoilState(featureState);
+  const [upload, setUpload] = useRecoilState(uploadState);
 
   function onChangeImage(e) {
     e.preventDefault();
@@ -33,10 +34,12 @@ export default function UploadImageComponent({ src, inputtype, id }) {
       const formData = new FormData();
       formData.append("dress_img", image);
       formData.append("user_id", userId);
-      axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
-        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
-        "content-type": "multipart/form-data",
-      });
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
+          headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+          "content-type": "multipart/form-data",
+        })
+        .then(setUpload(!upload));
     }
   }, [image]);
 
@@ -52,7 +55,7 @@ export default function UploadImageComponent({ src, inputtype, id }) {
         xs={4}
       >
         <Grid container className={classes.mobileEmptyImageBox}>
-          <img className={classes.mobileImage} src={src}  onClick={onClickimage} alt="none" />
+          <img className={classes.mobileImage} src={src} onClick={onClickimage} alt="none" />
         </Grid>
       </Grid>
     );
