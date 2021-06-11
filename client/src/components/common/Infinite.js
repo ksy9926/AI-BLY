@@ -5,12 +5,17 @@ import ItemLarge from "components/MainPage/ItemLarge";
 import useStyles from "styles/MainPageStyle";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { pageState, countAllState } from "recoil/atoms";
+import { categoryState } from "recoil/atoms";
+
 
 export default function Infinite({ info, recommend }) {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
   const classes = useStyles();
   const [page, setPage] = useRecoilState(pageState);
+  const category = useRecoilValue(categoryState);
+
+
   let temp = [];
   const countAll = useRecoilValue(countAllState);
   const remainder = countAll % 6;

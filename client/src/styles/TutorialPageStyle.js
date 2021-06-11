@@ -115,19 +115,23 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mobileAppBar: {
-    background: "rgba(256, 256, 256, 0)",
+    background: "rgba(256, 256, 256, 0.3)",
     position: "static",
   },
   mobileGrow: {
     flexGrow: "1",
   },
   mobileNavbarSkip: {
-    fontWeight: "bold",
-    color: "var(--color-bg-title)",
+    fontWeight: "bolder",
+    color: "#ff4b55",
+    fontSize: '18px',
+    textShadow: '-1px 1px 1px #f3bec1',
   },
   mobileNavbarSelect: {
-    fontWeight: "bold",
-    color: "white",
+    fontWeight: "bolder",
+    color: "#ff4b55",
+    fontSize: '18px',
+    textShadow: '-1px 1px 1px #f3bec1',
   },
   mobileGlassOutBox: {
     background: "rgba(255, 255, 255, 0.2)",
@@ -148,7 +152,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileGlassInBox: {
     background: "rgba(255, 255, 255, 0.2)",
+    color: "#000000ab",
     padding: "10px",
+    fontWeight: 'bold',
     boxShadow: "0 8px 32px 0 rgba(120, 120, 120, 0.37)",
     backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
@@ -168,6 +174,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileGlassSubText: {
     margin: "5px",
+    color: "#0000008c",
+    fontWeight: 'bold',
+    fontSize : "13px",
   },
   mobileImg: {
     display: "block",

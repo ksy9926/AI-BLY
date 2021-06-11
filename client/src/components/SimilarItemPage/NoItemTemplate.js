@@ -7,10 +7,12 @@ import { useHistory } from "react-router-dom";
 export default function NoItemTemplate({ title, subtitle, buttontext, buttonUrl }) {
   const classes = useStyles();
   const history = useHistory();
+  // console.log(buttonUrl)
 
-  function handleOnClick() {
+  function handleOnClick(e) {
     history.push(buttonUrl);
   }
+
   return (
     <Box className={classes.mobileNoItemBox}>
       <Box>
