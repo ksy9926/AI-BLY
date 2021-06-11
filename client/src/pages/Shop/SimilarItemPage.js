@@ -6,14 +6,12 @@ import useStyles from "styles/RecentItemPageStyle";
 import Navbar from "components/common/Navbar";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import ProductBox from "components/common/ProductBox";
-import { useHistory } from "react-router-dom";
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { featureState, pageState, countAllState } from "recoil/atoms";
 
 export default function SimilarItemPage({}) {
   const classes = useStyles();
-  const history = useHistory();
 
   const [info, setInfo] = useState([]);
   const feature = useRecoilValue(featureState);

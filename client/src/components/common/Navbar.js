@@ -7,7 +7,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import HomeIcon from "@material-ui/icons/Home";
+import TemporaryDrawer from "components/common/Drawer"
 
 const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
@@ -101,7 +101,7 @@ export default function Navbar({ title }) {
             <a href="/main">AIBLY</a>
           </Box>
           <Box className={classes.mobileGrow} /> */}
-          <AccountCircleButton />
+          <TemporaryDrawer/>
         </Toolbar>
       </AppBar>
     </React.Fragment>

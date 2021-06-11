@@ -17,6 +17,9 @@ export default function LikeItemPage() {
 
   const setCountAll = useSetRecoilState(countAllState);
 
+  if (localStorage.getItem("jwt") === null) {
+    history.push("/login");
+  }
   // 찜한 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {

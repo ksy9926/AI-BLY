@@ -20,6 +20,9 @@ function RegisterPage() {
   const [text, setText] = useState("");
   const [severity, setSeverity] = useState("");
 
+  if (localStorage.getItem("jwt") === null) {
+    history.push("/login");
+  }
   // (회원가입 폼) 입력 핸들러
   const onChangeHandler = (event) => {
     const {
