@@ -76,25 +76,29 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
   }
 
   function onClickimageDelete() {
-    console.log(pk)
+    console.log(pk);
     axios
-        .delete(`${process.env.REACT_APP_API_URL}/api/closet/${pk}`, {
-          headers: { Authorization: "JWT " + localStorage.getItem("jwt") }
-        })
-        .then((response)=>{console.log(response); setImage(!image)})
-        .catch((err) => {
-          console.log(err);
-        });
+      .delete(`${process.env.REACT_APP_API_URL}/api/closet/${pk}`, {
+        headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
+      })
+      .then((response) => {
+        console.log(response);
+        setImage(!image);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function ImageCoverComponent() {
-    if(!cover){
+    if (!cover) {
       return (
         <Grid
           className={classes.mobileSmallPaddingBox}
           inputtype={inputtype}
           item
-          xs={4}>
+          xs={4}
+        >
           <Grid container className={classes.mobileEmptyImageBox}>
             <img
               className={classes.mobileImageCover}
@@ -111,21 +115,37 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
         className={classes.mobileSmallPaddingBox}
         inputtype={inputtype}
         item
-        xs={4}>
-        <Grid container className={classes.mobileEmptyImageBox} onClick={onClickimageCover} style={{
-          backgroundImage : `url(${src})`,
-          backgroundSize : 'cover',
-          backgroundPositionX: "center",
-          boxShadow:
-          "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
-          "&::-webkit-backdrop-filter": {
-            backdropFilter: "blur(10px)",
+        xs={4}
+      >
+        <Grid
+          container
+          className={classes.mobileEmptyImageBox}
+          onClick={onClickimageCover}
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: "cover",
+            backgroundPositionX: "center",
+            boxShadow:
+              "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+            "&::-webkit-backdrop-filter": {
+              backdropFilter: "blur(10px)",
             },
-           }}> 
-           <Box className={classes.mobileEmptyCoverImageBox}>
-            <Button className={classes.mobileEmptyCoverBtn} onClick={onClickimage}>보기</Button>
-            <Button className={classes.mobileEmptyCoverBtn} onClick={onClickimageDelete}>삭제</Button>
-           </Box>
+          }}
+        >
+          <Box className={classes.mobileEmptyCoverImageBox}>
+            <Button
+              className={classes.mobileEmptyCoverBtn}
+              onClick={onClickimage}
+            >
+              보기
+            </Button>
+            <Button
+              className={classes.mobileEmptyCoverBtn}
+              onClick={onClickimageDelete}
+            >
+              삭제
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     );
