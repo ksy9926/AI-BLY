@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 export default function NoItemTemplate({ title, subtitle, buttontext, buttonUrl }) {
   const classes = useStyles();
   const history = useHistory();
-  // console.log(buttonUrl)
+
 
   function handleOnClick(e) {
     history.push(buttonUrl);

@@ -21,12 +21,12 @@ export default function ProductBox({ title, type }) {
           await axios
             .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, body)
             .then((response) => {
-              console.log(response.data.recommend_list);
+
               response.data.recommend_list.map((productList) =>
                 productList.map((product) => recommendList.push(product)),
               );
               setInfo(recommendList);
-              console.log("recommend", recommendList);
+
             });
         })();
       }

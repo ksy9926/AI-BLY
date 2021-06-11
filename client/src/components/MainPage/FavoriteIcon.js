@@ -30,9 +30,6 @@ export default function CustomFavoriteIcon({ idx, product_id, data }) {
             },
           }
         )
-        .then((response) => {
-          console.log("받은 데이터: ", response);
-        })
         .catch((error) => {
           console.log("error: ", error.response);
         });

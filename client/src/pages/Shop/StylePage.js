@@ -17,7 +17,6 @@ export default function StylePage() {
     (async function () {
       await axios.get(`${process.env.REACT_APP_API_URL}/api/stylelist/`).then((response) => {
         setCheckList(response.data);
-        console.log("response.data: ", response.data);
       });
     })();
   }, []);
@@ -35,10 +34,8 @@ export default function StylePage() {
 
   function onStyleHandler(e) {
     const type = e.target.getAttribute("type");
-    console.log(select);
     const style = [];
     if (type === "selected") {
-      console.log(style);
       select.map((styleId) => style.push(checkList[styleId].feature));
       localStorage.setItem("styles", JSON.stringify(style));
       history.push({

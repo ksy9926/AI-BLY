@@ -61,7 +61,6 @@ function RegisterPage() {
           withCredentials: true,
         })
         .then((response) => {
-          console.log(response);
           if (response.status === 201) {
             onToastHandler("회원가입 성공", "success");
             localStorage.setItem("jwt", response.data.token);

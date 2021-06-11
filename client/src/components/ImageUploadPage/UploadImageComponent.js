@@ -37,11 +37,11 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
   async function onChangeImage(e) {
     e.preventDefault();
     const originalfile = e.target.files[0];
-    console.log(originalfile);
+
 
     try {
       const resizedImage = await resizeFile(originalfile);
-      console.log(resizedImage);
+
 
       setImage(resizedImage);
     } catch (err) {
@@ -52,7 +52,7 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
   // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
-      console.log(image, userId);
+
 
       const formData = new FormData();
       formData.append("dress_img", image);
@@ -76,13 +76,13 @@ export default function UploadImageComponent({ src, inputtype, id, pk }) {
   }
 
   function onClickimageDelete() {
-    console.log(pk);
+
     axios
       .delete(`${process.env.REACT_APP_API_URL}/api/closet/${pk}`, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
       })
       .then((response) => {
-        console.log(response);
+
         setImage(!image);
       })
       .catch((err) => {

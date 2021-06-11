@@ -28,7 +28,6 @@ export default function ImageUploadPage({ match }) {
 
   // get User Image 리스트
   useEffect(async () => {
-    console.log("이미지 업로드시 새로고침 test");
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/closet/`, {
       headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
     });

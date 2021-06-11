@@ -20,7 +20,7 @@ export default function SimilarItemPage({}) {
 
   // 옷장 이미지 클릭시 이미지와 유사한 아이템 출력
   useEffect(() => {
-    console.log("feature: ", feature);
+
     (async function () {
       await axios
         .post(`${process.env.REACT_APP_API_URL}/api/recommend/`, [feature])
