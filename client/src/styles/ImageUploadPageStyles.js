@@ -77,6 +77,25 @@ const useStyles = makeStyles((theme) => ({
     },
     display:"relative"
   },
+  mobileEmptyCoverImageBox: {
+    display : "flex",
+    flexDirection: "column",
+    justifyContent:"center",
+    height: "18vh",
+    width: "13vh",
+    borderRadius: "15px",
+    backgroundColor: "#0000005c",
+  },
+  mobileEmptyCoverBtn:{
+      color: "#ffffffd6",
+      backgroundColor: "#f77260a8",
+      width: "8vh",
+      height: "4vh",
+      textAlign:"center",
+      margin: "10px auto",
+      borderRadius: "8px",
+      
+  },
   mobileImage: {
     objectFit: "cover",
     height: "100%",

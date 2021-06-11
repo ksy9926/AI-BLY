@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, Button } from "@material-ui/core";
 import { useStyles } from "styles/ImageUploadPageStyles";
 import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRounded";
 import Resizer from "react-image-file-resizer";
@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { featureState, uploadState } from "recoil/atoms";
 
-export default function UploadImageComponent({ src, inputtype, id }) {
+export default function UploadImageComponent({ src, inputtype, id, pk }) {
   const classes = useStyles();
   const [image, setImage] = useState(null);
   const history = useHistory();
@@ -49,11 +49,6 @@ export default function UploadImageComponent({ src, inputtype, id }) {
     }
   }
 
-  function onClickimage() {
-    setFeature(feature[id].feature);
-    history.push("/smlritem");
-  }
-
   // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
@@ -71,55 +66,69 @@ export default function UploadImageComponent({ src, inputtype, id }) {
     }
   }, [image]);
 
+  function onClickimageCover() {
+    setCover(!cover);
+  }
+
   function onClickimage() {
     setFeature(feature[id].feature);
     history.push("/smlritem");
-    // setCover(!cover);
   }
-  console.log(cover);
+
+  function onClickimageDelete() {
+    console.log(pk)
+    axios
+        .delete(`${process.env.REACT_APP_API_URL}/api/closet/${pk}`, {
+          headers: { Authorization: "JWT " + localStorage.getItem("jwt") }
+        })
+        .then((response)=>{console.log(response); setImage(!image)})
+        .catch((err) => {
+          console.log(err);
+        });
+  }
 
   function ImageCoverComponent() {
-    if (cover) {
+    if(!cover){
       return (
         <Grid
           className={classes.mobileSmallPaddingBox}
           inputtype={inputtype}
           item
-          xs={4}
-        >
+          xs={4}>
           <Grid container className={classes.mobileEmptyImageBox}>
             <img
               className={classes.mobileImageCover}
               src={src}
-              onClick={onClickimage}
+              onClick={onClickimageCover}
               alt="none"
             />
-          </Grid>
-        </Grid>
-      );
-    } else {
-      return (
-        <Grid
-          className={classes.mobileSmallPaddingBox}
-          inputtype={inputtype}
-          item
-          xs={4}
-        >
-          <Grid container className={classes.mobileEmptyImageBox}>
-            <img
-              className={classes.mobileImage}
-              src={src}
-              onClick={onClickimage}
-              alt="none"
-            />
-            {/* <Box className={classes.mobileCoverBox}>
-              <Box>상품보기</Box>
-              <Box>삭제하기</Box>
-            </Box> */}
           </Grid>
         </Grid>
       );
     }
+    return (
+      <Grid
+        className={classes.mobileSmallPaddingBox}
+        inputtype={inputtype}
+        item
+        xs={4}>
+        <Grid container className={classes.mobileEmptyImageBox} onClick={onClickimageCover} style={{
+          backgroundImage : `url(${src})`,
+          backgroundSize : 'cover',
+          backgroundPositionX: "center",
+          boxShadow:
+          "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+          "&::-webkit-backdrop-filter": {
+            backdropFilter: "blur(10px)",
+            },
+           }}> 
+           <Box className={classes.mobileEmptyCoverImageBox}>
+            <Button className={classes.mobileEmptyCoverBtn} onClick={onClickimage}>보기</Button>
+            <Button className={classes.mobileEmptyCoverBtn} onClick={onClickimageDelete}>삭제</Button>
+           </Box>
+        </Grid>
+      </Grid>
+    );
   }
   useState(() => {
     ImageCoverComponent();

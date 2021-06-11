@@ -48,6 +48,7 @@ export default function ImageUploadPage({ match }) {
             inputtype="image"
             user_id={user_id}
             id={idx}
+            pk={data.pk}
           />
         )),
       );
