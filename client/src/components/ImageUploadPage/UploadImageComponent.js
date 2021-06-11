@@ -72,9 +72,9 @@ export default function UploadImageComponent({ src, inputtype, id }) {
   }, [image]);
 
   function onClickimage() {
-    // setFeature(feature[id].feature);
-    // history.push("/smlritem");
-    setCover(!cover);
+    setFeature(feature[id].feature);
+    history.push("/smlritem");
+    // setCover(!cover);
   }
   console.log(cover);
 
