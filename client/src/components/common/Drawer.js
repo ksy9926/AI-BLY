@@ -11,8 +11,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
+  paper: {
+    background: '#8f8f8fd9',
+    color: '#ffffffc7',
+    borderRadius: '10px',
+    textAlign: 'center',
+  },
+  root:{
+    
+  },
   list: {
-    width: 250,
+    width: 260,
   },
   fullList: {
     width: "auto",
@@ -25,7 +34,7 @@ export default function TemporaryDrawer() {
     right: false,
   });
   const history = useHistory();
-
+  const styles = useStyles();
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -48,7 +57,7 @@ export default function TemporaryDrawer() {
       <List>
         {localStorage.getItem("jwt") === null ? (
           <Box>
-            <Button
+            <Button style={{color:"white"}}
               onClick={() => {
                 localStorage.clear();
                 history.push("/login");
@@ -56,7 +65,7 @@ export default function TemporaryDrawer() {
             >
               로그인
             </Button>
-            <Button
+            <Button style={{color:"white"}}
               onClick={() => {
                 localStorage.clear();
                 history.push("/register");
@@ -76,7 +85,7 @@ export default function TemporaryDrawer() {
           </Button>
         )}
       </List>
-      <Divider />
+      <Divider style={{backgroundColor:"rgb(0 0 0 / 40%)"}} />
       <List>
         <ListItem
           onClick={() => {
@@ -98,7 +107,7 @@ export default function TemporaryDrawer() {
         </ListItem>
       </List>
 
-        <Divider />
+        <Divider style={{backgroundColor:"rgb(0 0 0 / 20%)"}}  />
         <List>
 
         <ListItem
@@ -121,7 +130,7 @@ export default function TemporaryDrawer() {
       </ListItem>
       </List>
 
-      <Divider />
+      <Divider style={{backgroundColor:"rgb(0 0 0 / 45%)" , height:"1px"}} />
       <List>
         <ListItem onClick={() => {}} button key="최근 본 상품">
           <ListItemText primary="최근 본 상품" />
@@ -136,13 +145,14 @@ export default function TemporaryDrawer() {
           <ListItemText primary="찜한 상품" />
         </ListItem>
       </List>
+      <Divider style={{backgroundColor:"rgb(0 0 0 / 50%)" , height:"1px"}} />
     </div>
   );
 
   return (
     <React.Fragment key="right">
       <MenuIcon onClick={toggleDrawer("right", true)} />
-      <Drawer
+      <Drawer classes={{ paper: styles.paper, root: styles.root }}
         anchor="right"
         open={state["right"]}
         onClose={toggleDrawer("right", false)}
