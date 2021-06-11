@@ -387,7 +387,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     padding: "5px",
     margin: "3px",
-    color: "rgb(255 255 255 / 66%)",
+    color: "rgb(255 255 255 / 80%)",
     fontSize: "20px",
   },
 
@@ -413,8 +413,8 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileEmptyButtonText: {
     boxSizing: "border-box",
-    color: "rgb(255 255 255 / 66%)",
-    fontWeight: "500",
+    color: "rgb(255 255 255 / 80%)",
+    fontWeight: "1000",
   },
 }));
 

@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: "15px",
     margin: "10px",
-    height: "85vh",
     whiteSpace: "nowrap",
     overflowx: "auto",
     overflowY: "hidden",
@@ -77,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
     "&::-webkit-backdrop-filter": {
       backdropFilter: "blur(10px)",
     },
+    display:"relative"
   },
   mobileImage: {
     objectFit: "cover",
@@ -93,6 +93,25 @@ const useStyles = makeStyles((theme) => ({
     color: "lightgray",
     fontSize: "35px",
   },
+  mobileImageCover: {
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "15px",
+    boxShadow:
+      "0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%)",
+    "&::-webkit-backdrop-filter": {
+      backdropFilter: "blur(10px)",
+    },
+  },
+  mobileCoverBox:{
+    objectFit: "cover",
+    height: "100%",
+    width: "100%",
+    borderRadius: "15px",
+
+    backgroundColor:"rgb(0 0 0 / 14%)"
+  }
 }));
 
 export { useStyles };
