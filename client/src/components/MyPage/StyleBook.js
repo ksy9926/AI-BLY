@@ -34,7 +34,7 @@ function StyleBook() {
   useEffect(() => {
     if (imageData && imageData.length) {
       setImageList(
-        [0].map((idx) => (
+        [0,1,2].map((idx) => (
           <Grid className={classes.mobileStyleBookPreviewBox} item xs={4}>
             <img
               className={classes.mobileImage}

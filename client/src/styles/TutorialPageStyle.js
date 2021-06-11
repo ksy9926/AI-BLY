@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   mobileTutorialImageBox:{
     paddig:"10px",
-    margin:"0 40px 0  40px"
+    margin:"0 35px 0  35px"
   },
   mobileGrid: {
     gridRow: "3/span 1",
