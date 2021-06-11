@@ -69,6 +69,7 @@ function RegisterPage() {
             });
             localStorage.setItem("jwt", response.data.token);
             localStorage.setItem("username", response.data.username);
+            localStorage.setItem("user", response.data.pk);
             localStorage.setItem("email", response.data.email);
           } else {
             console.log(response.data);
@@ -101,7 +102,7 @@ function RegisterPage() {
 
   return (
     <Mobile>
-      <Navbar />
+      <Navbar title="SIGN UP" />
       <Box className={classes.mobileFullBox}>
         {toast ? <Toast text={text} severity={severity} /> : null}
         <Box className={classes.mobileGlassBox}>
@@ -130,9 +131,7 @@ function RegisterPage() {
                 />
                 <TextField
                   className={classes.mobileTextField}
-                  error={
-                    passwordCheck && password !== passwordCheck ? true : false
-                  }
+                  error={passwordCheck && password !== passwordCheck ? true : false}
                   id="standard-basic"
                   label={
                     passwordCheck && password !== passwordCheck
@@ -157,10 +156,7 @@ function RegisterPage() {
               </Box>
               <Box className={classes.mobileButtonBox}>
                 <Box onClick={onSignUpHandler}>
-                  <Buttons
-                    className={classes.mobileButton}
-                    text="가입하기"
-                  ></Buttons>
+                  <Buttons className={classes.mobileButton} text="가입하기"></Buttons>
                 </Box>
                 <Box className={classes.mobileLinkBox}>
                   <a href="/login">로그인 하러가기</a>

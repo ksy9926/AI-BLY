@@ -5,28 +5,34 @@ import { useStyles } from "styles/ImageUploadPageStyles";
 import AddCircleOutlineRoundedIcon from "@material-ui/icons/AddCircleOutlineRounded";
 import { useHistory } from "react-router-dom";
 
-export default function UploadImageComponent({ src, inputtype, user_id }) {
+import { useRecoilState } from "recoil";
+import { featureState } from "recoil/atoms";
+
+export default function UploadImageComponent({ src, inputtype, id }) {
   const classes = useStyles();
   const [image, setImage] = useState(null);
   const history = useHistory();
+  const userId = localStorage.getItem("user");
+  const [feature, setFeature] = useRecoilState(featureState);
 
   function onChangeImage(e) {
     e.preventDefault();
     setImage(e.target.files[0]);
-    console.log(image, "이미지 업로드 된거 체크");
   }
 
-  function onClickimage(){
+  function onClickimage() {
+    setFeature(feature[id].feature);
     history.push("/smlritem");
-
   }
 
   // 업로드 이미지 백엔드 전송
   useEffect(() => {
     if (image !== null) {
+      console.log(image, userId);
+
       const formData = new FormData();
       formData.append("dress_img", image);
-      formData.append("user_id", localStorage.getItem("user"));
+      formData.append("user_id", userId);
       axios.post(`${process.env.REACT_APP_API_URL}/api/closet/`, formData, {
         headers: { Authorization: "JWT " + localStorage.getItem("jwt") },
         "content-type": "multipart/form-data",
@@ -46,7 +52,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
         xs={4}
       >
         <Grid container className={classes.mobileEmptyImageBox}>
-          <img className={classes.mobileImage} src={src} onClick={onClickimage} alt="none" />
+          <img className={classes.mobileImage} src={src}  onClick={onClickimage} alt="none" />
         </Grid>
       </Grid>
     );
@@ -61,18 +67,9 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
           document.all.file.click();
         }}
       >
-        <Grid
-          container
-          inputtype={inputtype}
-          className={classes.mobileEmptyImageBox}
-        >
+        <Grid container inputtype={inputtype} className={classes.mobileEmptyImageBox}>
           <Box>
-            <form
-              action="/"
-              id="uploadForm"
-              method="post"
-              enctype="multipart/form-data"
-            >
+            <form action="/" id="uploadForm" method="post" enctype="multipart/form-data">
               <input
                 type="file"
                 name="file"
@@ -81,9 +78,7 @@ export default function UploadImageComponent({ src, inputtype, user_id }) {
                 onChange={onChangeImage}
               />
             </form>
-            <AddCircleOutlineRoundedIcon
-              className={classes.mobileEmptyImageIcon}
-            />
+            <AddCircleOutlineRoundedIcon className={classes.mobileEmptyImageIcon} />
           </Box>
         </Grid>
       </Grid>

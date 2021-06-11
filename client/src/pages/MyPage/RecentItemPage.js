@@ -3,7 +3,6 @@ import { Box } from "@material-ui/core";
 import { Mobile } from "MediaQuery";
 import useStyles from "styles/RecentItemPageStyle";
 import Navbar from "components/common/Navbar";
-import TextTitleComponent from "components/SimilarItemPage/TextTitleComponent";
 import NoItemTemplate from "components/SimilarItemPage/NoItemTemplate";
 import axios from "axios";
 import ProductBox from "components/common/ProductBox";
@@ -15,25 +14,23 @@ export default function RecentItemPage() {
   // 최근 본 상품 출력(코드 수정해야함)
   useEffect(() => {
     (async function () {
-      await axios
-        .get(`${process.env.REACT_APP_API_URL}/api/fashion`)
-        .then((response) => {
-          setInfo(response.data);
-        });
+      await axios.get(`${process.env.REACT_APP_API_URL}/api/fashion`).then((response) => {
+        setInfo(response.data);
+      });
     })();
   }, []);
 
   if (info.length > 0) {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <ProductBox info={info} title="최근 본 상품" />
       </Mobile>
     );
   } else {
     return (
       <Mobile>
-        <Navbar />
+        <Navbar title="ITEMs" />
         <Box className={classes.mobileFullBox}>
           <Box className={classes.mobileGlassBox}>
             <Box className={classes.mobileContainer}>

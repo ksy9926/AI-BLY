@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import useStyles from "styles/RecentItemPageStyle";
 import Buttons from "components/common/Buttons";
+import { useHistory } from "react-router-dom";
 
 export default function NoItemTemplate({
   title,
@@ -10,6 +11,11 @@ export default function NoItemTemplate({
   buttonUrl,
 }) {
   const classes = useStyles();
+  const history = useHistory();
+
+  function handleOnClick() {
+    history.push(buttonUrl);
+  }
   return (
     <Box className={classes.mobileNoItemBox}>
       <Box>
@@ -23,12 +29,7 @@ export default function NoItemTemplate({
         </Box>
       </Box>
       <Box className={classes.mobileButtonBox}>
-        <Buttons
-          text={buttontext}
-          onClick={(e) => {
-            console.log("hello");
-          }}
-        ></Buttons>
+        <Buttons text={buttontext} onClick={handleOnClick}></Buttons>
       </Box>
     </Box>
   );

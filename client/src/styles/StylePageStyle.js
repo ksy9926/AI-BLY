@@ -2,15 +2,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   mobileGlassBox: {
-    background: "rgba(255, 255, 255, 0.4)",
+    background: "rgba(255, 255, 255, 0.2)",
 
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
     "&::-webkit-backdrop-filter": {
-      backdropFilter: "blur(4px)",
+      backdropFilter: "blur(10px)",
     },
     borderRadius: "15px",
     margin: "10px",
-
     height: "85vh",
     whiteSpace: "wrap",
     overflowx: "hidden",
@@ -20,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileSubTitleBox: {
+    color: "rgb(1 1 1 / 66%)",
+    
     margin: "15px 10px 10px 20px",
     fontSize: "14px",
     width: "100%",
@@ -28,29 +29,27 @@ const useStyles = makeStyles((theme) => ({
   mobileAppBar: {
     background: "transparent",
   },
-  mobileBar:{
-    height:"56px",
+  mobileBar: {
+    height: "56px",
     display: "flex",
     position: "relative",
     alignContent: "center",
-    padding:"0px 15px 0px 15px"
+    padding: "0px 15px 0px 15px",
   },
-
 
   mobileGrow: {
     flexGrow: "1",
-    display: "block"
+    display: "block",
   },
   mobileNavbarSkip: {
     fontWeight: "bold",
     color: "var(--color-bg-title)",
-    lineHeight: "56px"
-
+    lineHeight: "56px",
   },
   mobileNavbarSelect: {
     fontWeight: "bold",
     color: "var(--color-main-b)",
-    lineHeight: "56px"
+    lineHeight: "56px",
   },
 
   mobileSmallPaddingBox: {

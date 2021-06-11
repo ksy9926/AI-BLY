@@ -19,20 +19,15 @@ export const categoryKeyState = atom({
   key: "categoryKeyState",
   default: [
     "전체",
-    "높은가격순",
-    "낮은가격순",
-    "반팔",
-    "긴팔",
-    "반팔아우터",
     "아우터",
-    "조끼",
-    "슬링",
-    "반바지",
-    "바지",
-    "스커트",
-    "짧은드레스",
+    "긴팔 상의",
+    "반팔 상의",
     "드레스",
-    "조끼드레스",
+    "스커트",
+    "짧은 드레스",
+    "조끼 드레스",
+    "바지",
+    "반바지",
     "슬링드레스",
   ],
 });
@@ -40,23 +35,18 @@ export const categoryKeyState = atom({
 export const categoryDictState = atom({
   key: "categoryListState",
   default: {
-    전체: "",
-    추천상품: "recommendation",
-    높은가격순: "",
-    낮은가격순: "",
-    반팔: "short sleeve top",
-    긴팔: "long sleeve top",
-    반팔아우터: "short sleeve outwear",
-    아우터: "long sleeve outwear",
-    조끼: "vest",
-    슬링: "sling",
-    반바지: "shorts",
-    바지: "trousers",
-    스커트: "skirt",
-    짧은드레스: "short sleeve dress",
-    드레스: "long sleeve dress",
-    조끼드레스: "vest dress",
-    슬링드레스: "sling dress",
+    "전체": "",
+    "반팔 상의": "short sleeve top",
+    "긴팔 상의": "long sleeve top",
+    "아우터": "long sleeve outwear",
+    "조끼": "vest",
+    "반바지": "shorts",
+    "바지": "trousers",
+    "스커트": "skirt",
+    "짧은드레스": "short sleeve dress",
+    "드레스": "long sleeve dress",
+    "조끼드레스": "vest dress",
+    "슬링드레스": "sling dress",
   },
 });
 
@@ -85,3 +75,12 @@ export const styleState = atom({
   default: [],
 });
 
+export const previousPageState = atom({
+  key: "previousPageState",
+  default: "",
+});
+
+export const featureState = atom({
+  key: "featureState",
+  default: {},
+});

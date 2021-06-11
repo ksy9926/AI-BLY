@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
-import LandingPage from "pages/Shop/LandingPage";
+import StylePage from "pages/Shop/StylePage";
 import MainPage from "pages/Shop/MainPage";
 import LoginPage from "pages/Auth/LoginPage";
 import RegisterPage from "pages/Auth/RegisterPage";
@@ -11,8 +11,9 @@ import SimilarItemPage from "pages/Shop/SimilarItemPage";
 import RecentItemPage from "pages/MyPage/RecentItemPage";
 import RecommendItemPage from "pages/Shop/RecommendItemPage";
 import LikeItemPage from "pages/MyPage/LikeItemPage";
-import TutorialPage from "pages/TutorialPage";
-import StartPage from "pages/Shop/TutorialPage";
+import TutorialPage from "pages/Landing/TutorialPage";
+import LandingPage from "pages/Landing/LandingPage";
+
 
 axios.defaults.withCredentials = true;
 
@@ -20,19 +21,19 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/style" component={LandingPage} />
+        <Route exact path="/style" component={StylePage} />
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/register/closet" component={RegisterClosetPage} />
         <Route exact path="/mypage" component={MyPage} />
-        <Route exact path="/imgupload" component={ImageUploadPage} />
+        <Route exact path="/closet" component={ImageUploadPage} />
         <Route exact path="/smlritem" component={SimilarItemPage} />
         <Route exact path="/likeitem" component={LikeItemPage} />
         <Route exact path="/rcntitem" component={RecentItemPage} />
         <Route exact path="/rcmditem" component={RecommendItemPage} />
-        <Route exact path="/" component={TutorialPage} />
-        <Route exact path="/start" component={StartPage} />
+        <Route exact path="/tutorial" component={TutorialPage} />
+        <Route exact path="/" component={LandingPage} />
       </Switch>
     </Router>
   );

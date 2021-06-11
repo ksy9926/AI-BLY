@@ -7,13 +7,12 @@ import Buttons from "components/common/Buttons";
 
 function RegisterPage() {
   const classes = useStyles();
-  const title =
-    localStorage.getItem("username") + "님의 클로젯은 현재 비어있습니다.";
+  const title = localStorage.getItem("username") + "님의 클로젯은 현재 비어있습니다.";
   const message = "등록하신 사진을 분석해서 아이템을 찾아드려요";
-
+  
   return (
     <Mobile>
-      <Navbar />
+      <Navbar title="SIGN UP" />
       <Box className={classes.mobileFullBox}>
         <Box className={classes.mobileGlassBox}>
           <Box className={classes.mobileAuthBox}>
