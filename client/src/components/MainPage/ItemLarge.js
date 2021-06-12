@@ -19,8 +19,12 @@ export default function ItemLarge({ idx, data, recommend }) {
               <Box>없으신가요?</Box>
             </Box>
             <Box className={classes.mobileEmptyInfoSubText1}>
-              <Box className={classes.mobileEmptyInfoSubText2}>원하시는 스타일을 알려주세요</Box>
-              <Box className={classes.mobileEmptyInfoSubText3}>저희가 대신 찾아드릴게요</Box>
+              <Box className={classes.mobileEmptyInfoSubText2}>
+                원하시는 스타일을 알려주세요
+              </Box>
+              <Box className={classes.mobileEmptyInfoSubText3}>
+                저희가 대신 찾아드릴게요
+              </Box>
             </Box>
           </Box>
           <Box className={classes.mobileEmptyImageBox}>
@@ -43,11 +47,13 @@ export default function ItemLarge({ idx, data, recommend }) {
       <Grid className={classes.mobileGridBox} item xs={6}>
         <Box className={classes.mobileGlassItemBox}>
           <Box className={classes.mobileItemImageBox}>
-            <img
-              className={classes.mobileItemLgImage}
-              src={data["thumnail"]}
-              alt="옷"
-            ></img>
+            <a href={data["url"]}>
+              <img
+                className={classes.mobileItemLgImage}
+                src={data["thumnail"]}
+                alt="옷"
+              ></img>
+            </a>
             <Box className={classes.mobileFavIconBox}>
               <CustomFavoriteIcon
                 idx={idx.toString()}
@@ -56,22 +62,22 @@ export default function ItemLarge({ idx, data, recommend }) {
               />
             </Box>
           </Box>
-          <Box className={classes.mobileItemInfoBox}>
-            <Box className={classes.mobileItemBrandName}>
-              <a href={data["url"]}>{data["brand"]}</a>
-            </Box>
-            <Box className={classes.mobileItemShortDescription}>
-              {data["name"]}
-            </Box>
-            <Box className={classes.mobileItemDiscountPriceBox}>
-              <Box className={classes.mobileItemDiscount}>
-                {data["discount_rate"]}% OFF
+          <a href={data["url"]}>
+            <Box className={classes.mobileItemInfoBox}>
+              <Box className={classes.mobileItemBrandName}>{data["brand"]}</Box>
+              <Box className={classes.mobileItemShortDescription}>
+                {data["name"]}
               </Box>
-              <Box className={classes.mobileItemPrice}>
-                $ {data["sale_price"]}
+              <Box className={classes.mobileItemDiscountPriceBox}>
+                <Box className={classes.mobileItemDiscount}>
+                  {data["discount_rate"]}% OFF
+                </Box>
+                <Box className={classes.mobileItemPrice}>
+                  $ {data["sale_price"]}
+                </Box>
               </Box>
             </Box>
-          </Box>
+          </a>
         </Box>
       </Grid>
     );

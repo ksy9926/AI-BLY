@@ -36,13 +36,16 @@ export default function ItemSmall({ idx, data }) {
     <Box>
       <Box className={classes.mobileGlassSmallItemBox}>
         <Box className={classes.mobileSmallItemImageBox}>
+        <a href={data["url"]}>
           <img
             className={classes.mobileItemSmallImage}
             src={data["thumnail"]}
             alt={data["name"]}
           />
+          </a>
         </Box>
         <Box className={classes.mobileItemSmInfoBox}>
+        <a href={data["url"]}>
           <Box className={classes.mobileItemSmBrandName}>
             <a href={data["url"]}>{data["brand"]}</a>
           </Box>
@@ -57,6 +60,7 @@ export default function ItemSmall({ idx, data }) {
               $ {data["sale_price"]}
             </Box>
           </Box>
+          </a>
         </Box>
       </Box>
     </Box>

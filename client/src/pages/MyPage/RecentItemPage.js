@@ -46,7 +46,7 @@ export default function RecentItemPage() {
             >
               <NoItemTemplate
                 title="최근 본 상품이 없어요!"
-                subtitle="클릭하시면 비슷한 상품을 모아서 볼 수 있어요."
+                subtitle="새로운 상품들을 보여드릴게요."
                 buttontext="해외직구 상품 보러가기"
                 buttonUrl="/main"
               />

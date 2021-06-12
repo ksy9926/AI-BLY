@@ -121,7 +121,7 @@ export default function TemporaryDrawer() {
         </ListItem>
       <ListItem
         onClick={() => {
-          history.push("/mypage");
+          history.push("/style");
         }}
         button
         key="스타일 선택"

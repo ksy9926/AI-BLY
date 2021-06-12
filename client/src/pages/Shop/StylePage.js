@@ -77,7 +77,7 @@ export default function StylePage() {
             </Box>
           ) : (
             <Box className={classes.mobileNavbarSkip} onClick={onStyleHandler} type="none">
-              건너뛰기
+              취소하기
             </Box>
           )}
         </Box>
