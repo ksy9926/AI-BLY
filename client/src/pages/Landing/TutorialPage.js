@@ -10,11 +10,6 @@ import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
-import tutorial1 from "tutorial1.png";
-import tutorial2 from "tutorial2.png";
-import tutorial3 from "tutorial3.png";
-import tutorial4 from "tutorial4.png";
-import tutorial5 from "tutorial5.png";
 
 function TutorialPage() {
   const classes = useStyles();
@@ -22,30 +17,27 @@ function TutorialPage() {
     {
       label: "클로젯 기능이란",
       text: "사용자가 등록하신 의류 이미지를 분석하여 \n 해당 상품을 해외 직구 사이트에서 찾아드려요",
-      imgPath: tutorial1,
+      imgPath: "/images/tutorial1.png",
     },
     {
       label: "클로젯 이용준비",
       text: "자신의 클로젯에 이미지를 등록하기 위해 \n 먼저 회원가입을 해주시기 바랍니다",
-      imgPath: tutorial2,
+      imgPath: "/images/tutorial2.png",
     },
     {
       label: "클로젯에 이미지 등록하기",
       text: "나의 클로젯에 있는 이미지 추가 버튼을 누른 후\n 찾아보고 싶은 의류의 이미지를 등록해주세요",
-      imgPath:
-        tutorial3,
+      imgPath: "/images/tutorial3.png",
     },
     {
       label: "클로젯에서 상품 찾기",
       text: "등록하신 이미지를 클릭하시면\n  AI로 이미지를 분석하여 비슷한 상품을 찾아드려요",
-      imgPath:
-        tutorial4,
+      imgPath: "/images/tutorial4.png",
     },
     {
       label: "나의 스타일 등록",
       text: "사용자님이 선택하신 스타일을 통해서 \n 혹시라도 마음에 드실 상품들을 추천해드려요.",
-      imgPath:
-        tutorial5,
+      imgPath: "/images/tutorial5.png",
     },
   ];
 

@@ -1,6 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import firstpageBackground from "firstpage.png";
-import secondpageBackground from "secondpage.png";
 
 const useStyles = makeStyles((theme) => ({
   noapplyGrid: {
@@ -19,13 +17,13 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateRows: "repeat(8, 1fr)",
     // gridTemplateColumns: "1fr 2fr 1fr",
-    backgroundImage: `url(${firstpageBackground})`,
+    backgroundImage: "url('/images/firstpage.png')",
     backgroundSize: "cover",
     justifyContent: "center",
     alignItems: "center",
   },
   mobileTutorialContainer: {
-    backgroundImage: `url(${secondpageBackground})`,
+    backgroundImage: "url('/images/secondpage.png')",
     backgroundSize: "cover",
     overflowX: "hidden",
   },

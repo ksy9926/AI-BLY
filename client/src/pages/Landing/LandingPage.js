@@ -2,8 +2,6 @@ import React from "react";
 import { Box, Grid, Button } from "@material-ui/core";
 import { Mobile, Tablet, PC, PCwide } from "MediaQuery";
 import useStyles from "styles/TutorialPageStyle";
-import logoImage from "logo.png";
-import Buttons from "components/common/Buttons";
 import { useHistory } from "react-router-dom";
 // import video from "background.mov";
 
@@ -30,7 +28,7 @@ export default function LandingPage() {
             <Box className={classes.mobileImageBox}>
               <img
                 className={classes.mobileLogoimage}
-                src={logoImage}
+                src="/images/logo.png"
                 alt="logo"
               />
               <Box>
