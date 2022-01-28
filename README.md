@@ -59,7 +59,7 @@
 | Development | Docker     | 배포         |
 | Server      | Django     | 웹 서버 구동 |
 | DB          | postgresql | Database     |
-| Client      | React      | 웹 UI 구현   |
+| Client      | React, recoil, material-ui      | 웹 UI 구현   |
 | AI          | Tensorflow | AI           |
 
 <div id='5'></div>
